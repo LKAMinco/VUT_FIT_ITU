@@ -5,3 +5,8 @@
     --white: #E0DEDE;
     --black: #121212;
 }
+
+#map_div {
+    width: 1280px;
+    height: 800px;
+}
