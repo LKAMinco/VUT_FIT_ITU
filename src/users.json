@@ -1,8 +1,18 @@
-{
-  "email": "user@email.com",
-  "password": "pass",
-  "name": "Jano",
-  "surname": "Novak",
-  "address": "Adresa 1",
-  "date_of_birth": "1990-01-01"
-}
+[
+  {
+    "email": "user@email.com",
+    "password": "pass",
+    "name": "Jano",
+    "surname": "Novak",
+    "address": "Adresa 1",
+    "date_of_birth": "1990-01-01"
+  },
+  {
+    "email": "ree@email.com",
+    "password": "ree",
+    "name": "Ree",
+    "surname": "the Great",
+    "address": "Ree 1",
+    "date_of_birth": "1990-01-01"
+  }
+]

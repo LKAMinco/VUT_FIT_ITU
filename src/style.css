@@ -1,12 +1,77 @@
 :root {
-    --darkRed: #DB323D;
+    --darkRed: #A62639;
     --lightRed: #DB323D;
     --lightGray: #56494E;
     --white: #E0DEDE;
     --black: #121212;
 }
 
+
 #map_div {
     width: 1280px;
     height: 800px;
+
+html {
+    background-color: var(--darkRed);
+}
+
+a {
+    text-decoration: none;
+    color: white;
+}
+
+#navigation-desktop {
+    position: fixed;
+    top: 0;
+    z-index: 1;
+}
+
+#navigation-desktop ul {
+    margin: 0;
+    padding: 0;
+}
+
+#navigation-desktop .content ul li{
+    display: inline;
+    text-align: center;
+}
+
+#navigation-desktop .content ul li a, .content ul button {
+    display: block;
+    height: 39px;
+    padding-top: 20px;
+    font-size: large;
+    text-transform: uppercase;
+    -moz-transition: .5s linear;
+    -webkit-transition: .5s linear;
+    -o-transition: .3s linear;
+    transition: .3s linear;
+}
+
+li {
+    list-style-type: none;
+}
+
+#navigation-desktop .content ul li,.content ul button {
+    display: inline;
+    float: left;
+    width: 100%;
+    padding-top: 1px;
+}
+
+#navigation-desktop .content ul button {
+    background-color: Transparent;
+    border: 0;
+    color: var(--white);
+}
+
+#navigation-desktop a:hover, button:hover {
+    color: #be2d3c;
+    text-decoration: underline white 2px;
+    text-underline-offset: 10px;
+}
+
+#btns2 {
+    margin-top: 400px;
+
 }

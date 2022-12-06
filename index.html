@@ -12,20 +12,49 @@
         <ul>
             <li><a href="#">Havní stránka</a></li>
             <li><a href="index.html#about">O nás</a></li>
-            <li><a href="index.html#services">Mapa závad</a></li>
+            <li><a href="index.html#map">Mapa závad</a></li>
             <li><a href="index.html#contact">Kontakty</a></li>
+            <button type="submit">Přihlásit se</button> <!-- TODO reomove !!! -->
+            <button type="submit">Registrovať sa</button> <!-- TODO reomove !!! -->
         </ul>
     </div>
 </nav>
-<button type="submit">Přihlásit se</button> <!-- TODO reomove !!! -->
-<button type="submit">Registrovať sa</button> <!-- TODO reomove !!! -->
-<button onclick="location.href='user_profile.html'" type="submit">Edit profil</button> <!-- TODO reomove !!! -->
-<button onclick="location.href='interactive_map.html'" type="submit">Nahlasit problem</button> <!-- TODO reomove !!! -->
-<main>
+<div id="btns2">
+    <button type="submit">Přihlásit se</button> <!-- TODO reomove !!! -->
+    <button type="submit">Registrovať sa</button> <!-- TODO reomove !!! -->
+    <button onclick="location.href='user_profile.html'" type="submit">Edit profil</button> <!-- TODO reomove !!! -->
+    <button onclick="location.href='interactive_map.html'" type="submit">Nahlasit problem</button>
+    <!-- TODO reomove !!! -->
+</div>
+<header>
 
+</header>
+<main>
+    <section id="about">
+        <div class="content">
+            <h1>O nás</h1>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto at dignissimos dolor dolore
+                dolorem doloremque doloribus exercitationem inventore laborum magnam molestiae mollitia necessitatibus,
+                porro, qui quo rem suscipit voluptas.</p>
+        </div>
+    </section>
+    <section id="map" class="map">
+        <div class="content">
+            <h1>Mapa závad</h1>
+            <div id="mapid"></div>
+        </div>
+    </section>
+    <section id="contact">
+        <div class="content">
+            <h1>Contact</h1>
+            <div id="contactid"></div>
+        </div>
+    </section>
 </main>
 <footer>
-
+    <div id="license">
+        <p><b>GoalDiggers</b> | Copyright 2022</p>
+    </div>
 </footer>
 </body>
 </html>
