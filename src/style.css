@@ -8,8 +8,9 @@
 
 
 #map_div {
-    width: 1280px;
+    width: 1200px;
     height: 800px;
+}
 
 html {
     background-color: var(--darkRed);
