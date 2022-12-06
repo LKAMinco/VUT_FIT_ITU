@@ -6,6 +6,12 @@
     --black: #121212;
 }
 
+
+#map_div {
+    width: 1200px;
+    height: 800px;
+}
+
 html {
     background-color: var(--darkRed);
 }
@@ -68,4 +74,5 @@ li {
 
 #btns2 {
     margin-top: 400px;
+
 }
