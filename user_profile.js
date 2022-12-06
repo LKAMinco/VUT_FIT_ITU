@@ -41,7 +41,7 @@ function loadTickets() {
     xhr.send();
 }
 
-function changeProfile() {
+function editProfile() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'src/tickets.json', true);
     document.getElementById("ree").innerHTML = "reee";
