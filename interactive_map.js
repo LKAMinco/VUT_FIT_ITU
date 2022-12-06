@@ -190,3 +190,11 @@ window.onload = function() {
 function test(){
     console.log("test message");
 }
+
+function category_menu(){
+    console.log("category loaded");
+}
+
+function condition_menu(){
+    console.log("condition loaded");
+}
