@@ -1,43 +1,8 @@
 {
-  "users": [
-    {
-      "email": "user@email.com",
-      "password": "pass",
-      "name": "Jano",
-      "surname": "Novak",
-      "address": "Adresa 1",
-      "date_of_birth": "1990-01-01"
-    }
-  ],
-  "tickets": [
-    {
-      "id": 1,
-      "user_email": "user@email.com",
-      "title": "Ticket 1",
-      "address": "Adresa 1",
-      "description": "Ticket 1 description",
-      "category": "category 1",
-      "status": "open",
-      "x": 1,
-      "y": 1
-    }
-  ],
-  "active_user": "user@email.com",
-  "comments": [
-    {
-      "id": 1,
-      "ticket_id": 1,
-      "user_email": "user@email.com",
-      "text": "Comment 1",
-      "date": "2019-01-01",
-      "time": "12:00:00"
-    }
-  ],
-  "images": [
-    {
-      "id": 1,
-      "ticket_id": 1,
-      "path": "image1.png"
-    }
-  ]
+  "email": "user@email.com",
+  "password": "pass",
+  "name": "Jano",
+  "surname": "Novak",
+  "address": "Adresa 1",
+  "date_of_birth": "1990-01-01"
 }
