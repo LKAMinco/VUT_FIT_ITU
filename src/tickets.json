@@ -7,7 +7,7 @@
   "description": "Ticket 1 description",
   "category": "category 1",
   "status": "open",
-  "x": 1,
-  "y": 1
+  "lat": 49.152556,
+  "long": 16.679267
 }
 ]
