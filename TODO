@@ -19,3 +19,31 @@ Simir:
 
 9)
 LAST) ostylovat vše
+
+
+Julo:
+1) Navigation Bar
+    - add style
+    - add drop down menus
+    - add combobox
+2) Marker PopUp Template
+    - image
+    - title
+    - desc
+    - details button
+3) Ticket List Panel
+    - image
+    - title
+    - desc
+    - details button
+4) Ticket Detail
+    - all data
+5) Comments
+    - print all
+    - add
+    - remove
+6) Ticket Filtering
+    - based on category/condition
+    - sort by date/condition/title
+7) Custom Ticket Marker
+    - different for different categories
