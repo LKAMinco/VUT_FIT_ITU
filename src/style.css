@@ -12,8 +12,19 @@
     height: 800px;
 }
 
-html {
-    background-color: var(--darkRed);
+.leaflet-popup-content-wrapper, .leaflet-popup.tip {
+    background-color: #56494E !important;
+    color: #E0DEDE !important;
+}
+
+html, body {
+    margin: 0;
+    padding: 0;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: var(--white);
 }
 
 a {
