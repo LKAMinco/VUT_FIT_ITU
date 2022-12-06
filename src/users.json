@@ -5,7 +5,9 @@
     "name": "Jano",
     "surname": "Novak",
     "address": "Adresa 1",
-    "date_of_birth": "1990-01-01"
+    "date_of_birth": "1990-01-01",
+    "bio": "Chci umřít",
+    "newsletter": "yes"
   },
   {
     "email": "ree@email.com",
@@ -13,6 +15,8 @@
     "name": "Ree",
     "surname": "the Great",
     "address": "Ree 1",
-    "date_of_birth": "1990-01-01"
+    "date_of_birth": "1990-01-01",
+    "bio": ":peeposad:",
+    "newsletter": "no"
   }
 ]
