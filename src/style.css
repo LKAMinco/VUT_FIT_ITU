@@ -6,12 +6,6 @@
     --black: #121212;
 }
 
-
-#map_div {
-    width: 1200px;
-    height: 800px;
-}
-
 .leaflet-popup-content-wrapper, .leaflet-popup.tip {
     background-color: #56494E !important;
     color: #E0DEDE !important;
@@ -86,4 +80,44 @@ li {
 #btns2 {
     margin-top: 400px;
 
+}
+
+#map_nav{
+    display: inline-flex;
+    width: 100%;
+    background: var(--darkRed);
+    color: var(--white);
+    font-weight: bolder;
+}
+
+#map_nav div{
+    width: 15rem;
+    margin: 0.5rem 1rem;
+    padding: 0.5rem 0;
+    text-align: center;
+    background-color: var(--lightRed);
+    border-radius: 0.5rem;
+}
+
+#map_nav div p{
+    margin: 0 0;
+}
+
+#map_main {
+    display: grid;
+    grid-template-columns: 75% 25%;
+    height: 100%;
+}
+
+#map_div {
+    grid-column: 1;
+    width: 100%;
+    height: 95vh;
+}
+
+#ticket_list{
+    margin: 0;
+    gird-column: -1;
+    width: 100%;
+    background: var(--white);
 }

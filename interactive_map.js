@@ -8,6 +8,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     minZoom: 11,
     accessToken: mapKey,
+    attribution: "<a>© Goal Diggers 2022<\a>"
 }).addTo(map);
 
 map.setMaxBounds(L.latLngBounds(bound1, bound2));
