@@ -1,13 +1,12 @@
 function loadUser() {
     var xhr = new XMLHttpRequest();
-    document.getElementById("ree").innerHTML = "Sup";
+    xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
-        var user = JSON.parse(this.responseText);
-        const active_user = user.filter(user.email === 'ree@email.com');
-
+        //FIXME:
+        var active_user = JSON.parse(this.responseText).filter(function(entry){return entry.name === 'ree@email.com'});
         var output = '';
 
-        output += '<ul>' + '<b>aaaa</b>' +
+        output += '<ul>' +
             '<li>Jméno: ' + active_user.name + '</li>' +
             '<li>Email: ' + active_user.email + '</li>' +
             '<li>Přijmení: ' + active_user.surname + '</li>' +
@@ -16,7 +15,6 @@ function loadUser() {
             '</ul>';
         document.getElementById('user').innerHTML = output;
     }
-    xhr.open('GET', 'src/users.json', true);
 
     xhr.send();
 }
@@ -30,18 +28,17 @@ function loadTickets() {
         var output = '';
         //document.getElementById('user').outerHTML = "";
         for (var i in ticket) {
-            output += '<ul>' + '<b>aaaa</b>' +
-                '<li>Jméno: ' + ticket[i].title + '</li>' +
-                '<li>Email: ' + ticket[i].address + '</li>' +
-                '<li>Přijmení: ' + ticket[i].description + '</li>' +
-                '<li>Adresa: ' + ticket[i].category + '</li>' +
-                '<li>Datum narození: ' + ticket[i].status + '</li>' +
+            output += '<ul>' +
+                '<li>Název ticketu: ' + ticket[i].title + '</li>' +
+                '<li>Adresa: ' + ticket[i].address + '</li>' +
+                '<li>Popis: ' + ticket[i].description + '</li>' +
+                '<li>Categorie: ' + ticket[i].category + '</li>' +
+                '<li>Status: ' + ticket[i].status + '</li>' +
                 '</ul>';
             document.getElementById('ticket').innerHTML = output;
         }
     }
     xhr.send();
-    document.getElementById("ree").innerHTML = "reee";
 }
 
 function changeProfile() {
@@ -54,7 +51,7 @@ function changeProfile() {
         var output = '';
         //document.getElementById('user').outerHTML = "";
         for (var i in ticket) {
-            output += '<ul>' + '<b>aaaa</b>' +
+            output += '<ul>' +
                 '<li>Jméno: ' + ticket[i].title + '</li>' +
                 '<li>Email: ' + ticket[i].address + '</li>' +
                 '<li>Přijmení: ' + ticket[i].description + '</li>' +
