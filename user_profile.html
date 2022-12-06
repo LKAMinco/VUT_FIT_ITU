@@ -1,30 +1,59 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User profile</title>
-  <link rel="stylesheet" href="src/style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User profile</title>
+    <link rel="stylesheet" href="src/user_style.css">
 </head>
 <body>
-  <script src="user_profile.js"></script>
-  <nav id="navigation-desktop">
-    <div class="userNav">
-      <ul>
-        <button onclick="loadTickets()" id="buttonProfileTickets">Moje nahlášené závady</button>
-        <button onclick="loadUser()" id="buttonProfileUpdate">Profil</button>
-        <button onclick="editProfile()" id="buttonProfileEdit">Edit profile</button>
-      </ul>
+<script src="user_profile.js"></script>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <div class="profile">
+            <!-- TODO: profile pic -->
+            <script>
+                getName()
+            </script>
+            <div id="userName"></div>
+        </div>
+        <ul>
+            <li>
+                <span class="icon"><i class="fas fa-home"></i></span>
+
+                <button onclick="loadTickets()" id="buttonProfileTickets">Moje nahlášené závady</button>
+            </li>
+            <li>
+                <span class="icon"><i class="fas fa-desktop"></i></span>
+                <button onclick="editProfile()" id="buttonProfileEdit">Edit profile</button>
+            </li>
+            <li><a href="user_profile_edit.html">Změna profilu</a></li>
+        </ul>
     </div>
-  </nav>
+
+</div>
+
+<nav id="navigation-desktop">
+    <div class="userNav">
+        <ul>
+
+        </ul>
+    </div>
+</nav>
 <main>
 
-<br><br>
-<h1>User</h1>
-<div id="user"></div>
-  <div id="ree"></div>
-  <div id="ticket"></div>
+    <script>
+        loadUser();
+    </script>
+
+    <br><br>
+    <h1>User</h1>
+    <div id="user"></div>
+    <div id="ree"></div>
+    <div id="ticket"></div>
+
 
 </main>
 <footer>

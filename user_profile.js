@@ -23,6 +23,22 @@ function loadUser() {
     xhr.send();
 }
 
+function getName(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'src/users.json', true);
+    xhr.onload = function () {
+        //FIXME:
+        var users_list = JSON.parse(this.responseText);
+        var active_user = users_list.filter((user) => user.email === 'ree@email.com');
+        active_user = active_user[0];
+        var output = '';
+
+        output += "<h3>" + active_user.name + " " + active_user.surname + "<h3>";
+        document.getElementById('userName').innerHTML = output;
+    }
+    xhr.send();
+}
+
 function loadTickets() {
     var active;
 
