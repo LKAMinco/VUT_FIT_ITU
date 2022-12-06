@@ -6,50 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User profile</title>
     <link rel="stylesheet" href="src/user_style.css">
- </head>
- <body>
- <script src="user_profile.js"></script>
- <main>
+</head>
+<body>
+<script src="user_profile.js"></script>
+<main>
+    <form action="save_file_edit.js">
+        <div class="container">
+            <h1 class="title">Úprava profilu</h1>
+            <div class="grid">
+                <div class="form-group a">
+                    <label for="first-name">Jméno</label>
+                    <input id="first-name" type="text" placeholder="Enter your name">
+                </div>
+                <div class="form-group b">
+                    <label for="last-name">Příjmení</label>
+                    <input id="last-name" type="text">
+                </div>
+                <div class="textarea-group">
+                    <label for="bio">Osobní popis</label>
+                    <textarea id="bio"></textarea>
+                </div>
+                <div class="form-group">
+                    <label for="address">Adresa</label>
+                    <input id="address" type="text">
+                </div>
+            </div>
+            <div class="profile_edit_checkboxes">
 
-     <div class="container">
-         <h1 class="title">Úprava profilu</h1>
-         <div class="grid">
-             <div class="form-group a">
-                 <label for="name">Jméno</label>
-                 <input id="name" type="text">
-             </div>
-             <div class="form-group b">
-                 <label for="first-name">Příjmení</label>
-                 <input id="first-name" type="text">
-             </div>
-             <div class="form-group phone-group">
-                 <label for="phone">Telefonní číslo</label>
-                 <input id="phone" type="text">
-             </div>
-             <div class="textarea-group">
-                 <label for="bio">Osobní popis</label>
-                 <textarea id="bio"></textarea>
-             </div>
-             <div class="form-group">
-                 <label for="address">Adresa</label>
-                 <input id="address" type="text">
-             </div>
-         </div>
-         <div class="profile_edit_checkboxes">
+                <div class="checkbox_group_edit">
+                    <input id="newsletter" type="checkbox">
+                    <label for="newsletter">Chci dostávat novinky o mých nahlášených ticketech.</label>
+                </div>
+            </div>
 
-             <div class="checkbox_group_edit">
-                 <input id="newsletter" type="checkbox">
-                 <label for="newsletter">Chci dostávat novinky o mých nahlášených ticketech</label>
-             </div>
-         </div>
+            <div class="button_container_edit">
+                <input type="button" id="bt" class="button" value="Uložit" onclick="saveProfile()"/>
+            </div>
+        </div>
+    </form>
+</main>
+<footer>
 
-         <div class="button_container_edit">
-             <button class="button">Uložit</button>
-         </div>
-     </div>
- </main>
- <footer>
-
- </footer>
- </body>
- </html>
+</footer>
+</body>
+</html>
