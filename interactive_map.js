@@ -8,6 +8,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
     maxZoom: 19,
     minZoom: 11,
     accessToken: mapKey,
+    attribution: "<a>© Goal Diggers 2022<\a>"
 }).addTo(map);
 
 map.setMaxBounds(L.latLngBounds(bound1, bound2));
@@ -148,3 +149,44 @@ const brnoBounds = L.polygon([[
     fillOpacity: 0.2,
     interactive: false
 }).addTo(map);
+
+// Different icon
+
+var LeafIcon = L.Icon.extend({
+    options: {
+        iconSize:     [38, 50],
+        shadowSize:   [0, 0],
+        iconAnchor:   [0, 40],
+        shadowAnchor: [4, 62],
+        popupAnchor:  [20, 0]
+    }
+});
+
+var greenIcon = new LeafIcon({
+    iconUrl: 'https://pngimg.com/uploads/gps/gps_PNG65.png',
+})
+
+// End of different icon
+
+function loadTickets() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'src/tickets.json', true);
+    xhr.onload = function () {
+        var tickets = JSON.parse(this.responseText);
+
+        tickets.forEach(ticket => {
+            //const marker = L.marker([49.152556, 16.679267], {icon: greenIcon}).addTo(map);
+            const marker = L.marker([49.152556, 16.679267]).addTo(map);
+            marker.bindPopup("<div id=\"testtest\"><button onclick=\"test()\" id=\"testtest\">Upravit profil</button><\div>");
+        });
+    }
+    xhr.send();
+}
+
+window.onload = function() {
+    loadTickets();
+}
+
+function test(){
+    console.log("test message");
+}
