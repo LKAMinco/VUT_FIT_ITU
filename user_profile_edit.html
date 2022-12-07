@@ -9,44 +9,79 @@
 </head>
 <body>
 <script src="user_profile.js"></script>
+
+<header id="header">
+    <!-- TODO nav bar -->
+</header>
 <main>
-    <form action="save_file_edit.js">
-        <div class="container">
-            <h1 class="title">Úprava profilu</h1>
-            <div class="grid">
-                <div class="form-group a">
-                    <label for="first-name">Jméno</label>
-                    <input id="first-name" type="text" placeholder="Moje jméno">
-                </div>
-                <div class="form-group b">
-                    <label for="last-name">Příjmení</label>
-                    <input id="last-name" type="text" placeholder="Moje příjmení">
-                </div>
-                <div class="textarea-group">
-                    <label for="bio">Osobní popis</label>
-                    <input id="bio" type="text" placeholder="Něco málo o mně...">
-                </div>
-                <div class="form-group">
-                    <label for="address">Adresa</label>
-                    <input id="address" type="text" placeholder="Ulice 42, Městská část">
-                </div>
-            </div>
-            <div class="profile_edit_checkboxes">
+    <div class="all">
+        <section id="side_bar">
+            <div class="content">
+                <div class="wrapper">
+                    <div class="profile">
+                        <a href="user_profile.html"><img  src="src/pictures/user_pic.png" alt="Profile picture"></a>
+                        <script>
+                            getName()
+                        </script>
+                        <a href="user_profile.html"><div id="userName"></div></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <span class="icon"><i class="fas fa-home"></i></span>
 
-                <div class="checkbox_group_edit">
-                    <input id="newsletter" type="checkbox">
-                    <label for="newsletter">Chci dostávat novinky o mých nahlášených ticketech.</label>
+                            <button onclick="loadTickets()" id="buttonProfileTickets">Moje nahlášené závady</button>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-desktop"></i></span>
+                            <button onclick="editProfile()" id="buttonProfileEdit">Edit profile</button>
+                        </li>
+                        <li><a href="user_profile_edit.html">Změna profilu</a></li>
+                    </ul>
                 </div>
             </div>
+        </section>
+        <section id="edit_profile">
+            <form action="save_file_edit.js">
+                <div class="container">
+                    <h1 class="title">Úprava profilu</h1>
+                    <div class="grid">
+                        <div class="form-group a">
+                            <label for="first-name">Jméno</label>
+                            <input id="first-name" type="text" placeholder="Moje jméno">
+                        </div>
+                        <div class="form-group b">
+                            <label for="last-name">Příjmení</label>
+                            <input id="last-name" type="text" placeholder="Moje příjmení">
+                        </div>
+                        <div class="textarea-group">
+                            <label for="bio">Osobní popis</label>
+                            <input id="bio" type="text" placeholder="Něco málo o mně...">
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Adresa</label>
+                            <input id="address" type="text" placeholder="Ulice 42, Městská část">
+                        </div>
+                    </div>
+                    <div class="profile_edit_checkboxes">
 
-            <div class="button_container_edit">
-                <input type="button" id="bt" class="button" value="Sumbit"  onclick="saveProfile()"/>
-            </div>
-        </div>
-    </form>
+                        <div class="checkbox_group_edit">
+                            <input id="newsletter" type="checkbox">
+                            <label for="newsletter">Chci dostávat novinky o mých nahlášených ticketech.</label>
+                        </div>
+                    </div>
+
+                    <div class="button_container_edit">
+                        <input type="button" id="bt" class="button" value="Sumbit"  onclick="saveProfile()"/>
+                    </div>
+                </div>
+            </form>
+        </section>
+    </div>
 </main>
 <footer>
 
 </footer>
+
+
 </body>
 </html>

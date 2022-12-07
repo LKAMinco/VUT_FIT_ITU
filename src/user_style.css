@@ -8,39 +8,48 @@
 }
 
 body {
+    display: flex;
     min-width: 768px;
     max-width: 1920px;
-}
-.content {
-    max-width: 1200px;
-    margin: auto;
-    padding: 0 20px 0 20px;
-}
-/* *************************** BODY ***************************** */
-/* *************************** CHECKBOX EDIT PROFILE ***************************** */
-body {
-    box-sizing: border-box;
-    background: #f2f2f2;
-    font-family: "Roboto", sans-serif;
-    display: flex;
     align-items: center;
     justify-content: center;
 }
+.content {
+    margin: auto;
+    padding: 0 20px 0 20px;
+}
+main .all {
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
 
+#user_profile {
+    grid-column: 2;
+    max-width: 400px;
+}
+#side_bar {
+    grid-column: 1;
+    max-width: 200px;
+    margin-right: 200px;
+}
+#edit_profile {
+    grid-column: 2;
+    max-width: 200px;
+}
+/* *************************** BODY ***************************** */
+/* *************************** CHECKBOX EDIT PROFILE ***************************** */
 .container {
-    background: #fff;
-    width: 100%;
     padding: 1rem;
 }
 
 .title {
     font-size: 24px;
-    line-height: 28px;
     font-weight: bold;
     text-transform: uppercase;
     color: #374151;
     padding-bottom: 11px;
-    border-bottom: 1px solid #d7dbdf;
 }
 
 .form-group {
@@ -55,17 +64,17 @@ body {
     font-size: 16px;
     line-height: 19px;
     margin-bottom: 10px;
+
 }
 
 .form-group [type],
 .textarea-group textarea {
-    border: 1px solid #d2d6db;
-    border-radius: 6px;
     padding: 15px;
 }
 .form-group [type]:hover,
 .textarea-group textarea:hover {
     border-color: #a8afb9;
+    border-radius: 5px;
 }
 .form-group [type]:focus,
 .textarea-group textarea:focus {
@@ -100,7 +109,7 @@ body {
     height: 16px;
     margin-right: 8px;
     border: 1px solid #d2d6db;
-    border-radius: 6px;
+    border-radius: 10px;
     transition: background 0.1s ease-in;
 }
 
@@ -122,6 +131,7 @@ body {
     content: "\2713";
     background: #5850eb;
     border-color: #5850eb;
+
 }
 
 .button {
@@ -131,7 +141,7 @@ body {
     background: #5850eb;
     border: none;
     padding: 15px 25px;
-    border-radius: 6px;
+    border-radius: 10px;
     color: white;
     width: 100%;
     margin-top: 24px;
@@ -144,16 +154,8 @@ body {
 }
 
 @media screen and (min-width: 768px) {
-    body {
-        align-items: center;
-        justify-content: center;
-    }
-
     .container {
-        margin: 2rem;
-        box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.1);
         border-radius: 4px;
-        max-width: 32rem;
         padding: 2rem;
     }
 }
@@ -161,13 +163,6 @@ body {
     .container {
         max-width: 80%;
         width: 100%;
-    }
-
-    .profile_edit_checkboxes {
-        display: flex;
-    }
-    .profile_edit_checkboxes > :not(:first-child) {
-        margin-left: 1rem;
     }
 
     .grid {
@@ -198,17 +193,13 @@ body {
     }
 
     .button {
-        width: auto;
+        width: 100%;
     }
 }
 
 /* *************************** CHECKBOX EDIT PROFILE ***************************** */
 /* *************************** SIDE BAR ***************************** */
-main .all {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-}
+
 .wrapper{
     background: rgb(5, 68, 104);
     top: 0;
@@ -282,6 +273,7 @@ main .all {
 
 #price {
     background-color: #f7f7f7;
+    max-width: 500px;
 }
 
 #price h2 {
