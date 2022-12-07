@@ -102,7 +102,13 @@ a {
     transition: 80ms ease-in-out;
 }
 
-#categories_list, #conditions_list{
+#sort_list{
+    left: 32rem;
+    height: 13.3rem;
+    transition: 90ms ease-in-out;
+}
+
+#categories_list, #conditions_list, #sort_list{
     position: fixed;
     top: 3.7rem;
     z-index: 5000;
@@ -116,7 +122,7 @@ a {
     max-height: 100%;
 }
 
-#categories_list button, #conditions_list button{
+#categories_list button, #conditions_list button, #sort_list button{
     margin-top: 0.85rem;
     margin-left: 0.5rem;
     padding: 0;
@@ -130,12 +136,12 @@ a {
     transition: 100ms ease-in-out;
 }
 
-#categories_list button p, #conditions_list button p{
+#categories_list button p, #conditions_list button p, #sort_list button p{
     margin-top: 0.9rem;
     transition: 50ms ease-in-out;
 }
 
-#categories_list button:hover>p, #conditions_list button:hover>p{
+#categories_list button:hover>p, #conditions_list button:hover>p, #sort_list button:hover>p{
     color: var(--black) !important;
 }
 

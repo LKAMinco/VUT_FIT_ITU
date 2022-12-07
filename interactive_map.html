@@ -11,7 +11,7 @@
 <nav id="map_nav">
     <button id="categories_btn" onclick="open_filter_menu('categories_list', 'categories_img')"><img id="categories_img" src="list_closed.png" title="list_closed"><p>Kategórie</p></button>
     <button id="condition_btn" onclick="open_filter_menu('conditions_list','condition_img')"><img id="condition_img" src="list_closed.png" title="list_closed"><p>Stav</p></button>
-    <button id="sort_by_btn" onclick="open_filter_menu()"><img id="sort_by_img" src="list_closed.png" title="list_closed"><p>Zoradené podľa: Názvu</p></button>
+    <button id="sort_by_btn" onclick="open_filter_menu('sort_list','sort_by_img')"><img id="sort_by_img" src="list_closed.png" title="list_closed"><p id="sort_text">Zoradené podľa: Názvu A-Z</p></button>
 </nav>
 
 <div id="categories_list" class="hidden_list">
@@ -26,10 +26,17 @@
     <button id="others" onclick="set_filter('others')"><p>Ostatné</p></button>
 </div>
 
-<div id="conditions_list">
+<div id="conditions_list" class="hidden_list">
     <button id="in_progress" onclick="set_filter('in_progress')"><p>Aktuálne riešené</p></button>
     <button id="done" onclick="set_filter('done')"><p>Vyriešené</p></button>
     <button id="to_do" onclick="set_filter('to_do')"><p>Prijaté</p></button>
+</div>
+
+<div id="sort_list">
+    <button id="name_asc" class="selected_filter" onclick="set_sort('name_asc')"><p>Názvu A-Z</p></button>
+    <button id="name_desc" onclick="set_sort('name_desc')"><p>Názvu Z-A</p></button>
+    <button id="age_asc" onclick="set_sort('age_asc')"><p>Najnovších</p></button>
+    <button id="age_desc" onclick="set_sort('age_desc')"><p>Najstarších</p></button>
 </div>
 
 <main id="map_main">

@@ -202,22 +202,33 @@ function open_filter_menu(menu, img){
     }
 }
 
-function condition_menu(){
-    console.log("condition loaded");
-}
-
-function sortby_menu(){
-    console.log("sort loaded");
-}
-
-function set_filter(category){
-    console.log(category);
-    if(document.getElementById(category).hasAttribute("class")){
-        document.getElementById(category).removeAttribute("class");
-        console.log("attribute removed");
+function set_filter(filter){
+    if(document.getElementById(filter).hasAttribute("class")){
+        document.getElementById(filter).removeAttribute("class");
     }
     else{
-        document.getElementById(category).setAttribute("class", "selected_filter");
-        console.log("attribute set");
+        document.getElementById(filter).setAttribute("class", "selected_filter");
+    }
+}
+
+function set_sort(sort){
+    console.log(sort);
+    if(!document.getElementById(sort).hasAttribute("class")){
+        var sort_types = document.getElementById(sort).parentElement.children;
+        console.log(sort_types);
+        for(let i = 0; i < sort_types.length; i++){
+            if(sort_types[i].hasAttribute("class")){
+                sort_types[i].removeAttribute("class");
+            }
+        }
+        document.getElementById(sort).setAttribute("class", "selected_filter");
+        var text = '';
+        switch(sort){
+            case "name_asc" : text = "Názvu A-Z"; break;
+            case "name_desc" : text = "Názvu Z-A"; break;
+            case "age_asc" : text = "Najnovších"; break;
+            case "age_desc" : text = "Najstarších"; break;
+        }
+        document.getElementById('sort_text').innerHTML = "Zoradené podľa: " + text;
     }
 }
