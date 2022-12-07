@@ -23,7 +23,7 @@ function loadUser() {
     xhr.send();
 }
 
-function getName(){
+function getName() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
@@ -40,28 +40,14 @@ function getName(){
 }
 
 function loadTickets() {
-    var active;
-
-    // **********************************************************
-    var xhr2 = new XMLHttpRequest();
-    xhr2.open('GET', 'src/active_user.json', false);
-    xhr2.onload = function () {
-        var active = JSON.parse(this.responseText);
-        console.log(active);
-        active = "test";
-    }
-    // **********************************************************
-
-    var xhr1 = new XMLHttpRequest();
-    xhr1.open('GET', 'src/tickets.json', true);
-    xhr1.onload = function () {
-        document.getElementById('ticket').innerHTML = "reee";
-
-        console.log(active);
-
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'src/tickets.json', true);
+    xhr.onload = function () {
         var ticker_list = JSON.parse(this.responseText);
-        var ticker_list_filtered = ticker_list.filter((ticket) => ticket.email === active);
+        var ticker_list_filtered = ticker_list.filter((ticket) => ticket.user_email === 'ree@email.com');
         var output = '';
+        document.getElementById('ticket').innerHTML = ticker_list_filtered;
+        console.log(ticker_list_filtered);
         for (var i in ticker_list_filtered) {
             output += '<tr>' +
                 '<th>' + ticker_list_filtered[i].title + '</th>' +
@@ -73,30 +59,15 @@ function loadTickets() {
             document.getElementById('ticket').innerHTML = output;
         }
     }
-    xhr1.send();
-    xhr2.send();
+    xhr.send();
 }
 
+
 function editProfile() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'src/tickets.json', true);
-    document.getElementById("ree").innerHTML = "reee";
-    xhr.onload = function () {
-        var ticket = JSON.parse(this.responseText);
-
-        var output = '';
-        //document.getElementById('user').outerHTML = "";
-        for (var i in ticket) {
-            output += '<ul>' +
-                '<li>Jméno: ' + ticket[i].title + '</li>' +
-                '<li>Email: ' + ticket[i].address + '</li>' +
-                '<li>Přijmení: ' + ticket[i].description + '</li>' +
-                '<li>Adresa: ' + ticket[i].category + '</li>' +
-                '<li>Datum narození: ' + ticket[i].status + '</li>' +
-                '</ul>';
-            document.getElementById('ticket').innerHTML = output;
-        }
+    var xhr1 = new XMLHttpRequest();
+    xhr1.open('GET', 'src/tickets.json', true);
+    xhr1.onload = function () {
+        document.getElementById('ticket').innerHTML = "reee";
     }
-
-    xhr.send();
+    xhr1.send();
 }

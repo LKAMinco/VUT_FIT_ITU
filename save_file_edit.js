@@ -1,4 +1,4 @@
-saveProfile()
+function saveProfile()
 {
     const Gname = document.getElementById('first-name');
     const Gsurname = document.getElementById('last-name');

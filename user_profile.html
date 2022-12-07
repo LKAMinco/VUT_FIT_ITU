@@ -10,66 +10,70 @@
 <body>
 <script src="user_profile.js"></script>
 
-<div class="wrapper">
-    <div class="sidebar">
-        <div class="profile">
-            <!-- TODO: profile pic -->
-            <script>
-                getName()
-            </script>
-            <div id="userName"></div>
-        </div>
-        <ul>
-            <li>
-                <span class="icon"><i class="fas fa-home"></i></span>
-
-                <button onclick="loadTickets()" id="buttonProfileTickets">Moje nahlášené závady</button>
-            </li>
-            <li>
-                <span class="icon"><i class="fas fa-desktop"></i></span>
-                <button onclick="editProfile()" id="buttonProfileEdit">Edit profile</button>
-            </li>
-            <li><a href="user_profile_edit.html">Změna profilu</a></li>
-        </ul>
-    </div>
-</div>
-
-<nav id="navigation-desktop">
-    <div class="userNav">
-        <ul>
-
-        </ul>
-    </div>
-</nav>
+<header id="header">
+    <!-- TODO nav bar -->
+</header>
 <main>
+    <div class="all">
+        <section id="side_bar">
+            <div class="content">
+                <div class="wrapper">
+                    <div class="profile">
+                        <a href="user_profile.html"><img  src="src/pictures/user_pic.png" alt="Profile picture"></a>
+                        <script>
+                            getName()
+                        </script>
+                        <a href="user_profile.html"><div id="userName"></div></a>
+                    </div>
+                    <ul>
+                        <li>
+                            <span class="icon"><i class="fas fa-home"></i></span>
 
-    <script>
-        loadUser();
-    </script>
+                            <button onclick="loadTickets()" id="buttonProfileTickets">Moje nahlášené závady</button>
+                        </li>
+                        <li>
+                            <span class="icon"><i class="fas fa-desktop"></i></span>
+                            <button onclick="editProfile()" id="buttonProfileEdit">Edit profile</button>
+                        </li>
+                        <li><a href="user_profile_edit.html">Změna profilu</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        <section id="user_profile">
+            <script>
+                loadUser();
+            </script>
+            <div class="content">
 
-    <br><br>
-    <h1>User</h1>
-    <div id="user"></div>
-    <div id="ree"></div>
-    <div id="a"><br><br><br></div>
-    <section id="price">
-        <div class="content">
-            <table>
-                <thead>
-                <tr>
-                    <th>Plan</th>
-                    <th>Services</th>
-                    <th>Price</th>
-                    <th>Order Now</th>
-                </tr>
-                </thead>
-                <tbody>
-                <div id="ticket"></div>
-                </tbody>
-            </table>
-        </div>
-    </section>
-
+                <br><br>
+                <h1>User</h1>
+                <div id="user"></div>
+                <div id="ree"></div>
+                <div id="a"><br><br><br></div>
+                <div id="ticket_table">
+                    <section id="price">
+                        <div class="content">
+                            <table>
+                                <thead>
+                                <tr>
+                                    <th>Název</th>
+                                    <th>Adresa</th>
+                                    <th>Popis</th>
+                                    <th>Kategorie</th>
+                                    <th>Status</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <div id="ticket"></div>
+                                </tbody>
+                            </table>
+                        </div>
+                    </section>
+                </div>
+            </div>
+        </section>
+    </div>
 </main>
 <footer>
 
