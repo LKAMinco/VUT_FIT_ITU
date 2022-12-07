@@ -7,8 +7,56 @@
 }
 
 .leaflet-popup-content-wrapper, .leaflet-popup.tip {
-    background-color: #56494E !important;
+    background-color: var(--darkRed) !important;
     color: #E0DEDE !important;
+    width: 15rem;
+    margin: 0;
+}
+
+.leaflet-popup-content-wrapper a, .leaflet-popup.tip a{
+    background-color: var(--darkRed) !important;
+    color: var(--white) !important;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+}
+
+#map_marker_popup {
+    width: 15.4rem;
+    height: 11rem;
+    margin: 0;
+    transform: translate(-1.31rem, -0.9rem);
+}
+
+#map_marker_popup img{
+    width: 15.12rem;
+    height: 6rem;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    object-fit: cover;
+    object-position: 100% 0;
+    margin-bottom: 0.2rem;
+}
+
+#map_marker_popup a{
+    margin-left: 0.5rem;
+}
+
+#popup_button{
+    width: 14rem;
+    height: 2rem;
+    margin-left: 0.55rem;
+    margin-top: 0.5rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--lightRed);
+    color: var(--white);
+}
+
+#popup_button:hover{
+    text-decoration: underline white 0.1rem;
+    text-underline-offset: 0.2rem;
 }
 
 html, body {
@@ -78,8 +126,8 @@ a {
 #map_div {
     top: 3.7rem;
     grid-column: 1;
-    width: 1420px;
-    height: 94vh;
+    width: 100%;
+    height: 88rem;
 }
 
 #ticket_list{

@@ -176,8 +176,15 @@ function loadTickets() {
 
         tickets.forEach(ticket => {
             //const marker = L.marker([49.152556, 16.679267], {icon: greenIcon}).addTo(map);
-            const marker = L.marker([49.152556, 16.679267]).addTo(map);
-            marker.bindPopup("<div id=\"testtest\"><button onclick=\"test()\" id=\"testtest\">Upravit profil</button><\div>");
+            const marker = L.marker([ticket.lat, ticket.long]).addTo(map);
+            var string = "<div id='map_marker_popup'>" +
+                         "<img src='" + ticket.image_path + "'>" +
+                         "<a>" + ticket.title + "</a><br>" +
+                         "<a>Category: " + ticket.category + "</a><br>" +
+                         "<a>Condition: " + ticket.status + "</a><br>" +
+                         "<button id=\"popup_button\" onclick=\"ticket_detail()\">Detaily tiketu</button>"
+                         "</div>";
+            marker.bindPopup(string);
         });
     }
     xhr.send();
@@ -187,7 +194,7 @@ window.onload = function() {
     loadTickets();
 }
 
-function test(){
+function ticket_detail(){
     console.log("test message");
 }
 

@@ -5,11 +5,11 @@
     "title": "Ticket 1",
     "address": "Adresa 1",
     "description": "Ticket 1 description",
-    "category": "category 1",
+    "category": "vandalism",
     "status": "open",
     "lat": 49.152556,
     "long": 16.679267,
-    "image_path" : "x.png"
+    "image_path" : "src/pictures/tree_storm.jpg"
   },
   {
     "id": 2,
@@ -17,10 +17,10 @@
     "title": "Ticket 2",
     "address": "Adresa 2",
     "description": "Ticket 2 description",
-    "category": "category 2",
+    "category": "vegetation",
     "status": "open",
-    "lat": 49.152556,
-    "long": 16.679267,
+    "lat": 49.223565,
+    "long": 16.583990,
     "image_path" : "src/pictures/tree_storm.jpg"
   },
   {
@@ -29,10 +29,34 @@
     "title": "Ticket 3",
     "address": "Adresa 3",
     "description": "Ticket 3 description",
-    "category": "category 3",
+    "category": "dirty_streets",
     "status": "open",
-    "lat": 49.152556,
-    "long": 16.679267,
+    "lat": 49.230015,
+    "long": 16.572803,
+    "image_path" : "src/pictures/tree_storm.jpg"
+  },
+  {
+    "id": 4,
+    "user_email": "ree@email.com",
+    "title": "Ticket 4",
+    "address": "Adresa 4",
+    "description": "Ticket 4 description",
+    "category": "illegal_dumps",
+    "status": "open",
+    "lat": 49.206512,
+    "long": 16.612106,
+    "image_path" : "src/pictures/tree_storm.jpg"
+  },
+  {
+    "id": 5,
+    "user_email": "ree@email.com",
+    "title": "Ticket 5",
+    "address": "Adresa 5",
+    "description": "Ticket 5 description",
+    "category": "others",
+    "status": "open",
+    "lat": 49.177746,
+    "long": 16.665243,
     "image_path" : "src/pictures/tree_storm.jpg"
   }
 ]
