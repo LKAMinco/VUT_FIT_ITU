@@ -14,11 +14,55 @@
             <li><a href="index.html#about">O nás</a></li>
             <li><a href="index.html#map">Mapa závad</a></li>
             <li><a href="index.html#contact">Kontakty</a></li>
-            <button type="submit">Přihlásit se</button> <!-- TODO reomove !!! -->
-            <button type="submit">Registrovať sa</button> <!-- TODO reomove !!! -->
+            <button type="submit">Registrovať sa</button>
+            <button type="submit">Přihlásit se</button>
         </ul>
     </div>
 </nav>
+<header>
+    <div id="slideshow">
+        <div class="content">
+            <img class="slide" src="src/images/fountain.png">
+            <img class="slide" src="src/images/garden.png">
+            <img class="slide" src="src/images/observatory.png">
+            <img class="slide" src="src/images/park.png">
+            <div id="dots">
+                <span class="dot white" onclick="currentDiv(1)"></span>
+                <span class="dot white" onclick="currentDiv(2)"></span>
+                <span class="dot white" onclick="currentDiv(3)"></span>
+                <span class="dot white" onclick="currentDiv(4)"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        let slideIndex = 1;
+        showDivs(slideIndex);
+
+        function plusDivs(n) {
+            showDivs(slideIndex += n);
+        }
+
+        function currentDiv(n) {
+            showDivs(slideIndex = n);
+        }
+
+        function showDivs(n) {
+            let i;
+            let x = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            if (n > x.length) {slideIndex = 1}
+            if (n < 1) {slideIndex = x.length}
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" white", "");
+            }
+            x[slideIndex-1].style.display = "block";
+            dots[slideIndex-1].className += " white";
+        }
+    </script>
+</header>
 <div id="btns2">
     <button type="submit">Přihlásit se</button> <!-- TODO reomove !!! -->
     <button type="submit">Registrovať sa</button> <!-- TODO reomove !!! -->
@@ -26,9 +70,6 @@
     <button onclick="location.href='interactive_map.html'" type="submit">Nahlasit problem</button>
     <!-- TODO reomove !!! -->
 </div>
-<header>
-
-</header>
 <main>
     <section id="about">
         <div class="content">
