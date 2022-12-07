@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User profile</title>
     <link rel="stylesheet" href="src/user_style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
 <script src="user_profile.js"></script>
@@ -29,11 +30,7 @@
                         </a>
                     </div>
                     <ul>
-                        <li>
-                            <span class="icon"><i class="fas fa-home"></i></span>
 
-                            <button onclick="loadTickets()" id="buttonProfileTickets">Moje nahlášené závady</button>
-                        </li>
                         <li>
                             <span class="icon"><i class="fas fa-desktop"></i></span>
                             <button onclick="editProfile()" id="buttonProfileEdit">Edit profile</button>
@@ -52,6 +49,42 @@
                 <br><br>
                 <div id="user"></div>
                 <div id="a"><br><br><br></div>
+            </div>
+            <div id="ticket_filters">
+                <div id="ticker_filter1" class="col-12 mb-3 col-md-6">
+                    <select class="form-select" id="filter1" onchange="searchFilter()">
+                        <div id="myDropdown1" class="dropdown-content">
+                            <option value="" selected>Status</option>
+                            <option value="green">Green</option>
+                            <option value="blue">Blue</option>
+                            <option value="yellow">Yellow</option>
+                        </div>
+                    </select>
+                </div>
+                <div id="ticket_filter2" class="col-12 mb-3 col-md-6">
+                    <select class="form-select" id="filter2" onchange="searchFilter()">
+                        <div id="myDropdown2" class="dropdown-content">
+                            <option value="" selected>Kategorie</option>
+                            <option value="green">Green</option>
+                            <option value="blue">Blue</option>
+                            <option value="yellow">Yellow</option>
+                        </div>
+                    </select>
+                </div>
+                <div id="ticket_filter3" class="col-12 mb-3 col-md-6">
+                    <select class="form-select" id="filter3" onchange="searchFilter()">
+                        <div id="myDropdown3" class="dropdown-content">
+                            <option value="" selected>Datum</option>
+                            <option value="green">Od nejnovějších</option>
+                            <option value="blue">Od nejstarších</option>
+                        </div>
+                    </select>
+                </div>
+                <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">
+                    <li>
+                        <button onclick="loadTickets()" id="buttonProfileTickets">Hledat</button>
+                    </li>
+                </div>
             </div>
             <div id="ticket_table">
                 <div class="content">

@@ -16,19 +16,20 @@ body {
 .content {
     width: auto;
     margin: auto;
-    padding: 0 20px 0 20px;
+    padding: 0 20px 0 35px;
 }
+
 main .all {
     max-width: 1200px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 50px;
+    gap: 20px;
 }
 
 #user_profile {
     margin: 0;
     grid-column: 2;
-    max-width: 600px;
+    max-width: 1000px;
 }
 #side_bar {
     grid-column: 1;
@@ -37,7 +38,7 @@ main .all {
 }
 #edit_profile {
     grid-column: 2;
-    max-width: 200px;
+    max-width: 500px;
 }
 /* *************************** BODY ***************************** */
 /* *************************** CHECKBOX EDIT PROFILE ***************************** */
@@ -51,12 +52,8 @@ main .all {
     padding: 1rem;
 }
 
-.container h1 {
-    width: 100px;
-}
-
-
 .title {
+    width: 600px;
     font-size: 24px;
     font-weight: bold;
     text-transform: uppercase;
@@ -75,10 +72,12 @@ main .all {
 }
 
 .textarea-group{
-    grid-column: 1;
-    grid-row: span 3;
+    width: 450px;
     margin-top: 24px;
     margin-right: 2rem;
+    display: flex;
+    flex-direction: column;
+
 }
 
 .b{
@@ -100,7 +99,7 @@ main .all {
 }
 
 .checkbox_group_edit {
-    width: 20px;
+    width: 600px;
     margin-top: 25px;
 }
 
@@ -191,7 +190,7 @@ main .all {
     }
 
     .button {
-        width: 100px;
+        width: 400px;
     }
 }
 
@@ -266,16 +265,15 @@ main .all {
 /* *************************** SIDE BAR ***************************** */
 /* *************************** TICKET TABLE ***************************** */
 #price table {
-    width: 400px;
-    margin:0px;
-    border-spacing: 0px 20px;
+    width: 800px;
     line-height: 20px;
+    border-spacing: 0px 20px;
 
 }
 
 #price {
-    background-color: #f7f7f7;
-    max-width: 500px;
+    background-color: #dbe1e1;
+    width: 800px;
 }
 
 #price h2 {
@@ -286,34 +284,19 @@ main .all {
 
 #price td {
     padding: 10px;
-    border-top: 1px dotted #bfbfbf;
-    border-bottom: 1px dotted #bfbfbf;
-    border-top: 1px dotted #bfbfbf;
-}
-
-#price button {
-    background-color: transparent;
-    border-radius: 5px;
-    border: 2px solid steelblue;
-    padding: 20px;
-    position: fixed;
-}
-
-#price button:hover {
-    background-color: steelblue;
-    transition: .5s;
+    border-top: 1px dotted #8cdae8;
+    border-bottom: 1px dotted #d28d8d;
+    border-top: 1px dotted #8dcc9c;
 }
 
 #price thead {
+    text-align: center;
     color: black;
-    text-align: left;
-    margin-left: -40px;
 }
 
 #price ul li:first-child {
     font-weight: bolder;
     list-style-type: none;
-    margin-left: -18px;
 }
 
 #price tbody tr:hover,
@@ -419,3 +402,78 @@ main .all {
     pointer-events: all;
 }
 /* *************************** POPUP LOGIN ***************************** */
+/* *************************** DROPDOWN MENU ***************************** */
+#ticket_filters{
+    padding-left: 20px;
+    padding-bottom: 10px;
+    max-width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 50px;
+}
+
+/* Dropdown Button */
+.form-select {
+    border-radius: 10px;
+    width: 200px;
+    background-color: rgba(141, 204, 156, 0);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+/* Dropdown button on hover & focus */
+.form-select:hover, .form-select:focus {
+    background-color: #8dcc9c;
+    transition: 200ms ease-in-out;
+}
+
+/* The container <div> - needed to position the dropdown content */
+.col-12 {
+    position: relative;
+    display: inline-block;
+}
+
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f6f6f6;
+    min-width: 230px;
+    border: 1px solid #ddd;
+    z-index: 1;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu (use JS to add this class to the .dropdown-content container when the user clicks on the dropdown button) */
+.show {display:block;}
+
+#buttonProfileTickets {
+    width: 100%;
+    background-color: rgba(141, 204, 156, 0);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+#buttonProfileTickets:hover{
+    background-color: #8dcc9c;
+    transition: 200ms ease-in-out;
+}
+
+/* *************************** DROPDOWN MENU ***************************** */
