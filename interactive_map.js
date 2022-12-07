@@ -191,14 +191,14 @@ function test(){
     console.log("test message");
 }
 
-function category_menu(){
-    if(document.getElementById("categories_list").hasAttribute("class")){
-        document.getElementById("categories_list").removeAttribute("class");
-        document.getElementById("categories_img").setAttribute("src", "list_opened.png");
+function open_filter_menu(menu, img){
+    if(document.getElementById(menu).hasAttribute("class")){
+        document.getElementById(menu).removeAttribute("class");
+        document.getElementById(img).setAttribute("src", "list_opened.png");
     }
     else{
-        document.getElementById("categories_list").setAttribute("class", "hidden_list");
-        document.getElementById("categories_img").setAttribute("src", "list_closed.png");
+        document.getElementById(menu).setAttribute("class", "hidden_list");
+        document.getElementById(img).setAttribute("src", "list_closed.png");
     }
 }
 
@@ -210,7 +210,7 @@ function sortby_menu(){
     console.log("sort loaded");
 }
 
-function set_category(category){
+function set_filter(category){
     console.log(category);
     if(document.getElementById(category).hasAttribute("class")){
         document.getElementById(category).removeAttribute("class");
