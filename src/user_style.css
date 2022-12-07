@@ -41,9 +41,20 @@ main .all {
 }
 /* *************************** BODY ***************************** */
 /* *************************** CHECKBOX EDIT PROFILE ***************************** */
+.grid {
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 1fr;
+}
 .container {
     padding: 1rem;
 }
+
+.container h1 {
+    width: 100px;
+}
+
 
 .title {
     font-size: 24px;
@@ -53,19 +64,25 @@ main .all {
     padding-bottom: 11px;
 }
 
-.form-group {
+.form-group{
+    width: 200px;
     margin-top: 25px;
     display: flex;
     flex-direction: column;
+    grid-column: 1;
+    grid-row: span 2;
+    margin-right: 2rem;
 }
 
-.textarea-group label,
-.form-group label {
-    color: #374151;
-    font-size: 16px;
-    line-height: 19px;
-    margin-bottom: 10px;
+.textarea-group{
+    grid-column: 1;
+    grid-row: span 3;
+    margin-top: 24px;
+    margin-right: 2rem;
+}
 
+.b{
+    grid-column: 2;
 }
 
 .form-group [type],
@@ -82,18 +99,8 @@ main .all {
     border-color: #eb50a0;
 }
 
-.textarea-group {
-    margin-top: 24px;
-}
-
-.textarea-group textarea {
-    resize: none;
-    width: 100%;
-    margin-top: 10px;
-    height: calc(100% - 59px);
-}
-
 .checkbox_group_edit {
+    width: 20px;
     margin-top: 25px;
 }
 
@@ -143,8 +150,8 @@ main .all {
     border: none;
     padding: 15px 25px;
     border-radius: 10px;
+    width: 16px;
     color: white;
-    width: 100%;
     margin-top: 24px;
 }
 .button:hover {
@@ -169,22 +176,12 @@ main .all {
     .grid {
         display: grid;
         grid-gap: 24px;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr;
         grid-auto-rows: 1fr;
     }
 
-    .email-group {
-        grid-column: 1;
-        grid-row: 2;
-    }
-
-    .phone-group {
-        grid-column: 2;
-        grid-row: 2;
-    }
-
     .textarea-group {
-        grid-column: 3;
+        grid-column: 1;
         grid-row: span 2;
         margin-right: 2rem;
     }
@@ -194,7 +191,7 @@ main .all {
     }
 
     .button {
-        width: 100%;
+        width: 100px;
     }
 }
 

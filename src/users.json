@@ -7,7 +7,8 @@
     "address": "Adresa 1",
     "date_of_birth": "1990-01-01",
     "bio": "Chci umřít",
-    "newsletter": "yes"
+    "newsletter": "yes",
+    "ticket_counter": 0
   },
   {
     "email": "ree@email.com",
@@ -17,6 +18,18 @@
     "address": "Ree 1",
     "date_of_birth": "1990-01-01",
     "bio": ":peeposad:",
-    "newsletter": "no"
+    "newsletter": "no",
+    "ticket_counter": 6
+  },
+  {
+    "email": "peepo@email.com",
+    "password": "peepo",
+    "name": "Peepo",
+    "surname": "Sad",
+    "address": "Pee 1",
+    "date_of_birth": "1990-01-01",
+    "bio": ":peeposad:",
+    "newsletter": "no",
+    "ticket_counter": 2
   }
 ]
