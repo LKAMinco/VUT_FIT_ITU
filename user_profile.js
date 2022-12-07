@@ -63,13 +63,13 @@ function loadTickets() {
         var ticker_list_filtered = ticker_list.filter((ticket) => ticket.email === active);
         var output = '';
         for (var i in ticker_list_filtered) {
-            output += '<ul>' +
-                '<li>Název ticketu: ' + ticker_list_filtered[i].title + '</li>' +
-                '<li>Adresa: ' + ticker_list_filtered[i].address + '</li>' +
-                '<li>Popis: ' + ticker_list_filtered[i].description + '</li>' +
-                '<li>Categorie: ' + ticker_list_filtered[i].category + '</li>' +
-                '<li>Status: ' + ticker_list_filtered[i].status + '</li>' +
-                '</ul>';
+            output += '<tr>' +
+                '<th>' + ticker_list_filtered[i].title + '</th>' +
+                '<th>' + ticker_list_filtered[i].address + '</th>' +
+                '<th>' + ticker_list_filtered[i].description + '</th>' +
+                '<th>' + ticker_list_filtered[i].category + '</th>' +
+                '<th>' + ticker_list_filtered[i].status + '</th>' +
+                '</tr>';
             document.getElementById('ticket').innerHTML = output;
         }
     }

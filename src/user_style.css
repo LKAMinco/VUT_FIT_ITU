@@ -264,5 +264,60 @@ body{
 }
 /* *************************** SIDE BAR ***************************** */
 /* *************************** TICKET TABLE ***************************** */
+#price table {
+    border-spacing: 0px 20px;
+}
 
+#price {
+    background-color: #f7f7f7;
+}
+
+#price h2 {
+    text-align: center;
+    color: black;
+    text-transform: none;
+}
+
+#price table {
+    width: 80%;
+    line-height: 20px;
+    margin: auto;
+}
+
+#price td {
+    border-top: 1px dotted #bfbfbf;
+    border-bottom: 1px dotted #bfbfbf;
+    border-top: 1px dotted #bfbfbf;
+}
+
+#price button {
+    background-color: transparent;
+    border-radius: 5px;
+    border: 2px solid steelblue;
+    padding: 20px;
+}
+
+#price button:hover {
+    background-color: steelblue;
+    transition: .5s;
+}
+
+#price thead {
+    color: black;
+    text-align: left;
+    margin-left: -40px;
+}
+
+#price ul li:first-child {
+    font-weight: bolder;
+    list-style-type: none;
+    margin-left: -18px;
+}
+
+#price tbody tr:hover,
+#price ul li:first-child:hover {
+    background-color: white;
+    color: steelblue;
+    transition: .5s;
+}
 /* *************************** TICKET TABLE ***************************** */
