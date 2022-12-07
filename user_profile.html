@@ -13,17 +13,20 @@
 <header id="header">
     <!-- TODO nav bar -->
 </header>
+
 <main>
     <div class="all">
-        <section id="side_bar">
+        <div id="side_bar">
             <div class="content">
                 <div class="wrapper">
                     <div class="profile">
-                        <a href="user_profile.html"><img  src="src/pictures/user_pic.png" alt="Profile picture"></a>
+                        <a href="user_profile.html"><img src="src/pictures/user_pic.png" alt="Profile picture"></a>
                         <script>
                             getName()
                         </script>
-                        <a href="user_profile.html"><div id="userName"></div></a>
+                        <a href="user_profile.html">
+                            <div id="userName"></div>
+                        </a>
                     </div>
                     <ul>
                         <li>
@@ -39,7 +42,7 @@
                     </ul>
                 </div>
             </div>
-        </section>
+        </div>
         <section id="user_profile">
             <script>
                 loadUser();
@@ -51,29 +54,54 @@
                 <div id="user"></div>
                 <div id="ree"></div>
                 <div id="a"><br><br><br></div>
-                <div id="ticket_table">
+            </div>
+            <div id="ticket_table">
+                <div class="content">
                     <section id="price">
-                        <div class="content">
-                            <table>
-                                <thead>
-                                <tr>
-                                    <th>Název</th>
-                                    <th>Adresa</th>
-                                    <th>Popis</th>
-                                    <th>Kategorie</th>
-                                    <th>Status</th>
-                                </tr>
-                                </thead>
-                                <tbody>
-                                <div id="ticket"></div>
-                                </tbody>
-                            </table>
-                        </div>
+                        <table>
+                            <thead>
+                            <tr>
+                                <th>Název</th>
+                                <th>Adresa</th>
+                                <th>Popis</th>
+                                <th>Kategorie</th>
+                                <th>Status</th>
+                                <th>Obrázek</th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                            <tr id="ticket"></tr>
+                            </tbody>
+                        </table>
                     </section>
                 </div>
             </div>
         </section>
     </div>
+    <div class="pop-up-image">
+        <span>&times;</span>
+        <img src="src/pictures/tree_storm.jpg">
+    </div>
+
+    <!-- SIGNUP -->
+    <script defer src="user_profile.js"></script>
+    <button data-modal-target="#modal">Open Modal</button>
+    <div class="modal" id="modal">
+        <div class="modal-header">
+            <div class="title">Example Modal</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Esse quod alias ut illo doloremque eum ipsum
+            obcaecati distinctio debitis reiciendis quae quia soluta totam doloribus quos nesciunt necessitatibus,
+            consectetur quisquam accusamus ex, dolorum, dicta vel? Nostrum voluptatem totam, molestiae rem at ad autem
+            dolor ex aperiam. Amet assumenda eos architecto, dolor placeat deserunt voluptatibus tenetur sint officiis
+            perferendis atque! Voluptatem maxime eius eum dolorem dolor exercitationem quis iusto totam! Repudiandae
+            nobis nesciunt sequi iure! Eligendi, eius libero. Ex, repellat sapiente!
+        </div>
+    </div>
+    <div id="overlay"></div>
+    <!-- SIGNUP -->
 </main>
 <footer>
 

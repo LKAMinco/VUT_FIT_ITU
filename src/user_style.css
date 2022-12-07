@@ -6,7 +6,6 @@
     padding: 0;
     font-family: 'Open Sans', sans-serif;
 }
-
 body {
     display: flex;
     min-width: 768px;
@@ -15,6 +14,7 @@ body {
     justify-content: center;
 }
 .content {
+    width: auto;
     margin: auto;
     padding: 0 20px 0 20px;
 }
@@ -26,8 +26,9 @@ main .all {
 }
 
 #user_profile {
+    margin: 0;
     grid-column: 2;
-    max-width: 400px;
+    max-width: 600px;
 }
 #side_bar {
     grid-column: 1;
@@ -268,7 +269,11 @@ main .all {
 /* *************************** SIDE BAR ***************************** */
 /* *************************** TICKET TABLE ***************************** */
 #price table {
+    width: 400px;
+    margin:0px;
     border-spacing: 0px 20px;
+    line-height: 20px;
+
 }
 
 #price {
@@ -282,13 +287,8 @@ main .all {
     text-transform: none;
 }
 
-#price table {
-    width: auto;
-    line-height: 20px;
-    margin: auto;
-}
-
 #price td {
+    padding: 10px;
     border-top: 1px dotted #bfbfbf;
     border-bottom: 1px dotted #bfbfbf;
     border-top: 1px dotted #bfbfbf;
@@ -299,6 +299,7 @@ main .all {
     border-radius: 5px;
     border: 2px solid steelblue;
     padding: 20px;
+    position: fixed;
 }
 
 #price button:hover {
@@ -324,4 +325,101 @@ main .all {
     color: steelblue;
     transition: .5s;
 }
+
+.ticket_img_small{
+    width: 100px;
+    border-radius: 10px;
+}
+.ticket_img_small:hover{
+    transform: scale(1.2);
+    transition: 200ms ease-in-out;
+}
+.pop-up-image{
+    position: fixed;
+    top: 0;left: 0;
+    background:rgba(0,0,0,.9);
+    height: 400px;
+    z-index: 100;
+}
+
+.pop-up-image span{
+    position: absolute;
+    top: 0; right: 10px;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.pop-up-image img{
+    position: absolute;
+    top: 50%; left: 50px;
+    transform: translate(-50%, -50%);
+    width: 700px;
+    object-fit: cover;
+}
 /* *************************** TICKET TABLE ***************************** */
+/* *************************** POPUP LOGIN ***************************** */
+*, *::after, *::before {
+    box-sizing: border-box;
+}
+
+.modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    transition: 200ms ease-in-out;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 10;
+    background-color: white;
+    width: 500px;
+    max-width: 80%;
+}
+
+.modal.active {
+    transform: translate(-50%, -50%) scale(1);
+}
+
+.modal-header {
+    padding: 10px 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid black;
+}
+
+.modal-header .title {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-header .close-button {
+    cursor: pointer;
+    border: none;
+    outline: none;
+    background: none;
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+
+.modal-body {
+    padding: 10px 15px;
+}
+
+#overlay {
+    position: fixed;
+    opacity: 0;
+    transition: 200ms ease-in-out;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .5);
+    pointer-events: none;
+}
+
+#overlay.active {
+    opacity: 1;
+    pointer-events: all;
+}
+/* *************************** POPUP LOGIN ***************************** */
