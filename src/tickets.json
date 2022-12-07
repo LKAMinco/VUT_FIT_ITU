@@ -22,5 +22,17 @@
     "lat": 49.152556,
     "long": 16.679267,
     "image_path" : "src/pictures/tree_storm.jpg"
+  },
+  {
+    "id": 3,
+    "user_email": "ree@email.com",
+    "title": "Ticket 3",
+    "address": "Adresa 3",
+    "description": "Ticket 3 description",
+    "category": "category 3",
+    "status": "open",
+    "lat": 49.152556,
+    "long": 16.679267,
+    "image_path" : "src/pictures/tree_storm.jpg"
   }
 ]

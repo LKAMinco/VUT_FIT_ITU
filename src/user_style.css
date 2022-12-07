@@ -334,8 +334,9 @@ main .all {
     transform: scale(1.2);
     transition: 200ms ease-in-out;
 }
+/* *************************** TICKET TABLE ***************************** */
+/* *********************IMG POPUP *************************** */
 .pop-up-image{
-    position: fixed;
     top: 0;left: 0;
     background:rgba(0,0,0,.9);
     height: 400px;
@@ -343,20 +344,18 @@ main .all {
 }
 
 .pop-up-image span{
-    position: absolute;
     top: 0; right: 10px;
     cursor: pointer;
     z-index: 100;
 }
 
 .pop-up-image img{
-    position: absolute;
     top: 50%; left: 50px;
     transform: translate(-50%, -50%);
     width: 700px;
     object-fit: cover;
 }
-/* *************************** TICKET TABLE ***************************** */
+/* *********************IMG POPUP *************************** */
 /* *************************** POPUP LOGIN ***************************** */
 *, *::after, *::before {
     box-sizing: border-box;
