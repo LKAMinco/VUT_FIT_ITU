@@ -8,7 +8,8 @@
     "category": "category 1",
     "status": "open",
     "lat": 49.152556,
-    "long": 16.679267
+    "long": 16.679267,
+    "image_path" : "x.png"
   },
   {
     "id": 2,
@@ -19,6 +20,7 @@
     "category": "category 2",
     "status": "open",
     "lat": 49.152556,
-    "long": 16.679267
+    "long": 16.679267,
+    "image_path" : "x.png"
   }
 ]
