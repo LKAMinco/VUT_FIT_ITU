@@ -1,13 +1,24 @@
 [
-{
-  "id": 1,
-  "user_email": "user@email.com",
-  "title": "Ticket 1",
-  "address": "Adresa 1",
-  "description": "Ticket 1 description",
-  "category": "category 1",
-  "status": "open",
-  "lat": 49.152556,
-  "long": 16.679267
-}
+  {
+    "id": 1,
+    "user_email": "user@email.com",
+    "title": "Ticket 1",
+    "address": "Adresa 1",
+    "description": "Ticket 1 description",
+    "category": "category 1",
+    "status": "open",
+    "lat": 49.152556,
+    "long": 16.679267
+  },
+  {
+    "id": 2,
+    "user_email": "ree@email.com",
+    "title": "Ticket 2",
+    "address": "Adresa 2",
+    "description": "Ticket 2 description",
+    "category": "category 2",
+    "status": "open",
+    "lat": 49.152556,
+    "long": 16.679267
+  }
 ]
