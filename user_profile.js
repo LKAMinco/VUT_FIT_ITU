@@ -11,11 +11,8 @@ function loadUser() {
         var output = '';
 
         output += '<ul>' +
-            '<li>Jméno: ' + active_user.name + '</li>' +
-            '<li>Email: ' + active_user.email + '</li>' +
-            '<li>Přijmení: ' + active_user.surname + '</li>' +
-            '<li>Adresa: ' + active_user.address + '</li>' +
-            '<li>Datum narození: ' + active_user.date_of_birth + '</li>' +
+            '<li><strong>Email: ' + active_user.email + '</strong></li>' +
+            '<li><strong>Datum narození: ' + active_user.date_of_birth + '</strong></li>' +
             '</ul>';
         document.getElementById('user').innerHTML = output;
     }
