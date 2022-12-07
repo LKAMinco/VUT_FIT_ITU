@@ -173,18 +173,27 @@ function loadTickets() {
     xhr.open('GET', 'src/tickets.json', true);
     xhr.onload = function () {
         var tickets = JSON.parse(this.responseText);
+        var ticket_list = document.getElementById('ticket_list');
 
         tickets.forEach(ticket => {
             //const marker = L.marker([49.152556, 16.679267], {icon: greenIcon}).addTo(map);
             const marker = L.marker([ticket.lat, ticket.long]).addTo(map);
-            var string = "<div id='map_marker_popup'>" +
+            var popup_string = "<div id='map_marker_popup'>" +
                          "<img src='" + ticket.image_path + "'>" +
                          "<a>" + ticket.title + "</a><br>" +
                          "<a>Category: " + ticket.category + "</a><br>" +
                          "<a>Condition: " + ticket.status + "</a><br>" +
                          "<button id=\"popup_button\" onclick=\"ticket_detail()\">Detaily tiketu</button>"
                          "</div>";
-            marker.bindPopup(string);
+            marker.bindPopup(popup_string);
+            var list_string = "<div id='map_list_item'>" +
+                              "<img src='" + ticket.image_path + "'>" +
+                              "<a>" + ticket.title + "</a><br>" +
+                              "<a>Category: " + ticket.category + "</a><br>" +
+                              "<a>Condition: " + ticket.status + "</a><br>" +
+                              "<button id=\"list_item_button\" onclick=\"ticket_detail()\">Detaily tiketu</button>"
+                              "</div>";
+            ticket_list.innerHTML += list_string;
         });
     }
     xhr.send();
