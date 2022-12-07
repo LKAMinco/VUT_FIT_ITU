@@ -192,9 +192,32 @@ function test(){
 }
 
 function category_menu(){
-    console.log("category loaded");
+    if(document.getElementById("categories_list").hasAttribute("class")){
+        document.getElementById("categories_list").removeAttribute("class");
+        document.getElementById("categories_img").setAttribute("src", "list_opened.png");
+    }
+    else{
+        document.getElementById("categories_list").setAttribute("class", "hidden_list");
+        document.getElementById("categories_img").setAttribute("src", "list_closed.png");
+    }
 }
 
 function condition_menu(){
     console.log("condition loaded");
+}
+
+function sortby_menu(){
+    console.log("sort loaded");
+}
+
+function set_category(category){
+    console.log(category);
+    if(document.getElementById(category).hasAttribute("class")){
+        document.getElementById(category).removeAttribute("class");
+        console.log("attribute removed");
+    }
+    else{
+        document.getElementById(category).setAttribute("class", "selected_filter");
+        console.log("attribute set");
+    }
 }

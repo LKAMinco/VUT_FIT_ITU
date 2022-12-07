@@ -9,9 +9,22 @@
 </head>
 <body>
 <nav id="map_nav">
-    <button id="categories_btn" onclick="category_menu()"><img src="list_closed.png" title="list_closed"><p>Kategórie</p></button>
-    <button id="categories_btn" onclick="condition_menu()"><img src="list_closed.png" title="list_closed"><p>Stav</p></button>
+    <button id="categories_btn" onclick="category_menu()"><img id="categories_img" src="list_closed.png" title="list_closed"><p>Kategórie</p></button>
+    <button id="condition_btn" onclick="condition_menu()"><img id="condition_img" src="list_closed.png" title="list_closed"><p>Stav</p></button>
+    <button id="sort_by_btn" onclick="sortby_menu()"><img id="sort_by_img" src="list_closed.png" title="list_closed"><p>Zoradené podľa: Názvu</p></button>
 </nav>
+
+<div id="categories_list" class="hidden_list">
+    <button id="dirty_streets" onclick="set_category('dirty_streets')"><p>Neporiadok v uliciach</p></button>
+    <button id="roads" onclick="set_category('roads')"><p>Problémy na cestách</p></button>
+    <button id="playgrounds" onclick="set_category('playgrounds')"><p>Ihriská</p></button>
+    <button id="benches" onclick="set_category('benches')"><p>Lavičky</p></button>
+    <button id="abandoned_vehicles" onclick="set_category('abandoned_vehicles')"><p>Opustené vozidlá</p></button>
+    <button id="illegal_dumps" onclick="set_category('illegal_dumps')"><p>Nelegálne skládky</p></button>
+    <button id="vegetation" onclick="set_category('vegetation')"><p>Vegetace</p></button>
+    <button id="vandalism" onclick="set_category('vandalism')"><p>Vandalizmus</p></button>
+    <button id="others" onclick="set_category('others')"><p>Ostatné</p></button>
+</div>
 
 <main id="map_main">
     <div id="map_div">
@@ -22,5 +35,6 @@
 
     </div>
 </main>
+
 </body>
 </html>

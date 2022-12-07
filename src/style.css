@@ -83,12 +83,15 @@ li {
 }
 
 #map_nav{
+    position: fixed;
     display: inline-flex;
+    justify-content: start;
     width: 100%;
     background: var(--darkRed);
     color: var(--white);
     font-weight: bolder;
-    height: 5.5vh;
+    height: 3.7rem;
+    z-index: 10000;
 }
 
 #map_nav button{
@@ -122,14 +125,70 @@ li {
 }
 
 #map_div {
+    top: 3.7rem;
     grid-column: 1;
-    width: 100%;
-    height: 94.5vh;
+    width: 1420px;
+    height: 94vh;
 }
 
 #ticket_list{
+    top: 3.7rem;
     margin: 0;
     gird-column: -1;
     width: 100%;
     background: var(--white);
+}
+
+#categories_list{
+    position: fixed;
+    top: 3.7rem;
+    z-index: 5000;
+    padding-bottom: 1rem;
+    margin: 0;
+    background-color: var(--darkRed);
+    width: 16.2rem;
+    display: grid;
+    border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    transition: 120ms ease-in-out;
+    max-height: 100%;
+    height: 30rem;
+}
+
+#categories_list button{
+    margin-top: 0.85rem;
+    margin-left: 0.5rem;
+    padding: 0;
+    width: 15rem;
+    border-radius: 0.5rem;
+    border: none;
+    background-color: var(--lightRed);
+    color: var(--white);
+    font-weight: bold;
+    height: 2.5rem;
+    transition: 100ms ease-in-out;
+}
+
+#categories_list button p{
+    margin-top: 0.9rem;
+    transition: 100ms ease-in-out;
+}
+
+.selected_filter, .selected_filter>p{
+    background-color: var(--white) !important;
+    color: var(--darkRed) !important;
+}
+
+.hidden_list{
+    max-height: 0 !important;
+    padding: 0 !important;
+}
+
+.hidden_list>button>p, .hidden_list>button{
+    max-height: 0 !important;
+    padding: 0 !important;
+}
+
+.hidden_list>button>p{
+    display: none !important;
 }
