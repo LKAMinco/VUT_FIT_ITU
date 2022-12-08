@@ -79,12 +79,10 @@ var searchFilter = () => {
         let status = document.getElementById("filter1").value;
         let category = document.getElementById("filter2").value;
         let date = document.getElementById("filter3").value;
-        if(status != "all")
-        {
+        if (status != "all") {
             ticker_list_filtered = ticker_list_filtered.filter((ticket) => ticket.status === status);
         }
-        if(category != "all")
-        {
+        if (category != "all") {
             ticker_list_filtered = ticker_list_filtered.filter((ticket) => ticket.category === category);
         }
         ticker_list_filtered = ticker_list_filtered.sort((a, b) => b.date - a.date)
@@ -109,37 +107,40 @@ var searchFilter = () => {
 
 /* **********************************DROPDOWN MENU **************************** */
 /* **********************************MODAL IMG **************************** */
-/*
+
 // all images inside the image modal content class
-const lightboxImages = document.querySelectorAll('.ticket_img_small');
+function popUpImage() {
+
+    const lightboxImages = document.querySelectorAll('.ticket_img_small');
 
 // dynamically selects all elements inside modal popup
-const modalElement = element =>
-    document.querySelector(`.image-modal-popup ${element}`);
+    const modalElement = element =>
+        document.querySelector(`.image-modal-popup ${element}`);
 
-const body = document.querySelector('body');
+    const body = document.querySelector('body');
 
 // closes modal on clicking anywhere and adds overflow back
-document.addEventListener('click', () => {
-    body.style.overflow = 'auto';
-    modalPopup.style.display = 'none';
-});
+    document.addEventListener('click', () => {
+        body.style.overflow = 'auto';
+        modalPopup.style.display = 'none';
+    });
 
-const modalPopup = document.querySelector('.image-modal-popup');
+    const modalPopup = document.querySelector('.image-modal-popup');
 
 // loops over each modal content img and adds click event functionality
-lightboxImages.forEach(img => {
-    const data = img.dataset;
-    img.addEventListener('click', e => {
-        body.style.overflow = 'hidden';
-        e.stopPropagation();
-        modalPopup.style.display = 'block';
-        modalElement('h1').innerHTML = data.title;
-        modalElement('p').innerHTML = data.description;
-        modalElement('a').href = data.url;
-        modalElement('.secondary-link').href = data.repo;
-        modalElement('img').src = img.src;
+    lightboxImages.forEach(img => {
+        const data = img.dataset;
+        img.addEventListener('click', e => {
+            body.style.overflow = 'hidden';
+            e.stopPropagation();
+            modalPopup.style.display = 'block';
+            modalElement('h1').innerHTML = data.title;
+            modalElement('p').innerHTML = data.description;
+            modalElement('a').href = data.url;
+            modalElement('.secondary-link').href = data.repo;
+            modalElement('img').src = img.src;
+        });
     });
-});
-*/
+}
+
 /* **********************************MODAL IMG **************************** */
