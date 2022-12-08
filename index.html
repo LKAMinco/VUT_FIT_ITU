@@ -13,6 +13,7 @@
             <li><a href="#">Havní stránka</a></li>
             <li><a href="index.html#about">O nás</a></li>
             <li><a href="index.html#map">Mapa závad</a></li>
+            <li><a href="index.html#stats">Štatistiky</a></li>
             <li><a href="index.html#contact">Kontakty</a></li>
             <button type="submit">Registrovať sa</button>
             <button type="submit">Přihlásit se</button>
@@ -22,54 +23,75 @@
 <header>
     <div id="slideshow">
         <div class="content">
-            <img class="slide" src="src/images/fountain.png">
-            <img class="slide" src="src/images/garden.png">
-            <img class="slide" src="src/images/observatory.png">
-            <img class="slide" src="src/images/park.png">
+            <img class="slide anim_fade" src="src/images/fountain.png">
+            <img class="slide anim_fade" src="src/images/garden.png">
+            <img class="slide anim_fade" src="src/images/observatory.png">
+            <img class="slide anim_fade" src="src/images/park.png">
             <div id="dots">
-                <span class="dot white" onclick="currentDiv(1)"></span>
-                <span class="dot white" onclick="currentDiv(2)"></span>
-                <span class="dot white" onclick="currentDiv(3)"></span>
-                <span class="dot white" onclick="currentDiv(4)"></span>
+                <span class="dot" onclick="currentDiv(1)"></span>
+                <span class="dot" onclick="currentDiv(2)"></span>
+                <span class="dot" onclick="currentDiv(3)"></span>
+                <span class="dot" onclick="currentDiv(4)"></span>
             </div>
         </div>
     </div>
     <script>
         let slideIndex = 1;
-        showDivs(slideIndex);
 
-        function plusDivs(n) {
-            showDivs(slideIndex += n);
-        }
+        //showDivs(slideIndex);
 
         function currentDiv(n) {
             showDivs(slideIndex = n);
+        }
+
+        carousel();
+
+        function carousel() {
+            let i;
+            let x = document.getElementsByClassName("slide");
+            let dots = document.getElementsByClassName("dot");
+            for (i = 0; i < x.length; i++) {
+                x[i].style.display = "none";
+            }
+            slideIndex++;
+            if (slideIndex > x.length) {
+                slideIndex = 1
+            }
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" white", "");
+            }
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " white";
+            setTimeout(carousel, 10000); // Change image every 2 seconds
         }
 
         function showDivs(n) {
             let i;
             let x = document.getElementsByClassName("slide");
             let dots = document.getElementsByClassName("dot");
-            if (n > x.length) {slideIndex = 1}
-            if (n < 1) {slideIndex = x.length}
+            if (n > x.length) {
+                slideIndex = 1
+            }
+            if (n < 1) {
+                slideIndex = x.length
+            }
             for (i = 0; i < x.length; i++) {
                 x[i].style.display = "none";
             }
             for (i = 0; i < dots.length; i++) {
                 dots[i].className = dots[i].className.replace(" white", "");
             }
-            x[slideIndex-1].style.display = "block";
-            dots[slideIndex-1].className += " white";
+            x[slideIndex - 1].style.display = "block";
+            dots[slideIndex - 1].className += " white";
         }
     </script>
 </header>
-<div id="btns2">
-    <button type="submit">Přihlásit se</button> <!-- TODO reomove !!! -->
-    <button type="submit">Registrovať sa</button> <!-- TODO reomove !!! -->
-    <button onclick="location.href='user_profile.html'" type="submit">Edit profil</button> <!-- TODO reomove !!! -->
+<!--div id="btns2">
+    <button type="submit">Přihlásit se</button>
+    <button type="submit">Registrovať sa</button>
+    <button onclick="location.href='user_profile.html'" type="submit">Edit profil</button>
     <button onclick="location.href='interactive_map.html'" type="submit">Nahlasit problem</button>
-    <!-- TODO reomove !!! -->
-</div>
+</div-->
 <main>
     <section id="about">
         <div class="content">
@@ -83,6 +105,15 @@
         <div class="content">
             <h1>Mapa závad</h1>
             <div id="mapid"></div>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ducimus libero natus velit. Architecto
+                consequatur, cumque delectus dolorem, eveniet id illo iusto modi nisi nobis non reprehenderit sequi
+                soluta voluptate?</p>
+        </div>
+    </section>
+    <section id="stats" class="stat">
+        <div class="content">
+            <h1>Štatistiky</h1>
+            <div id="statid"></div>
         </div>
     </section>
     <section id="contact">
