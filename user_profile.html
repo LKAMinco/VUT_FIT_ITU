@@ -30,12 +30,10 @@
                         </a>
                     </div>
                     <ul>
-
-                        <li>
-                            <span class="icon"><i class="fas fa-desktop"></i></span>
-                            <button onclick="editProfile()" id="buttonProfileEdit">Edit profile</button>
-                        </li>
+                        <li class="blink_li"><a href="user_profile.html">Moje nahlášené závady</a></li>
                         <li><a href="user_profile_edit.html">Změna profilu</a></li>
+                        <li class="level_bar_info">3/10 nahlášených problémů</li>
+                        <li><img class="level_bar" src="src/pictures/bar.png"></li>
                     </ul>
                 </div>
             </div>
@@ -46,48 +44,47 @@
             <div id="ticket_filters">
                 <div id="ticker_filter1" class="col-12 mb-3 col-md-6">
                     <select class="form-select" id="filter1" onchange="searchFilter()">
-                        <div id="myDropdown1" class="dropdown-content">
-                            <option value="" selected>Status</option>
-                            <option value="green">Green</option>
-                            <option value="blue">Blue</option>
-                            <option value="yellow">Yellow</option>
+                        <div id="myDropdown1" class="dropdown-content" >
+                            <option value="all" selected>Všechny staty</option>
+                            <option value="open">Open</option>
+                            <option value="closed">Done</option>
                         </div>
                     </select>
                 </div>
                 <div id="ticket_filter2" class="col-12 mb-3 col-md-6">
                     <select class="form-select" id="filter2" onchange="searchFilter()">
                         <div id="myDropdown2" class="dropdown-content">
-                            <option value="" selected>Kategorie</option>
-                            <option value="green">Green</option>
-                            <option value="blue">Blue</option>
-                            <option value="yellow">Yellow</option>
+                            <option value="all" selected>Všechny kategorie</option>
+                            <option value="illegal_dumps">illegal_dumps</option>
+                            <option value="dirty_streets">dirty_streets</option>
+                            <option value="others">others</option>
                         </div>
                     </select>
                 </div>
                 <div id="ticket_filter3" class="col-12 mb-3 col-md-6">
                     <select class="form-select" id="filter3" onchange="searchFilter()">
                         <div id="myDropdown3" class="dropdown-content">
-                            <option value="" selected>Datum</option>
-                            <option value="green">Od nejnovějších</option>
+                            <option value="2024" selected>Od nejnovějších</option>
                             <option value="blue">Od nejstarších</option>
                         </div>
                     </select>
                 </div>
                 <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">
                     <li>
-                        <button onclick="loadTickets()" id="buttonProfileTickets">Hledat</button>
+                        <button onclick="loadTickets()" id="buttonProfileTickets">Resetovat filter</button>
                     </li>
                 </div>
             </div>
+            <script>loadTickets()</script>
             <div id="ticket_table">
                 <div class="content">
                     <section id="price">
-                        <table>
+                        <table class="main_table">
                             <thead>
                             <tr>
                                 <th>Název</th>
+                                <th>Datum nahlášení</th>
                                 <th>Adresa</th>
-                                <th>Popis</th>
                                 <th>Kategorie</th>
                                 <th>Status</th>
                                 <th>Obrázek</th>
@@ -102,8 +99,8 @@
         </section>
     </div>
     <!-- MODAL IMG -->
+    <script>popUpImage()</script>
 
-    <!-- modal popup (displayed none by default) -->
     <div class="image-modal-popup">
         <div class="wrapper">
             <span>&times;</span>

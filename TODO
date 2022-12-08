@@ -5,20 +5,17 @@ Simir:
 2) Edit profile
     -profilový obrazek
     -heslo
-    -
-3) Moje tickety - tabulka s řádkem pro popis
-4) Registrace
-    -email check ?
-    -user existuje check ?
-5) Popup login
+    -uložit informace
+3) Moje tickety - popis upravit
+    -popup velký obrázek
 6) Logout
-7) Filtrace tiketu
+7) Filtrace data
 8) Popup okýnka
-    - komentáře
+    - správy
     - profile button
-
 9)
 LAST) ostylovat vše
+@media
 
 
 Julo:
