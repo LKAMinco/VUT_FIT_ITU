@@ -69,6 +69,7 @@ html, body {
     bottom: 0;
     background-color: var(--white);
     height: 100vh;
+    font-family: Bahnschrift, serif;
 }
 
 a {
@@ -134,7 +135,7 @@ a {
 
 #ticket_list{
     top: 3.7rem;
-    margin: 0;
+    margin: 3.5rem 0 0 0;
     grid-column: 2;
     width: 100%;
     background: var(--white);
@@ -202,8 +203,8 @@ a {
     width: 23rem; /*36rem*/
     background-color: var(--darkRed);
     margin: 1rem auto;
-    height: 16rem; /*20rem*/
-    border-radius: 1rem;
+    height: 16.2rem; /*20rem*/
+    border-radius: 0.75rem;
 }
 
 #map_list_item img{
@@ -211,11 +212,31 @@ a {
     height: 8rem; /*10rem*/
     object-fit: cover;
     object-position: 100% 30%;
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem;
+    border-top-right-radius: 0.75rem;
+    border-top-left-radius: 0.75rem;
 }
 
+#map_list_item a{
+    margin-left: 0.5rem;
+    font-size: 1.05rem;
+}
 
+#map_list_item button{
+    margin-top: 0.3rem;
+    width: 22rem;
+    margin-left: 0.5rem;
+    height: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--lightRed);
+    color: var(--white);
+    font-weight: bold;
+}
+
+#map_list_item button:hover{
+    text-decoration: underline white 0.1rem;
+    text-underline-offset: 0.2rem;
+}
 
 .selected_filter, .selected_filter>p{
     background-color: var(--white) !important;

@@ -181,17 +181,17 @@ function loadTickets() {
             var popup_string = "<div id='map_marker_popup'>" +
                          "<img src='" + ticket.image_path + "'>" +
                          "<a>" + ticket.title + "</a><br>" +
-                         "<a>Category: " + ticket.category + "</a><br>" +
-                         "<a>Condition: " + ticket.status + "</a><br>" +
+                         "<a>Kategória: " + ticket.category + "</a><br>" +
+                         "<a>Stav: " + ticket.status + "</a><br>" +
                          "<button id=\"popup_button\" onclick=\"ticket_detail()\">Detaily tiketu</button>"
                          "</div>";
             marker.bindPopup(popup_string);
             var list_string = "<div id='map_list_item'>" +
                               "<img src='" + ticket.image_path + "'>" +
                               "<a>" + ticket.title + "</a><br>" +
-                              "<a>Category: " + ticket.category + "</a><br>" +
-                              "<a>Condition: " + ticket.status + "</a><br>" +
-                              "<a>Address: " + ticket.address + "</a><br>" +
+                              "<a>Kategória: " + ticket.category + "</a><br>" +
+                              "<a>Stav: " + ticket.status + "</a><br>" +
+                              "<a>Adresa: " + ticket.address + "</a><br>" +
                               "<button id=\"list_item_button\" onclick=\"ticket_detail()\">Detaily tiketu</button>"
                               "</div>";
             ticket_list.innerHTML += list_string;
