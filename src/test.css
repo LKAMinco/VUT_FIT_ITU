@@ -1,0 +1,130 @@
+html {
+    min-width: 768px;
+    max-width: 1920px;
+}
+
+body {
+    margin: auto;
+    font-size: 14px;
+    color: #898989;
+    font-family: "PT Sans";
+}
+
+.content {
+    max-width: 1200px;
+    margin: auto;
+    padding: 0 20px 0 20px;
+}
+
+header {
+    min-height: 400px;
+    height: 100vh;
+    background-image: url("../img/header.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+section {
+    padding-top: 60px;
+    padding-bottom: 80px;
+}
+
+section,
+header,
+footer {
+    width: 100%;
+}
+
+h2 {
+    font-size: 40px;
+    text-transform: uppercase;
+    color: black;
+}
+
+h3 {
+    font-size: 24px;
+}
+
+*,
+*:focus,
+*:hover {
+    /* odkazy budou vypadat normalne */
+    outline: none;
+}
+/* ******************************** 1/5 ***************************** */
+
+#services h3 {
+    color: black;
+}
+
+#services {
+    min-width: 300px;
+}
+
+#services .content>div {
+    /* div ktere jsou potomky .contentu */
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    gap: 30px;
+    justify-content: center;
+    justify-items: center;
+}
+
+#services {
+    text-align: center;
+}
+
+.services-card img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    border: 2px solid;
+    border-color: #d28d8d;
+    margin: auto;
+    margin-top: 20px;
+    padding: 5px;
+}
+
+.services-card {
+    /* flex na vytvoreni mezer v cards a rozhrani */
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    justify-content: center;
+    width: 150px;
+    box-shadow: 0 0 10px 0 #bfbfbf;
+    text-align: center;
+    border-radius: 5px;
+}
+
+.services-card:hover {
+    box-shadow: 0 0 10px 0 #d28d8d;
+}
+
+/* serazeni karet aby sedely na jejich pozice */
+
+.services-card img:first-child {
+    display: block;
+}
+
+.services-card:hover img:first-child {
+    display: none;
+    background-color: #d28d8d;
+}
+
+.services-card img:last-child {
+    display: none;
+}
+
+.services-card:hover img:last-child {
+    background-color: #d28d8d;
+    display: block;
+}
+/* ******************************** 1/5 ***************************** */
+/* ******************************** 2/5 ***************************** */
+/* ******************************** 2/5 ***************************** */
+/* ******************************** 3/5 ***************************** */
+/* ******************************** 4/5 ***************************** */
+/* ******************************** 5/5 ***************************** */
+/* ******************************** 5/5 ***************************** */
