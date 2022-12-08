@@ -47,6 +47,7 @@ function loadTickets() {
         for (var i in ticker_list_filtered) {
             output += '<tr class="ticket_body"><ul><li>' +
                 '<td>' + ticker_list_filtered[i].title + '</td>' +
+                '<td>' + ticker_list_filtered[i].date + '</td>' +
                 '<td>' + ticker_list_filtered[i].address + '</td>' +
                 '<td>' + ticker_list_filtered[i].category + '</td>' +
                 '<td>' + ticker_list_filtered[i].status + '</td>' +

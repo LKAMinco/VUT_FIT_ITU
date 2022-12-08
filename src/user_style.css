@@ -286,6 +286,9 @@ main .all {
     border-right: 2px solid rgb(5, 68, 104);
     transition: all 0.5s ease;
 }
+.blink_li{
+    background: #a62e2e;
+}
 
 .wrapper ul li a:hover .icon,
 .wrapper ul li a.active .icon {

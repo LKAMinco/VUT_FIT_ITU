@@ -3,20 +3,20 @@
     "id": 1,
     "user_email": "user@email.com",
     "date": "01-11-2022",
-    "title": "Ticket 1",
+    "title": "Počmáraný obchod",
     "address": "Adresa 1",
     "description": "Ticket 1 description",
     "category": "vandalism",
     "status": "open",
     "lat": 49.152556,
     "long": 16.679267,
-    "image_path" : "src/pictures/tree_storm.jpg"
+    "image_path" : "src/pictures/grafity.jpg"
   },
   {
     "id": 2,
     "user_email": "ree@email.com",
     "date": "01-11-2022",
-    "title": "Ticket 2",
+    "title": "Blesk uhodil do stromu",
     "address": "Adresa 2",
     "description": "Ticket 2 description",
     "category": "vegetation",
@@ -28,40 +28,40 @@
   {
     "id": 3,
     "user_email": "ree@email.com",
-    "date": "01-11-2022",
-    "title": "Ticket 3",
+    "date": "01-01-2022",
+    "title": "Ulice po oslavách silvestra",
     "address": "Adresa 3",
     "description": "Ticket 3 description",
     "category": "dirty_streets",
     "status": "closed",
     "lat": 49.230015,
     "long": 16.572803,
-    "image_path" : "src/pictures/tree_storm.jpg"
+    "image_path" : "src/pictures/dirty_street.jpg"
   },
   {
     "id": 4,
     "user_email": "ree@email.com",
     "date": "01-11-2022",
-    "title": "Ticket 4",
+    "title": "Skládka před školou",
     "address": "Adresa 4",
     "description": "Ticket 4 description",
     "category": "illegal_dumps",
     "status": "open",
     "lat": 49.206512,
     "long": 16.612106,
-    "image_path" : "src/pictures/tree_storm.jpg"
+    "image_path" : "src/pictures/illegal-dumping.jpg"
   },
   {
     "id": 5,
     "user_email": "ree@email.com",
     "date": "01-11-2022",
-    "title": "Ticket 5",
+    "title": "Hluk z hospody",
     "address": "Adresa 5",
     "description": "Ticket 5 description",
     "category": "others",
     "status": "closed",
     "lat": 49.177746,
     "long": 16.665243,
-    "image_path" : "src/pictures/tree_storm.jpg"
+    "image_path" : "src/pictures/hospoda.jpeg"
   }
 ]
