@@ -2,6 +2,7 @@
   {
     "id": 1,
     "user_email": "user@email.com",
+    "date": "01-11-2022",
     "title": "Ticket 1",
     "address": "Adresa 1",
     "description": "Ticket 1 description",
@@ -14,6 +15,7 @@
   {
     "id": 2,
     "user_email": "ree@email.com",
+    "date": "01-11-2022",
     "title": "Ticket 2",
     "address": "Adresa 2",
     "description": "Ticket 2 description",
@@ -26,11 +28,12 @@
   {
     "id": 3,
     "user_email": "ree@email.com",
+    "date": "01-11-2022",
     "title": "Ticket 3",
     "address": "Adresa 3",
     "description": "Ticket 3 description",
     "category": "dirty_streets",
-    "status": "open",
+    "status": "closed",
     "lat": 49.230015,
     "long": 16.572803,
     "image_path" : "src/pictures/tree_storm.jpg"
@@ -38,6 +41,7 @@
   {
     "id": 4,
     "user_email": "ree@email.com",
+    "date": "01-11-2022",
     "title": "Ticket 4",
     "address": "Adresa 4",
     "description": "Ticket 4 description",
@@ -50,11 +54,12 @@
   {
     "id": 5,
     "user_email": "ree@email.com",
+    "date": "01-11-2022",
     "title": "Ticket 5",
     "address": "Adresa 5",
     "description": "Ticket 5 description",
     "category": "others",
-    "status": "open",
+    "status": "closed",
     "lat": 49.177746,
     "long": 16.665243,
     "image_path" : "src/pictures/tree_storm.jpg"
