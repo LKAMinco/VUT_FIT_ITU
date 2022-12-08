@@ -1,3 +1,7 @@
+*{
+    list-style: none;
+}
+
 html {
     min-width: 768px;
     max-width: 1920px;
@@ -7,22 +11,12 @@ body {
     margin: auto;
     font-size: 14px;
     color: #898989;
-    font-family: "PT Sans";
 }
 
 .content {
     max-width: 1200px;
     margin: auto;
     padding: 0 20px 0 20px;
-}
-
-header {
-    min-height: 400px;
-    height: 100vh;
-    background-image: url("../img/header.jpg");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 section {
@@ -87,6 +81,7 @@ h3 {
 }
 
 .services-card {
+    cursor: pointer;
     /* flex na vytvoreni mezer v cards a rozhrani */
     display: flex;
     flex-direction: column;
@@ -121,8 +116,58 @@ h3 {
     background-color: #d28d8d;
     display: block;
 }
+/* ******************************* BUTTON ************************** */
+
+#buttonProfileTickets {
+    width: 200px;
+    background-color: rgba(141, 204, 156, 0);
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 10px;
+    position: relative;
+    display: inline-block;
+}
+
+#buttonProfileTickets:hover {
+    background-color: #8dcc9c;
+    transition: 200ms ease-in-out;
+}
+/* ******************************* BUTTON ************************** */
+#services .only_four .content>div {
+    /* div ktere jsou potomky .contentu */
+    display: grid;
+    grid-template-columns: auto auto;
+    gap: 30px;
+    justify-content: center;
+    justify-items: center;
+}
+/* ******************************* BUTTON ************************** */
 /* ******************************** 1/5 ***************************** */
 /* ******************************** 2/5 ***************************** */
+#photo_mode{
+    border-style: dashed;
+    max-width: 500px;
+    max-height: 500px;
+    height: 100%;
+    width: 100%;
+    color: #a62e2e;
+    text-align: center;
+    position: relative;
+    padding: 200px;
+    cursor: pointer;
+    background-color: #acbabd;
+}
+.photo_mode_h{
+    color: black;
+    font-size: 20px;
+}
+.photo_mode_img{
+    padding-bottom: -10px;
+    width: 30px;
+    margin-right: 10px;
+}
 /* ******************************** 2/5 ***************************** */
 /* ******************************** 3/5 ***************************** */
 /* ******************************** 4/5 ***************************** */
