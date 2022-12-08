@@ -29,10 +29,10 @@ Julo:
     - desc - REJECTED
     - details button - DONE
 3) Ticket List Panel
-    - image
-    - title
+    - image - DONE
+    - title - DONE
     - desc - REJECTED
-    - details button
+    - details button - DONE
 4) Ticket Detail\
     - background blur
     - all data

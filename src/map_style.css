@@ -9,7 +9,7 @@
 .leaflet-popup-content-wrapper, .leaflet-popup.tip {
     background-color: var(--darkRed) !important;
     color: #E0DEDE !important;
-    width: 15rem;
+    width: 18rem;
     margin: 0;
 }
 
@@ -23,15 +23,15 @@
 }
 
 #map_marker_popup {
-    width: 15.4rem;
-    height: 11rem;
+    width: 18.18rem;
+    height: 12.7rem;
     margin: 0;
     transform: translate(-1.31rem, -0.9rem);
 }
 
 #map_marker_popup img{
-    width: 15.12rem;
-    height: 6rem;
+    width: 100%;
+    height: 7rem;
     border-top-left-radius: 0.75rem;
     border-top-right-radius: 0.75rem;
     object-fit: cover;
@@ -40,11 +40,12 @@
 }
 
 #map_marker_popup a{
-    margin-left: 0.5rem;
+    margin-left: 0.6rem;
+    font-size: 1rem;
 }
 
 #popup_button{
-    width: 14rem;
+    width: 17.1rem;
     height: 2rem;
     margin-left: 0.55rem;
     margin-top: 0.5rem;
@@ -68,6 +69,7 @@ html, body {
     bottom: 0;
     background-color: var(--white);
     height: 100vh;
+    font-family: Bahnschrift, serif;
 }
 
 a {
@@ -133,7 +135,7 @@ a {
 
 #ticket_list{
     top: 3.7rem;
-    margin: 0;
+    margin: 3.5rem 0 0 0;
     grid-column: 2;
     width: 100%;
     background: var(--white);
@@ -198,23 +200,43 @@ a {
 }
 
 #map_list_item{
-    width: 36rem;
+    width: 23rem; /*36rem*/
     background-color: var(--darkRed);
     margin: 1rem auto;
-    height: 20rem;
-    border-radius: 1rem;
+    height: 16.2rem; /*20rem*/
+    border-radius: 0.75rem;
 }
 
 #map_list_item img{
     width: 100%;
-    height: 10rem;
+    height: 8rem; /*10rem*/
     object-fit: cover;
     object-position: 100% 30%;
-    border-top-right-radius: 1rem;
-    border-top-left-radius: 1rem;
+    border-top-right-radius: 0.75rem;
+    border-top-left-radius: 0.75rem;
 }
 
+#map_list_item a{
+    margin-left: 0.5rem;
+    font-size: 1.05rem;
+}
 
+#map_list_item button{
+    margin-top: 0.3rem;
+    width: 22rem;
+    margin-left: 0.5rem;
+    height: 2rem;
+    border: none;
+    border-radius: 0.5rem;
+    background-color: var(--lightRed);
+    color: var(--white);
+    font-weight: bold;
+}
+
+#map_list_item button:hover{
+    text-decoration: underline white 0.1rem;
+    text-underline-offset: 0.2rem;
+}
 
 .selected_filter, .selected_filter>p{
     background-color: var(--white) !important;
