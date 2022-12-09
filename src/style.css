@@ -446,16 +446,27 @@ section {
     font-size: larger;
 }
 
-#form_login input:focus{
+#form_register input{
+     background-color: lightgrey;
+     border: none;
+     margin: 10px;
+     height: 40px;
+     border-radius: 10px;
+     padding-left: 10px;
+     font-size: larger;
+ }
+
+ #form_login input:focus, #form_register input:not(#news_reg):focus {
     outline: var(--darkRed) solid 3px;
 }
 
-#form_login label {
+#form_login label, #form_register label {
     margin-right: 10px;
+    margin-left: 10px;
     font-size: x-large;
 }
 
-#form_login button {
+#form_login button, #form_register button {
     margin: 15px;
     height: 40px;
     width: 90%;
@@ -466,8 +477,117 @@ section {
     border-radius: 10px;
 }
 
-#form_login button:hover {
+#form_login button:hover, #form_register button:hover {
     background-color: var(--lightRed);
+}
+
+::-webkit-calendar-picker-indicator {
+    padding-right: 15px;
+}
+
+::-webkit-calendar-picker-indicator:hover {
+    padding-bottom: 15px;
+}
+
+#register_form {
+    width: 800px;
+}
+
+#form_register {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto auto auto auto auto auto auto auto auto;
+}
+
+#name_reg {
+    grid-column: 1;
+    grid-row: 2;
+}
+
+#name_lab {
+    grid-row: 1;
+    grid-column: 1;
+}
+
+#surname_lab {
+    grid-row: 1;
+    grid-column: 2;
+}
+
+#surname_reg {
+    grid-column: 2;
+    grid-row: 2;
+}
+
+
+#address_lab {
+    grid-row: 3;
+    grid-column: 1;
+}
+
+#address_reg {
+    grid-column: 1/-1;
+    grid-row: 4;
+}
+
+#date_lab {
+    grid-row: 5;
+    grid-column: 1;
+}
+
+#date_reg {
+    grid-column: 1;
+    grid-row: 6;
+}
+
+#email_lab {
+    grid-row: 5;
+    grid-column: 2;
+}
+
+#email_reg {
+    grid-column: 2;
+    grid-row: 6;
+}
+
+#pwd_lab {
+    grid-row: 7;
+    grid-column: 1;
+}
+
+#password_reg {
+    grid-column: 1;
+    grid-row: 8;
+}
+
+#pwd2_lab {
+    grid-row: 7;
+    grid-column: 2;
+}
+
+#password_reg2 {
+    grid-column: 2;
+    grid-row:8;
+}
+
+#news {
+    grid-row: 9;
+    grid-column: 1/-1;
+    padding-left: 10px;
+}
+
+#news_reg {
+    scale: 2;
+}
+
+#news_reg:focus {
+    border: 0;
+}
+
+#reg_btn{
+    grid-column: 1/-1;
+    grid-row: 10;
+    justify-self: center;
 }
 
 #contact_div {
