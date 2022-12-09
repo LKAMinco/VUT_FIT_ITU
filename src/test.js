@@ -25,7 +25,7 @@ function reportThree() {
     xhr.onload = function () {
         var output = '';
         output += '<section id="contact">'+
-            '<div className="content">'+
+            '<div class="content">'+
                 '<h2>Contact</h2>'+
                 '<div id="map"></div>'+
                 '<form action="#">'+
@@ -35,6 +35,7 @@ function reportThree() {
                 '</form>'+
             '</div>'+
             '</section>' +
+            '<section>' +
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
             '   <li>\n' +
             '     <button onclick="reportSecond()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
@@ -47,6 +48,7 @@ function reportThree() {
 }
 
 function reportSecond() {
+//    var image = document.getElementById('photo_mode').innerHTML;
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'users.json', true);
     xhr.onload = function () {
@@ -55,31 +57,23 @@ function reportSecond() {
             '        <div class="content">\n' +
             '            <h3>2/5 Nahrajte fotografii:</h3>\n' +
             '        </div>\n' +
-            '<div id="photo_mode" onclick="reportThree()">' +
-            '<img class="photo_mode_img" src="pictures/plus.svg" alt="plus">' +
-            '<span class="photo_mode_h">fotografie</span>' +
+            '<div id="aa">' +
+            '<input id="photo_mode" type="file" name="uploadfile" accept="image/png, image/gif, image/jpeg">'+
             '</div>' +
-            ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
+            ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n<ul>' +
+            '   <li>\n' +
+            '     <button onclick="reportThree()" id="buttonProfileTickets">Pokračovat dále</button>\n' +
+            '   </li>\n' +
             '   <li>\n' +
             '     <button onclick="reportFirst()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
             '   </li>\n' +
-            ' </div>' +
+            ' </ul></div>' +
             '</section>';
         document.getElementById('report_part').innerHTML = output;
     }
     xhr.send();
 }
 
-function selectPhoto(){
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'users.json', true);
-    xhr.onload = function () {
-        var output = '';
-        output += 'aaaaa\n';
-        document.getElementById('report_part').innerHTML = output;
-    }
-    xhr.send();
-}
 function reportFirst() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'users.json', true);
