@@ -129,6 +129,7 @@
             <div id="mapid">
                 <span id="zoom" onclick="location.href='interactive_map.html'" class="material-symbols-rounded">zoom_out_map</span>
             </div>
+            <button id="submit_btn" type="button">Nahlásiť problém</button>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ducimus libero natus velit. Architecto
                 consequatur, cumque delectus dolorem, eveniet id illo iusto modi nisi nobis non reprehenderit sequi
                 soluta voluptate?</p>
@@ -172,7 +173,7 @@
                 <div class="modal ease" id="graph1">
                     <div class="modal-header">
                         <div class="title">Nejaký pekný graf 1</div>
-                        <button data-close-button class="close-button" >&times;</button>
+                        <button data-close-button class="close-button">&times;</button>
                     </div>
                     <div class="modal-body">
                         Tuto bude nejaky pekny graf 1 <!--TODO-->
@@ -256,8 +257,17 @@
     <section id="contact">
         <a class="anchor" id="contact_ref"></a>
         <div class="content">
-            <h1>Contact</h1>
-            <div id="contactid"></div>
+            <h1>Kontakt</h1>
+            <div id="contact_div">
+                <label for="email_"></label>
+                <a id="email_" href="mailto:brno-mesto@brno.cz">brno-mesto@brno.cz</a><br>
+                <label for="mobile">Milan Hrabovský (xhrabo15)</label>
+                <a id="mobile">+420 948 000 000 </a><br>
+                <label for="phone">Simona Češková (xcesko00)</label>
+                <a id="phone">+033/00 000 000</a><br>
+                <label for="address">Jakub Július Šmýkal (xsmyka01)</label>
+                <a id="address">Brno 123/4, 612 00, Česká republika</a>
+            </div>
         </div>
     </section>
 </main>
