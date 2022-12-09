@@ -244,6 +244,8 @@ a {
     width: 34rem;
     height: auto;
     transform: translate(150%,4.2rem);
+    opacity: 0;
+    pointer-events: none;
 }
 
 #ticket_info{
@@ -359,4 +361,9 @@ a {
 
 .hidden_list>button>p{
     display: none !important;
+}
+
+.hidden_ticket{
+    opacity: 1 !important;
+    pointer-events: auto !important;
 }

@@ -34,12 +34,12 @@ Julo:
     - desc - REJECTED
     - details button - DONE
 4) Ticket Detail\
-    - background blur
-    - all data
+    - background blur - DONE
+    - all data - DONE
 5) Comments
     - print all
-    - add
-    - remove
+    - add - DONE
+    - remove - REJECTED
 6) Ticket Filtering
     - based on category/condition
     - sort by date/condition/title
