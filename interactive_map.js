@@ -183,7 +183,7 @@ function loadTickets() {
                          "<a>" + ticket.title + "</a><br>" +
                          "<a>Kategória: " + ticket.category + "</a><br>" +
                          "<a>Stav: " + ticket.status + "</a><br>" +
-                         "<button id=\"popup_button\" onclick=\"ticket_detail()\">Detaily tiketu</button>"
+                         "<button id=\"popup_button\" onclick=\"ticket_detail(" + ticket.id + ")\">Detaily tiketu</button>"
                          "</div>";
             marker.bindPopup(popup_string);
             var list_string = "<div id='map_list_item'>" +
@@ -192,7 +192,7 @@ function loadTickets() {
                               "<a>Kategória: " + ticket.category + "</a><br>" +
                               "<a>Stav: " + ticket.status + "</a><br>" +
                               "<a>Adresa: " + ticket.address + "</a><br>" +
-                              "<button id=\"list_item_button\" onclick=\"ticket_detail()\">Detaily tiketu</button>"
+                              "<button id=\"list_item_button\" onclick=\"ticket_detail(" + ticket.id + ")\">Detaily tiketu</button>"
                               "</div>";
             ticket_list.innerHTML += list_string;
         });
@@ -204,8 +204,28 @@ window.onload = function() {
     loadTickets();
 }
 
-function ticket_detail(){
-    console.log("test message");
+function ticket_detail(id){
+    //document.getElementById("background-blur").setAttribute("class", "blur-active");
+    var popup = document.getElementById("ticket_info");
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'src/tickets.json', true);
+    xhr.onload = function () {
+        var tickets = JSON.parse(this.responseText);
+        var filtered = tickets.filter( (ticket) => {
+            return ticket.id == id;
+        })
+        filtered = filtered[0];
+        popup.innerHTML = "<img src=\"" + filtered.image_path + "\"></img>" +
+                          "<h1>" + filtered.title + "</h1>" +
+                          "<p>" + filtered.description + "</p>" +
+                          "<div>" +
+                          "<a>Adresa závady: " + filtered.address + "</a><br>" +
+                          "<a>Kategória: " + filtered.category + "</a><br>" +
+                          "<a>Stav závady: " + filtered.status + "</a><br>" +
+                          "<a>Dátum pridania: " + filtered.date + "</a>"+
+                          "</div>";
+    }
+    xhr.send();
 }
 
 function open_filter_menu(menu, img){
