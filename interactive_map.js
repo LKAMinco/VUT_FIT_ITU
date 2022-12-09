@@ -205,11 +205,19 @@ window.onload = function() {
 }
 
 function ticket_detail(id){
-    //document.getElementById("background-blur").setAttribute("class", "blur-active");
     var popup = document.getElementById("ticket_info");
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'src/tickets.json', true);
     xhr.onload = function () {
+        var overlay = document.getElementById("background-blur");
+        overlay.setAttribute("class", "blur-active");
+        var div = document.getElementById("ticket_detail");
+        div.setAttribute("class", "hidden_ticket");
+
+        overlay.addEventListener('click', () => {
+            div.removeAttribute("class");
+            overlay.removeAttribute("class");
+        })
         var tickets = JSON.parse(this.responseText);
         var filtered = tickets.filter( (ticket) => {
             return ticket.id == id;
