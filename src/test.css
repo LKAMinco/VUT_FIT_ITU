@@ -170,6 +170,77 @@ h3 {
 }
 /* ******************************** 2/5 ***************************** */
 /* ******************************** 3/5 ***************************** */
+#contact h2 {
+    text-transform: uppercase;
+    color: black;
+    text-align: center;
+    grid-column: 1/-1;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+#contact-name:hover,
+#contact-subject:hover,
+#contact-message:hover,
+#contact-email:hover {
+    border-color: green;
+}
+
+#contact-name {
+    border: 2px solid steelblue;
+    border-radius: 5px;
+    /* od prvniho po zacatek druheho sloupce */
+    grid-column: 1/2;
+    color: steelblue;
+}
+
+#contact-email {
+    border: 2px solid steelblue;
+    border-radius: 5px;
+    color: steelblue;
+    /* od druheho do zacatku prvniho sloupce */
+    grid-column: 2/-1;
+}
+
+#contact-subject {
+    /* od konec prvniho po zacatek prvniho sloupce */
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 2px solid steelblue;
+    border-radius: 5px;
+    color: steelblue;
+    grid-column: 1/-1;
+}
+
+#contact-message {
+    border: 2px solid steelblue;
+    border-radius: 5px;
+    color: steelblue;
+    /* od konec prvniho po zacatek prvniho sloupce */
+    grid-column: 1/-1;
+}
+
+#contact-submit {
+    padding: 10px;
+    /* od konec prvniho po zacatek prvniho sloupce */
+    grid-column: 1/-1;
+    border: 2px solid steelblue;
+    border-radius: 5px;
+    background-color: steelblue;
+    color: white;
+    max-width: 150px;
+    /* tlacitko do stredu */
+}
+
+#contact-submit:hover {
+    border-color: green;
+    background-color: green;
+}
 /* ******************************** 4/5 ***************************** */
 /* ******************************** 5/5 ***************************** */
+
 /* ******************************** 5/5 ***************************** */

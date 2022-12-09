@@ -1,19 +1,44 @@
-function reportSecond() {
+function endOfReport(){
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'users.json', true);
     xhr.onload = function () {
         var output = '';
-        output += '<section id="services">\n' +
-            '        <div class="content">\n' +
-            '            <h3>2/5 Nahrajte fotografii:</h3>\n' +
-            '        </div>\n' +
-            '<div id="photo_mode" onclick="selectPhoto()">' +
-            '<img class="photo_mode_img" src="pictures/plus.svg" alt="plus">' +
-            '<span class="photo_mode_h">fotografie</span>' +
-            '</div>' +
+        output += '<section id="last_report_page">'+
+            '<div class="content">'+
+            '<h2>Děkujeme za nahlášení problému</h2>'+
+            '</div>'+
+            ' <div id="back">\n' +
+            '     <button id="back_to_main_page">Zpět na hlavní stránku</button>\n' +
+            ' </div>' +
+            '</section>';
+        document.getElementById('report_part').innerHTML = output;
+        document.getElementById("back_to_main_page").onclick = function () {
+            location.href = "./index.html";
+        }
+    }
+    xhr.send();
+}
+
+function reportThree() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'users.json', true);
+    xhr.onload = function () {
+        var output = '';
+        output += '<section id="contact">'+
+            '<div class="content">'+
+                '<h2>Contact</h2>'+
+                '<div id="map"></div>'+
+                '<form action="#">'+
+                    '<input id="contact-subject" type="text" name="subject" placeholder="Subject" required>'+
+                    '<textarea id="contact-message" name="message" cols="30" rows="10" placeholder="Message" required></textarea>'+
+                    '<input onclick="endOfReport()" id="contact-submit" type="submit" value="Submit">'+
+                '</form>'+
+            '</div>'+
+            '</section>' +
+            '<section>' +
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
             '   <li>\n' +
-            '     <button onclick="reportFirst()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
+            '     <button onclick="reportSecond()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
             '   </li>\n' +
             ' </div>' +
             '</section>';
@@ -22,16 +47,33 @@ function reportSecond() {
     xhr.send();
 }
 
-function selectPhoto(){
+function reportSecond() {
+//    var image = document.getElementById('photo_mode').innerHTML;
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'users.json', true);
     xhr.onload = function () {
         var output = '';
-        output += 'aaaaa\n';
+        output += '<section id="services">\n' +
+            '        <div class="content">\n' +
+            '            <h3>2/5 Nahrajte fotografii:</h3>\n' +
+            '        </div>\n' +
+            '<div id="aa">' +
+            '<input id="photo_mode" type="file" name="uploadfile" accept="image/png, image/gif, image/jpeg">'+
+            '</div>' +
+            ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n<ul>' +
+            '   <li>\n' +
+            '     <button onclick="reportThree()" id="buttonProfileTickets">Pokračovat dále</button>\n' +
+            '   </li>\n' +
+            '   <li>\n' +
+            '     <button onclick="reportFirst()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
+            '   </li>\n' +
+            ' </ul></div>' +
+            '</section>';
         document.getElementById('report_part').innerHTML = output;
     }
     xhr.send();
 }
+
 function reportFirst() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'users.json', true);
