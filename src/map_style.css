@@ -314,6 +314,7 @@ a {
     margin-left: 1rem;
     margin-top: 0.75rem;
     max-width: 72%;
+    min-width: 72%;
     background-color: var(--lightGray);
     color: var(--white);
 }
