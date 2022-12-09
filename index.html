@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <title>Main Page</title>
     <link rel="stylesheet" href="src/style.css">
 </head>
@@ -12,15 +13,33 @@
     <div class="content">
         <ul>
             <li><a href="#">Havní stránka</a></li>
-            <li><a href="index.html#about">O nás</a></li>
-            <li><a href="index.html#map">Mapa závad</a></li>
-            <li><a href="index.html#stats">Štatistiky</a></li>
-            <li><a href="index.html#contact">Kontakty</a></li>
+            <li><a href="index.html#about_ref">O nás</a></li>
+            <li><a href="index.html#map_ref">Mapa závad</a></li>
+            <li><a href="index.html#stats_ref">Štatistiky</a></li>
+            <li><a href="index.html#contact_ref">Kontakty</a></li>
             <button type="submit">Registrovať sa</button>
-            <button type="submit">Přihlásit se</button>
+            <button type="submit" data-modal-target="#login_form">Přihlásit se</button>
         </ul>
     </div>
 </nav>
+<div id="login_id">
+    <div class="modal ease" id="login_form">
+        <div class="modal-header">
+            <div class="title">Prosím prihláste sa</div>
+            <button data-close-button class="close-button" id="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="form_login">
+                <label for="email">Email</label>
+                <input type="email" name="email" id="email" placeholder="Email" required><br>
+                <label for="password">Heslo</label>
+                <input type="password" name="password" id="password" placeholder="Heslo" required><br>
+                <button type="submit">Přihlásit se</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <header>
     <div id="slideshow">
         <div class="content">
@@ -95,6 +114,7 @@
 </div-->
 <main>
     <section id="about">
+        <a class="anchor" id="about_ref"></a>
         <div class="content">
             <h1>O nás</h1>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid architecto at dignissimos dolor dolore
@@ -103,6 +123,7 @@
         </div>
     </section>
     <section id="map">
+        <a class="anchor" id="map_ref"></a>
         <div class="content">
             <h1>Mapa závad</h1>
             <div id="mapid">
@@ -114,31 +135,32 @@
         </div>
     </section>
     <section id="stats">
+        <a class="anchor" id="stats_ref"></a>
         <div class="content">
             <h1>Štatistiky</h1>
             <div id="statid">
-                <div class="box_size">
+                <div class="box_size" data-modal-target="#graph1">
                     <p class="alignleft"><strong>Python:</strong></p>
                     <p class="alignright">80%</p>
                     <div class="bcgr_loading">
                         <div id="line_1"></div>
                     </div>
                 </div>
-                <div class="box_size">
+                <div class="box_size" data-modal-target="#graph2">
                     <p class="alignleft"><strong>C/C++:</strong></p>
                     <p class="alignright">60%</p>
                     <div class="bcgr_loading">
                         <div id="line_2"></div>
                     </div>
                 </div>
-                <div class="box_size">
+                <div class="box_size" data-modal-target="#graph3">
                     <p class="alignleft"><strong>Php:</strong></p>
                     <p class="alignright">40%</p>
                     <div class="bcgr_loading">
                         <div id="line_3"></div>
                     </div>
                 </div>
-                <div class="box_size">
+                <div class="box_size" data-modal-target="#graph4">
                     <p class="alignleft"><strong>HTML/CSS:</strong></p>
                     <p class="alignright">25%</p>
                     <div class="bcgr_loading">
@@ -146,9 +168,93 @@
                     </div>
                 </div>
             </div>
+            <div id="graph1_i">
+                <div class="modal ease" id="graph1">
+                    <div class="modal-header">
+                        <div class="title">Nejaký pekný graf 1</div>
+                        <button data-close-button class="close-button" >&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        Tuto bude nejaky pekny graf 1 <!--TODO-->
+                    </div>
+                </div>
+            </div>
+            <div id="graph2_i">
+                <div class="modal ease" id="graph2">
+                    <div class="modal-header">
+                        <div class="title">Nejaký pekný graf 2</div>
+                        <button data-close-button class="close-button">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        Tuto bude nejaky pekny graf 2 <!--TODO-->
+                    </div>
+                </div>
+            </div>
+            <div id="graph3_i">
+                <div class="modal ease" id="graph3">
+                    <div class="modal-header">
+                        <div class="title">Nejaký pekný graf 3</div>
+                        <button data-close-button class="close-button">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        Tuto bude nejaky pekny graf 3 <!--TODO-->
+                    </div>
+                </div>
+            </div>
+            <div id="graph4_id">
+                <div class="modal ease" id="graph4">
+                    <div class="modal-header">
+                        <div class="title">Nejaký pekný graf 4</div>
+                        <button data-close-button class="close-button">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        Tuto bude nejaky pekny graf 4 <!--TODO-->
+                    </div>
+                </div>
+            </div>
+            <div id="overlay" class="ease"></div>
+            <script>
+                const openModalButtons = document.querySelectorAll('[data-modal-target]')
+                const closeModalButtons = document.querySelectorAll('[data-close-button]')
+                const overlay = document.getElementById('overlay')
+
+                openModalButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const modal = document.querySelector(button.dataset.modalTarget)
+                        openModal(modal)
+                    })
+                })
+
+                overlay.addEventListener('click', () => {
+                    const modals = document.querySelectorAll('.modal.active')
+                    modals.forEach(modal => {
+                        closeModal(modal)
+                    })
+                })
+
+                closeModalButtons.forEach(button => {
+                    button.addEventListener('click', () => {
+                        const modal = button.closest('.modal')
+                        closeModal(modal)
+                    })
+                })
+
+                function openModal(modal) {
+                    if (modal == null) return
+                    modal.classList.add('active')
+                    overlay.classList.add('active')
+                }
+
+                function closeModal(modal) {
+                    if (modal == null) return
+                    modal.classList.remove('active')
+                    overlay.classList.remove('active')
+                }
+            </script>
         </div>
     </section>
     <section id="contact">
+        <a class="anchor" id="contact_ref"></a>
         <div class="content">
             <h1>Contact</h1>
             <div id="contactid"></div>
