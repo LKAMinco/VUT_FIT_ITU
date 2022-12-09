@@ -17,7 +17,7 @@
             <li><a href="index.html#map_ref">Mapa závad</a></li>
             <li><a href="index.html#stats_ref">Štatistiky</a></li>
             <li><a href="index.html#contact_ref">Kontakty</a></li>
-            <button type="submit">Registrovať sa</button>
+            <button type="submit" data-modal-target="#register_form">Registrovať sa</button>
             <button type="submit" data-modal-target="#login_form">Přihlásit se</button>
         </ul>
     </div>
@@ -26,7 +26,7 @@
     <div class="modal ease" id="login_form">
         <div class="modal-header">
             <div class="title">Prosím prihláste sa</div>
-            <button data-close-button class="close-button" id="close-button">&times;</button>
+            <button data-close-button class="close-button">&times;</button>
         </div>
         <div class="modal-body">
             <form id="form_login">
@@ -39,7 +39,37 @@
         </div>
     </div>
 </div>
-
+<div id="register_id">
+    <div class="modal ease" id="register_form">
+        <div class="modal-header">
+            <div class="title">Registrácia</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="form_register">
+                <label id="name_lab" for="name_reg">Meno</label>
+                <input type="text" name="name_reg" id="name_reg" placeholder="Meno" required>
+                <label id="surename_lab" for="surname_reg">Priezvisko</label>
+                <input type="text" name="surname_reg" id="surname_reg" placeholder="Priezvisko" required>
+                <label id="address_lab" for="address_reg">Addresa</label>
+                <input type="text" name="address" id="address_reg" placeholder="Addresa" required>
+                <label id="date_lab" for="date_reg">Dátum narodenia</label>
+                <input type="date" name="date_reg" id="date_reg" placeholder="Dátum narodenia" required>
+                <label id="email_lab" for="email_reg">Email</label>
+                <input type="email" name="email" id="email_reg" placeholder="Email" required>
+                <label id="pwd_lab" for="password_reg">Heslo</label>
+                <input type="password" name="password" id="password_reg" placeholder="********" required>
+                <label id="pwd2_lab" for="password_reg2">Potvrdenie hesla</label>
+                <input type="password" name="password" id="password_reg2" placeholder="********" required>
+                <div id="news">
+                    <input id="news_reg" type="checkbox">
+                    <label id="news_lab" for="news_reg">Chci dostávat novinky o mých nahlášených ticketech.</label>
+                </div>
+                <button id="reg_btn" type="submit">Registrovať sa</button>
+            </form>
+        </div>
+    </div>
+</div>
 <header>
     <div id="slideshow">
         <div class="content">
