@@ -269,3 +269,8 @@ function set_sort(sort){
         document.getElementById('sort_text').innerHTML = "Zoradené podľa: " + text;
     }
 }
+
+function add_comment(form){
+    console.log(form.comment_text.value);
+    document.getElementById("comment_text").value = "";
+}
