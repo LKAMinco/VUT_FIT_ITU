@@ -20,12 +20,20 @@
     font-family: 'Open Sans', sans-serif;
 }
 
+html{
+    font-family: Bahnschrift, serif;
+}
+
 body {
     display: flex;
     min-width: 768px;
     max-width: 1920px;
     align-items: center;
     justify-content: center;
+}
+
+main{
+    padding-top: 58px;
 }
 
 .content {
@@ -61,10 +69,13 @@ main .all {
 
 /* *************************** BODY ***************************** */
 /* *************************** CHECKBOX EDIT PROFILE ***************************** */
-#user ul li {
-    text-align: left;
-    padding-right: 20px;
-    padding-left: 20px;
+#user, #userName {
+    color: white;
+    text-align: center;
+}
+#user{
+    font-size: 80%;
+    padding-bottom: 20px;
 }
 
 .grid {
@@ -231,11 +242,12 @@ main .all {
 /* *************************** SIDE BAR ***************************** */
 
 .wrapper {
-    background: rgb(5, 68, 104);
+    background: var(--wrapper_user);
     top: 0;
     left: 0;
     width: 225px;
-    height: 400px;
+    max-height: 1000px;
+    height: 100%;
     padding: 20px 0;
     transition: all 0.5s ease;
 }
@@ -324,7 +336,9 @@ main .all {
 }
 
 th{
-    padding-bottom: -20px;
+    width: 200px;
+    /* padding-bottom: -20px;*/
+
 }
 
 #price td {
@@ -352,8 +366,12 @@ th{
 }
 
 .ticket_img_small:hover {
-    transform: scale(1.2);
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     transition: 200ms ease-in-out;
+/* FIXME */
 }
 
 /* *************************** TICKET TABLE ***************************** */

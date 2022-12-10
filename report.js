@@ -13,7 +13,7 @@ function endOfReport(){
             '</section>';
         document.getElementById('report_part').innerHTML = output;
         document.getElementById("back_to_main_page").onclick = function () {
-            location.href = "./index.html";
+            location.href = "index.html";
         }
     }
     xhr.send();
@@ -164,7 +164,7 @@ function reportFirst() {
 
 function parks() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'users.json', true);
+    xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
 
@@ -223,7 +223,7 @@ function parks() {
 
 function roads() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'users.json', true);
+    xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
 
