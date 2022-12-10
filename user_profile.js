@@ -11,8 +11,8 @@ function loadUser() {
         var output = '';
 
         output += '<ul>' +
-            '<li><strong>Email: ' + active_user.email + '</strong></li>' +
-            '<li><strong>Datum narození: ' + active_user.date_of_birth + '</strong></li>' +
+            '<li><strong>' +active_user.email + '</strong></li>' +
+            '<li><strong>' +active_user.date_of_birth + '</strong></li>' +
             '</ul>';
         document.getElementById('user').innerHTML = output;
     }
@@ -52,7 +52,8 @@ function loadTickets() {
                 '<td>' + ticker_list_filtered[i].category + '</td>' +
                 '<td>' + ticker_list_filtered[i].status + '</td>' +
                 '<td><img src="' + ticker_list_filtered[i].image_path + '" class="ticket_img_small" alt="Ticket picture"></td></li>' +
-                '<li><td class="ticket_description" colspan=5>' + ticker_list_filtered[i].description + '</td></li></ul></tr>';
+                //'<li><td class="ticket_description" colspan=5>' + ticker_list_filtered[i].description +
+                '</td></li></ul></tr>';
             document.getElementById('ticket').innerHTML = output;
         }
     }
@@ -85,7 +86,11 @@ var searchFilter = () => {
         if (category != "all") {
             ticker_list_filtered = ticker_list_filtered.filter((ticket) => ticket.category === category);
         }
-        ticker_list_filtered = ticker_list_filtered.sort((a, b) => b.date - a.date)
+        if(date == 'max'){
+            ticker_list_filtered = ticker_list_filtered.sort((a, b) => a.date - b.date)
+        }else{
+            ticker_list_filtered = ticker_list_filtered.sort((a, b) => b.date - a.date)
+        }
 
         var output = '';
         document.getElementById('ticket').innerHTML = ticker_list_filtered;

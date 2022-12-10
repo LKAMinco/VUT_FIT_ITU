@@ -2,7 +2,7 @@
   {
     "id": 1,
     "user_email": "user@email.com",
-    "date": "01-11-2022",
+    "date": "03-11-2022",
     "title": "Počmáraný obchod",
     "address": "Adresa 1",
     "description": "Ticket 1 description",
@@ -15,7 +15,7 @@
   {
     "id": 2,
     "user_email": "ree@email.com",
-    "date": "01-11-2022",
+    "date": "04-11-2022",
     "title": "Blesk uhodil do stromu",
     "address": "Adresa 2",
     "description": "Ticket 2 description",
@@ -28,7 +28,7 @@
   {
     "id": 3,
     "user_email": "ree@email.com",
-    "date": "01-01-2022",
+    "date": "05-01-2022",
     "title": "Ulice po oslavách silvestra",
     "address": "Adresa 3",
     "description": "Ticket 3 description",
@@ -41,7 +41,7 @@
   {
     "id": 4,
     "user_email": "ree@email.com",
-    "date": "01-11-2022",
+    "date": "06-11-2022",
     "title": "Skládka před školou",
     "address": "Adresa 4",
     "description": "Ticket 4 description",
@@ -54,7 +54,7 @@
   {
     "id": 5,
     "user_email": "ree@email.com",
-    "date": "01-11-2022",
+    "date": "07-11-2022",
     "title": "Hluk z hospody",
     "address": "Adresa 5",
     "description": "Ticket 5 description",

@@ -21,11 +21,13 @@
                     <div class="profile">
                         <a href="user_profile.html"><img  src="src/pictures/user_pic.png" alt="Profile picture"></a>
                         <script>
-                            getName()
+                            getName();
+                            loadUser();
                         </script>
                         <a href="user_profile.html"><div id="userName"></div></a>
                     </div>
                     <ul>
+                        <li id="user"></li>
 
                         <li><a href="user_profile.html">Moje nahlášené závady</a></li>
 
@@ -34,11 +36,7 @@
                 </div>
             </div>
         </section>
-        <script>
-            loadUser();
-        </script>
         <section id="edit_profile">
-            <div id="user"></div>
             <form action="save_file_edit.js">
                 <div class="container">
                     <h1 class="title">Úprava profilu</h1>
@@ -76,15 +74,15 @@
                     <div class="grid">
                         <div class="form-group a">
                             <label for="first-name">Heslo</label>
-                            <input id="first-name" type="text" placeholder="Nové heslo">
+                            <input id="first-pass" type="text" placeholder="Nové heslo">
                         </div>
                         <div class="form-group b">
                             <label for="last-name">Kontrola hesla</label>
-                            <input id="last-name" type="text" placeholder="Nové heslo">
+                            <input id="last-pass" type="text" placeholder="Nové heslo">
                         </div>
                     </div>
                     <div class="button_container_edit">
-                        <input type="button" id="bt" class="button" value="Uložit nové heslo" onclick="saveProfile()"/>
+                        <input type="button" id="bt_pass" class="button" value="Uložit nové heslo" onclick="saveProfile()"/>
                     </div>
                 </div>
             </form>
