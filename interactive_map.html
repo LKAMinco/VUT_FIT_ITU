@@ -9,62 +9,66 @@
 </head>
 <body>
 <nav id="map_nav">
-    <button id="categories_btn" onclick="open_filter_menu('categories_list', 'categories_img')"><img id="categories_img" src="list_closed.png" title="list_closed"><p>Kategórie</p></button>
-    <button id="condition_btn" onclick="open_filter_menu('conditions_list','condition_img')"><img id="condition_img" src="list_closed.png" title="list_closed"><p>Stav</p></button>
-    <button id="sort_by_btn" onclick="open_filter_menu('sort_list','sort_by_img')"><img id="sort_by_img" src="list_closed.png" title="list_closed"><p id="sort_text">Zoradené podľa: Názvu A-Z</p></button>
-</nav>
-
-<div id="ticket_detail">
-    <div id="ticket_info">
+    <div class="content">
+        <button id="categories_btn" onclick="open_filter_menu('categories_list', 'categories_img')"><img id="categories_img" src="list_closed.png" title="list_closed"><p>Kategórie</p></button>
+        <button id="condition_btn" onclick="open_filter_menu('conditions_list','condition_img')"><img id="condition_img" src="list_closed.png" title="list_closed"><p>Stav</p></button>
+        <button id="sort_by_btn" onclick="open_filter_menu('sort_list','sort_by_img')"><img id="sort_by_img" src="list_closed.png" title="list_closed"><p id="sort_text">Zoradené podľa: Názvu A-Z</p></button>
     </div>
-    <div id="add_comment">
-        <form name="comment_form" method="GET">
-            <div>
-                <textarea name="comment_text" id="comment_text" placeholder="Sem napíšte komentár.."></textarea>
-                <input type="button" name="comment_button" id="comment_button" onclick="add_comment(this.form)" value="Pridať komentár">
-            </div>
-        </form>
-    </div >
-</div>
+</nav>
 
 <div id="background-blur">
 
 </div>
 
-<div id="categories_list" class="hidden_list">
-    <button id="dirty_streets" onclick="set_filter('dirty_streets')"><p>Neporiadok v uliciach</p></button>
-    <button id="roads" onclick="set_filter('roads')"><p>Problémy na cestách</p></button>
-    <button id="playgrounds" onclick="set_filter('playgrounds')"><p>Ihriská</p></button>
-    <button id="benches" onclick="set_filter('benches')"><p>Lavičky</p></button>
-    <button id="abandoned_vehicles" onclick="set_filter('abandoned_vehicles')"><p>Opustené vozidlá</p></button>
-    <button id="illegal_dumps" onclick="set_filter('illegal_dumps')"><p>Nelegálne skládky</p></button>
-    <button id="vegetation" onclick="set_filter('vegetation')"><p>Vegetace</p></button>
-    <button id="vandalism" onclick="set_filter('vandalism')"><p>Vandalizmus</p></button>
-    <button id="others" onclick="set_filter('others')"><p>Ostatné</p></button>
-</div>
-
-<div id="conditions_list" class="hidden_list">
-    <button id="in_progress" onclick="set_filter('in_progress')"><p>Aktuálne riešené</p></button>
-    <button id="done" onclick="set_filter('done')"><p>Vyriešené</p></button>
-    <button id="to_do" onclick="set_filter('to_do')"><p>Prijaté</p></button>
-</div>
-
-<div id="sort_list" class="hidden_list">
-    <button id="name_asc" class="selected_filter" onclick="set_sort('name_asc')"><p>Názvu A-Z</p></button>
-    <button id="name_desc" onclick="set_sort('name_desc')"><p>Názvu Z-A</p></button>
-    <button id="age_asc" onclick="set_sort('age_asc')"><p>Najnovších</p></button>
-    <button id="age_desc" onclick="set_sort('age_desc')"><p>Najstarších</p></button>
-</div>
-
-<main id="map_main">
-    <div id="map_div">
-        <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
-        <script src="interactive_map.js"></script>
+<div class="content">
+    <div id="ticket_detail">
+        <div id="ticket_info">
+        </div>
+        <div id="add_comment">
+            <form name="comment_form" method="GET">
+                <div>
+                    <textarea name="comment_text" id="comment_text" placeholder="Sem napíšte komentár.."></textarea>
+                    <input type="button" name="comment_button" id="comment_button" onclick="add_comment(this.form)" value="Pridať komentár">
+                </div>
+            </form>
+        </div >
     </div>
-    <div id="ticket_list">
 
+    <div id="categories_list" class="hidden_list">
+        <button id="dirty_streets" onclick="set_filter('dirty_streets')"><p>Neporiadok v uliciach</p></button>
+        <button id="roads" onclick="set_filter('roads')"><p>Problémy na cestách</p></button>
+        <button id="playgrounds" onclick="set_filter('playgrounds')"><p>Ihriská</p></button>
+        <button id="benches" onclick="set_filter('benches')"><p>Lavičky</p></button>
+        <button id="abandoned_vehicles" onclick="set_filter('abandoned_vehicles')"><p>Opustené vozidlá</p></button>
+        <button id="illegal_dumps" onclick="set_filter('illegal_dumps')"><p>Nelegálne skládky</p></button>
+        <button id="vegetation" onclick="set_filter('vegetation')"><p>Vegetace</p></button>
+        <button id="vandalism" onclick="set_filter('vandalism')"><p>Vandalizmus</p></button>
+        <button id="others" onclick="set_filter('others')"><p>Ostatné</p></button>
     </div>
-</main>
+
+    <div id="conditions_list" class="hidden_list">
+        <button id="in_progress" onclick="set_filter('in_progress')"><p>Aktuálne riešené</p></button>
+        <button id="done" onclick="set_filter('done')"><p>Vyriešené</p></button>
+        <button id="to_do" onclick="set_filter('to_do')"><p>Prijaté</p></button>
+    </div>
+
+    <div id="sort_list" class="hidden_list">
+        <button id="name_asc" class="selected_filter" onclick="set_sort('name_asc')"><p>Názvu A-Z</p></button>
+        <button id="name_desc" onclick="set_sort('name_desc')"><p>Názvu Z-A</p></button>
+        <button id="age_asc" onclick="set_sort('age_asc')"><p>Najnovších</p></button>
+        <button id="age_desc" onclick="set_sort('age_desc')"><p>Najstarších</p></button>
+    </div>
+
+    <main id="map_main">
+        <div id="map_div">
+            <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+            <script src="interactive_map.js"></script>
+        </div>
+        <div id="ticket_list">
+
+        </div>
+    </main>
+</div>
 
 </body>
 </html>

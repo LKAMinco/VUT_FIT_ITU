@@ -70,6 +70,12 @@ html, body {
     background-color: var(--white);
     height: 100vh;
     font-family: Bahnschrift, serif;
+    overflow-y: hidden;
+}
+
+.content{
+    /* max-width: 1920px; TODO */
+    margin: auto;
 }
 
 a {
@@ -77,20 +83,22 @@ a {
     color: var(--white);
 }
 
-
 #map_nav{
     position: fixed;
-    display: inline-flex;
-    justify-content: start;
     width: 100%;
     background: var(--darkRed);
     color: var(--white);
     font-weight: bolder;
     height: 3.7rem;
     z-index: 10000;
+    margin: auto;
 }
 
-#map_nav button{
+#map_nav .content{
+    display: flex;
+}
+
+#map_nav .content button{
     width: 15rem;
     height: 2.5rem;
     margin: 0.5rem 0.5rem;
@@ -103,18 +111,18 @@ a {
     transition: 250ms ease-in-out;
 }
 
-#map_nav button:hover{
+#map_nav .content button:hover{
     text-decoration: underline white 0.1rem;
     text-underline-offset: 0.2rem;
 }
 
-#map_nav img{
+#map_nav .content img{
     margin-left: 0.25rem;
     margin-top: 0.75rem;
     width: 1rem;
 }
 
-#map_nav button p{
+#map_nav .content button p{
     margin-top: 0.85rem;
     margin-left: 0.25rem;
     padding: 0;
@@ -122,8 +130,9 @@ a {
 
 #map_main {
     display: grid;
-    grid-template-columns: 75% 25%;
+    grid-template-columns: 77% 23%;
     height: 100%;
+    margin: auto;
 }
 
 #map_div {
@@ -138,9 +147,8 @@ a {
     margin: 3.5rem 0 0 0;
     grid-column: 2;
     width: 100%;
+    height: 88rem;
     background: var(--white);
-    overflow-scrolling: touch;
-    overflow: hidden;
     overflow-y: scroll;
 }
 
@@ -200,16 +208,17 @@ a {
 }
 
 #map_list_item{
-    width: 23rem; /*36rem*/
+    max-width: 37rem; /*36rem*/
+    min-width: 20rem;
     background-color: var(--darkRed);
     margin: 1rem auto;
-    height: 16.2rem; /*20rem*/
+    height: 22rem; /*20rem*/
     border-radius: 0.75rem;
 }
 
 #map_list_item img{
     width: 100%;
-    height: 8rem; /*10rem*/
+    height: 13.7rem; /*10rem*/
     object-fit: cover;
     object-position: 100% 30%;
     border-top-right-radius: 0.75rem;
@@ -223,7 +232,7 @@ a {
 
 #map_list_item button{
     margin-top: 0.3rem;
-    width: 22rem;
+    width: 97.2%;
     margin-left: 0.5rem;
     height: 2rem;
     border: none;
@@ -243,7 +252,8 @@ a {
     position: fixed;
     width: 34rem;
     height: auto;
-    transform: translate(150%,4.2rem);
+    left: 60%;
+    transform: translate(-15%,4.2rem);
     opacity: 0;
     pointer-events: none;
 }

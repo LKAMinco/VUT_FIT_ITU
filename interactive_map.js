@@ -179,7 +179,7 @@ function loadTickets() {
             //const marker = L.marker([49.152556, 16.679267], {icon: greenIcon}).addTo(map);
             const marker = L.marker([ticket.lat, ticket.long]).addTo(map);
             var popup_string = "<div id='map_marker_popup'>" +
-                         "<img src='" + ticket.image_path + "'>" +
+                         "<img src='" + ticket.image_path + "' alt=\".\">" +
                          "<a>" + ticket.title + "</a><br>" +
                          "<a>Kategória: " + ticket.category + "</a><br>" +
                          "<a>Stav: " + ticket.status + "</a><br>" +
@@ -187,7 +187,7 @@ function loadTickets() {
                          "</div>";
             marker.bindPopup(popup_string);
             var list_string = "<div id='map_list_item'>" +
-                              "<img src='" + ticket.image_path + "'>" +
+                              "<img src='" + ticket.image_path + "' alt=\".\">" +
                               "<a>" + ticket.title + "</a><br>" +
                               "<a>Kategória: " + ticket.category + "</a><br>" +
                               "<a>Stav: " + ticket.status + "</a><br>" +
@@ -223,7 +223,7 @@ function ticket_detail(id){
             return ticket.id == id;
         })
         filtered = filtered[0];
-        popup.innerHTML = "<img src=\"" + filtered.image_path + "\"></img>" +
+        popup.innerHTML = "<img src=\"" + filtered.image_path + "\" alt=\".\"></img>" +
                           "<h1>" + filtered.title + "</h1>" +
                           "<p>" + filtered.description + "</p>" +
                           "<div>" +
