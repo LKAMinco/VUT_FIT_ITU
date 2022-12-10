@@ -4,6 +4,7 @@
     --lightGray: #282525;
     --white: #E0DEDE;
     --black: #121212;
+    --wrapper_user: #e79696;
 }
 
 html {
@@ -263,6 +264,7 @@ section {
     font-size: x-large;
     grid-row: 3;
     z-index: 2;
+    cursor: pointer;
 }
 
 #submit_btn:hover {

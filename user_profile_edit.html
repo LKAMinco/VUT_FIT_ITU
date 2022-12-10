@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User profile</title>
     <link rel="stylesheet" href="src/user_style.css">
+    <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
 <script src="user_profile.js"></script>
@@ -13,6 +14,15 @@
 <header id="header">
     <!-- TODO nav bar -->
 </header>
+<nav id="navigation-desktop">
+    <div class="content">
+        <ul>
+            <li><a href="#">Hlavní stránka</a></li>
+            <button type="submit" onclick="location.href='index.html'">Odhlásit se</button>
+            <button type="submit" onclick="location.href='user_profile.html'">Zobrazit profil</button>
+        </ul>
+    </div>
+</nav>
 <main>
     <div class="all">
         <section id="side_bar">
@@ -24,9 +34,9 @@
                             getName();
                             loadUser();
                         </script>
-                        <a href="user_profile.html"><div id="userName"></div></a>
                     </div>
                     <ul>
+                        <a href="user_profile.html"><div id="userName"></div></a>
                         <li id="user"></li>
 
                         <li><a href="user_profile.html">Moje nahlášené závady</a></li>
