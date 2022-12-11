@@ -8,13 +8,41 @@ function endOfReport(){
             '<h3>Děkujeme za nahlášení problému</h3>'+
             '</div>'+
             ' <div id="back">\n' +
-            '     <button id="buttonProfileTickets">Zpět na hlavní stránku</button>\n' +
+            '     <button id="buttonProfileTickets" onClick="location.href=\'../index_nav.html\'">Zpět na hlavní stránku</button>\n' +
+            '     <button id="buttonProfileTickets" onClick="location.href=\'../user_profile.html\'">Sledovat stav mých hlášení</button>\n' +
             ' </div>' +
             '</section>';
         document.getElementById('report_part').innerHTML = output;
         document.getElementById("back_to_main_page").onclick = function () {
             location.href = "index.html";
         }
+    }
+    xhr.send();
+}
+
+function reportFour() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'users.json', true);
+    xhr.onload = function () {
+        var output = '';
+        output += '<section id="services">'+
+            '<div class="content">'+
+                '<h3>4/4 Doplňte další informace:</h3>'+
+                '<form action="#">'+
+                    '<input id="contact-subject" type="text" name="subject" placeholder="Subject" required>'+
+                    '<textarea id="contact-message" name="message" cols="30" rows="10" placeholder="Message" required></textarea>'+
+                    '<input onclick="endOfReport()" id="contact-submit" type="submit" value="Submit">'+
+                '</form>'+
+            '</div>'+
+            '</section>' +
+            '<section>' +
+            ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
+            '   <li>\n' +
+            '     <button onclick="reportThree()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
+            '   </li>\n' +
+            ' </div>' +
+            '</section>';
+        document.getElementById('report_part').innerHTML = output;
     }
     xhr.send();
 }
@@ -26,12 +54,10 @@ function reportThree() {
         var output = '';
         output += '<section id="services">'+
             '<div class="content">'+
-                '<h3>3/3 Doplňte další informace:</h3>'+
-                '<form action="#">'+
-                    '<input id="contact-subject" type="text" name="subject" placeholder="Subject" required>'+
-                    '<textarea id="contact-message" name="message" cols="30" rows="10" placeholder="Message" required></textarea>'+
-                    '<input onclick="endOfReport()" id="contact-submit" type="submit" value="Submit">'+
-                '</form>'+
+            '<h3>3/4 Vyberte lokaci problému:</h3>'+
+            '<form action="#">'+
+            '<input onclick="reportFour()" id="contact-submit" type="submit" value="Submit">'+
+            '</form>'+
             '</div>'+
             '</section>' +
             '<section>' +
@@ -46,6 +72,7 @@ function reportThree() {
     xhr.send();
 }
 
+
 function reportSecond() {
 //    var image = document.getElementById('photo_mode').innerHTML;
     var xhr = new XMLHttpRequest();
@@ -54,7 +81,7 @@ function reportSecond() {
         var output = '';
         output += '<section id="services">\n' +
             '        <div class="content">\n' +
-            '            <h3>2/3 Nahrajte fotografii:</h3>\n' +
+            '            <h3>2/4 Nahrajte fotografii:</h3>\n' +
             '        </div>\n' +
             '<div id="aa">' +
             '<input id="photo_mode" type="file" name="uploadfile" accept="image/png, image/gif, image/jpeg">'+
@@ -80,7 +107,7 @@ function reportFirst() {
         var output = '';
         output += '<section id="services">\n' +
             '        <div class="content">\n' +
-            '            <h3>1/3 Vyberte kategorii hlášení:</h3>\n' +
+            '            <h3>1/4 Vyberte kategorii hlášení:</h3>\n' +
             '            <div>\n' +
             '                <div class="services-card">\n' +
             '                    <div onclick="roads()" class="services-column">\n' +
@@ -170,7 +197,7 @@ function parks() {
 
         output += '<section id="services" class="only_four">\n' +
             '        <div class="content">\n' +
-            '            <h3>1/3 Vyberte kategorii hlášení:</h3>\n' +
+            '            <h3>1/4 Vyberte kategorii hlášení:</h3>\n' +
             '            <div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
@@ -229,7 +256,7 @@ function roads() {
 
         output += '<section id="services" class="only_four">\n' +
             '        <div class="content">\n' +
-            '            <h3>1/3 Vyberte kategorii hlášení:</h3>\n' +
+            '            <h3>1/4 Vyberte kategorii hlášení:</h3>\n' +
             '            <div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +

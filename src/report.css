@@ -201,6 +201,7 @@ form {
     color: white;
     max-width: 150px;
     text-align: center;
+    cursor: pointer;
     /* tlacitko do stredu */
 }
 
