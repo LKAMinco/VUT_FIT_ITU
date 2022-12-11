@@ -251,13 +251,30 @@ function load_comments(id){
         filtered.forEach(comment => {
             output_string += "<div class='comment_div'>" +
                 "<div class='comment_header'>" +
-                "<h1>" + comment.user_email + "</h1>" +
+                "<h1 id='" + comment.id + "'></h1>" +
                 "<h1>" + comment.date + " " + comment.time + "</h1>" +
                 "</div>" +
                 "<p>" + comment.text + "</p>" +
                 "</div>";
+            readName(comment.user_email, comment.id);
         })
         div.innerHTML = output_string;
+    }
+    xhr.send();
+}
+
+function readName(email, id){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/users', true);
+    xhr.onload = function () {
+        var users = JSON.parse(this.responseText);
+        var filtered = users.filter( (user) => {
+            return user.email == email;
+        })
+        filtered = filtered[0];
+        console.log(filtered);
+        var text = document.getElementById(id);
+        text.innerHTML = filtered.name + " " + filtered.surname;
     }
     xhr.send();
 }
