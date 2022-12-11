@@ -8,12 +8,9 @@ html {
     font-family: Bahnschrift, serif;
 }
 
-body {
-    margin: auto;
-    font-size: 14px;
-    color: #898989;
+main{
+    margin-bottom: -50px;
 }
-
 .content {
     max-width: 1200px;
     margin: auto;
@@ -23,12 +20,6 @@ body {
 section {
     padding-top: 60px;
     padding-bottom: 80px;
-}
-
-section,
-header,
-footer {
-    width: 100%;
 }
 
 h2 {
@@ -81,13 +72,14 @@ h3 {
 }
 
 .services-card {
+    font-size: 100%;
     cursor: pointer;
     /* flex na vytvoreni mezer v cards a rozhrani */
     display: flex;
     flex-direction: column;
     justify-items: center;
     justify-content: center;
-    width: 150px;
+    width: 170px;
     box-shadow: 0 0 10px 0 #bfbfbf;
     text-align: center;
     border-radius: 5px;
@@ -217,6 +209,13 @@ form {
     background-color: green;
 }
 /* ******************************** 4/5 ***************************** */
-/* ******************************** 5/5 ***************************** */
-
-/* ******************************** 5/5 ***************************** */
+/* ************************* INDEX NAV************************ */
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+#report_footer{
+    margin-top: auto;
+}
+/* ************************* INDEX NAV************************ */
