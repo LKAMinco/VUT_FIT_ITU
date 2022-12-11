@@ -183,6 +183,7 @@ var filter_arr = [
 ]
 
 var marker_list = []
+var selected_sort = "name_asc";
 
 function loadTickets() {
     marker_list.forEach(marker => {
@@ -196,6 +197,47 @@ function loadTickets() {
         var tickets = JSON.parse(this.responseText);
         var filtered = tickets.filter( (ticket) => {
             return filter_arr.includes(ticket.category) && filter_arr.includes(ticket.status);
+        })
+        filtered.sort((a,b) => {
+            const nameB = b.title.toUpperCase();
+            const nameA = a.title.toUpperCase();
+
+            const dateB = b.date;
+            const dateA = a.date;
+            switch(selected_sort){
+                case "name_asc" :
+                    if (nameA < nameB) {
+                        return -1;
+                    }
+                    if (nameA > nameB) {
+                        return 1;
+                    }
+                    return 0;
+                case "name_desc" :
+                    if (nameA < nameB) {
+                        return 11;
+                    }
+                    if (nameA > nameB) {
+                        return -1;
+                    }
+                    return 0;
+                case "age_asc" :
+                    if (dateA < dateB) {
+                        return -1;
+                    }
+                    if (dateA > dateB) {
+                        return 1;
+                    }
+                    return 0;
+                case "age_desc" :
+                    if (dateA < dateB) {
+                        return 1;
+                    }
+                    if (dateA > dateB) {
+                        return -1;
+                    }
+                    return 0;
+            }
         })
         filtered.forEach(ticket => {
             //const marker = L.marker([49.152556, 16.679267], {icon: greenIcon}).addTo(map);
@@ -296,7 +338,6 @@ function readName(email, id){
             return user.email == email;
         })
         filtered = filtered[0];
-        console.log(filtered);
         var text = document.getElementById(id);
         text.innerHTML = filtered.name + " " + filtered.surname;
     }
@@ -327,11 +368,9 @@ function set_filter(filter){
 }
 
 function set_sort(sort){
-    test = "test";
-    console.log(sort);
     if(!document.getElementById(sort).hasAttribute("class")){
+        selected_sort = sort;
         var sort_types = document.getElementById(sort).parentElement.children;
-        console.log(sort_types);
         for(let i = 0; i < sort_types.length; i++){
             if(sort_types[i].hasAttribute("class")){
                 sort_types[i].removeAttribute("class");
@@ -346,14 +385,12 @@ function set_sort(sort){
             case "age_desc" : text = "Najstarších"; break;
         }
         document.getElementById('sort_text').innerHTML = "Zoradené podľa: " + text;
+        loadTickets();
     }
 }
 
 var index = 0;
 function add_comment(form, id){
-    console.log(form.comment_text.value);
-    console.log(id);
-
     var div = document.getElementById("comment_list");
     var date = new Date().toISOString().substr(0, 19).replace('T', ' ');
     div.innerHTML += "<div class='comment_div'>" +
