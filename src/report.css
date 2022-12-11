@@ -4,7 +4,7 @@
 
 html {
     min-width: 768px;
-    max-width: 1920px;
+    margin: auto;
     font-family: Bahnschrift, serif;
 }
 
@@ -12,7 +12,7 @@ main{
     margin-bottom: -50px;
 }
 .content {
-    max-width: 1200px;
+    max-width: 1920px;
     margin: auto;
     padding: 0 20px 0 20px;
 }
@@ -218,6 +218,7 @@ body{
 /* FIXME: */
 #report_footer{
     margin-top: auto;
+    width: 100%;
 }
 /* ************************* INDEX NAV************************ */
 /* ************************* POPUPS LEAVE REPORT ************************ */
@@ -300,6 +301,7 @@ body{
 /* ************************* POPUPS LEAVE REPORT ************************ */
 
 #map_div{
-    height: 400px;
-    width: 400px;
+    height: 800px;
+    width: 1600px;
+    margin: auto;
 }

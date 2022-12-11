@@ -56,7 +56,7 @@ function reportThree() {
             '<div class="content">'+
             '<h3>3/4 Vyberte lokaci problému:</h3>'+
             '<form action="#">'+
-            '<div id="map_div"></div>'
+            '<div id="map_div"></div>' +
             '<input onclick="reportFour()" class="contact-submit" id="three-submit" type="submit" value="Submit">'+
             '</form>'+
             '</div>'+
