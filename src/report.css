@@ -1,4 +1,4 @@
-*{
+* {
     list-style: none;
 }
 
@@ -8,9 +8,10 @@ html {
     font-family: Bahnschrift, serif;
 }
 
-main{
+main {
     margin-bottom: -50px;
 }
+
 .content {
     max-width: 1920px;
     margin: auto;
@@ -37,8 +38,9 @@ h3 {
     /* odkazy budou vypadat normalne */
     outline: none;
 }
-/* ******************************** 1/5 ***************************** */
 
+/* ******************************** BASIC ***************************** */
+/* ******************************** 1/5 ***************************** */
 #services h3 {
     margin-top: 40px;
     color: black;
@@ -48,7 +50,7 @@ h3 {
     min-width: 300px;
 }
 
-#services .content>div {
+#services .content > div {
     /* div ktere jsou potomky .contentu */
     display: grid;
     grid-template-columns: auto auto auto auto;
@@ -107,6 +109,8 @@ h3 {
     background-color: #d28d8d;
     display: block;
 }
+
+/* ******************************** 1/5 ***************************** */
 /* ******************************* BUTTON ************************** */
 
 #buttonProfileTickets {
@@ -125,8 +129,8 @@ h3 {
     background-color: #8dcc9c;
     transition: 200ms ease-in-out;
 }
-/* ******************************* BUTTON ************************** */
-#services .only_four .content>div {
+
+#services .only_four .content > div {
     /* div ktere jsou potomky .contentu */
     display: grid;
     grid-template-columns: auto auto;
@@ -134,10 +138,11 @@ h3 {
     justify-content: center;
     justify-items: center;
 }
+
 /* ******************************* BUTTON ************************** */
 /* ******************************** 1/5 ***************************** */
 /* ******************************** 2/5 ***************************** */
-#photo_mode{
+#photo_mode {
     border-style: dashed;
     max-width: 500px;
     max-height: 500px;
@@ -150,15 +155,18 @@ h3 {
     cursor: pointer;
     background-color: #acbabd;
 }
-.photo_mode_h{
+
+.photo_mode_h {
     color: black;
     font-size: 20px;
 }
-.photo_mode_img{
+
+.photo_mode_img {
     padding-bottom: -10px;
     width: 30px;
     margin-right: 10px;
 }
+
 /* ******************************** 2/5 ***************************** */
 /* ******************************** 3/5 ***************************** */
 form {
@@ -208,21 +216,24 @@ form {
     border-color: green;
     background-color: green;
 }
+
 /* ******************************** 4/5 ***************************** */
 /* ************************* INDEX NAV************************ */
-body{
+body {
     min-height: 100vh;
     display: flex;
     flex-direction: column;
 }
+
 /* FIXME: */
-#report_footer{
+#report_footer {
     margin-top: auto;
     width: 100%;
 }
+
 /* ************************* INDEX NAV************************ */
 /* ************************* POPUPS LEAVE REPORT ************************ */
-#form_hl_link input{
+#form_hl_link input {
     background-color: lightgrey;
     border: none;
     margin: 10px;
@@ -233,7 +244,7 @@ body{
     font-size: larger;
 }
 
-#form_hl_link input{
+#form_hl_link input {
     background-color: lightgrey;
     border: none;
     margin: 10px;
@@ -242,6 +253,7 @@ body{
     padding-left: 10px;
     font-size: larger;
 }
+
 .link input:focus, #form_hl_link input:not(#news_reg):focus {
     outline: var(--darkRed) solid 3px;
 }
@@ -292,6 +304,7 @@ body{
     background-color: var(--lightRed);
     cursor: pointer;
 }
+
 .modal-header .title {
     margin-right: 50px;
     font-size: x-large;
@@ -299,9 +312,58 @@ body{
 }
 
 /* ************************* POPUPS LEAVE REPORT ************************ */
-
-#map_div{
+/* ************************* MAP ************************ */
+#map_div {
     height: 800px;
     width: 1600px;
     margin: auto;
 }
+
+/* ************************* MAP ************************ */
+/* ************************* MEDIA ************************ */
+@media only screen and (max-width: 1650px) {
+    #map_div {
+        height: 700px;
+        width: 800px;
+        margin: auto;
+        transition: 200ms ease-in-out;
+
+    }
+    #photo_mode {
+        max-height: 300px;
+        max-width: 100px;
+        height: 40%;
+        width: 40%;
+        transition: 200ms ease-in-out;
+
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #services .content > div {
+        display: grid;
+        grid-template-columns: auto auto;
+        gap: 30px;
+        justify-content: center;
+        justify-items: center;
+        transition: 200ms ease-in-out;
+
+    }
+    #photo_mode {
+        max-height: 300px;
+        max-width: 100px;
+        height: 40%;
+        width: 40%;
+        color: #a62e2e;
+        transition: 200ms ease-in-out;
+
+    }
+    #map_div {
+        height: 300px;
+        width: 300px;
+        margin: auto;
+        transition: 200ms ease-in-out;
+    }
+}
+
+/* ************************* MEDIA ************************ */
