@@ -170,11 +170,10 @@ var greenIcon = new LeafIcon({
 
 function loadTickets() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'src/tickets.json', true);
+    xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
     xhr.onload = function () {
-        var tickets = JSON.parse(this.responseText);
         var ticket_list = document.getElementById('ticket_list');
-
+        var tickets = JSON.parse(this.responseText);
         tickets.forEach(ticket => {
             //const marker = L.marker([49.152556, 16.679267], {icon: greenIcon}).addTo(map);
             const marker = L.marker([ticket.lat, ticket.long]).addTo(map);
@@ -200,9 +199,6 @@ function loadTickets() {
     xhr.send();
 }
 
-var test;
-console.log(test);
-
 window.onload = function() {
     loadTickets();
 }
@@ -210,7 +206,7 @@ window.onload = function() {
 function ticket_detail(id){
     var popup = document.getElementById("ticket_info");
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'src/tickets.json', true);
+    xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
     xhr.onload = function () {
         var overlay = document.getElementById("background-blur");
         overlay.setAttribute("class", "blur-active");
@@ -244,7 +240,7 @@ function ticket_detail(id){
 
 function load_comments(id){
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'src/comments.json', true);
+    xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/comments', true);
     xhr.onload = function () {
         var div = document.getElementById("comment_list");
         var comments = JSON.parse(this.responseText);
