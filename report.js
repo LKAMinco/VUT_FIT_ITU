@@ -31,7 +31,7 @@ function reportFour() {
                 '<form action="#">'+
                     '<input id="contact-subject" type="text" name="subject" placeholder="Subject" required>'+
                     '<textarea id="contact-message" name="message" cols="30" rows="10" placeholder="Message" required></textarea>'+
-                    '<input onclick="endOfReport()" id="contact-submit" type="submit" value="Submit">'+
+                    '<input onclick="endOfReport()" class="contact-submit" id="contact-submit" type="submit" value="Submit">'+
                 '</form>'+
             '</div>'+
             '</section>' +
@@ -56,7 +56,7 @@ function reportThree() {
             '<div class="content">'+
             '<h3>3/4 Vyberte lokaci problému:</h3>'+
             '<form action="#">'+
-            '<input onclick="reportFour()" id="contact-submit" type="submit" value="Submit">'+
+            '<input onclick="reportFour()" class="contact-submit" id="three-submit" type="submit" value="Submit">'+
             '</form>'+
             '</div>'+
             '</section>' +
