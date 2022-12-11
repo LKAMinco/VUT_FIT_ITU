@@ -115,7 +115,7 @@ function reportFirst() {
             '                            <img src="pictures/roads.svg" alt=".">\n' +
             '                            <img src="pictures/roads.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Problémy na silnicích</h4>\n' +
+            '                        <h4>Problémy na cestách</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
@@ -133,7 +133,7 @@ function reportFirst() {
             '                            <img src="pictures/dump.svg" alt=".">\n' +
             '                            <img src="pictures/dump.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Ilegální skládky</h4>\n' +
+            '                        <h4>Nelegálne skládky</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="parks()" class="services-column">\n' +
@@ -151,7 +151,7 @@ function reportFirst() {
             '                            <img src="pictures/car.svg" alt=".">\n' +
             '                            <img src="pictures/car.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Opuštěná vozidla</h4>\n' +
+            '                        <h4>Opustené vozidlá</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
@@ -160,7 +160,7 @@ function reportFirst() {
             '                            <img src="pictures/playground.svg" alt=".">\n' +
             '                            <img src="pictures/playground.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Dětská hřiště</h4>\n' +
+            '                        <h4>Detské ihriská</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
@@ -169,7 +169,7 @@ function reportFirst() {
             '                            <img src="pictures/vandalism.svg" alt=".">\n' +
             '                            <img src="pictures/vandalism.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Vandalismus</h4>\n' +
+            '                        <h4>Vandalizmus</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
@@ -178,7 +178,7 @@ function reportFirst() {
             '                            <img src="pictures/others.svg" alt=".">\n' +
             '                            <img src="pictures/others.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Ostatní</h4>\n' +
+            '                        <h4>Ostatné</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '            </div>\n' +
@@ -205,7 +205,7 @@ function parks() {
             '                            <img src="pictures/park_pic/flower.svg" alt=".">\n' +
             '                            <img src="pictures/park_pic/flower.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Vysazování květin</h4>\n' +
+            '                        <h4>Vysádzanie kvetín</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
@@ -214,7 +214,7 @@ function parks() {
             '                            <img src="pictures/park_pic/forest.svg" alt=".">\n' +
             '                            <img src="pictures/park_pic/forest.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Sázení nových stromů</h4>\n' +
+            '                        <h4>Sadenie nových stromov</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
@@ -223,7 +223,7 @@ function parks() {
             '                            <img src="pictures/park_pic/grass.svg" alt=".">\n' +
             '                            <img src="pictures/park_pic/grass.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Luční trávy</h4>\n' +
+            '                        <h4>Lúčne trávy</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
@@ -232,7 +232,7 @@ function parks() {
             '                            <img src="pictures/park_pic/people_in_park.svg" alt=".">\n' +
             '                            <img src="pictures/park_pic/people_in_park.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Nelegální kempování</h4>\n' +
+            '                        <h4>Nelegálne kempovanie</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '            </div>\n' +
@@ -264,7 +264,7 @@ function roads() {
             '                            <img src="pictures/car_pic/edit_road.svg" alt=".">\n' +
             '                            <img src="pictures/car_pic/edit_road.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Oprava silnic</h4>\n' +
+            '                        <h4>Oprava ciest</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
@@ -273,7 +273,7 @@ function roads() {
             '                            <img src="pictures/car_pic/sign-stop-lights.svg" alt=".">\n' +
             '                            <img src="pictures/car_pic/sign-stop-lights.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Nefunkční semafor</h4>\n' +
+            '                        <h4>Nefunkčný semafor</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
@@ -282,7 +282,7 @@ function roads() {
             '                            <img src="pictures/car_pic/sign-stop.svg" alt=".">\n' +
             '                            <img src="pictures/car_pic/sign-stop.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Dopravní značení</h4>\n' +
+            '                        <h4>Dopravné značenie</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +
@@ -291,7 +291,7 @@ function roads() {
             '                            <img src="pictures/car_pic/other.svg" alt=".">\n' +
             '                            <img src="pictures/car_pic/other.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>ostatní</h4>\n' +
+            '                        <h4>Ostatné</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '            </div>\n' +
