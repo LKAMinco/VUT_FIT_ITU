@@ -441,7 +441,7 @@ section {
     transition: 200ms ease-in-out;
 }
 
-#form_login input{
+#form_login input,  #form_login_register input {
     background-color: lightgrey;
     border: none;
     margin: 10px;
@@ -452,7 +452,7 @@ section {
     font-size: larger;
 }
 
-#form_register input{
+#form_register input,  #form_login_register input {
      background-color: lightgrey;
      border: none;
      margin: 10px;
@@ -462,17 +462,18 @@ section {
      font-size: larger;
  }
 
- #form_login input:focus, #form_register input:not(#news_reg):focus {
+ #form_login input:focus, #form_register input:not(#news_reg):focus,  #form_login_register input:focus {
+     background-color: white;
     outline: var(--darkRed) solid 3px;
 }
 
-#form_login label, #form_register label {
+#form_login label, #form_register label, #form_login_register label {
     margin-right: 10px;
     margin-left: 10px;
     font-size: x-large;
 }
 
-#form_login button, #form_register button {
+#form_login button, #form_register button,  #form_login_register button {
     margin: 15px;
     height: 40px;
     width: 90%;
@@ -483,7 +484,7 @@ section {
     border-radius: 10px;
 }
 
-#form_login button:hover, #form_register button:hover {
+#form_login button:hover, #form_register button:hover, #form_login_register button:hover {
     background-color: var(--lightRed);
     cursor: pointer;
 
@@ -614,77 +615,6 @@ section {
 }
 /* ************************************************* */
 /* ********************** LOGIN OR REGISTER *************************** */
-#form_login_register input{
-    background-color: lightgrey;
-    border: none;
-    margin: 10px;
-    height: 40px;
-    width: 90%;
-    border-radius: 10px;
-    padding-left: 10px;
-    font-size: larger;
-}
-
-#form_register input{
-    background-color: lightgrey;
-    border: none;
-    margin: 10px;
-    height: 40px;
-    border-radius: 10px;
-    padding-left: 10px;
-    font-size: larger;
-}
-#login_register_form input:focus, #form_register input:not(#news_reg):focus {
-    outline: var(--darkRed) solid 3px;
-}
-
-#login_register_form label, #form_register label {
-    margin-right: 10px;
-    margin-left: 10px;
-    font-size: x-large;
-}
-
-#login_register_form button, #form_register button {
-    margin: 15px;
-    height: 40px;
-    width: 90%;
-    background-color: var(--darkRed);
-    color: var(--white);
-    border: none;
-    font-size: larger;
-    border-radius: 10px;
-}
-
-#login_register_form button:hover, #form_register button:hover {
-    background-color: var(--lightRed);
-}
-
-#form_login_register input:focus, #form_register input:not(#news_reg):focus {
-    outline: var(--darkRed) solid 3px;
-}
-
-#form_login_register label, #form_register label {
-    margin-right: 10px;
-    margin-left: 10px;
-    font-size: x-large;
-}
-
-#form_login_registern button, #form_register button {
-    margin: 15px;
-    height: 40px;
-    width: 90%;
-    background-color: var(--darkRed);
-    color: var(--white);
-    border: none;
-    font-size: larger;
-    border-radius: 10px;
-}
-
-#form_login_register button:hover, #form_register button:hover {
-    background-color: var(--lightRed);
-    cursor: pointer;
-}
-
 .nebo{
     text-align: center;
 }
