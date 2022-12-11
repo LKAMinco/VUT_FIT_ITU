@@ -399,8 +399,11 @@ section {
     font-weight: bold;
 }
 
-.modal-header .close-button {
+.close-button{
     cursor: pointer;
+}
+
+.modal-header .close-button {
     border: none;
     outline: none;
     background: none;
@@ -725,3 +728,12 @@ body{
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
 /* ********************** CHAT BOT *************************** */
+/* ja */
+.close-button_small{
+    background-color: black;
+    cursor: pointer;
+}
+.close-button_small:hover {
+    background-color: black;
+}
+/* ja */
