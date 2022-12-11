@@ -153,19 +153,21 @@ a {
 }
 
 #categories_list{
-    left: 0;
+    left: inherit;
     height: 30rem;
     transition: 120ms ease-in-out;
 }
 
 #conditions_list{
-    left: 16rem;
+    left: inherit;
+    transform: translateX(16rem);
     height: 10rem;
     transition: 80ms ease-in-out;
 }
 
 #sort_list{
-    left: 32rem;
+    left: inherit;
+    transform: translateX(32rem);
     height: 13.3rem;
     transition: 90ms ease-in-out;
 }
@@ -177,7 +179,7 @@ a {
     padding-bottom: 1rem;
     margin: 0;
     background-color: var(--darkRed);
-    width: 16rem;
+    width: 16.05rem;
     display: grid;
     border-bottom-left-radius: 0.5rem;
     border-bottom-right-radius: 0.5rem;
