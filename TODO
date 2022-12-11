@@ -6,35 +6,9 @@ Simir:
 
 
 Julo:
-1) Navigation Bar
-    - add style - DONE
-    - add drop down menus - DONE
-    - add combobox - DONE
-    - add reset filter button
-2) Marker PopUp Template
-    - image - DONE
-    - title - DONE
-    - desc - REJECTED
-    - details button - DONE
-3) Ticket List Panel
-    - image - DONE
-    - title - DONE
-    - desc - REJECTED
-    - details button - DONE
-4) Ticket Detail
-    - background blur - DONE
-    - all data - DONE
-5) Comments
-    - print all - DONE
-    - add - DONE
-    - remove - REJECTED
-6) Ticket Filtering
-    - based on category/condition DONE
-    - sort by date/condition/title DONE
+1) Add reset filter button
 7) Custom Ticket Marker
     - different for different categories
-8) Small fixes
-    - display categories in slovak language - DONE
 
 Minko:
 1) login or resiter krizek opravit
