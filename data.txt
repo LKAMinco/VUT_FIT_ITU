@@ -1,0 +1,267 @@
+[
+ {
+  "email": "Dejuan20@gmail.com",
+  "name": "Ephraim",
+  "surname": "Krajcik",
+  "password": "iut2zkREm8QxxKU",
+  "address": "7396",
+  "date_of_birth": "1990-01-01",
+  "bio": "Definitívne som človek a nie random vygenerované dáta",
+  "newsletter": "no",
+  "ticket_counter": 65,
+  "id": "1"
+ },
+ {
+  "email": "Reid.Renner48@gmail.com",
+  "name": "Nathaniel",
+  "surname": "Kessler",
+  "password": "DJpSAE1kF8g8XHQ",
+  "address": "384",
+  "date_of_birth": "1971-11-21",
+  "bio": "Definitívne som človek a nie random vygenerované dáta",
+  "newsletter": "no",
+  "ticket_counter": 8,
+  "id": "2"
+ },
+ {
+  "email": "Hardy_Hansen@yahoo.com",
+  "name": "Shemar",
+  "surname": "Feeney",
+  "password": "aCLbWE6zRl36_ds",
+  "address": "860",
+  "date_of_birth": "1981-02-09",
+  "bio": "Definitívne som človek a nie random vygenerované dáta",
+  "newsletter": "no",
+  "ticket_counter": 18,
+  "id": "3"
+ },
+ {
+  "email": "Tillman.Howe37@gmail.com",
+  "name": "Isaac",
+  "surname": "Pfannerstill",
+  "password": "mMDRnzeFDlQOf9Q",
+  "address": "581",
+  "date_of_birth": "1999-07-18",
+  "bio": "Definitívne som človek a nie random vygenerované dáta",
+  "newsletter": "no",
+  "ticket_counter": 34,
+  "id": "4"
+ },
+ {
+  "email": "Misty_Mertz80@gmail.com",
+  "name": "Nia",
+  "surname": "Medhurst",
+  "password": "LAX22mqMzZLXl9z",
+  "address": "6325",
+  "date_of_birth": "1968-07-11",
+  "bio": "Definitívne som človek a nie random vygenerované dáta",
+  "newsletter": "no",
+  "ticket_counter": 25,
+  "id": "5"
+ }
+]
+
+
+
+[
+ {
+  "ticket_id": "6",
+  "user_email": "Dejuan20@gmail.com",
+  "text": "lol, nezávidím",
+  "date": "2022-11-04",
+  "time": "10:32:54",
+  "id": "1"
+ },
+ {
+  "ticket_id": "6",
+  "user_email": "Reid.Renner48@gmail.com",
+  "text": "to by sa nestalo keby má škodovku",
+  "date": "2022-11-04",
+  "time": "10:33:21",
+  "id": "2"
+ },
+ {
+  "ticket_id": "6",
+  "user_email": "Dejuan20@gmail.com",
+  "text": "tá by sa pokazila skôr než sa dostane na to parkovisko",
+  "date": "2022-11-05",
+  "time": "17:11:24",
+  "id": "3"
+ },
+ {
+  "ticket_id": "6",
+  "user_email": "Hardy_Hansen@yahoo.com",
+  "text": "neviete niekto či tam ešte je katalyzátor",
+  "date": "2022-11-05",
+  "time": "18:39:59",
+  "id": "4"
+ },
+ {
+  "ticket_id": "2",
+  "user_email": "Hardy_Hansen@yahoo.com",
+  "text": "hej strašne som sa zlakol, keď som tam včera vykrádal hroby",
+  "date": "2022-11-05",
+  "time": "11:22:53",
+  "id": "5"
+ },
+ {
+  "ticket_id": "4",
+  "user_email": "Reid.Renner48@gmail.com",
+  "text": "pardon, za to sa ospravedlňujem",
+  "date": "2022-11-07",
+  "time": "15:37:13",
+  "id": "6"
+ },
+ {
+  "ticket_id": "7",
+  "user_email": "Hardy_Hansen@yahoo.com",
+  "text": "Už z dálky poznám, že to byla borovička",
+  "date": "2022-02-14",
+  "time": "22:39:21",
+  "id": "7"
+ },
+ {
+  "ticket_id": "8",
+  "user_email": "Hardy_Hansen@yahoo.com",
+  "text": "Pořád je zlomená",
+  "date": "2022-12-12",
+  "time": "11:11:11",
+  "id": "8"
+ },
+ {
+  "ticket_id": "8",
+  "user_email": "Reid.Renner48@gmail.com",
+  "text": "Nemám si kde sednout",
+  "date": "2022-11-12",
+  "time": "10:08:03",
+  "id": "9"
+ },
+ {
+  "ticket_id": "10",
+  "user_email": "Dejuan20@gmail.com",
+  "text": "Nedá se tam kvůli nim koupat.",
+  "date": "2018-08-12",
+  "time": "13:08:03",
+  "id": "10"
+ },
+ {
+  "ticket_id": "12",
+  "user_email": "Dejuan20@gmail.com",
+  "text": "Už jsem tu 2x uklouznul",
+  "date": "2020-04-02",
+  "time": "07:08:03",
+  "id": "11"
+ },
+ {
+  "ticket_id": "12",
+  "user_email": "Reid.Renner48@gmail.com",
+  "text": "Solí to nestačí posypat, musíte i štěrk přidat",
+  "date": "2020-08-02",
+  "time": "18:03:47",
+  "id": "12"
+ }
+]
+
+
+
+
+
+
+[
+ {
+  "ticket_id": "6",
+  "user_email": "Dejuan20@gmail.com",
+  "text": "lol, nezávidím",
+  "date": "2022-11-04",
+  "time": "10:32:54",
+  "id": "1"
+ },
+ {
+  "ticket_id": "6",
+  "user_email": "Reid.Renner48@gmail.com",
+  "text": "to by sa nestalo keby má škodovku",
+  "date": "2022-11-04",
+  "time": "10:33:21",
+  "id": "2"
+ },
+ {
+  "ticket_id": "6",
+  "user_email": "Dejuan20@gmail.com",
+  "text": "tá by sa pokazila skôr než sa dostane na to parkovisko",
+  "date": "2022-11-05",
+  "time": "17:11:24",
+  "id": "3"
+ },
+ {
+  "ticket_id": "6",
+  "user_email": "Hardy_Hansen@yahoo.com",
+  "text": "neviete niekto či tam ešte je katalyzátor",
+  "date": "2022-11-05",
+  "time": "18:39:59",
+  "id": "4"
+ },
+ {
+  "ticket_id": "2",
+  "user_email": "Hardy_Hansen@yahoo.com",
+  "text": "hej strašne som sa zlakol, keď som tam včera vykrádal hroby",
+  "date": "2022-11-05",
+  "time": "11:22:53",
+  "id": "5"
+ },
+ {
+  "ticket_id": "4",
+  "user_email": "Reid.Renner48@gmail.com",
+  "text": "pardon, za to sa ospravedlňujem",
+  "date": "2022-11-07",
+  "time": "15:37:13",
+  "id": "6"
+ },
+ {
+  "ticket_id": "7",
+  "user_email": "Hardy_Hansen@yahoo.com",
+  "text": "Už z dálky poznám, že to byla borovička",
+  "date": "2022-02-14",
+  "time": "22:39:21",
+  "id": "7"
+ },
+ {
+  "ticket_id": "8",
+  "user_email": "Hardy_Hansen@yahoo.com",
+  "text": "Pořád je zlomená",
+  "date": "2022-12-12",
+  "time": "11:11:11",
+  "id": "8"
+ },
+ {
+  "ticket_id": "8",
+  "user_email": "Reid.Renner48@gmail.com",
+  "text": "Nemám si kde sednout",
+  "date": "2022-11-12",
+  "time": "10:08:03",
+  "id": "9"
+ },
+ {
+  "ticket_id": "10",
+  "user_email": "Dejuan20@gmail.com",
+  "text": "Nedá se tam kvůli nim koupat.",
+  "date": "2018-08-12",
+  "time": "13:08:03",
+  "id": "10"
+ },
+ {
+  "ticket_id": "12",
+  "user_email": "Dejuan20@gmail.com",
+  "text": "Už jsem tu 2x uklouznul",
+  "date": "2020-04-02",
+  "time": "07:08:03",
+  "id": "11"
+ },
+ {
+  "ticket_id": "12",
+  "user_email": "Reid.Renner48@gmail.com",
+  "text": "Solí to nestačí posypat, musíte i štěrk přidat",
+  "date": "2020-08-02",
+  "time": "18:03:47",
+  "id": "12"
+ }
+]
