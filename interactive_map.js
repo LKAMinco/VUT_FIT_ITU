@@ -168,15 +168,39 @@ var greenIcon = new LeafIcon({
 
 // End of different icon
 
+var filter_arr = [
+    "Problémy na cestách",
+    "Lavičky",
+    "Nelegálne skládky",
+    "Parky a zeleň",
+    "Opustené vozidlá",
+    "Detské ihriská",
+    "Vandalizmus",
+    "Ostatné",
+    "Aktuálne riešené",
+    "Vyriešené",
+    "Prijaté"
+]
+
+var marker_list = []
+
 function loadTickets() {
+    marker_list.forEach(marker => {
+        map.removeLayer(marker);
+    })
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
     xhr.onload = function () {
         var ticket_list = document.getElementById('ticket_list');
+        ticket_list.innerHTML = "";
         var tickets = JSON.parse(this.responseText);
-        tickets.forEach(ticket => {
+        var filtered = tickets.filter( (ticket) => {
+            return filter_arr.includes(ticket.category) && filter_arr.includes(ticket.status);
+        })
+        filtered.forEach(ticket => {
             //const marker = L.marker([49.152556, 16.679267], {icon: greenIcon}).addTo(map);
             const marker = L.marker([ticket.lat, ticket.long]).addTo(map);
+            marker_list.push(marker);
             var popup_string = "<div id='map_marker_popup'>" +
                          "<img src='" + ticket.image_path + "' alt=\".\">" +
                          "<a>" + ticket.title + "</a><br>" +
@@ -293,10 +317,13 @@ function open_filter_menu(menu, img){
 function set_filter(filter){
     if(document.getElementById(filter).hasAttribute("class")){
         document.getElementById(filter).removeAttribute("class");
+        filter_arr =  filter_arr.filter(function(e) { return e !== filter });
     }
     else{
         document.getElementById(filter).setAttribute("class", "selected_filter");
+        filter_arr.push(filter);
     }
+    loadTickets();
 }
 
 function set_sort(sort){

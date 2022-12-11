@@ -42,7 +42,7 @@ Julo:
     - add - DONE
     - remove - REJECTED
 6) Ticket Filtering
-    - based on category/condition
+    - based on category/condition DONE
     - sort by date/condition/title
 7) Custom Ticket Marker
     - different for different categories
