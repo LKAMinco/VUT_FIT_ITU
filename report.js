@@ -82,8 +82,8 @@ function reportFirst() {
             '        <div class="content">\n' +
             '            <h3>1/3 Vyberte kategorii hlášení:</h3>\n' +
             '            <div>\n' +
-            '                <div class="services-column">\n' +
-            '                    <div onclick="roads()" class="services-card">\n' +
+            '                <div class="services-card">\n' +
+            '                    <div onclick="roads()" class="services-column">\n' +
             '                        <div>\n' +
             '                            <img src="pictures/roads.svg" alt=".">\n' +
             '                            <img src="pictures/roads.svg" alt=".">\n' +
@@ -237,7 +237,7 @@ function roads() {
             '                            <img src="pictures/car_pic/edit_road.svg" alt=".">\n' +
             '                            <img src="pictures/car_pic/edit_road.svg" alt=".">\n' +
             '                        </div>\n' +
-            '                        <h4>Silnice optřebuje opravu</h4>\n' +
+            '                        <h4>Oprava silnic</h4>\n' +
             '                    </div>\n' +
             '                </div>\n' +
             '                <div onclick="reportSecond()" class="services-column">\n' +

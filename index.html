@@ -12,7 +12,7 @@
 <nav id="navigation-desktop">
     <div class="content">
         <ul>
-            <li><a href="#">Havní stránka</a></li>
+            <li><a href="#">Hlavní stránka</a></li>
             <li><a href="index.html#about_ref">O nás</a></li>
             <li><a href="index.html#map_ref">Mapa závad</a></li>
             <li><a href="index.html#stats_ref">Štatistiky</a></li>
@@ -159,7 +159,26 @@
             <div id="mapid">
                 <span id="zoom" onclick="location.href='interactive_map.html'" class="material-symbols-rounded">zoom_out_map</span>
             </div>
-            <button id="submit_btn" type="button">Nahlásiť problém</button>
+            <button id="submit_btn" type="button" data-modal-target="#login_register_form">Nahlásiť problém</button>
+            <div id="login_register">
+                <div class="modal ease" id="login_register_form">
+                    <div class="modal-header">
+                        <div class="title">Prosím prihláste sa</div>
+                        <button data-close-button class="close-button">&times;</button>
+                    </div>
+                    <div class="modal-body">
+                        <form id="form_login_register">
+                            <label for="email">Email</label>
+                            <input type="email" name="email" id="email_lr" placeholder="Email" required><br>
+                            <label for="password">Heslo</label>
+                            <input type="password" name="password" id="password_lr" placeholder="Heslo" required><br>
+                            <button type="submit">Přihlásit se</button>
+                            <p class="nebo">nebo</p>
+                            <button id="or_register" type="button" data-modal-target="#register_form" data-close-button class="close-button">Registrovat se</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa ducimus libero natus velit. Architecto
                 consequatur, cumque delectus dolorem, eveniet id illo iusto modi nisi nobis non reprehenderit sequi
                 soluta voluptate?</p>
