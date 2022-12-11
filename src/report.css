@@ -296,4 +296,10 @@ body{
     font-size: x-large;
     font-weight: bold;
 }
+
 /* ************************* POPUPS LEAVE REPORT ************************ */
+
+#map_div{
+    height: 400px;
+    width: 400px;
+}
