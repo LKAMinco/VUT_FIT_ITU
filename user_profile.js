@@ -49,7 +49,14 @@ function loadTickets() {
                 '<td>' + ticker_list_filtered[i].address + '</td>' +
                 '<td>' + ticker_list_filtered[i].category + '</td>' +
                 '<td>' + ticker_list_filtered[i].status + '</td>' +
-                '<td><img src="' + ticker_list_filtered[i].image_path + '" class="ticket_img_small" alt="Ticket picture"></td></li>' +
+                '<td><img src="' + ticker_list_filtered[i].image_path + '" class="ticket_img_small" alt="Ticket picture" onclick="getModal(this.dataset.modalTarget)" data-modal-target="#img' + i + '"></td></li>' +
+                '<td>' +
+                '<div class="modal_u ease" id="img' + i + '">' +
+                '<div class="modal-header_u">' +
+                '<img id="aaa" src="' + ticker_list_filtered[i].image_path + '">' +
+                '</div>' +
+                '</div>'
+                + '</td>' +
                 //'<li><td class="ticket_description" colspan=5>' + ticker_list_filtered[i].description +
                 '</td></li></ul></tr>';
             document.getElementById('ticket').innerHTML = output;
@@ -57,7 +64,6 @@ function loadTickets() {
     }
     xhr.send();
 }
-
 
 function editProfile() {
     var xhr1 = new XMLHttpRequest();
@@ -100,7 +106,14 @@ var searchFilter = () => {
                 '<td>' + ticker_list_filtered[i].address + '</td>' +
                 '<td>' + ticker_list_filtered[i].category + '</td>' +
                 '<td>' + ticker_list_filtered[i].status + '</td>' +
-                '<td><img src="' + ticker_list_filtered[i].image_path + '" class="ticket_img_small" alt="Ticket picture"></td>' +
+                '<td><img src="' + ticker_list_filtered[i].image_path + '" class="ticket_img_small" alt="Ticket picture" onclick="getModal(this.dataset.modalTarget)" data-modal-target="#img' + i + '"></td>' +
+                '<td>' +
+                '<div class="modal_u ease" id="img' + i + '">' +
+                '<div class="modal-header_u">' +
+                '<img id="aaa" src="' + ticker_list_filtered[i].image_path + '">' +
+                '</div>' +
+                '</div>'
+                + '</td>' +
                 '</tr>';
             document.getElementById('ticket').innerHTML = output;
         }

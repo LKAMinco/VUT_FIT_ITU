@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User profile</title>
     <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="src/user_style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
@@ -24,7 +25,7 @@
     </div>
 </nav>
 <main>
-    <div class="all">
+    <div class="all content">
         <div id="side_bar">
             <div class="content">
                 <div class="wrapper">
@@ -36,52 +37,54 @@
                         </script>
                     </div>
                     <ul>
-                            <a href="user_profile.html"><div id="userName"></div></a>
-                            <li id="user"></li>
+                        <a href="user_profile.html">
+                            <div id="userName"></div>
+                        </a>
+                        <li id="user"></li>
                         <li class="blink_li"><a href="user_profile.html">Moje nahlášené závady</a></li>
                         <li><a href="user_profile_edit.html">Změna profilu</a></li>
                         <li class="level_bar_info">3/10 nahlášených problémů</li>
                         <li><img class="level_bar" src="src/pictures/bar.png"></li>
-                        <li><input id="file_id" type="file" name="uploadfile" accept="image/png, image/gif, image/jpeg" ></li>
+                        </li>
                     </ul>
                 </div>
             </div>
         </div>
         <section id="user_profile">
-
-            <div id="a"><br><br><br></div>
-            <div id="ticket_filters">
-                <div id="ticker_filter1" class="col-12 mb-3 col-md-6">
-                    <select class="form-select" id="filter1" onchange="searchFilter()">
-                        <div id="myDropdown1" class="dropdown-content" >
-                            <option value="all" selected>Všechny staty</option>
-                            <option value="open">Open</option>
-                            <option value="closed">Done</option>
-                        </div>
-                    </select>
-                </div>
-                <div id="ticket_filter2" class="col-12 mb-3 col-md-6">
-                    <select class="form-select" id="filter2" onchange="searchFilter()">
-                        <div id="myDropdown2" class="dropdown-content">
-                            <option value="all" selected>Všechny kategorie</option>
-                            <option value="illegal_dumps">illegal_dumps</option>
-                            <option value="dirty_streets">dirty_streets</option>
-                            <option value="others">others</option>
-                        </div>
-                    </select>
-                </div>
-                <div id="ticket_filter3" class="col-12 mb-3 col-md-6">
-                    <select class="form-select" id="filter3" onchange="searchFilter()">
-                        <div id="myDropdown3" class="dropdown-content">
-                            <option value="max" selected>Od nejnovějších</option>
-                            <option value="min">Od nejstarších</option>
-                        </div>
-                    </select>
-                </div>
-                <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">
-                    <li>
-                        <button onclick="loadTickets()" id="buttonProfileTickets">Resetovat filter</button>
-                    </li>
+            <div class="content">
+                <div id="ticket_filters">
+                    <div id="ticker_filter1" class="col-12 mb-3 col-md-6">
+                        <select class="form-select" id="filter1" onchange="searchFilter()">
+                            <div id="myDropdown1" class="dropdown-content">
+                                <option value="all" selected>Všechny staty</option>
+                                <option value="open">Open</option>
+                                <option value="closed">Done</option>
+                            </div>
+                        </select>
+                    </div>
+                    <div id="ticket_filter2" class="col-12 mb-3 col-md-6">
+                        <select class="form-select" id="filter2" onchange="searchFilter()">
+                            <div id="myDropdown2" class="dropdown-content">
+                                <option value="all" selected>Všechny kategorie</option>
+                                <option value="illegal_dumps">illegal_dumps</option>
+                                <option value="dirty_streets">dirty_streets</option>
+                                <option value="others">others</option>
+                            </div>
+                        </select>
+                    </div>
+                    <div id="ticket_filter3" class="col-12 mb-3 col-md-6">
+                        <select class="form-select" id="filter3" onchange="searchFilter()">
+                            <div id="myDropdown3" class="dropdown-content">
+                                <option value="max" selected>Od nejnovějších</option>
+                                <option value="min">Od nejstarších</option>
+                            </div>
+                        </select>
+                    </div>
+                    <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">
+                        <li>
+                            <button onclick="loadTickets()" id="buttonProfileTickets">Resetovat filter</button>
+                        </li>
+                    </div>
                 </div>
             </div>
             <script>loadTickets()</script>
@@ -109,8 +112,38 @@
     </div>
 
 </main>
+<div id="overlay" class="ease"></div>
 <footer>
-
+    <div id="license">
+        <p><b>GoalDiggers</b> | Copyright 2022</p>
+    </div>
 </footer>
+<script>
+    const overlay = document.getElementById('overlay')
+
+    function getModal(modal_id) {
+        const modal = document.querySelector(modal_id)
+        openModal(modal)
+    }
+
+    overlay.addEventListener('click', () => {
+        const modals = document.querySelectorAll('.modal_u.active')
+        modals.forEach(modal => {
+            closeModal(modal)
+        })
+    })
+
+    function openModal(modal) {
+        if (modal == null) return
+        modal.classList.add('active')
+        overlay.classList.add('active')
+    }
+
+    function closeModal(modal) {
+        if (modal == null) return
+        modal.classList.remove('active')
+        overlay.classList.remove('active')
+    }
+</script>
 </body>
 </html>

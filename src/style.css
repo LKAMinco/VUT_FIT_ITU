@@ -1,6 +1,6 @@
 :root {
-    --darkRed: #ae2d3c;
-    --lightRed: #DB323D;
+    --darkRed: #054468;
+    --lightRed: #a62e2e;
     --lightGray: #282525;
     --white: #E0DEDE;
     --black: #121212;
@@ -69,9 +69,9 @@ section {
     position: fixed;
     top: 0;
     width: 100%;
-    background: rgba(40, 37, 37, 0.8);
+    background: rgba(5, 68, 104, 0.8);
     backdrop-filter: blur(10px);
-    z-index: 10000;
+    z-index: 7000;
 }
 
 #navigation-desktop ul {
@@ -88,14 +88,11 @@ section {
 #navigation-desktop ul button {
     float: right;
     font-weight: bold;
-    height: 39px;
-    margin-top: 10px;
+    height: 73px;
+    padding-left: 20px;
+    padding-right: 20px;
     font-size: large;
     text-transform: uppercase;
-    -moz-transition: .5s linear;
-    -webkit-transition: .5s linear;
-    -o-transition: .3s linear;
-    transition: .3s linear;
     background-color: Transparent;
     border: 0;
     color: var(--white);
@@ -113,23 +110,23 @@ section {
     margin-top: 20px;
     font-size: large;
     text-transform: uppercase;
-    -moz-transition: .5s linear;
-    -webkit-transition: .5s linear;
-    -o-transition: .3s linear;
-    transition: .3s linear;
     cursor: pointer;
 }
 
 #navigation-desktop .content ul button:hover {
-    color: var(--darkRed);
-    text-decoration: underline white 2px;
-    text-underline-offset: 10px;
+    background-color: var(--lightRed);
+    -moz-transition: .5s linear;
+    -webkit-transition: .5s linear;
+    -o-transition: .3s linear;
+    transition: .3s linear;
 }
 
-#navigation-desktop .content a:hover {
-    color: var(--darkRed);
-    text-decoration: underline white 2px;
-    text-underline-offset: 10px;
+#navigation-desktop .content li:hover {
+    background-color: var(--lightRed);
+    -moz-transition: .5s linear;
+    -webkit-transition: .5s linear;
+    -o-transition: .3s linear;
+    transition: .3s linear;
 }
 
 #navigation-desktop .content ul button:last-child {
@@ -377,28 +374,49 @@ section {
     transform: translate(-50%, -50%) scale(0);
     border: 3px solid var(--darkRed);
     border-radius: 10px;
-    z-index: 10000;
+    z-index: 7200;
     background-color: var(--lightGray);
     width: 500px;
     max-width: 80%;
     color: var(--white);
 }
 
-.modal.active {
+
+.modal_u {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(0);
+    border: 0;
+    z-index: 7200;
+    background: Transparent;
+    max-width: 90%;
+    color: var(--white);
+}
+
+.modal.active, .modal_u.active {
     transform: translate(-50%, -50%) scale(1);
 }
 
-.modal-header {
+.modal-header, .modal_u-header {
     padding: 10px 15px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-bottom: 3px solid var(--darkRed);
+    z-index: 7300;
 }
 
 .modal-header .title {
     font-size: x-large;
     font-weight: bold;
+}
+
+#aaa {
+    z-index: 7400;
+    max-width: 100%;
+    background-color: white;
+    color: white;
 }
 
 .close-button{
@@ -431,7 +449,7 @@ section {
     bottom: 0;
     background-color: rgba(0, 0, 0, .5);
     pointer-events: none;
-    z-index: 9999;
+    z-index: 7100;
 }
 
 #overlay.active {
@@ -622,6 +640,7 @@ section {
 }
 /* ********************** LOGIN OR REGISTER *************************** */
 /* ********************** CHAT BOT *************************** */
+/*
 html, body {
     margin: 0;
 }
@@ -630,6 +649,7 @@ body{
     display: flex;
     flex-direction: column;
 }
+*/
 #chatbot{
     margin-top: 100px;
     position: fixed;
