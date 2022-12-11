@@ -200,6 +200,9 @@ function loadTickets() {
     xhr.send();
 }
 
+var test;
+console.log(test);
+
 window.onload = function() {
     loadTickets();
 }
@@ -233,6 +236,8 @@ function ticket_detail(id){
                           "<a>Dátum pridania: " + filtered.date + "</a>"+
                           "</div>";
         load_comments(id);
+        var comment_button = document.getElementById("comment_button");
+        comment_button.setAttribute("onclick", "add_comment(this.form, " + id + ")")
     }
     xhr.send();
 }
@@ -282,6 +287,7 @@ function set_filter(filter){
 }
 
 function set_sort(sort){
+    test = "test";
     console.log(sort);
     if(!document.getElementById(sort).hasAttribute("class")){
         var sort_types = document.getElementById(sort).parentElement.children;
@@ -303,7 +309,9 @@ function set_sort(sort){
     }
 }
 
-function add_comment(form){
+function add_comment(form, id){
     console.log(form.comment_text.value);
     document.getElementById("comment_text").value = "";
+    console.log(id);
+
 }
