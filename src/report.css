@@ -253,7 +253,8 @@ body{
 
 .link button, #form_hl_link button {
     margin: 15px;
-    height: 40px;
+    height: 42px;
+    padding-left: -10px;
     background-color: var(--darkRed);
     color: var(--white);
     border: none;
@@ -294,8 +295,5 @@ body{
     margin-right: 50px;
     font-size: x-large;
     font-weight: bold;
-}
-.close-button{
-    padding: 5px;
 }
 /* ************************* POPUPS LEAVE REPORT ************************ */
