@@ -12,31 +12,150 @@
 <nav id="navigation-desktop">
     <div class="content">
         <ul>
-            <li><a type="sumbit" data-modal-target="#hl_link_form">Hlavní stránka</a></li>
-            <li><a href="../index_nav.html#about_ref">O nás</a></li>
-            <li><a href="../index_nav.html#map_ref">Mapa závad</a></li>
-            <li><a href="../index_nav.html#stats_ref">Štatistiky</a></li>
-            <li><a href="../index_nav.html#contact_ref">Kontakty</a></li>
-            <li><a href="../index_nav.html#contact_ref">Odhlásit se</a></li>
-            <button type="button" data-modal-target="#hl_link_form">Odhlásit se</button>
-            <button type="button" data-modal-target="#hl_link_form">Zobrazit profil</button>
+            <li><a type="sumbit" data-modal-target="#hl_link_form_1">Hlavní stránka</a></li>
+            <li><a type="sumbit" data-modal-target="#hl_link_form_2">O nás</a></li>
+            <li><a type="sumbit" data-modal-target="#hl_link_form_3">Mapa závad</a></li>
+            <li><a type="sumbit" data-modal-target="#hl_link_form_4">Štatistiky</a></li>
+            <li><a type="sumbit" data-modal-target="#hl_link_form_5">Kontakty</a></li>
+            <button type="button" data-modal-target="#hl_link_form_6">Odhlásit se</button>
+            <button type="button" data-modal-target="#hl_link_form_7">Zobrazit profil</button>
         </ul>
     </div>
 </nav>
 <!-- ----------------------- FIXME: -------------------------------- -->
-<div id="nwm">
-    <div class="modal ease" id="hl_link_form">
-        <div class="modal-header">
-            <div class="title">Chcete opravdu odejít?</div>
-            <button data-close-button class="close-button">&times;</button>
+<section id="no-stats">
+    <a class="anchor" id="stats_ref"></a>
+    <div class="content">
+        <div class="modal ease link" id="hl_link_form_1">
+            <div class="modal-header">
+                <div class="title">Chcete opravdu odejít?</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <button data-close-button class="close-button">Pokračovat v hlášení</button>
+                <button data-close-button class="close-button" onClick="location.href='../index_nav.html'">Odejít a
+                    zahodit změny
+                </button>
+            </div>
         </div>
-        <div class="modal-body">
-            <form id="form_hl_link">
-                <button type="submit">Přihlásit se</button>
-            </form>
+        <div class="modal ease link" id="hl_link_form_2">
+            <div class="modal-header">
+                <div class="title">Chcete opravdu odejít?</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <button data-close-button class="close-button">Pokračovat v hlášení</button>
+                <button data-close-button class="close-button" onClick="location.href='../index_nav.html#about_ref'">
+                    Odejít a
+                    zahodit změny
+                </button>
+            </div>
         </div>
+        <div class="modal ease link" id="hl_link_form_3">
+            <div class="modal-header">
+                <div class="title">Chcete opravdu odejít?</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <button data-close-button class="close-button">Pokračovat v hlášení</button>
+                <button data-close-button class="close-button" onClick="location.href='../index_nav.html#map_ref'">
+                    Odejít a
+                    zahodit změny
+                </button>
+            </div>
+        </div>
+        <div class="modal ease link" id="hl_link_form_4">
+            <div class="modal-header">
+                <div class="title">Chcete opravdu odejít?</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <button data-close-button class="close-button">Pokračovat v hlášení</button>
+                <button data-close-button class="close-button" onClick="location.href='../index_nav.html#stats_ref'">
+                    Odejít a
+                    zahodit změny
+                </button>
+            </div>
+        </div>
+        <div class="modal ease link" id="hl_link_form_5">
+            <div class="modal-header">
+                <div class="title">Chcete opravdu odejít?</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <button data-close-button class="close-button">Pokračovat v hlášení</button>
+                <button data-close-button class="close-button" onClick="location.href='../index_nav.html#contact_ref'">
+                    Odejít a
+                    zahodit změny
+                </button>
+            </div>
+        </div>
+        <div class="modal ease link" id="hl_link_form_6">
+            <div class="modal-header">
+                <div class="title">Chcete se chcete odhlásit?</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <button data-close-button class="close-button">Pokračovat</button>
+                <button data-close-button class="close-button" onClick="location.href='../index.html#about_ref'">
+                    Odhlásit se
+                </button>
+            </div>
+        </div>
+        <div class="modal ease link" id="hl_link_form_7">
+            <div class="modal-header">
+                <div class="title">Chcete opravdu odejít?</div>
+                <button data-close-button class="close-button">&times;</button>
+            </div>
+            <div class="modal-body">
+                <button data-close-button class="close-button">Pokračovat v hlášení</button>
+                <button data-close-button class="close-button" onClick="location.href='../user_profile.html#about_ref'">
+                    Odejít a
+                    zahodit změny
+                </button>
+            </div>
+        </div>
+        <div id="overlay" class="ease"></div>
+        <script>
+            const openModalButtons = document.querySelectorAll('[data-modal-target]')
+            const closeModalButtons = document.querySelectorAll('[data-close-button]')
+            const overlay = document.getElementById('overlay')
+
+            openModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modal = document.querySelector(button.dataset.modalTarget)
+                    openModal(modal)
+                })
+            })
+
+            overlay.addEventListener('click', () => {
+                const modals = document.querySelectorAll('.modal.active')
+                modals.forEach(modal => {
+                    closeModal(modal)
+                })
+            })
+
+            closeModalButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const modal = button.closest('.modal')
+                    closeModal(modal)
+                })
+            })
+
+            function openModal(modal) {
+                if (modal == null) return
+                modal.classList.add('active')
+                overlay.classList.add('active')
+            }
+
+            function closeModal(modal) {
+                if (modal == null) return
+                modal.classList.remove('active')
+                overlay.classList.remove('active')
+            }
+        </script>
     </div>
-</div>
+</section>
 <!-- ----------------------- FIXME: -------------------------------- -->
 
 <main>

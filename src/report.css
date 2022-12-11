@@ -18,7 +18,6 @@ main{
 }
 
 section {
-    padding-top: 60px;
     padding-bottom: 80px;
 }
 
@@ -191,7 +190,7 @@ form {
     grid-column: 1/-1;
 }
 
-#contact-submit {
+.contact-submit {
     padding: 10px;
     /* od konec prvniho po zacatek prvniho sloupce */
     grid-column: 1;
@@ -201,10 +200,11 @@ form {
     color: white;
     max-width: 150px;
     text-align: center;
+    cursor: pointer;
     /* tlacitko do stredu */
 }
 
-#contact-submit:hover {
+.contact-submit:hover {
     border-color: green;
     background-color: green;
 }
@@ -215,6 +215,7 @@ body{
     display: flex;
     flex-direction: column;
 }
+/* FIXME: */
 #report_footer{
     margin-top: auto;
 }
@@ -240,20 +241,19 @@ body{
     padding-left: 10px;
     font-size: larger;
 }
-#hl_link_form input:focus, #form_hl_link input:not(#news_reg):focus {
+.link input:focus, #form_hl_link input:not(#news_reg):focus {
     outline: var(--darkRed) solid 3px;
 }
 
-#hl_link_form label, #form_hl_link label {
+.link label, #form_hl_link label {
     margin-right: 10px;
     margin-left: 10px;
     font-size: x-large;
 }
 
-#hl_link_form button, #form_hl_link button {
+.link button, #form_hl_link button {
     margin: 15px;
     height: 40px;
-    width: 90%;
     background-color: var(--darkRed);
     color: var(--white);
     border: none;
@@ -261,8 +261,8 @@ body{
     border-radius: 10px;
 }
 
-#hl_link_form button:hover, #form_hl_link button:hover {
-    background-color: var(--lightRed);
+.link button:hover, #form_hl_link button:hover {
+    color: white;
 }
 
 #form_hl_link input:focus, #form_hl_link input:not(#news_reg):focus {
@@ -289,5 +289,13 @@ body{
 #form_hl_link button:hover, #form_hl_link button:hover {
     background-color: var(--lightRed);
     cursor: pointer;
+}
+.modal-header .title {
+    margin-right: 50px;
+    font-size: x-large;
+    font-weight: bold;
+}
+.close-button{
+    padding: 5px;
 }
 /* ************************* POPUPS LEAVE REPORT ************************ */

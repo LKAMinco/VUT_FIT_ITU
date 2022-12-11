@@ -34,7 +34,7 @@
                 <input type="email" name="email" id="email" placeholder="Email" required><br>
                 <label for="password">Heslo</label>
                 <input type="password" name="password" id="password" placeholder="Heslo" required><br>
-                <button type="submit">Přihlásit se</button>
+                <button type="submit" onclick="location.href='index_nav.html'">Přihlásit se</button>
             </form>
         </div>
     </div>
@@ -164,7 +164,7 @@
                 <div class="modal ease" id="login_register_form">
                     <div class="modal-header">
                         <div class="title">Prosím prihláste sa</div>
-                        <button data-close-button class="close-button">&times;</button>
+                        <button data-close-button class="close-button_small">&times;</button>
                     </div>
                     <div class="modal-body">
                         <form id="form_login_register">
@@ -320,6 +320,9 @@
         </div>
     </section>
 </main>
+<div id="chatbot">
+    <img class="chatbot_img" src="src/pictures/user_pic.png">
+</div>
 <footer>
     <div id="license">
         <p><b>GoalDiggers</b> | Copyright 2022</p>
