@@ -232,6 +232,31 @@ function ticket_detail(id){
                           "<a>Stav závady: " + filtered.status + "</a><br>" +
                           "<a>Dátum pridania: " + filtered.date + "</a>"+
                           "</div>";
+        load_comments(id);
+    }
+    xhr.send();
+}
+
+function load_comments(id){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'src/comments.json', true);
+    xhr.onload = function () {
+        var div = document.getElementById("comment_list");
+        var comments = JSON.parse(this.responseText);
+        var filtered = comments.filter( (comment) => {
+            return comment.ticket_id == id;
+        })
+        var output_string = "";
+        filtered.forEach(comment => {
+            output_string += "<div class='comment_div'>" +
+                "<div class='comment_header'>" +
+                "<h1>" + comment.user_email + "</h1>" +
+                "<h1>" + comment.date + " " + comment.time + "</h1>" +
+                "</div>" +
+                "<p>" + comment.text + "</p>" +
+                "</div>";
+        })
+        div.innerHTML = output_string;
     }
     xhr.send();
 }
