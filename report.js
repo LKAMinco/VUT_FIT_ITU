@@ -55,7 +55,7 @@ function reportThree() {
         output += '<section id="services">'+
             '<div class="content">'+
             '<h3>3/4 Vyberte lokaci problému:</h3>'+
-            '<form action="#">'+
+            '<form id="report_form" action="#">'+
             '<div id="map_div"></div>' +
             '<input onclick="reportFour()" class="contact-submit" id="three-submit" type="submit" value="Submit">'+
             '</form>'+
@@ -70,10 +70,14 @@ function reportThree() {
             '</section>';
         document.getElementById('report_part').innerHTML = output;
         createMap();
+
+        var form = document.getElementById("report_form");
+        form.addEventListener('submit', handleForm);
     }
     xhr.send();
 }
 
+function handleForm(event) { event.preventDefault(); }
 
 function reportSecond() {
 //    var image = document.getElementById('photo_mode').innerHTML;
