@@ -314,4 +314,10 @@ function add_comment(form, id){
     document.getElementById("comment_text").value = "";
     console.log(id);
 
+    var fs = require('fs')
+
+
+    fs.readFile('src/comments.json', function (err, data) {
+        console.log(data);
+    })
 }
