@@ -322,15 +322,21 @@ function set_sort(sort){
     }
 }
 
+var index = 0;
 function add_comment(form, id){
     console.log(form.comment_text.value);
-    document.getElementById("comment_text").value = "";
     console.log(id);
 
-    var fs = require('fs')
-
-
-    fs.readFile('src/comments.json', function (err, data) {
-        console.log(data);
-    })
+    var div = document.getElementById("comment_list");
+    var date = new Date().toISOString().substr(0, 19).replace('T', ' ');
+    div.innerHTML += "<div class='comment_div'>" +
+        "<div class='comment_header'>" +
+        "<h1 id='fake" + index + "'></h1>" +
+        "<h1>" + date + "</h1>" +
+        "</div>" +
+        "<p>" + form.comment_text.value + "</p>" +
+        "</div>";
+    readName("basic.user@email.com", "fake" + index);
+    index++;
+    document.getElementById("comment_text").value = "";
 }
