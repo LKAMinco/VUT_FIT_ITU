@@ -219,3 +219,75 @@ body{
     margin-top: auto;
 }
 /* ************************* INDEX NAV************************ */
+/* ************************* POPUPS LEAVE REPORT ************************ */
+#form_hl_link input{
+    background-color: lightgrey;
+    border: none;
+    margin: 10px;
+    height: 40px;
+    width: 90%;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: larger;
+}
+
+#form_hl_link input{
+    background-color: lightgrey;
+    border: none;
+    margin: 10px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: larger;
+}
+#hl_link_form input:focus, #form_hl_link input:not(#news_reg):focus {
+    outline: var(--darkRed) solid 3px;
+}
+
+#hl_link_form label, #form_hl_link label {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: x-large;
+}
+
+#hl_link_form button, #form_hl_link button {
+    margin: 15px;
+    height: 40px;
+    width: 90%;
+    background-color: var(--darkRed);
+    color: var(--white);
+    border: none;
+    font-size: larger;
+    border-radius: 10px;
+}
+
+#hl_link_form button:hover, #form_hl_link button:hover {
+    background-color: var(--lightRed);
+}
+
+#form_hl_link input:focus, #form_hl_link input:not(#news_reg):focus {
+    outline: var(--darkRed) solid 3px;
+}
+
+#form_hl_link label, #form_hl_link label {
+    margin-right: 10px;
+    margin-left: 10px;
+    font-size: x-large;
+}
+
+#form_hl_link button, #form_hl_link button {
+    margin: 15px;
+    height: 40px;
+    width: 90%;
+    background-color: var(--darkRed);
+    color: var(--white);
+    border: none;
+    font-size: larger;
+    border-radius: 10px;
+}
+
+#form_hl_link button:hover, #form_hl_link button:hover {
+    background-color: var(--lightRed);
+    cursor: pointer;
+}
+/* ************************* POPUPS LEAVE REPORT ************************ */

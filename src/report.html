@@ -12,36 +12,38 @@
 <nav id="navigation-desktop">
     <div class="content">
         <ul>
-            <li><a type="button" data-modal-target="#hlavni_stranka_link">Hlavní stránka</a></li>
-            <li><a href="index.html#about_ref">O nás</a></li>
-            <li><a href="index.html#map_ref">Mapa závad</a></li>
-            <li><a href="index.html#stats_ref">Štatistiky</a></li>
-            <li><a href="index.html#contact_ref">Kontakty</a></li>
-            <button type="submit" data-modal-target="#register_form">Odhlásit se</button>
-            <button type="submit" data-modal-target="#login_form">Zobrazit profil</button>
+            <li><a type="sumbit" data-modal-target="#hl_link_form">Hlavní stránka</a></li>
+            <li><a href="../index_nav.html#about_ref">O nás</a></li>
+            <li><a href="../index_nav.html#map_ref">Mapa závad</a></li>
+            <li><a href="../index_nav.html#stats_ref">Štatistiky</a></li>
+            <li><a href="../index_nav.html#contact_ref">Kontakty</a></li>
+            <li><a href="../index_nav.html#contact_ref">Odhlásit se</a></li>
+            <button type="button" data-modal-target="#hl_link_form">Odhlásit se</button>
+            <button type="button" data-modal-target="#hl_link_form">Zobrazit profil</button>
         </ul>
     </div>
-    <button id="submit_btn" type="button" data-modal-target="#hlavni_stranka_link">Nahlásiť problém</button>
-    <div>
-        <div class="modal ease" id="hlavni_stranka_link">
-            <div class="modal-header">
-                <div class="title">Opravdu chcete odejít?</div>
-                <button data-close-button class="close-button">&times;</button>
-            </div>
-            <div class="modal-body">
-                <form id="form_login_register">
-                    <button id="leave" type="button" onclick="location.href='index_nav.html'" data-close-button class="close-button">Odejít</button>
-                    <button id="stay" type="button" data-close-button class="close-button">Zůstat</button>
-                </form>
-            </div>
+</nav>
+<!-- ----------------------- FIXME: -------------------------------- -->
+<div id="nwm">
+    <div class="modal ease" id="hl_link_form">
+        <div class="modal-header">
+            <div class="title">Chcete opravdu odejít?</div>
+            <button data-close-button class="close-button">&times;</button>
+        </div>
+        <div class="modal-body">
+            <form id="form_hl_link">
+                <button type="submit">Přihlásit se</button>
+            </form>
         </div>
     </div>
+</div>
+<!-- ----------------------- FIXME: -------------------------------- -->
 
-</nav>
 <main>
 
-    <script>window.onload = function() {
-    reportFirst();}
+    <script>window.onload = function () {
+        reportFirst();
+    }
     </script>
 
     <div id="report_part"></div>
