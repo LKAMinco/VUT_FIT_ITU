@@ -511,7 +511,7 @@ a {
     transition: .3s linear;
 }
 
-#navigation-desktop .content ul button:last-child {
+#navigation-desktop .content ul button:nth-child(2n-1) {
     border-right: 3px solid var(--white);
 }
 
