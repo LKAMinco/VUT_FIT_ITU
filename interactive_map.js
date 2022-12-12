@@ -251,13 +251,30 @@ function load_comments(id){
         filtered.forEach(comment => {
             output_string += "<div class='comment_div'>" +
                 "<div class='comment_header'>" +
-                "<h1>" + comment.user_email + "</h1>" +
+                "<h1 id='" + comment.id + "'></h1>" +
                 "<h1>" + comment.date + " " + comment.time + "</h1>" +
                 "</div>" +
                 "<p>" + comment.text + "</p>" +
                 "</div>";
+            readName(comment.user_email, comment.id);
         })
         div.innerHTML = output_string;
+    }
+    xhr.send();
+}
+
+function readName(email, id){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/users', true);
+    xhr.onload = function () {
+        var users = JSON.parse(this.responseText);
+        var filtered = users.filter( (user) => {
+            return user.email == email;
+        })
+        filtered = filtered[0];
+        console.log(filtered);
+        var text = document.getElementById(id);
+        text.innerHTML = filtered.name + " " + filtered.surname;
     }
     xhr.send();
 }
@@ -305,15 +322,21 @@ function set_sort(sort){
     }
 }
 
+var index = 0;
 function add_comment(form, id){
     console.log(form.comment_text.value);
-    document.getElementById("comment_text").value = "";
     console.log(id);
 
-    var fs = require('fs')
-
-
-    fs.readFile('src/comments.json', function (err, data) {
-        console.log(data);
-    })
+    var div = document.getElementById("comment_list");
+    var date = new Date().toISOString().substr(0, 19).replace('T', ' ');
+    div.innerHTML += "<div class='comment_div'>" +
+        "<div class='comment_header'>" +
+        "<h1 id='fake" + index + "'></h1>" +
+        "<h1>" + date + "</h1>" +
+        "</div>" +
+        "<p>" + form.comment_text.value + "</p>" +
+        "</div>";
+    readName("basic.user@email.com", "fake" + index);
+    index++;
+    document.getElementById("comment_text").value = "";
 }
