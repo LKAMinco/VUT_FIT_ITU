@@ -176,6 +176,9 @@ var selected_sort;
 var path = window.location.pathname;
 var page = path.split("/").pop();
 
+reset_filters();
+
+
 function reset_filters(){
     filter_arr = [
         "Problémy na cestách",
@@ -208,7 +211,12 @@ function reset_filters(){
             item.setAttribute("class", "selected_filter");
         })
     }
-    set_sort(selected_sort);
+    if (page == "index.html"){
+        loadTickets()
+    }
+    else{
+        set_sort(selected_sort);
+    }
 }
 
 function loadTickets() {

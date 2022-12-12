@@ -8,10 +8,14 @@
 function handleForm(event) { event.preventDefault(); }
 
 var form = document.getElementById("form_login_register");
-form.addEventListener('submit', handleForm);
+if(form != null){
+    form.addEventListener('submit', handleForm);
+}
 
 form = document.getElementById("form_login");
-form.addEventListener('submit', handleForm);
+if(form != null){
+    form.addEventListener('submit', handleForm);
+}
 
 function login(){
 
@@ -50,8 +54,10 @@ function set_navbar(){
             button.removeAttribute("class");
 
             button = document.getElementById("submit_btn");
-            button.removeAttribute("data-modal-target");
-            button.setAttribute("onclick", "location.href='src/report.html'");
+            if(button != null) {
+                button.removeAttribute("data-modal-target");
+                button.setAttribute("onclick", "location.href='src/report.html'");
+            }
         }
         else{
             var button = document.getElementById("profile_btn");
@@ -64,8 +70,10 @@ function set_navbar(){
             button.removeAttribute("class");
 
             button = document.getElementById("submit_btn");
-            button.setAttribute("data-modal-target", "#login_register_form");
-            button.removeAttribute("onclick");
+            if(button != null) {
+                button.setAttribute("data-modal-target", "#login_register_form");
+                button.removeAttribute("onclick");
+            }
         }
     }
     xhr.send();
