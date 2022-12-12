@@ -279,7 +279,7 @@ section {
     font-size: 44pt;
     margin-left: 90%;
     margin-top: 3%;
-    z-index: 10000;
+    z-index: 6000;
     font-variation-settings: 'FILL' 0,
     'wght' 500,
     'GRAD' 200
@@ -755,4 +755,8 @@ body{
 #map_marker_popup a{
     margin-left: 0.6rem;
     font-size: 1rem;
+}
+
+.hide_btn{
+    scale: 0;
 }

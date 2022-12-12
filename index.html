@@ -13,14 +13,15 @@
 <div id="overlay" class="ease"></div>
 <nav id="navigation-desktop">
     <div class="content">
-        <ul>
+        <ul id="bar_list">
+            <script src="login.js"></script>
             <li><a href="#">Hlavní stránka</a></li>
             <li><a href="index.html#about_ref">O nás</a></li>
             <li><a href="index.html#map_ref">Mapa závad</a></li>
             <li><a href="index.html#stats_ref">Štatistiky</a></li>
             <li><a href="index.html#contact_ref">Kontakty</a></li>
-            <button type="submit" data-modal-target="#register_form">Registrovať sa</button>
-            <button type="submit" data-modal-target="#login_form">Přihlásit se</button>
+            <button id="register_btn" type="submit" data-modal-target="#register_form">Registrovať sa</button>
+            <button id="login_btn" type="submit" data-modal-target="#login_form">Přihlásit se</button>
         </ul>
     </div>
 </nav>
@@ -36,7 +37,7 @@
                 <input type="email" name="email" id="email" placeholder="Email" required><br>
                 <label for="password">Heslo</label>
                 <input type="password" name="password" id="password" placeholder="Heslo" required><br>
-                <button type="submit" onclick="location.href='index_nav.html'">Přihlásit se</button>
+                <button type="submit" data-close-button onclick="login()">Přihlásit se</button>
             </form>
         </div>
     </div>
@@ -178,7 +179,7 @@
                             <input type="email" name="email" id="email_lr" placeholder="Email" required><br>
                             <label for="password">Heslo</label>
                             <input type="password" name="password" id="password_lr" placeholder="Heslo" required><br>
-                            <button type="submit" onclick="location.href='index_nav.html'">Přihlásit se</button>
+                            <button type="submit" data-close-button onclick="login()">Přihlásit se</button>
                             <p class="nebo">nebo</p>
                             <button id="or_register" type="button" data-modal-target="#register_form" data-close-button class="close-button">Registrovat se</button>
                         </form>
