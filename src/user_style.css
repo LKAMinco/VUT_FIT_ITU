@@ -110,7 +110,7 @@ thead {
     text-transform: Uppercase;
 }
 
-tbody {
+tbody, a {
     font-size: 16pt;
 }
 
@@ -330,7 +330,6 @@ tbody {
     padding: 13px 30px;
     border-bottom: 1px solid #10558d;
     color: rgb(241, 237, 237);
-    font-size: 16px;
     position: relative;
 }
 
@@ -427,31 +426,6 @@ th{
 }
 
 /* *************************** TICKET TABLE ***************************** */
-/* *********************IMG POPUP *************************** */
-.pop-up-image {
-    top: 0;
-    left: 0;
-    background: rgba(0, 0, 0, .9);
-    height: 400px;
-    z-index: 100;
-}
-
-.pop-up-image span {
-    top: 0;
-    right: 10px;
-    cursor: pointer;
-    z-index: 100;
-}
-
-.pop-up-image img {
-    top: 50%;
-    left: 50px;
-    transform: translate(-50%, -50%);
-    width: 700px;
-    object-fit: cover;
-}
-
-/* *********************IMG POPUP *************************** */
 /* *************************** DROPDOWN MENU ***************************** */
 #ticket_filters {
     padding-left: 20px;
