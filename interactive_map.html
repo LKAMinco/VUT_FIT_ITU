@@ -37,21 +37,20 @@
     </div>
 
     <div id="categories_list" class="hidden_list">
-        <button id="dirty_streets" onclick="set_filter('dirty_streets')"><p>Neporiadok v uliciach</p></button>
-        <button id="roads" onclick="set_filter('roads')"><p>Problémy na cestách</p></button>
-        <button id="playgrounds" onclick="set_filter('playgrounds')"><p>Ihriská</p></button>
-        <button id="benches" onclick="set_filter('benches')"><p>Lavičky</p></button>
-        <button id="abandoned_vehicles" onclick="set_filter('abandoned_vehicles')"><p>Opustené vozidlá</p></button>
-        <button id="illegal_dumps" onclick="set_filter('illegal_dumps')"><p>Nelegálne skládky</p></button>
-        <button id="vegetation" onclick="set_filter('vegetation')"><p>Vegetace</p></button>
-        <button id="vandalism" onclick="set_filter('vandalism')"><p>Vandalizmus</p></button>
-        <button id="others" onclick="set_filter('others')"><p>Ostatné</p></button>
+        <button class="selected_filter" id="Problémy na cestách" onclick="set_filter('Problémy na cestách')"><p>Problémy na cestách</p></button>
+        <button class="selected_filter" id="Lavičky" onclick="set_filter('Lavičky')"><p>Lavičky</p></button>
+        <button class="selected_filter" id="Nelegálne skládky" onclick="set_filter('Nelegálne skládky')"><p>Nelegálne skládky</p></button>
+        <button class="selected_filter" id="Parky a zeleň" onclick="set_filter('Parky a zeleň')"><p>Parky a zeleň</p></button>
+        <button class="selected_filter" id="Opustené vozidlá" onclick="set_filter('Opustené vozidlá')"><p>Opustené vozidlá</p></button>
+        <button class="selected_filter" id="Detské ihriská" onclick="set_filter('Detské ihriská')"><p>Detské ihriská</p></button>
+        <button class="selected_filter" id="Vandalizmus" onclick="set_filter('Vandalizmus')"><p>Vandalizmus</p></button>
+        <button class="selected_filter" id="Ostatné" onclick="set_filter('Ostatné')"><p>Ostatné</p></button>
     </div>
 
     <div id="conditions_list" class="hidden_list">
-        <button id="in_progress" onclick="set_filter('in_progress')"><p>Aktuálne riešené</p></button>
-        <button id="done" onclick="set_filter('done')"><p>Vyriešené</p></button>
-        <button id="to_do" onclick="set_filter('to_do')"><p>Prijaté</p></button>
+        <button class="selected_filter" id="Aktuálne riešené" onclick="set_filter('Aktuálne riešené')"><p>Aktuálne riešené</p></button>
+        <button class="selected_filter" id="Vyriešené" onclick="set_filter('Vyriešené')"><p>Vyriešené</p></button>
+        <button class="selected_filter" id="Prijaté" onclick="set_filter('Prijaté')"><p>Prijaté</p></button>
     </div>
 
     <div id="sort_list" class="hidden_list">
