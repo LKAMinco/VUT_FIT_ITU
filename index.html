@@ -20,8 +20,11 @@
             <li><a href="index.html#stats_ref">Štatistiky</a></li>
             <li><a href="index.html#contact_ref">Kontakty</a></li>
             <button class="hide_btn" id="logout_btn" type="submit" onclick="logout()">Odhlásit se</button>
-            <button class="hide_btn" id="profile_btn" type="submit" onclick="location.href='user_profile.html'">Zobrazit profil</button>
-            <button class="hide_btn" id="register_btn" type="submit" data-modal-target="#register_form">Registrovať sa</button>
+            <button class="hide_btn" id="profile_btn" type="submit" onclick="location.href='user_profile.html'">Zobrazit
+                profil
+            </button>
+            <button class="hide_btn" id="register_btn" type="submit" data-modal-target="#register_form">Registrovať sa
+            </button>
             <button class="hide_btn" id="login_btn" type="submit" data-modal-target="#login_form">Přihlásit se</button>
         </ul>
     </div>
@@ -163,7 +166,8 @@
             <div id="mapid">
                 <span id="zoom" onclick="location.href='interactive_map.html'" class="material-symbols-rounded">zoom_out_map</span>
                 <div id="map_div">
-                    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+                    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+                            integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
                     <script src="interactive_map.js"></script>
                 </div>
             </div>
@@ -182,7 +186,9 @@
                             <input type="password" name="password" id="password_lr" placeholder="Heslo"><br>
                             <button type="submit" data-close-button onclick="login()">Přihlásit se</button>
                             <p class="nebo">nebo</p>
-                            <button id="or_register" type="button" data-modal-target="#register_form" data-close-button class="close-button">Registrovat se</button>
+                            <button id="or_register" type="button" data-modal-target="#register_form" data-close-button
+                                    class="close-button">Registrovat se
+                            </button>
                         </form>
                     </div>
                 </div>
@@ -198,28 +204,28 @@
             <h1>Štatistiky</h1>
             <div id="statid">
                 <div class="box_size" data-modal-target="#graph1">
-                    <p class="alignleft"><strong>Python:</strong></p>
+                    <p class="alignleft"><strong>Vyřešených případů do jednoho měsíce:</strong></p>
                     <p class="alignright">80%</p>
                     <div class="bcgr_loading">
                         <div id="line_1"></div>
                     </div>
                 </div>
                 <div class="box_size" data-modal-target="#graph2">
-                    <p class="alignleft"><strong>C/C++:</strong></p>
+                    <p class="alignleft"><strong>Uživatelé, kteří nahlašují opakovaně:</strong></p>
                     <p class="alignright">60%</p>
                     <div class="bcgr_loading">
                         <div id="line_2"></div>
                     </div>
                 </div>
                 <div class="box_size" data-modal-target="#graph3">
-                    <p class="alignleft"><strong>Php:</strong></p>
+                    <p class="alignleft"><strong>:</strong></p>
                     <p class="alignright">40%</p>
                     <div class="bcgr_loading">
                         <div id="line_3"></div>
                     </div>
                 </div>
                 <div class="box_size" data-modal-target="#graph4">
-                    <p class="alignleft"><strong>HTML/CSS:</strong></p>
+                    <p class="alignleft"><strong>:</strong></p>
                     <p class="alignright">25%</p>
                     <div class="bcgr_loading">
                         <div id="line_4"></div>
@@ -233,82 +239,83 @@
                         <button data-close-button class="close-button">&times;</button>
                     </div>
                     <div class="modal-body">
-                        Tuto bude nejaky pekny graf 1 <!--TODO-->
+                        <p>Graf 2</p>
+                        <div class="circle"></div>
                     </div>
                 </div>
-            </div>
-            <div id="graph2_i">
-                <div class="modal ease" id="graph2">
-                    <div class="modal-header">
-                        <div class="title">Nejaký pekný graf 2</div>
-                        <button data-close-button class="close-button">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        Tuto bude nejaky pekny graf 2 <!--TODO-->
-                    </div>
-                </div>
-            </div>
-            <div id="graph3_i">
-                <div class="modal ease" id="graph3">
-                    <div class="modal-header">
-                        <div class="title">Nejaký pekný graf 3</div>
-                        <button data-close-button class="close-button">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        Tuto bude nejaky pekny graf 3 <!--TODO-->
+                <div id="graph2_i">
+                    <div class="modal ease" id="graph2">
+                        <div class="modal-header">
+                            <div class="title">Nejaký pekný graf 2</div>
+                            <button data-close-button class="close-button">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            Tuto bude nejaky pekny graf 2 <!--TODO-->
+                        </div>
                     </div>
                 </div>
-            </div>
-            <div id="graph4_id">
-                <div class="modal ease" id="graph4">
-                    <div class="modal-header">
-                        <div class="title">Nejaký pekný graf 4</div>
-                        <button data-close-button class="close-button">&times;</button>
-                    </div>
-                    <div class="modal-body">
-                        Tuto bude nejaky pekny graf 4 <!--TODO-->
+                <div id="graph3_i">
+                    <div class="modal ease" id="graph3">
+                        <div class="modal-header">
+                            <div class="title">Nejaký pekný graf 3</div>
+                            <button data-close-button class="close-button">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            Tuto bude nejaky pekny graf 3 <!--TODO-->
+                        </div>
                     </div>
                 </div>
-            </div>
+                <div id="graph4_id">
+                    <div class="modal ease" id="graph4">
+                        <div class="modal-header">
+                            <div class="title">Nejaký pekný graf 4</div>
+                            <button data-close-button class="close-button">&times;</button>
+                        </div>
+                        <div class="modal-body">
+                            Tuto bude nejaky pekny graf 4 <!--TODO-->
+                        </div>
+                    </div>
+                </div>
 
-            <script>
-                const openModalButtons = document.querySelectorAll('[data-modal-target]')
-                const closeModalButtons = document.querySelectorAll('[data-close-button]')
-                const overlay = document.getElementById('overlay')
+                <script>
+                    const openModalButtons = document.querySelectorAll('[data-modal-target]')
+                    const closeModalButtons = document.querySelectorAll('[data-close-button]')
+                    const overlay = document.getElementById('overlay')
 
-                openModalButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const modal = document.querySelector(button.dataset.modalTarget)
-                        openModal(modal)
+                    openModalButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const modal = document.querySelector(button.dataset.modalTarget)
+                            openModal(modal)
+                        })
                     })
-                })
 
-                overlay.addEventListener('click', () => {
-                    const modals = document.querySelectorAll('.modal.active')
-                    modals.forEach(modal => {
-                        closeModal(modal)
+                    overlay.addEventListener('click', () => {
+                        const modals = document.querySelectorAll('.modal.active')
+                        modals.forEach(modal => {
+                            closeModal(modal)
+                        })
                     })
-                })
 
-                closeModalButtons.forEach(button => {
-                    button.addEventListener('click', () => {
-                        const modal = button.closest('.modal')
-                        closeModal(modal)
+                    closeModalButtons.forEach(button => {
+                        button.addEventListener('click', () => {
+                            const modal = button.closest('.modal')
+                            closeModal(modal)
+                        })
                     })
-                })
 
-                function openModal(modal) {
-                    if (modal == null) return
-                    modal.classList.add('active')
-                    overlay.classList.add('active')
-                }
+                    function openModal(modal) {
+                        if (modal == null) return
+                        modal.classList.add('active')
+                        overlay.classList.add('active')
+                    }
 
-                function closeModal(modal) {
-                    if (modal == null) return
-                    modal.classList.remove('active')
-                    overlay.classList.remove('active')
-                }
-            </script>
+                    function closeModal(modal) {
+                        if (modal == null) return
+                        modal.classList.remove('active')
+                        overlay.classList.remove('active')
+                    }
+                </script>
+            </div>
         </div>
     </section>
     <section id="contact">

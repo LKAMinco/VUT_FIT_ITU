@@ -663,6 +663,7 @@ body{
 .chatbot_img{
     height: 70px;
     border-radius: 50%;
+    cursor: pointer;
 }
 
 .chatbot_img:hover{
@@ -760,4 +761,14 @@ body{
 
 .hide_btn{
     display: none;
+}
+
+.circle {
+    margin: auto;
+    display: inline-grid;
+    margin: 5px;
+    height: 160px;
+    width: 160px;
+    border-radius: 50%;
+    background: conic-gradient(var(--menu-color) 0% 33%, var(--almost-white) 33% 67%, var(--violet) 67%);
 }
