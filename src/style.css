@@ -7,6 +7,7 @@
     --wrapper_user: #e79696;
     --up: #d28d8d;
     --up-hover: #8dcc9c;
+    --up-hover2: #b7d5da;
 }
 
 html {
@@ -733,7 +734,7 @@ section {
 }
 
 .chatbot_img {
-    height: 100px;
+    height: 70px;
     border-radius: 50%;
 }
 
@@ -791,15 +792,18 @@ section {
 #chatbot_wrapper{
     border-radius: 15px;
     width: 320px;
-    height: 510px;
-    box-shadow: 0 0 15px gray;
+    height: 448px;
+    left: 83%;
+    top: 52%;
 }
 
 #chatbot_body {
     overflow: scroll;
     border-radius: 0 0 15px 15px;
-    height: 400px;
-    background: #8dcc9c;
+    width: 320px;
+    height: 350px;
+    margin-left: -15px;
+    background: #dbe1e1;
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
@@ -808,15 +812,18 @@ section {
 }
 
 #title_bot {
+    text-transform: uppercase;
     border: none;
     width: 290px;
     text-align: center;
     border-radius: 15px 15px 0 0;
-    background-color: #d28d8d;
-    height: 10px;
+    height: 15px;
+    color: white;
 }
 
 #title_bot span {
+    margin-top: 10px;
+    margin-left: 55px;
     text-align: center;
 }
 
@@ -827,19 +834,20 @@ section {
 }
 
 blockquote {
-    margin-bottom: -5px;
+    margin-bottom: 15px;
     padding-top: 20px;
-    color: #bfbfbf;
-    background-color: #4d4d4d;
+    color: rgb(12, 1, 1);
+    background-color: var(--up-hover2);
     display: flex;
     flex-direction: column;
+    border: none;
     border-radius: 15px;
     padding-left: 15px;
     padding-right: 15px;
 }
 
 blockquote::after {
-    border-top: 20px solid #4d4d4d;
+    border-top: 20px solid var(--up-hover2);
     border-right: 20px solid transparent;
     transform: translate(20px, 20px);
     content: "";
@@ -848,22 +856,49 @@ blockquote::after {
 
 #user_chat {
     padding-top: 20px;
-    color: #bfbfbf;
-    background-color: #4d4d4d;
+    color: rgba(166, 38, 57, 0);
+    background-color: var(--up-hover2);
     border-radius: 15px;
     padding-left: 155px;
     padding-right: 15px;
 }
 
 #chatbot_body img {
+    margin-left: -10px;
+    background: #dbe1e1;
     border-radius: 50%;
     width: 60px;
-    height: 60px;
-    padding-top: 10px;
 }
 
 #user_chat_pic {
     margin-left: 200px;
 }
 
+#contact-message{
+    margin-top: -10px;
+    max-width: 250px;
+    width: 100%;
+}
+
+#chat_form{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+#texarea_div{
+    grid-column: 1/4;
+}
+
+#contact-submit{
+    font-size: 27px;
+    cursor: pointer;
+    border: None;
+    color: white;
+    width: 50px;
+    background: #2b2d38;
+}
+#sendPaper {
+    margin-bottom: 20px;
+    margin-left: 15px;
+    grid-column: 4/-1;
+}
 /* ************************ CHATBOX ********************** */

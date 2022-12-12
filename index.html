@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> <link rel="stylesheet"
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <title>Main Page</title>
+    <script src="index.js"></script>
     <link rel="stylesheet" href="src/style.css">
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
 </head>
@@ -299,7 +300,7 @@
 
 <!-- ---------------CHATBOT------------------ -->
 <div id="chatbot">
-    <img type="button" data-modal-target="#chatbot_wrapper" class="chatbot_img" src="src/pictures/user_pic.png"
+    <img type="button" data-modal-target="#chatbot_wrapper" class="chatbot_img" src="src/pictures/message.png"
          alt="chatbot">
 </div>
 <div class="modal ease" id="chatbot_wrapper">
@@ -313,35 +314,23 @@
                     <span>Chcete pomoct? Jsme tu pro Vás!</span>
                 </blockquote>
                 <figure>
-                    <img src="src/pictures/user_pic.png" alt="Radovan">
+                    <img src="src/pictures/bot.png" alt="user profile picture">
                 </figure>
             </div>
-            <div class="messages">
-                <blockquote id="user_chat">
-                    <span class="chat_user">reeeeee</span>
-                </blockquote>
-                <figure id="user_chat_pic">
-                    <img src="src/pictures/user_pic.png" alt="Radovan">
-                </figure>
-            </div>
-            <div class="messages">
-                <blockquote>
-                    <span>Omlouváme se, ale chatbot momentálně není dostupný.</span>
-                </blockquote>
-                <figure>
-                    <img src="src/pictures/user_pic.png" alt="Viktor">
-                </figure>
-            </div>
+            <div id="getMessage"></div>
         </div>
     </div>
-    <div id="chat_form">
-        <form>
-                <textarea id="contact-message" name="message" cols="30" rows="2" placeholder="Message"
-                          required></textarea>
-            <input onclick="endOfReport()" class="contact-submit" id="contact-submit" type="submit"
-                   value="Submit">
-        </form>
-    </div>
+    <form name="chat_form" method="GET">
+        <div id="chat_form">
+            <div id="texarea_div">
+            <textarea name="comment_text" id="contact-message" placeholder="Napiště zprávu..." required></textarea>
+            </div>
+            <div id="sendPaper">
+                <button onclick="sendMessage()" id="contact-submit" class="contact-submit" type="submit"><i class="fa fa-send-o"></i></button>
+            </div>
+        </div>
+    </form>
+
 </div>
 <!-- ---------------CHATBOT------------------ -->
 <div id="up">
