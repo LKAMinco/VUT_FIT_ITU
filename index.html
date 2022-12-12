@@ -335,9 +335,55 @@
         </div>
     </section>
 </main>
+
+<!-- ---------------CHATBOT------------------ -->
 <div id="chatbot">
-    <img class="chatbot_img" src="src/pictures/user_pic.png">
+    <img type="button" data-modal-target="#chatbot_body" class="chatbot_img" src="src/pictures/user_pic.png"
+         alt="chatbot">
 </div>
+
+<div class="modal ease" id="chatbot_wrapper">
+    <div class="modal-header" id="title_bot">
+        <span>Chatbot chytré město</span>
+    </div>
+    <div id="chatbot_body">
+        <div class="modal-body">
+            <div class="messages">
+                <blockquote>
+                    <span>Chcete pomoct? Jsme tu pro Vás!</span>
+                </blockquote>
+                <figure>
+                    <img src="src/pictures/user_pic.png" alt="Radovan">
+                </figure>
+            </div>
+            <div class="messages">
+                <blockquote id="user_chat">
+                    <span class="chat_user">reeeeee</span>
+                </blockquote>
+                <figure id="user_chat_pic">
+                    <img src="src/pictures/user_pic.png" alt="Radovan">
+                </figure>
+            </div>
+            <div class="messages">
+                <blockquote>
+                    <span>Omlouváme se, ale chatbot momentálně není dostupný.</span>
+                </blockquote>
+                <figure>
+                    <img src="src/pictures/user_pic.png" alt="Viktor">
+                </figure>
+            </div>
+        </div>
+    </div>
+    <div id="chat_form">
+        <form>
+                <textarea id="contact-message" name="message" cols="30" rows="2" placeholder="Message"
+                          required></textarea>
+            <input onclick="endOfReport()" class="contact-submit" id="contact-submit" type="submit"
+                   value="Submit">
+        </form>
+    </div>
+</div>
+<!-- ---------------CHATBOT------------------ -->
 <div id="up">
     <a href="#"><img class="up" src="src/pictures/up.svg" alt="up button"></a>
 </div>
