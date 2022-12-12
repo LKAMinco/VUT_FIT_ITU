@@ -18,11 +18,11 @@ function sendMessage(form, id) {
             '       <span>Omlouváme se, ale chatbot momentálně není dostupný.</span>' +
             '   </blockquote>' +
             '<figure>' +
-            '<img src="src/pictures/user_pic.png" alt="Viktor">' +
+            '<img src="src/pictures/bot.png" alt="bot">' +
             '       </figure>' +
             '</div>';
         document.getElementById('getMessage').innerHTML = output;
-        var form = document.getElementById("report_form");
+        var form = document.getElementById("chat_form");
         form.addEventListener('submit', handleForm);
 
     }
