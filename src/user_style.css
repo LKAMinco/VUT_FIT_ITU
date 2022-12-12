@@ -295,8 +295,6 @@ tbody, a {
     background: rgb(5, 68, 104);
     top: 0;
     left: 0;
-    //width: 225px;
-    //height: 400px;
     padding: 20px 0;
     transition: all 0.5s ease;
 }
@@ -363,7 +361,7 @@ tbody, a {
 /* *************************** TICKET TABLE ***************************** */
 
 #price {
-    width: 80%;
+    width: 95%;
 }
 
 #price .main_table {

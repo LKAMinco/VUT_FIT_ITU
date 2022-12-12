@@ -43,7 +43,7 @@ function loadTickets() {
         var output = '';
         document.getElementById('ticket').innerHTML = ticker_list_filtered;
         for (var i in ticker_list_filtered) {
-            output += '<tr class="ticket_body"><ul><li>' +
+            output += '<tr class="ticket_body"> ' +
                 '<td>' + ticker_list_filtered[i].title + '</td>' +
                 '<td>' + ticker_list_filtered[i].date + '</td>' +
                 '<td>' + ticker_list_filtered[i].address + '</td>' +
@@ -55,10 +55,9 @@ function loadTickets() {
                 '<div class="modal-header_u">' +
                 '<img id="aaa" src="' + ticker_list_filtered[i].image_path + '">' +
                 '</div>' +
-                '</div>'
-                + '</td>' +
-                //'<li><td class="ticket_description" colspan=5>' + ticker_list_filtered[i].description +
-                '</td></li></ul></tr>';
+                '</div>'+
+                '</td>' +
+                '</tr>';
             document.getElementById('ticket').innerHTML = output;
         }
     }
@@ -110,7 +109,7 @@ var searchFilter = () => {
                 '<td>' +
                 '<div class="modal_u ease" id="img' + i + '">' +
                 '<div class="modal-header_u">' +
-                '<img id="aaa" src="' + ticker_list_filtered[i].image_path + '">' +
+                '<img src="' + ticker_list_filtered[i].image_path + '">' +
                 '</div>' +
                 '</div>'
                 + '</td>' +
