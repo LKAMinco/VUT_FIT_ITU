@@ -19,6 +19,7 @@ html {
 }
 
 body {
+    overflow-y: auto !important;
     margin: 0;
     padding: 0;
 }
@@ -243,7 +244,6 @@ section {
 }
 
 #mapid {
-    background-color: #73bc71;
     grid-column: 1;
     margin-right: 10%;
     height: 500px;
@@ -271,13 +271,15 @@ section {
 }
 
 #zoom {
+    position: relative;
     text-align: center;
     cursor: pointer;
     display: inline-block;
-    color: var(--white);
+    color: var(--lightGray);
     font-size: 44pt;
-    margin-left: 3%;
+    margin-left: 90%;
     margin-top: 3%;
+    z-index: 10000;
     font-variation-settings: 'FILL' 0,
     'wght' 500,
     'GRAD' 200
@@ -709,3 +711,48 @@ body{
     transition: .3s linear;
 }
 /* ********************** UP BUTTON *************************** */
+
+#map_div{
+    width: 100%;
+    height: 500px;
+    border-radius: 40px;
+    transform: translateY(-90px);
+}
+
+.leaflet-popup-content-wrapper, .leaflet-popup.tip {
+    background-color: var(--darkRed) !important;
+    color: #E0DEDE !important;
+    width: 18rem;
+    margin: 0;
+}
+
+.leaflet-popup-content-wrapper a, .leaflet-popup.tip a{
+    background-color: var(--darkRed) !important;
+    color: var(--white) !important;
+}
+
+.leaflet-popup-content {
+    margin: 0;
+}
+
+#map_marker_popup {
+    width: 18.18rem;
+    height: 10rem;
+    margin: 0;
+    transform: translate(-1.31rem, -0.9rem);
+}
+
+#map_marker_popup img{
+    width: 100%;
+    height: 7rem;
+    border-top-left-radius: 0.75rem;
+    border-top-right-radius: 0.75rem;
+    object-fit: cover;
+    object-position: 100% 30%;
+    margin-bottom: 0.2rem;
+}
+
+#map_marker_popup a{
+    margin-left: 0.6rem;
+    font-size: 1rem;
+}

@@ -71,6 +71,7 @@ html, body {
     height: 100vh;
     font-family: Bahnschrift, serif;
     overflow-y: hidden;
+    scroll-behavior: smooth;
 }
 
 .content{
@@ -90,7 +91,7 @@ a {
     color: var(--white);
     font-weight: bolder;
     height: 3.7rem;
-    z-index: 10000;
+    z-index: 9000;
     margin: auto;
 }
 

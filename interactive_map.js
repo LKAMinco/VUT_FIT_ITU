@@ -173,6 +173,9 @@ var filter_arr = [];
 var marker_list = [];
 var selected_sort;
 
+var path = window.location.pathname;
+var page = path.split("/").pop();
+
 function reset_filters(){
     filter_arr = [
         "Problémy na cestách",
@@ -189,14 +192,22 @@ function reset_filters(){
     ]
     selected_sort = "name_asc";
 
+    if(page === "index.html"){
+        filter_arr =  filter_arr.filter(function(e) { return e !== "Vyriešené" });
+    }
+
     var list = document.getElementById('categories_list');
-    Array.from(list.children).forEach(item => {
-        item.setAttribute("class", "selected_filter");
-    })
+    if (list != null) {
+        Array.from(list.children).forEach(item => {
+            item.setAttribute("class", "selected_filter");
+        })
+    }
     list = document.getElementById('conditions_list');
-    Array.from(list.children).forEach(item => {
-        item.setAttribute("class", "selected_filter");
-    })
+    if(list != null) {
+        Array.from(list.children).forEach(item => {
+            item.setAttribute("class", "selected_filter");
+        })
+    }
     set_sort(selected_sort);
 }
 
@@ -208,7 +219,6 @@ function loadTickets() {
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
     xhr.onload = function () {
         var ticket_list = document.getElementById('ticket_list');
-        ticket_list.innerHTML = "";
         var tickets = JSON.parse(this.responseText);
         var filtered = tickets.filter( (ticket) => {
             return filter_arr.includes(ticket.category) && filter_arr.includes(ticket.status);
@@ -254,6 +264,9 @@ function loadTickets() {
                     return 0;
             }
         })
+        if(ticket_list != null) {
+            ticket_list.innerHTML = "";
+        }
         filtered.forEach(ticket => {
             //const marker = L.marker([49.152556, 16.679267], {icon: greenIcon}).addTo(map);
             const marker = L.marker([ticket.lat, ticket.long]).addTo(map);
@@ -262,19 +275,26 @@ function loadTickets() {
                          "<img src='" + ticket.image_path + "' alt=\".\">" +
                          "<a>" + ticket.title + "</a><br>" +
                          "<a>Kategória: " + ticket.category + "</a><br>" +
-                         "<a>Stav: " + ticket.status + "</a><br>" +
-                         "<button id=\"popup_button\" onclick=\"ticket_detail(" + ticket.id + ")\">Detaily tiketu</button>"
-                         "</div>";
+                         "<a>Stav: " + ticket.status + "</a><br>";
+            if (page !== "index.html"){
+                popup_string += "<button id=\"popup_button\" onclick=\"ticket_detail(" + ticket.id + ")\">Detaily tiketu</button>"
+                                "</div>";
+            }
+            else{
+                popup_string += "</div>";
+            }
             marker.bindPopup(popup_string);
-            var list_string = "<div id='map_list_item'>" +
-                              "<img src='" + ticket.image_path + "' alt=\".\">" +
-                              "<a>" + ticket.title + "</a><br>" +
-                              "<a>Kategória: " + ticket.category + "</a><br>" +
-                              "<a>Stav: " + ticket.status + "</a><br>" +
-                              "<a>Adresa: " + ticket.address + "</a><br>" +
-                              "<button id=\"list_item_button\" onclick=\"ticket_detail(" + ticket.id + ")\">Detaily tiketu</button>"
-                              "</div>";
-            ticket_list.innerHTML += list_string;
+            if (ticket_list != null) {
+                var list_string = "<div id='map_list_item'>" +
+                    "<img src='" + ticket.image_path + "' alt=\".\">" +
+                    "<a>" + ticket.title + "</a><br>" +
+                    "<a>Kategória: " + ticket.category + "</a><br>" +
+                    "<a>Stav: " + ticket.status + "</a><br>" +
+                    "<a>Adresa: " + ticket.address + "</a><br>" +
+                    "<button id=\"list_item_button\" onclick=\"ticket_detail(" + ticket.id + ")\">Detaily tiketu</button>"
+                "</div>";
+                ticket_list.innerHTML += list_string;
+            }
         });
     }
     xhr.send();
@@ -383,23 +403,34 @@ function set_filter(filter){
 }
 
 function set_sort(sort){
-    if(!document.getElementById(sort).hasAttribute("class")){
-        selected_sort = sort;
-        var sort_types = document.getElementById(sort).parentElement.children;
-        for(let i = 0; i < sort_types.length; i++){
-            if(sort_types[i].hasAttribute("class")){
-                sort_types[i].removeAttribute("class");
+    var button = document.getElementById(sort);
+    if(button != null) {
+        if (!button.hasAttribute("class")) {
+            selected_sort = sort;
+            var sort_types = document.getElementById(sort).parentElement.children;
+            for (let i = 0; i < sort_types.length; i++) {
+                if (sort_types[i].hasAttribute("class")) {
+                    sort_types[i].removeAttribute("class");
+                }
             }
+            document.getElementById(sort).setAttribute("class", "selected_filter");
+            var text = '';
+            switch (sort) {
+                case "name_asc" :
+                    text = "Názvu A-Z";
+                    break;
+                case "name_desc" :
+                    text = "Názvu Z-A";
+                    break;
+                case "age_asc" :
+                    text = "Najnovších";
+                    break;
+                case "age_desc" :
+                    text = "Najstarších";
+                    break;
+            }
+            document.getElementById('sort_text').innerHTML = "Zoradené podľa: " + text;
         }
-        document.getElementById(sort).setAttribute("class", "selected_filter");
-        var text = '';
-        switch(sort){
-            case "name_asc" : text = "Názvu A-Z"; break;
-            case "name_desc" : text = "Názvu Z-A"; break;
-            case "age_asc" : text = "Najnovších"; break;
-            case "age_desc" : text = "Najstarších"; break;
-        }
-        document.getElementById('sort_text').innerHTML = "Zoradené podľa: " + text;
     }
     loadTickets();
 }

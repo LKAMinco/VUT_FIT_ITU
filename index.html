@@ -7,6 +7,7 @@
           href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
     <title>Main Page</title>
     <link rel="stylesheet" href="src/style.css">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"/>
 </head>
 <body>
 <div id="overlay" class="ease"></div>
@@ -159,6 +160,10 @@
             <h1>Mapa závad</h1>
             <div id="mapid">
                 <span id="zoom" onclick="location.href='interactive_map.html'" class="material-symbols-rounded">zoom_out_map</span>
+                <div id="map_div">
+                    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js" integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+                    <script src="interactive_map.js"></script>
+                </div>
             </div>
             <button id="submit_btn" type="button" data-modal-target="#login_register_form">Nahlásiť problém</button>
             <div id="login_register">
