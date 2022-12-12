@@ -5,6 +5,8 @@
     --white: #E0DEDE;
     --black: #121212;
     --wrapper_user: #e79696;
+    --up: #d28d8d;
+    --up-hover: #8dcc9c;
 }
 
 html {
@@ -658,7 +660,6 @@ body{
     90% { transform: translate(1px, 2px) rotate(0deg); }
     100% { transform: translate(1px, -2px) rotate(-1deg); }
 }
-/* ********************** CHAT BOT *************************** */
 /* ja */
 .close-button_small{
     background-color: black;
@@ -668,3 +669,23 @@ body{
     background-color: black;
 }
 /* ja */
+/* ********************** CHAT BOT *************************** */
+/* ********************** UP BUTTON *************************** */
+#up{
+    margin-top: 100px;
+    position: fixed;
+    left: 95vw;
+    top: 38vw;
+    z-index: 10000;
+    width:50px;
+    height:50px;
+    background: #d28d8d;
+    border-radius: 5px;
+}
+#up:hover{
+    background: orange;
+    color: var(--up-hover);
+    cursor: pointer;
+    transition: .3s linear;
+}
+/* ********************** UP BUTTON *************************** */
