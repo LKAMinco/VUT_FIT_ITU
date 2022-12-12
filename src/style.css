@@ -758,5 +758,5 @@ body{
 }
 
 .hide_btn{
-    scale: 0;
+    display: none;
 }
