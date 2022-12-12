@@ -84,6 +84,7 @@ section {
 
 #navigation-desktop ul li {
     float: left;
+    height: 73px;
 }
 
 #navigation-desktop ul button {
@@ -106,10 +107,10 @@ section {
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-    height: 39px;
+    height: 100%;
     padding: 0 16px 14px;
-    margin-top: 20px;
-    font-size: large;
+    margin-top: 24px;
+    font-size: 15pt;
     text-transform: uppercase;
     cursor: pointer;
 }
