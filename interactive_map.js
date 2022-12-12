@@ -168,15 +168,81 @@ var greenIcon = new LeafIcon({
 
 // End of different icon
 
+var filter_arr = [
+    "Problémy na cestách",
+    "Lavičky",
+    "Nelegálne skládky",
+    "Parky a zeleň",
+    "Opustené vozidlá",
+    "Detské ihriská",
+    "Vandalizmus",
+    "Ostatné",
+    "Aktuálne riešené",
+    "Vyriešené",
+    "Prijaté"
+]
+
+var marker_list = []
+var selected_sort = "name_asc";
+
 function loadTickets() {
+    marker_list.forEach(marker => {
+        map.removeLayer(marker);
+    })
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
     xhr.onload = function () {
         var ticket_list = document.getElementById('ticket_list');
+        ticket_list.innerHTML = "";
         var tickets = JSON.parse(this.responseText);
-        tickets.forEach(ticket => {
+        var filtered = tickets.filter( (ticket) => {
+            return filter_arr.includes(ticket.category) && filter_arr.includes(ticket.status);
+        })
+        filtered.sort((a,b) => {
+            const nameB = b.title.toUpperCase();
+            const nameA = a.title.toUpperCase();
+
+            const dateB = b.date;
+            const dateA = a.date;
+            switch(selected_sort){
+                case "name_asc" :
+                    if (nameA < nameB) {
+                        return -1;
+                    }
+                    if (nameA > nameB) {
+                        return 1;
+                    }
+                    return 0;
+                case "name_desc" :
+                    if (nameA < nameB) {
+                        return 11;
+                    }
+                    if (nameA > nameB) {
+                        return -1;
+                    }
+                    return 0;
+                case "age_asc" :
+                    if (dateA < dateB) {
+                        return -1;
+                    }
+                    if (dateA > dateB) {
+                        return 1;
+                    }
+                    return 0;
+                case "age_desc" :
+                    if (dateA < dateB) {
+                        return 1;
+                    }
+                    if (dateA > dateB) {
+                        return -1;
+                    }
+                    return 0;
+            }
+        })
+        filtered.forEach(ticket => {
             //const marker = L.marker([49.152556, 16.679267], {icon: greenIcon}).addTo(map);
             const marker = L.marker([ticket.lat, ticket.long]).addTo(map);
+            marker_list.push(marker);
             var popup_string = "<div id='map_marker_popup'>" +
                          "<img src='" + ticket.image_path + "' alt=\".\">" +
                          "<a>" + ticket.title + "</a><br>" +
@@ -251,13 +317,29 @@ function load_comments(id){
         filtered.forEach(comment => {
             output_string += "<div class='comment_div'>" +
                 "<div class='comment_header'>" +
-                "<h1>" + comment.user_email + "</h1>" +
+                "<h1 id='" + comment.id + "'></h1>" +
                 "<h1>" + comment.date + " " + comment.time + "</h1>" +
                 "</div>" +
                 "<p>" + comment.text + "</p>" +
                 "</div>";
+            readName(comment.user_email, comment.id);
         })
         div.innerHTML = output_string;
+    }
+    xhr.send();
+}
+
+function readName(email, id){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/users', true);
+    xhr.onload = function () {
+        var users = JSON.parse(this.responseText);
+        var filtered = users.filter( (user) => {
+            return user.email == email;
+        })
+        filtered = filtered[0];
+        var text = document.getElementById(id);
+        text.innerHTML = filtered.name + " " + filtered.surname;
     }
     xhr.send();
 }
@@ -276,18 +358,19 @@ function open_filter_menu(menu, img){
 function set_filter(filter){
     if(document.getElementById(filter).hasAttribute("class")){
         document.getElementById(filter).removeAttribute("class");
+        filter_arr =  filter_arr.filter(function(e) { return e !== filter });
     }
     else{
         document.getElementById(filter).setAttribute("class", "selected_filter");
+        filter_arr.push(filter);
     }
+    loadTickets();
 }
 
 function set_sort(sort){
-    test = "test";
-    console.log(sort);
     if(!document.getElementById(sort).hasAttribute("class")){
+        selected_sort = sort;
         var sort_types = document.getElementById(sort).parentElement.children;
-        console.log(sort_types);
         for(let i = 0; i < sort_types.length; i++){
             if(sort_types[i].hasAttribute("class")){
                 sort_types[i].removeAttribute("class");
@@ -302,18 +385,22 @@ function set_sort(sort){
             case "age_desc" : text = "Najstarších"; break;
         }
         document.getElementById('sort_text').innerHTML = "Zoradené podľa: " + text;
+        loadTickets();
     }
 }
 
+var index = 0;
 function add_comment(form, id){
-    console.log(form.comment_text.value);
+    var div = document.getElementById("comment_list");
+    var date = new Date().toISOString().substr(0, 19).replace('T', ' ');
+    div.innerHTML += "<div class='comment_div'>" +
+        "<div class='comment_header'>" +
+        "<h1 id='fake" + index + "'></h1>" +
+        "<h1>" + date + "</h1>" +
+        "</div>" +
+        "<p>" + form.comment_text.value + "</p>" +
+        "</div>";
+    readName("basic.user@email.com", "fake" + index);
+    index++;
     document.getElementById("comment_text").value = "";
-    console.log(id);
-
-    var fs = require('fs')
-
-
-    fs.readFile('src/comments.json', function (err, data) {
-        console.log(data);
-    })
 }

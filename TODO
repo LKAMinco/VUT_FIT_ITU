@@ -1,21 +1,8 @@
 Simir:
-1) User page
-    -statistika
-    -hvězdička u profilu
-2) Edit profile
-    -profilový obrazek
-    -heslo
-    -uložit informace
-3) Moje tickety - popis upravit
-    -popup velký obrázek
-6) Logout
-7) Filtrace data
-8) Popup okýnka
-    - správy
-    - profile button
-9)
-LAST) ostylovat vše
-@media
+1)chatbot
+2)grafy
+3)@media
+4)img nahrát 2/4
 
 
 Julo:
@@ -39,11 +26,11 @@ Julo:
     - all data - DONE
 5) Comments
     - print all - DONE
-    - add - PARTIALLY DONE
-    - remove -
+    - add - DONE
+    - remove - REJECTED
 6) Ticket Filtering
-    - based on category/condition
-    - sort by date/condition/title
+    - based on category/condition DONE
+    - sort by date/condition/title DONE
 7) Custom Ticket Marker
     - different for different categories
 8) Small fixes
