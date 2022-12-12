@@ -341,6 +341,7 @@ function ticket_detail(id){
                           "<a>Dátum pridania: " + filtered.date + "</a>"+
                           "</div>";
         load_comments(id);
+        load_add_comments();
         var comment_button = document.getElementById("comment_button");
         comment_button.setAttribute("onclick", "add_comment(this.form, " + id + ")")
     }
@@ -383,6 +384,21 @@ function readName(email, id){
         filtered = filtered[0];
         var text = document.getElementById(id);
         text.innerHTML = filtered.name + " " + filtered.surname;
+    }
+    xhr.send();
+}
+
+function load_add_comments(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/active/1', true);
+    xhr.onload = function () {
+        var response = JSON.parse(this.responseText).status;
+        if (response === "true"){
+            document.getElementById("add_comment").removeAttribute("class");
+        }
+        else{
+            document.getElementById("add_comment").setAttribute("class", "hide_btn");
+        }
     }
     xhr.send();
 }
