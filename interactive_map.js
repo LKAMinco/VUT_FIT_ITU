@@ -168,22 +168,37 @@ var greenIcon = new LeafIcon({
 
 // End of different icon
 
-var filter_arr = [
-    "Problémy na cestách",
-    "Lavičky",
-    "Nelegálne skládky",
-    "Parky a zeleň",
-    "Opustené vozidlá",
-    "Detské ihriská",
-    "Vandalizmus",
-    "Ostatné",
-    "Aktuálne riešené",
-    "Vyriešené",
-    "Prijaté"
-]
+var filter_arr = [];
 
-var marker_list = []
-var selected_sort = "name_asc";
+var marker_list = [];
+var selected_sort;
+
+function reset_filters(){
+    filter_arr = [
+        "Problémy na cestách",
+        "Lavičky",
+        "Nelegálne skládky",
+        "Parky a zeleň",
+        "Opustené vozidlá",
+        "Detské ihriská",
+        "Vandalizmus",
+        "Ostatné",
+        "Aktuálne riešené",
+        "Vyriešené",
+        "Prijaté"
+    ]
+    selected_sort = "name_asc";
+
+    var list = document.getElementById('categories_list');
+    Array.from(list.children).forEach(item => {
+        item.setAttribute("class", "selected_filter");
+    })
+    list = document.getElementById('conditions_list');
+    Array.from(list.children).forEach(item => {
+        item.setAttribute("class", "selected_filter");
+    })
+    set_sort(selected_sort);
+}
 
 function loadTickets() {
     marker_list.forEach(marker => {
@@ -266,7 +281,7 @@ function loadTickets() {
 }
 
 window.onload = function() {
-    loadTickets();
+    reset_filters();
 }
 
 function ticket_detail(id){
@@ -385,8 +400,8 @@ function set_sort(sort){
             case "age_desc" : text = "Najstarších"; break;
         }
         document.getElementById('sort_text').innerHTML = "Zoradené podľa: " + text;
-        loadTickets();
     }
+    loadTickets();
 }
 
 var index = 0;
