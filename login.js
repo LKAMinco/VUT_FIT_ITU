@@ -17,6 +17,12 @@ if(form != null){
     form.addEventListener('submit', handleForm);
 }
 
+form = document.getElementById("form_register");
+if(form != null){
+    form.addEventListener('submit', handleForm);
+}
+
+
 function login(){
 
     var xhr = new XMLHttpRequest();
