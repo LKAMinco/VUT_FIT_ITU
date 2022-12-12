@@ -2,24 +2,16 @@
     list-style: none;
 }
 
-html {
-    min-width: 768px;
-    margin: auto;
-    font-family: Bahnschrift, serif;
-}
-
 main {
-    margin-bottom: -50px;
+    margin-top: 150px;
+    min-height: calc(100vh - 150px - 45px);
+
 }
 
 .content {
     max-width: 1920px;
     margin: auto;
     padding: 0 20px 0 20px;
-}
-
-section {
-    padding-bottom: 80px;
 }
 
 h2 {
@@ -35,7 +27,6 @@ h3 {
 *,
 *:focus,
 *:hover {
-    /* odkazy budou vypadat normalne */
     outline: none;
 }
 
@@ -75,7 +66,6 @@ h3 {
 .services-card {
     font-size: 100%;
     cursor: pointer;
-    /* flex na vytvoreni mezer v cards a rozhrani */
     display: flex;
     flex-direction: column;
     justify-items: center;
@@ -89,8 +79,6 @@ h3 {
 .services-card:hover {
     box-shadow: 0 0 10px 0 #d28d8d;
 }
-
-/* serazeni karet aby sedely na jejich pozice */
 
 .services-card img:first-child {
     display: block;
@@ -218,21 +206,8 @@ form {
 }
 
 /* ******************************** 4/5 ***************************** */
-/* ************************* INDEX NAV************************ */
-body {
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-}
-
-/* FIXME: */
-#report_footer {
-    margin-top: auto;
-    width: 100%;
-}
-
-/* ************************* INDEX NAV************************ */
 /* ************************* POPUPS LEAVE REPORT ************************ */
+
 #form_hl_link input {
     background-color: lightgrey;
     border: none;
@@ -313,6 +288,7 @@ body {
 
 /* ************************* POPUPS LEAVE REPORT ************************ */
 /* ************************* MAP ************************ */
+
 #map_div {
     height: 800px;
     width: 1600px;
@@ -321,6 +297,7 @@ body {
 
 /* ************************* MAP ************************ */
 /* ************************* MEDIA ************************ */
+
 @media only screen and (max-width: 1650px) {
     #map_div {
         height: 700px;
@@ -329,6 +306,7 @@ body {
         transition: 200ms ease-in-out;
 
     }
+
     #photo_mode {
         max-height: 300px;
         max-width: 100px;
@@ -349,6 +327,7 @@ body {
         transition: 200ms ease-in-out;
 
     }
+
     #photo_mode {
         max-height: 300px;
         max-width: 100px;
@@ -358,6 +337,7 @@ body {
         transition: 200ms ease-in-out;
 
     }
+
     #map_div {
         height: 300px;
         width: 300px;

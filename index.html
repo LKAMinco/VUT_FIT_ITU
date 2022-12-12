@@ -276,45 +276,6 @@
                         </div>
                     </div>
                 </div>
-
-                <script>
-                    const openModalButtons = document.querySelectorAll('[data-modal-target]')
-                    const closeModalButtons = document.querySelectorAll('[data-close-button]')
-                    const overlay = document.getElementById('overlay')
-
-                    openModalButtons.forEach(button => {
-                        button.addEventListener('click', () => {
-                            const modal = document.querySelector(button.dataset.modalTarget)
-                            openModal(modal)
-                        })
-                    })
-
-                    overlay.addEventListener('click', () => {
-                        const modals = document.querySelectorAll('.modal.active')
-                        modals.forEach(modal => {
-                            closeModal(modal)
-                        })
-                    })
-
-                    closeModalButtons.forEach(button => {
-                        button.addEventListener('click', () => {
-                            const modal = button.closest('.modal')
-                            closeModal(modal)
-                        })
-                    })
-
-                    function openModal(modal) {
-                        if (modal == null) return
-                        modal.classList.add('active')
-                        overlay.classList.add('active')
-                    }
-
-                    function closeModal(modal) {
-                        if (modal == null) return
-                        modal.classList.remove('active')
-                        overlay.classList.remove('active')
-                    }
-                </script>
             </div>
         </div>
     </section>
@@ -338,16 +299,15 @@
 
 <!-- ---------------CHATBOT------------------ -->
 <div id="chatbot">
-    <img type="button" data-modal-target="#chatbot_body" class="chatbot_img" src="src/pictures/user_pic.png"
+    <img type="button" data-modal-target="#chatbot_wrapper" class="chatbot_img" src="src/pictures/user_pic.png"
          alt="chatbot">
 </div>
-
 <div class="modal ease" id="chatbot_wrapper">
     <div class="modal-header" id="title_bot">
         <span>Chatbot chytré město</span>
     </div>
-    <div id="chatbot_body">
-        <div class="modal-body">
+    <div class="modal-body">
+        <div id="chatbot_body">
             <div class="messages">
                 <blockquote>
                     <span>Chcete pomoct? Jsme tu pro Vás!</span>
@@ -385,13 +345,51 @@
 </div>
 <!-- ---------------CHATBOT------------------ -->
 <div id="up">
-    <a href="#"><img class="up" src="src/pictures/up.svg" alt="up button"></a>
+    <a href="#"><span class="material-symbols-rounded">expand_less</span></a>
 </div>
 <footer>
     <div id="license">
         <p><b>GoalDiggers</b> | Copyright 2022</p>
     </div>
 </footer>
+<script>
+    const openModalButtons = document.querySelectorAll('[data-modal-target]')
+    const closeModalButtons = document.querySelectorAll('[data-close-button]')
+    const overlay = document.getElementById('overlay')
+
+    openModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = document.querySelector(button.dataset.modalTarget)
+            openModal(modal)
+        })
+    })
+
+    overlay.addEventListener('click', () => {
+        const modals = document.querySelectorAll('.modal.active')
+        modals.forEach(modal => {
+            closeModal(modal)
+        })
+    })
+
+    closeModalButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            const modal = button.closest('.modal')
+            closeModal(modal)
+        })
+    })
+
+    function openModal(modal) {
+        if (modal == null) return
+        modal.classList.add('active')
+        overlay.classList.add('active')
+    }
+
+    function closeModal(modal) {
+        if (modal == null) return
+        modal.classList.remove('active')
+        overlay.classList.remove('active')
+    }
+</script>
 </body>
 <script src="login.js"></script>
 </html>

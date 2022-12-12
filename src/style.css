@@ -10,7 +10,7 @@
 }
 
 html {
-    background: whitesmoke;
+    background: honeydew;
     font-family: Bahnschrift, serif;
     scroll-behavior: smooth;
     width: 100%;
@@ -642,21 +642,26 @@ section {
 /* ********************** LOGIN OR REGISTER *************************** */
 /* ********************** UP BUTTON *************************** */
 #up{
-    margin-top: 100px;
     position: fixed;
-    left: 95vw;
-    top: 38vw;
-    z-index: 10000;
-    width:50px;
-    height:50px;
-    background: #d28d8d;
-    border-radius: 5px;
+    z-index: 6000;
+    width:60px;
+    height:60px;
+    left: 95%;
+    top: 87%;
+    background: var(--lightRed);
+    border-radius: 10px;
 }
+
+#up span {
+    display: block;
+    font-size: 60px;
+}
+
 #up:hover{
     background: orange;
     color: var(--up-hover);
     cursor: pointer;
-    transition: .3s linear;
+    transition: .2s linear;
 }
 /* ********************** UP BUTTON *************************** */
 
@@ -720,15 +725,15 @@ section {
 /* ************************ GRAPHS ********************** */
 /* ************************ CHATBOX ********************** */
 #chatbot {
-    margin-top: 100px;
     position: fixed;
-    left: 85vw;
-    top: 35vw;
-    z-index: 10000;
+    z-index: 6000;
+    bottom: 0;
+    left: 90%;
+    top: 85%;
 }
 
 .chatbot_img {
-    height: 70px;
+    height: 100px;
     border-radius: 50%;
 }
 
