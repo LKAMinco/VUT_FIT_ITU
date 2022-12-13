@@ -135,7 +135,6 @@ function loadTickets() {
 
 /* **********************************DROPDOWN MENU **************************** */
 var searchFilter = () => {
-    loadUserProfile();
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'src/tickets.json', true);
     xhr.onload = function () {
