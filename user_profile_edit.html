@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User profile</title>
-    <link rel="stylesheet" href="src/user_style2.css">
+    <link rel="stylesheet" href="src/user_style.css">
     <link rel="stylesheet" href="src/style.css">
 </head>
 <body>
@@ -24,19 +24,21 @@
     </div>
 </nav>
 <main>
-    <div class="all">
+    <div class="all content">
         <section id="side_bar">
             <div class="content">
                 <div class="wrapper">
                     <div class="profile">
-                        <a href="user_profile.html"><img  src="src/pictures/user_pic.png" alt="Profile picture"></a>
+                        <a href="user_profile.html"><img src="src/images/profile.png" alt="Profile picture"></a>
                         <script>
                             getName();
                             loadUser();
                         </script>
                     </div>
                     <ul>
-                        <a href="user_profile.html"><div id="userName"></div></a>
+                        <a href="user_profile.html">
+                            <div id="userName"></div>
+                        </a>
                         <li id="user"></li>
 
                         <li><a href="user_profile.html">Moje nahlášené závady</a></li>
@@ -49,50 +51,45 @@
         <section id="edit_profile">
             <form action="save_file_edit.js">
                 <div class="container">
-                    <h1 class="title">Úprava profilu</h1>
-                    <div class="grid">
-                        <div class="form-group a">
-                            <label for="first-name">Jméno</label>
-                            <input id="first-name" type="text" placeholder="Moje jméno">
-                        </div>
-                        <div class="form-group b">
-                            <label for="last-name">Příjmení</label>
-                            <input id="last-name" type="text" placeholder="Moje příjmení">
-                        </div>
-                        <div class="form-group">
-                            <label for="address">Adresa</label>
-                            <input id="address" type="text" placeholder="Ulice 42, Městská část">
-                        </div>
+                    <h1 class="title c">Úprava profilu</h1>
+                    <div class="form-group a">
+                        <label for="first-name">Jméno</label><br>
+                        <input id="first-name" type="text" placeholder="Moje jméno">
                     </div>
-                        <div class="textarea-group bio">
-                            <label for="bio">Osobní popis</label>
-                            <input id="bio" type="text" placeholder="Něco málo o mně...">
-                        </div>
-                    <div class="profile_edit_checkboxes">
-                        <div class="checkbox_group_edit">
-                            <input id="newsletter" type="checkbox">
-                            <label for="newsletter">Chci dostávat novinky o mých nahlášených ticketech.</label>
-                        </div>
+                    <div class="form-group b">
+                        <label for="last-name">Příjmení</label><br>
+                        <input id="last-name" type="text" placeholder="Moje příjmení">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Adresa</label><br>
+                        <input id="address" type="text" placeholder="Ulice 42, Městská část">
+                    </div>
+                    <div class="form-group bio">
+                        <label for="bio">Osobní popis</label><br>
+                        <input id="bio" type="text" placeholder="Něco málo o mně...">
+                    </div>
+                    <div class="checkbox_group_edit c r4">
+                        <input id="newsletter" type="checkbox">
+                        <label for="newsletter">Chci dostávat novinky o mých nahlášených ticketech.</label>
                     </div>
 
-                    <div class="button_container_edit">
+                    <div class="button_container_edit c r5">
                         <input type="button" id="bt" class="button" value="Uložit změny" onclick="saveProfile()"/>
                     </div>
                 </div>
                 <div class="container">
-                    <h1 class="title">Změna hesla</h1>
-                    <div class="grid">
-                        <div class="form-group a">
-                            <label for="first-name">Heslo</label>
-                            <input id="first-pass" type="text" placeholder="Nové heslo">
-                        </div>
-                        <div class="form-group b">
-                            <label for="last-name">Kontrola hesla</label>
-                            <input id="last-pass" type="text" placeholder="Nové heslo">
-                        </div>
+                    <h1 class="title c">Změna hesla</h1>
+                    <div class="form-group a">
+                        <label for="first-name">Heslo</label><br>
+                        <input id="first-pass" type="text" placeholder="Nové heslo">
                     </div>
-                    <div class="button_container_edit">
-                        <input type="button" id="bt_pass" class="button" value="Uložit nové heslo" onclick="saveProfile()"/>
+                    <div class="form-group b">
+                        <label for="last-name">Kontrola hesla</label><br>
+                        <input id="last-pass" type="text" placeholder="Nové heslo">
+                    </div>
+                    <div class="button_container_edit c">
+                        <input type="button" id="bt_pass" class="button" value="Uložit nové heslo"
+                               onclick="saveProfile()"/>
                     </div>
                 </div>
             </form>
@@ -100,9 +97,9 @@
     </div>
 </main>
 <footer>
-
+    <div id="license">
+        <p><b>GoalDiggers</b> | Copyright 2022</p>
+    </div>
 </footer>
-
-
 </body>
 </html>
