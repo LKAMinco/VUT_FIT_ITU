@@ -23,6 +23,11 @@ closeModalButtons.forEach(button => {
     })
 })
 
+function getModal(modal_id) {
+    const modal = document.querySelector(modal_id)
+    openModal(modal)
+}
+
 function openModal(modal) {
     if (modal == null) return
     modal.classList.add('active')

@@ -36,7 +36,7 @@ function reportFour() {
             '</div>'+
             '</section>' +
             '<section>' +
-            ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
+            ' <div id="ticket_filter_search">\n' +
             '   <li>\n' +
             '     <button onclick="reportThree()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
             '   </li>\n' +

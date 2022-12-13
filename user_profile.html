@@ -67,32 +67,6 @@
         <p><b>GoalDiggers</b> | Copyright 2022</p>
     </div>
 </footer>
-<script>
-    const overlay = document.getElementById('overlay')
-
-    function getModal(modal_id) {
-        const modal = document.querySelector(modal_id)
-        openModal(modal)
-    }
-
-    overlay.addEventListener('click', () => {
-        const modals = document.querySelectorAll('.modal_u.active')
-        modals.forEach(modal => {
-            closeModal(modal)
-        })
-    })
-
-    function openModal(modal) {
-        if (modal == null) return
-        modal.classList.add('active')
-        overlay.classList.add('active')
-    }
-
-    function closeModal(modal) {
-        if (modal == null) return
-        modal.classList.remove('active')
-        overlay.classList.remove('active')
-    }
-</script>
+<script src="src/main_page.js"></script>
 </body>
 </html>
