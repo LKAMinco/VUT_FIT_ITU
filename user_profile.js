@@ -1,12 +1,12 @@
 function loadUser() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'src/users.json', true);
+    xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/users', true);
     xhr.onload = function () {
         //FIXME:
         //var active_user = JSON.parse(this.responseText).filter(function(entry){return entry.email === 'ree@email.com'});
 
         var users_list = JSON.parse(this.responseText);
-        var active_user = users_list.filter((user) => user.email === 'ree@email.com');
+        var active_user = users_list.filter((user) => user.email === 'basic.user@email.com');
         active_user = active_user[0];
         var output = '';
 
@@ -20,11 +20,11 @@ function loadUser() {
 
 function getName() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'src/users.json', true);
+    xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/users', true);
     xhr.onload = function () {
         //FIXME:
         var users_list = JSON.parse(this.responseText);
-        var active_user = users_list.filter((user) => user.email === 'ree@email.com');
+        var active_user = users_list.filter((user) => user.email === 'basic.user@email.com');
         active_user = active_user[0];
         var output = '';
 
@@ -104,10 +104,10 @@ function loadUserProfile() {
 function loadTickets() {
     loadUserProfile();
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'src/tickets.json', true);
+    xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
     xhr.onload = function () {
         var ticker_list = JSON.parse(this.responseText);
-        var ticker_list_filtered = ticker_list.filter((ticket) => ticket.user_email === 'ree@email.com');
+        var ticker_list_filtered = ticker_list.filter((ticket) => ticket.user_email === 'Misty_Mertz80@gmail.com');
         var output = '';
         document.getElementById('ticket').innerHTML = ticker_list_filtered;
         for (var i in ticker_list_filtered) {
@@ -136,10 +136,10 @@ function loadTickets() {
 /* **********************************DROPDOWN MENU **************************** */
 var searchFilter = () => {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'src/tickets.json', true);
+    xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
     xhr.onload = function () {
         var ticker_list = JSON.parse(this.responseText);
-        var ticker_list_filtered = ticker_list.filter((ticket) => ticket.user_email === 'ree@email.com');
+        var ticker_list_filtered = ticker_list.filter((ticket) => ticket.user_email === 'Misty_Mertz80@gmail.com');
         let status = document.getElementById("filter1").value;
         let category = document.getElementById("filter2").value;
         let date = document.getElementById("filter3").value;
@@ -150,9 +150,29 @@ var searchFilter = () => {
             ticker_list_filtered = ticker_list_filtered.filter((ticket) => ticket.category === category);
         }
         if (date == 'max') {
-            ticker_list_filtered = ticker_list_filtered.sort((a, b) => a.date - b.date)
+            ticker_list_filtered = ticker_list_filtered.sort((a, b) => {
+                const dateB = b.date;
+                const dateA = a.date;
+                if (dateA < dateB) {
+                    return 1;
+                }
+                if (dateA > dateB) {
+                    return -1;
+                }
+                return 0;
+            })
         } else {
-            ticker_list_filtered = ticker_list_filtered.sort((a, b) => b.date - a.date)
+            ticker_list_filtered = ticker_list_filtered.sort((a, b) => {
+                const dateB = b.date;
+                const dateA = a.date;
+                if (dateA < dateB) {
+                    return -1;
+                }
+                if (dateA > dateB) {
+                    return 1;
+                }
+                return 0;
+            })
         }
 
         var output = '';
