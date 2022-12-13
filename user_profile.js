@@ -45,8 +45,9 @@ function loadUserProfile() {
             '   <select class="form-select" id="filter1" onchange="searchFilter()">' +
             '   <div id="myDropdown1" class="dropdown-content">' +
             '   <option value="all" selected>Všechny staty</option>' +
-            '<option value="open">Open</option>' +
-            '<option value="closed">Done</option>' +
+            '<option value="Prijaté">Prijaté</option>' +
+            '<option value="Aktuálne riešené">Aktuálne riešené</option>' +
+            '<option value="Vyriešené">Vyriešené</option>' +
             '</div>' +
             '</select>' +
             '   </div>' +
@@ -54,9 +55,14 @@ function loadUserProfile() {
             '     <select class="form-select" id="filter2" onchange="searchFilter()">' +
             '        <div id="myDropdown2" class="dropdown-content">' +
             '           <option value="all" selected>Všechny kategorie</option>' +
-            '         <option value="illegal_dumps">illegal_dumps</option>' +
-            '       <option value="dirty_streets">dirty_streets</option>' +
-            '        <option value="others">others</option>' +
+            '         <option value="Problémy na cestách">Problémy na cestách</option>' +
+            '       <option value="Lavičky">Lavičky</option>' +
+            '        <option value="Nelegálne skládky">Nelegálne skládky</option>' +
+            '        <option value="Parky a zeleň">Parky a zeleň</option>' +
+            '        <option value="Opustené vozidlá">Opustené vozidlá</option>' +
+            '        <option value="Detské ihriská">Detské ihriská</option>' +
+            '        <option value="Vandalizmus">Vandalizmus</option>' +
+            '        <option value="Ostatné">Ostatné</option>' +
             '      </div>' +
             '     </select>' +
             '   </div>' +
