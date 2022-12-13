@@ -18,9 +18,13 @@
 <nav id="navigation-desktop">
     <div class="content">
         <ul>
-            <li><a href="index.html">Hlavní stránka</a></li>
+            <li><a href="#">Hlavní stránka</a></li>
+            <li><a href="index.html#about_ref">O nás</a></li>
+            <li><a href="index.html#map_ref">Mapa závad</a></li>
+            <li><a href="index.html#stats_ref">Štatistiky</a></li>
+            <li><a href="index.html#contact_ref">Kontakty</a></li>
             <button type="submit" onclick="log_out()">Odhlásit se</button>
-            <button type="submit" onclick="location.href='user_profile.html'">Zobrazit profil</button>
+            <button type="submit" onclick="loadTickets()">Zobrazit profil</button>
         </ul>
     </div>
 </nav>
@@ -30,20 +34,23 @@
             <div class="content">
                 <div class="wrapper">
                     <div class="profile">
-                        <a href="user_profile.html"><img src="src/images/profile.png" alt="Profile picture"></a>
+                        <img src="src/images/profile.png" alt="Profile picture">
                         <script>
                             loadUser();
                             getName();
                         </script>
                     </div>
                     <ul>
-                        <a href="user_profile.html">
+                        <a>
                             <div id="userName"></div>
                         </a>
                         <li id="user"></li>
-                        <li class="blink_li"><a href="user_profile.html">Moje nahlášené závady</a></li>
                         <li>
-                            <button onClick="editProfile()" id="edit_profile_button">Změna profilu
+                            <button onClick="loadTickets()" id="profile_button" class="button">Moje nahlášené závady
+                            </button>
+                        </li>
+                        <li>
+                            <button onClick="editProfile()" id="edit_profile_button" class="button">Změna profilu
                             </button>
                         </li>
 

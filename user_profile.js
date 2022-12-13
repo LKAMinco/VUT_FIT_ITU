@@ -281,7 +281,7 @@ function editProfile() {
             '<input type="button" id="bt" class="button" value="Uložit změny" onClick="saveProfile()"/>' +
             '</div>' +
             '</div>' +
-            '<div class="container">' +
+            '<div id="second_container" class="container">' +
             '<h1 class="title c">Změna hesla</h1>' +
             '<div class="form-group a">' +
             '<label for="first-name">Heslo</label>' + '<br>' +
