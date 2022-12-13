@@ -77,7 +77,7 @@ h3 {
 }
 
 .services-card:hover {
-    box-shadow: 0 0 10px 0 #d28d8d;
+    box-shadow: 0 0 10px 0 var(--lightRed);
 }
 
 .services-card img:first-child {
@@ -86,7 +86,7 @@ h3 {
 
 .services-card:hover img:first-child {
     display: none;
-    background-color: #d28d8d;
+    background-color: var(--lightRed);
 }
 
 .services-card img:last-child {
@@ -94,7 +94,7 @@ h3 {
 }
 
 .services-card:hover img:last-child {
-    background-color: #d28d8d;
+    background-color: var(--lightRed);
     display: block;
 }
 
@@ -102,24 +102,25 @@ h3 {
 /* ******************************* BUTTON ************************** */
 
 #buttonProfileTickets {
-    width: 200px;
-    background-color: rgba(141, 204, 156, 0);
+    width: 300px;
+    background-color: var(--darkRed);
     padding: 16px;
-    font-size: 16px;
+    font-size: 14pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    color: var(--white);
     cursor: pointer;
     border-radius: 10px;
-    position: relative;
-    display: inline-block;
-    border: 1px;
+    border: none;
+    margin-top: 20px;
 }
 
 #buttonProfileTickets:hover {
-    background-color: #8dcc9c;
+    background-color: var(--lightRed);
     transition: 200ms ease-in-out;
 }
 
 #services .only_four .content > div {
-    /* div ktere jsou potomky .contentu */
     display: grid;
     grid-template-columns: auto auto;
     gap: 30px;
@@ -157,11 +158,6 @@ h3 {
 
 /* ******************************** 2/5 ***************************** */
 /* ******************************** 3/5 ***************************** */
-form {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: 20px;
-}
 
 #contact-subject:hover,
 #contact-message:hover {
@@ -187,22 +183,26 @@ form {
 }
 
 .contact-submit {
-    padding: 10px;
-    /* od konec prvniho po zacatek prvniho sloupce */
-    grid-column: 1;
-    border: 2px solid steelblue;
-    border-radius: 5px;
-    background-color: steelblue;
+    width: 300px;
+    padding: 16px;
+    font-size: 14pt;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 10px;
+    background-color: var(--darkRed);
     color: white;
-    max-width: 150px;
+    max-width: 300px;
     text-align: center;
     cursor: pointer;
-    /* tlacitko do stredu */
+    border: none;
 }
 
 .contact-submit:hover {
-    border-color: green;
     background-color: green;
+}
+
+#map_div {
+    margin-top: 150px;
 }
 
 /* ******************************** 4/5 ***************************** */
@@ -287,18 +287,10 @@ form {
 }
 
 /* ************************* POPUPS LEAVE REPORT ************************ */
-/* ************************* MAP ************************ */
-
-#map_div {
-    height: 800px;
-    width: 1600px;
-    margin: auto;
-}
-
-/* ************************* MAP ************************ */
 /* ************************* MEDIA ************************ */
 
 @media only screen and (max-width: 1650px) {
+    /*
     #map_div {
         height: 700px;
         width: 800px;
@@ -314,10 +306,11 @@ form {
         width: 40%;
         transition: 200ms ease-in-out;
 
-    }
+    }*/
 }
 
 @media only screen and (max-width: 750px) {
+    /*
     #services .content > div {
         display: grid;
         grid-template-columns: auto auto;
@@ -343,7 +336,7 @@ form {
         width: 300px;
         margin: auto;
         transition: 200ms ease-in-out;
-    }
+    }*/
 }
 
 /* ************************* MEDIA ************************ */
