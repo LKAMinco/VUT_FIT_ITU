@@ -159,30 +159,7 @@ h3 {
 /* ******************************** 2/5 ***************************** */
 /* ******************************** 3/5 ***************************** */
 
-#contact-subject:hover,
-#contact-message:hover {
-    border-color: green;
-}
-
-#contact-subject {
-    /* od konec prvniho po zacatek prvniho sloupce */
-    padding-top: 10px;
-    padding-bottom: 10px;
-    border: 2px solid steelblue;
-    border-radius: 5px;
-    color: steelblue;
-    grid-column: 1/-1;
-}
-
-#contact-message {
-    border: 2px solid steelblue;
-    border-radius: 5px;
-    color: steelblue;
-    /* od konec prvniho po zacatek prvniho sloupce */
-    grid-column: 1/-1;
-}
-
-.contact-submit {
+.submit-btn {
     width: 300px;
     padding: 16px;
     font-size: 14pt;
@@ -197,7 +174,7 @@ h3 {
     border: none;
 }
 
-.contact-submit:hover {
+.submit-btn:hover {
     background-color: green;
 }
 
@@ -205,7 +182,53 @@ h3 {
     margin-top: 150px;
 }
 
+/* ******************************** 3/5 ***************************** */
 /* ******************************** 4/5 ***************************** */
+#submit-btn {
+    margin-top: 20px;
+}
+
+#form_4 {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    width: 70%;
+    margin: auto;
+}
+
+#form_4 input:not([type="submit"]) {
+    margin-bottom: 20px;
+    height: 40px;
+    padding-left: 15px;
+}
+
+#form_4 textarea {
+    resize: none;
+    padding-left: 15px;
+    padding-top: 15px;
+}
+
+#4_textarea {
+    height: 200px;
+    margin-bottom: 20px;
+}
+
+#form_4 .submit-btn {
+    justify-self: center;
+}
+
+/* ******************************** 4/5 ***************************** */
+/* ******************************** 5/5 ***************************** */
+#last_report_page h3{
+    text-align: center;
+}
+
+#back {
+    margin: 0;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+/* ********************************5/5 ***************************** */
 /* ************************* POPUPS LEAVE REPORT ************************ */
 
 #form_hl_link input {

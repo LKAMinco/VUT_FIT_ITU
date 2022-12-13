@@ -6,10 +6,10 @@ function endOfReport(){
         output += '<section id="last_report_page">'+
             '<div class="content">'+
             '<h3>Děkujeme za nahlášení problému</h3>'+
-            '</div>'+
             ' <div id="back">\n' +
-            '     <button id="buttonProfileTickets" onClick="location.href=\'../index_nav.html\'">Zpět na hlavní stránku</button>\n' +
+            '     <button id="buttonProfileTickets" onClick="location.href=\'../index.html\'">Zpět na hlavní stránku</button><br>\n' +
             '     <button id="buttonProfileTickets" onClick="location.href=\'../user_profile.html\'">Sledovat stav mých hlášení</button>\n' +
+            '</div>'+
             ' </div>' +
             '</section>';
         document.getElementById('report_part').innerHTML = output;
@@ -28,15 +28,13 @@ function reportFour() {
         output += '<section id="services">'+
             '<div class="content">'+
                 '<h3>4/4 Doplňte další informace:</h3>'+
-                '<form action="#">'+
-                    '<input id="contact-subject" type="text" name="subject" placeholder="Subject" required>'+
-                    '<textarea id="contact-message" name="message" cols="30" rows="10" placeholder="Message" required></textarea>'+
-                    '<input onclick="endOfReport()" class="contact-submit" id="contact-submit" type="submit" value="Submit">'+
+                '<form action="#" id="form_4">'+
+                    '<input id="4_input" type="text" name="subject" placeholder="Subject" required>'+
+                    '<textarea id="4_textarea" name="message" cols="30" rows="10" placeholder="Message" required></textarea>'+
+                    '<input onclick="endOfReport()" class="submit-btn" id="submit-btn" type="submit" value="Submit">'+
                 '</form>'+
             '</div>'+
-            '</section>' +
-            '<section>' +
-            ' <div id="ticket_filter_search">\n' +
+            ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
             '   <li>\n' +
             '     <button onclick="reportThree()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
             '   </li>\n' +
@@ -57,11 +55,9 @@ function reportThree() {
             '<h3>3/4 Vyberte lokaci problému:</h3>'+
             '<form id="report_form" action="#">'+
             '<div id="map_div"></div>' +
-            '<input onclick="reportFour()" class="contact-submit" id="three-submit" type="submit" value="Submit">'+
+            '<input onclick="reportFour()" class="submit-btn" id="three-submit" type="submit" value="Submit">'+
             '</form>'+
             '</div>'+
-            '</section>' +
-            '<section>' +
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
             '   <li>\n' +
             '     <button onclick="reportSecond()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
@@ -475,17 +471,6 @@ function createMap(){
         marker.setLatLng(new L.LatLng(lat, lng));
         console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
     });
-}
-
-function log_out(){
-    console.log("test");
-    var xhr = new XMLHttpRequest();
-    xhr.open('PUT', 'https://639637b790ac47c680810698.mockapi.io/active/1', true);
-    xhr.onload = function () {
-        location.href = '../index.html';
-    }
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send('status=' + false);
 }
 
 
