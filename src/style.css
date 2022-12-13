@@ -920,7 +920,7 @@ blockquote::after {
     border: None;
     color: white;
     width: 50px;
-    background: var(--lightGray);
+    background: rgba(43, 45, 56, 0);
 }
 #sendPaper {
     margin-bottom: 20px;
