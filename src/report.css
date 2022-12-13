@@ -78,6 +78,8 @@ h3 {
 
 .services-card:hover {
     box-shadow: 0 0 10px 0 var(--lightRed);
+    transition: 200ms ease-in-out;
+cursor: pointer;
 }
 
 .services-card img:first-child {
@@ -86,6 +88,7 @@ h3 {
 
 .services-card:hover img:first-child {
     display: none;
+    transition: 200ms ease-in-out;
     background-color: var(--lightRed);
 }
 
@@ -95,7 +98,9 @@ h3 {
 
 .services-card:hover img:last-child {
     background-color: var(--lightRed);
+    transition: 200ms ease-in-out;
     display: block;
+    cursor: pointer;
 }
 
 /* ******************************** 1/5 ***************************** */
@@ -117,6 +122,7 @@ h3 {
 
 #buttonProfileTickets:hover {
     background-color: var(--lightRed);
+    cursor: pointer;
     transition: 200ms ease-in-out;
 }
 
@@ -176,6 +182,8 @@ h3 {
 
 .submit-btn:hover {
     background-color: green;
+    transition: 200ms ease-in-out;
+    cursor: pointer;
 }
 
 #map_div {
@@ -274,7 +282,9 @@ h3 {
 }
 
 .link button:hover, #form_hl_link button:hover {
+    transition: 200ms ease-in-out;
     color: white;
+    cursor: pointer;
 }
 
 #form_hl_link input:focus, #form_hl_link input:not(#news_reg):focus {
@@ -300,6 +310,7 @@ h3 {
 
 #form_hl_link button:hover, #form_hl_link button:hover {
     background-color: var(--lightRed);
+    transition: 200ms ease-in-out;
     cursor: pointer;
 }
 

@@ -267,6 +267,7 @@ section {
 }
 
 #submit_btn:hover {
+    transition: 200ms ease-in-out;
     background-color: var(--lightRed);
 }
 
@@ -287,6 +288,7 @@ section {
 
 #zoom:hover {
     color: var(--lightRed);
+    transition: 200ms ease-in-out;
 }
 
 #stats {
@@ -338,6 +340,7 @@ section {
 
 .box_size:hover {
     background-color: var(--darkRed);
+    transition: 200ms ease-in-out;
     color: var(--white);
 }
 
@@ -435,6 +438,7 @@ section {
 }
 
 .close-button:hover {
+    transition: 200ms ease-in-out;
     color: var(--lightRed);
 }
 
@@ -509,7 +513,7 @@ section {
 #form_login button:hover, #form_register button:hover, #form_login_register button:hover {
     background-color: var(--lightRed);
     cursor: pointer;
-
+    transition: 200ms ease-in-out;
 }
 
 ::-webkit-calendar-picker-indicator {
@@ -517,6 +521,7 @@ section {
 }
 
 ::-webkit-calendar-picker-indicator:hover {
+    transition: 200ms ease-in-out;
     padding-bottom: 15px;
 }
 
@@ -791,6 +796,7 @@ section {
 
 .close-button_small:hover {
     background-color: black;
+    transition: 200ms ease-in-out;
 }
 
 #chatbot_wrapper{
@@ -922,3 +928,6 @@ blockquote::after {
     grid-column: 4/-1;
 }
 /* ************************ CHATBOX ********************** */
+#news_reg{
+    cursor: pointer;
+}
