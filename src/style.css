@@ -798,6 +798,8 @@ section {
 }
 
 #chatbot_body {
+    scroll-padding-bottom: revert;
+    flex-direction: column-reverse;
     overflow-x: hidden;
     overflow-y: scroll;
     width: 320px;
@@ -881,6 +883,7 @@ blockquote::after {
 }
 
 .chat_user{
+    margin-left: -145px;
     color: var(--lightGray);
 }
 
