@@ -91,9 +91,13 @@ window.onload = function() {
 
 /* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
 var comment_button = document.getElementById("contact-submit");
-comment_button.setAttribute("onclick", "sendMessage(this.form)")
+if(comment_button != null){
+    comment_button.setAttribute("onclick", "sendMessage(this.form)")
+}
 var form3 = document.getElementById("chat_form_form");
-form3.addEventListener('submit', handleForm);
+if(form3 != null){
+    form3.addEventListener('submit', handleForm);
+}
 
 function sendMessage(form) {
     var xhr = new XMLHttpRequest();
