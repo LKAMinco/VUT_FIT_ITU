@@ -277,4 +277,15 @@ function editProfile() {
     xhr1.send();
 }
 
+function log_out(){
+    console.log("test");
+    var xhr = new XMLHttpRequest();
+    xhr.open('PUT', 'https://639637b790ac47c680810698.mockapi.io/active/1', true);
+    xhr.onload = function () {
+        window.location.href = "index.html";
+    }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send('status=' + false);
+}
+
 
