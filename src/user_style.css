@@ -10,6 +10,7 @@
     --graf-color: #b98888;
     --dark: #2b2d38;
     --transiton-time: .5s;
+    --lightDarkBlue: rgba(5, 68, 104, 0.8);
 }
 
 .all {
@@ -142,10 +143,11 @@ tbody, a {
 }
 
 #profile_button, #edit_profile_button{
-margin-left: -40px;
+    margin-left: -40px;
+    background-color: var(--lightDarkBlue);
 }
 
-.button:hover {
+.button:hover, #profile_button:hover, #edit_profile_button:hover {
     transition: 200ms ease-in-out;
     background: #a62e2e;
 }
@@ -197,7 +199,7 @@ margin-left: -40px;
 
 .wrapper {
     max-width: 300px;
-    background: var(--darkRed);
+    background: var(--lightDarkBlue);
     padding: 20px 0;
     transition: all 0.5s ease;
 }
