@@ -77,9 +77,9 @@ function loadUserProfile() {
             '  </div>';
         output += '<tr class="ticket_body"> ' +
             '<div id="ticket_table">' +
-            '<div className="content">' +
+            '<div class="content">' +
             '<section id="price">' +
-            '<table className="main_table">' +
+            '<table class="main_table">' +
             '<thead>' +
             '<tr>' +
             '<th>Název</th>' +
