@@ -339,6 +339,7 @@ th{
 
 /* Dropdown Button */
 .form-select {
+    text-align: center;
     padding: 16px;
     border: none;
     cursor: pointer;
