@@ -224,7 +224,7 @@ a {
 
 #map_list_item{
     max-width: 24.4rem; /*36rem*/
-    min-width: 20rem;
+    min-width: 24.4rem;
     background-color: var(--darkRed);
     margin: 1rem auto;
     height: 18rem; /*20rem*/
