@@ -46,7 +46,12 @@ function currentDiv(n) {
     showDivs(slideIndex = n);
 }
 
-carousel();
+var path = window.location.pathname;
+var page = path.split("/").pop();
+
+if(page !== "report.html"){
+    carousel();
+}
 
 function carousel() {
     let i;
