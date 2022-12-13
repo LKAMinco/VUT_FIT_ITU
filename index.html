@@ -93,63 +93,7 @@
             </div>
         </div>
     </div>
-    <script>
-        let slideIndex = 1;
-
-        //showDivs(slideIndex);
-
-        function currentDiv(n) {
-            showDivs(slideIndex = n);
-        }
-
-        carousel();
-
-        function carousel() {
-            let i;
-            let x = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            slideIndex++;
-            if (slideIndex > x.length) {
-                slideIndex = 1
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" white", "");
-            }
-            x[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " white";
-            setTimeout(carousel, 10000); // Change image every 2 seconds
-        }
-
-        function showDivs(n) {
-            let i;
-            let x = document.getElementsByClassName("slide");
-            let dots = document.getElementsByClassName("dot");
-            if (n > x.length) {
-                slideIndex = 1
-            }
-            if (n < 1) {
-                slideIndex = x.length
-            }
-            for (i = 0; i < x.length; i++) {
-                x[i].style.display = "none";
-            }
-            for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" white", "");
-            }
-            x[slideIndex - 1].style.display = "block";
-            dots[slideIndex - 1].className += " white";
-        }
-    </script>
 </header>
-<!--div id="btns2">
-    <button type="submit">Přihlásit se</button>
-    <button type="submit">Registrovať sa</button>
-    <button onclick="location.href='user_profile.html'" type="submit">Edit profil</button>
-    <button onclick="location.href='interactive_map.html'" type="submit">Nahlasit problem</button>
-</div-->
 <main>
     <section id="about">
         <a class="anchor" id="about_ref"></a>
@@ -341,44 +285,7 @@
         <p><b>GoalDiggers</b> | Copyright 2022</p>
     </div>
 </footer>
-<script>
-    const openModalButtons = document.querySelectorAll('[data-modal-target]')
-    const closeModalButtons = document.querySelectorAll('[data-close-button]')
-    const overlay = document.getElementById('overlay')
-
-    openModalButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const modal = document.querySelector(button.dataset.modalTarget)
-            openModal(modal)
-        })
-    })
-
-    overlay.addEventListener('click', () => {
-        const modals = document.querySelectorAll('.modal.active')
-        modals.forEach(modal => {
-            closeModal(modal)
-        })
-    })
-
-    closeModalButtons.forEach(button => {
-        button.addEventListener('click', () => {
-            const modal = button.closest('.modal')
-            closeModal(modal)
-        })
-    })
-
-    function openModal(modal) {
-        if (modal == null) return
-        modal.classList.add('active')
-        overlay.classList.add('active')
-    }
-
-    function closeModal(modal) {
-        if (modal == null) return
-        modal.classList.remove('active')
-        overlay.classList.remove('active')
-    }
-</script>
+<script src="src/main_page.js"></script>
 </body>
 <script src="login.js"></script>
 </html>
