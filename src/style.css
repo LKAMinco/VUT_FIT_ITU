@@ -798,8 +798,8 @@ section {
 }
 
 #chatbot_body {
-    overflow: scroll;
-    border-radius: 0 0 15px 15px;
+    overflow-x: hidden;
+    overflow-y: scroll;
     width: 320px;
     height: 350px;
     margin-left: -15px;
@@ -809,6 +809,10 @@ section {
     grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
     justify-content: center;
     justify-items: center;
+}
+
+#getMessage{
+    transition: .3s linear;
 }
 
 #title_bot {
@@ -871,10 +875,16 @@ blockquote::after {
 }
 
 #user_chat_pic {
+    padding-bottom: 10px;
+    padding-top: 5px;
     margin-left: 200px;
 }
 
-#contact-message{
+.chat_user{
+    color: var(--lightGray);
+}
+
+#contact_message{
     margin-top: -10px;
     max-width: 250px;
     width: 100%;
@@ -894,7 +904,7 @@ blockquote::after {
     border: None;
     color: white;
     width: 50px;
-    background: #2b2d38;
+    background: var(--lightGray);
 }
 #sendPaper {
     margin-bottom: 20px;

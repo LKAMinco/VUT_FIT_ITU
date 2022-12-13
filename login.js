@@ -88,3 +88,40 @@ function set_navbar(){
 window.onload = function() {
     set_navbar();
 }
+
+/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
+var comment_button = document.getElementById("contact-submit");
+comment_button.setAttribute("onclick", "sendMessage(this.form)")
+var form3 = document.getElementById("chat_form_form");
+form3.addEventListener('submit', handleForm);
+
+function sendMessage(form) {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'index.html', true);
+    xhr.onload = function () {
+        var output = '';
+        output += '<div class="messages">' +
+            '<blockquote id="user_chat">' +
+            '<span class="chat_user">'+form.contact_message.value+'</span>' +
+            '   </blockquote>' +
+            '   <figure id="user_chat_pic">' +
+            '       <img src="src/images/profile.png" alt="user">' +
+            '   </figure>' +
+            '</div>' +
+            '<div class="messages">' +
+            '   <blockquote>' +
+            '       <span>Omlouváme se, ale chatbot momentálně není dostupný.</span>' +
+            '   </blockquote>' +
+            '<figure>' +
+            '<img src="src/pictures/bot.png" alt="bot">' +
+            '       </figure>' +
+            '</div>';
+        document.getElementById('getMessage').innerHTML = output;
+    }
+    xhr.send();
+}
+
+
+function handleForm(event) {
+    event.preventDefault();
+}
