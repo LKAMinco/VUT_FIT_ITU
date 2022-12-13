@@ -310,7 +310,7 @@ section {
 #statid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-rows: 1fr;
     margin: auto;
 }
 
@@ -722,6 +722,10 @@ section {
     width: 160px;
     border-radius: 50%;
     background: conic-gradient(var(--menu-color) 0% 33%, var(--almost-white) 33% 67%, var(--violet) 67%);
+}
+
+#graph_p1, #graph_p2{
+    width: 100%;
 }
 /* ************************ GRAPHS ********************** */
 /* ************************ CHATBOX ********************** */
