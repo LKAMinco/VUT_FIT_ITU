@@ -42,7 +42,11 @@
                         </a>
                         <li id="user"></li>
                         <li class="blink_li"><a href="user_profile.html">Moje nahlášené závady</a></li>
-                        <li><a href="user_profile_edit.html">Změna profilu</a></li>
+                        <li>
+                            <button onClick="editProfile()" id="edit_profile_button">Změna profilu
+                            </button>
+                        </li>
+
                         <li class="level_bar_info">3/10 nahlášených problémů</li>
                         <li><img class="level_bar" src="src/pictures/bar.png"></li>
                         </li>
@@ -88,26 +92,7 @@
                 </div>
             </div>
             <script>loadTickets()</script>
-            <div id="ticket_table">
-                <div class="content">
-                    <section id="price">
-                        <table class="main_table">
-                            <thead>
-                            <tr>
-                                <th>Název</th>
-                                <th>Datum nahlášení</th>
-                                <th>Adresa</th>
-                                <th>Kategorie</th>
-                                <th>Status</th>
-                                <th>Obrázek</th>
-                            </tr>
-                            </thead>
-                            <tbody id="ticket">
-                            </tbody>
-                        </table>
-                    </section>
-                </div>
-            </div>
+            <div id="loadUserPageAl"></div>
         </section>
     </div>
 
