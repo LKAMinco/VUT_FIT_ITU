@@ -256,7 +256,7 @@ function editProfile() {
             '<section id="edit_profile">' +
             '<form action="save_file_edit.js">' +
             '<div class="container">' +
-            '<h1 class="title c">Úprava profilu</h1>' +
+            '<h1 id="update_header_h1" class="title c">Úprava profilu</h1>' +
             '<div class="form-group a">' +
             '<label for="first-name">Jméno</label>' + '<br>' +
             '<input id="first-name" type="text" placeholder="Moje jméno">' +
@@ -312,6 +312,18 @@ function log_out(){
     }
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send('status=' + false);
+}
+
+function saveProfile(){
+    document.getElementById("first-name").value = "";
+    document.getElementById("last-name").value = "";
+    document.getElementById("address").value = "";
+    document.getElementById("bio").value = "";
+    document.getElementById("first-pass").value = "";
+    document.getElementById("last-pass").value = "";
+    document.getElementById("newsletter").checked = false;
+
+    document.getElementById("update_header_h1").innerHTML = "Vaše údaje boli zmenené!";
 }
 
 
