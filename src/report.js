@@ -1,17 +1,17 @@
-function endOfReport(){
+function endOfReport() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
-        output += '<section id="last_report_page">'+
-            '<div class="content">'+
-            '<h3>Děkujeme za nahlášení problému</h3>'+
-            '<h3>Problém jsme si převzali na kontrolu ověření jeho pravdivost.</h3>'+
-            '<h3>O další změně stavu Vás nadále budeme informovat.</h3>'+
+        output += '<section id="last_report_page">' +
+            '<div class="content">' +
+            '<h3>Děkujeme za nahlášení problému</h3>' +
+            '<h3>Problém jsme si převzali na kontrolu ověření jeho pravdivost.</h3>' +
+            '<h3>O další změně stavu Vás nadále budeme informovat.</h3>' +
             ' <div id="back">\n' +
             '     <button id="buttonProfileTickets" onClick="location.href=\'index.html\'">Zpět na hlavní stránku</button><br>\n' +
             '     <button id="buttonProfileTickets" onClick="location.href=\'user_profile.html\'">Sledovat stav mých hlášení</button>\n' +
-            '</div>'+
+            '</div>' +
             ' </div>' +
             '</section>';
         document.getElementById('report_part').innerHTML = output;
@@ -24,15 +24,15 @@ function reportFour() {
     xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
-        output += '<section id="services">'+
-            '<div class="content">'+
-                '<h3>4/4 Doplňte další informace:</h3>'+
-                '<form action="#" id="form_4">'+
-                    '<input id="4_input" type="text" name="subject" placeholder="Subject" required>'+
-                    '<textarea id="4_textarea" name="message" cols="30" rows="10" placeholder="Message" required></textarea>'+
-                    '<input onclick="endOfReport()" class="submit-btn" id="submit-btn" type="submit" value="Pokračovat dále">'+
-                '</form>'+
-            '</div>'+
+        output += '<section id="services">' +
+            '<div class="content">' +
+            '<h3>4/4 Doplňte další informace:</h3>' +
+            '<form action="#" id="form_4">' +
+            '<input id="4_input" type="text" name="subject" placeholder="Subject" required>' +
+            '<textarea id="4_textarea" name="message" cols="30" rows="10" placeholder="Message" required></textarea>' +
+            '<input onclick="endOfReport()" class="submit-btn" id="submit-btn" type="submit" value="Pokračovat dále">' +
+            '</form>' +
+            '</div>' +
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
             '   <li>\n' +
             '     <button onclick="reportThree()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
@@ -49,14 +49,14 @@ function reportThree() {
     xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
-        output += '<section id="services">'+
-            '<div class="content">'+
-            '<h3>3/4 Vyberte lokaci problému:</h3>'+
-            '<form id="report_form" action="#">'+
+        output += '<section id="services">' +
+            '<div class="content">' +
+            '<h3>3/4 Vyberte lokaci problému:</h3>' +
+            '<form id="report_form" action="#">' +
             '<div id="map_div"></div>' +
-            '<input onclick="reportFour()" class="submit-btn" id="three-submit" type="submit" value="Pokračovat dále">'+
-            '</form>'+
-            '</div>'+
+            '<input onclick="reportFour()" class="submit-btn" id="three-submit" type="submit" value="Pokračovat dále">' +
+            '</form>' +
+            '</div>' +
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
             '   <li>\n' +
             '     <button onclick="reportSecond()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
@@ -72,7 +72,9 @@ function reportThree() {
     xhr.send();
 }
 
-function handleForm(event) { event.preventDefault(); }
+function handleForm(event) {
+    event.preventDefault();
+}
 
 function reportSecond() {
 //    var image = document.getElementById('photo_mode').innerHTML;
@@ -85,7 +87,7 @@ function reportSecond() {
             '            <h3>2/4 Nahrajte fotografii:</h3>\n' +
             '        </div>\n' +
             '<div id="aa">' +
-            '<input id="photo_mode" type="file" name="uploadfile" accept="image/png, image/gif, image/jpeg">'+
+            '<input id="photo_mode" type="file" name="uploadfile" accept="image/png, image/gif, image/jpeg">' +
             '</div>' +
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n<ul>' +
             '   <li>\n' +
@@ -101,95 +103,93 @@ function reportSecond() {
     xhr.send();
 }
 
+// Next three functions create array of selectable parts in grid. Each is made of picture and description and works as button.
+// 8 selectable parts with every possible choice that user could have to report
 function reportFirst() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'src/users.json', true);
-    xhr.onload = function () {
-        var output = '';
-        output += '<section id="services">\n' +
-            '        <div class="content">\n' +
-            '            <h3>1/4 Vyberte kategorii hlášení:</h3>\n' +
-            '            <div>\n' +
-            '                <div class="services-card">\n' +
-            '                    <div onclick="roads()" class="services-column">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/roads.svg" alt=".">\n' +
-            '                            <img src="src/pictures/roads.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Problémy na cestách</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <div onclick="reportSecond()" class="services-column">\n' +
-            '                    <div class="services-card">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/bench.svg" alt=".">\n' +
-            '                            <img src="src/pictures/bench.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Lavičky</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <div onclick="reportSecond()" class="services-column">\n' +
-            '                    <div class="services-card">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/dump.svg" alt=".">\n' +
-            '                            <img src="src/pictures/dump.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Nelegálne skládky</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <div onclick="parks()" class="services-column">\n' +
-            '                    <div class="services-card">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/park.svg" alt=".">\n' +
-            '                            <img src="src/pictures/park.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Parky a zeleň</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <div onclick="reportSecond()" class="services-column">\n' +
-            '                    <div class="services-card">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/car.svg" alt=".">\n' +
-            '                            <img src="src/pictures/car.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Opustené vozidlá</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <div onclick="reportSecond()" class="services-column">\n' +
-            '                    <div class="services-card">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/playground.svg" alt=".">\n' +
-            '                            <img src="src/pictures/playground.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Detské ihriská</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <div onclick="reportSecond()" class="services-column">\n' +
-            '                    <div class="services-card">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/vandalism.svg" alt=".">\n' +
-            '                            <img src="src/pictures/vandalism.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Vandalizmus</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <div onclick="reportSecond()" class="services-column">\n' +
-            '                    <div class="services-card">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/others.svg" alt=".">\n' +
-            '                            <img src="src/pictures/others.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Ostatné</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '            </div>\n' +
-            '        </div>\n' +
-            '         </section>';
-        document.getElementById('report_part').innerHTML = output;
-    }
-    xhr.send();
+    var output = '';
+    output += '<section id="services">\n' +
+        '        <div class="content">\n' +
+        '            <h3>1/4 Vyberte kategorii hlášení:</h3>\n' +
+        '            <div>\n' +
+        '                <div class="services-card">\n' +
+        '                    <div onclick="roads()" class="services-column">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/roads.svg" alt=".">\n' +
+        '                            <img src="src/pictures/roads.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Problémy na cestách</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '                <div onclick="reportSecond()" class="services-column">\n' +
+        '                    <div class="services-card">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/bench.svg" alt=".">\n' +
+        '                            <img src="src/pictures/bench.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Lavičky</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '                <div onclick="reportSecond()" class="services-column">\n' +
+        '                    <div class="services-card">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/dump.svg" alt=".">\n' +
+        '                            <img src="src/pictures/dump.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Nelegálne skládky</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '                <div onclick="parks()" class="services-column">\n' +
+        '                    <div class="services-card">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/park.svg" alt=".">\n' +
+        '                            <img src="src/pictures/park.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Parky a zeleň</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '                <div onclick="reportSecond()" class="services-column">\n' +
+        '                    <div class="services-card">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/car.svg" alt=".">\n' +
+        '                            <img src="src/pictures/car.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Opustené vozidlá</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '                <div onclick="reportSecond()" class="services-column">\n' +
+        '                    <div class="services-card">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/playground.svg" alt=".">\n' +
+        '                            <img src="src/pictures/playground.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Detské ihriská</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '                <div onclick="reportSecond()" class="services-column">\n' +
+        '                    <div class="services-card">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/vandalism.svg" alt=".">\n' +
+        '                            <img src="src/pictures/vandalism.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Vandalizmus</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '                <div onclick="reportSecond()" class="services-column">\n' +
+        '                    <div class="services-card">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/others.svg" alt=".">\n' +
+        '                            <img src="src/pictures/others.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Ostatné</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '            </div>\n' +
+        '        </div>\n' +
+        '         </section>';
+    document.getElementById('report_part').innerHTML = output;
 }
 
+// 4 parts with park theme
 function parks() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'src/users.json', true);
@@ -250,65 +250,58 @@ function parks() {
 }
 
 function roads() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'src/users.json', true);
-    xhr.onload = function () {
-        var output = '';
-
-        output += '<section id="services" class="only_four">\n' +
-            '        <div class="content">\n' +
-            '            <h3>1/4 Vyberte kategorii hlášení:</h3>\n' +
-            '            <div>\n' +
-            '                <div onclick="reportSecond()" class="services-column">\n' +
-            '                    <div class="services-card">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/car_pic/edit_road.svg" alt=".">\n' +
-            '                            <img src="src/pictures/car_pic/edit_road.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Oprava ciest</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <div onclick="reportSecond()" class="services-column">\n' +
-            '                    <div class="services-card">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/car_pic/sign-stop-lights.svg" alt=".">\n' +
-            '                            <img src="src/pictures/car_pic/sign-stop-lights.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Nefunkčný semafor</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <div onclick="reportSecond()" class="services-column">\n' +
-            '                    <div class="services-card">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/car_pic/sign-stop.svg" alt=".">\n' +
-            '                            <img src="src/pictures/car_pic/sign-stop.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Dopravné značenie</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '                <div onclick="reportSecond()" class="services-column">\n' +
-            '                    <div class="services-card">\n' +
-            '                        <div>\n' +
-            '                            <img src="src/pictures/car_pic/other.svg" alt=".">\n' +
-            '                            <img src="src/pictures/car_pic/other.svg" alt=".">\n' +
-            '                        </div>\n' +
-            '                        <h4>Ostatné</h4>\n' +
-            '                    </div>\n' +
-            '                </div>\n' +
-            '            </div>\n' +
-            '        </div>\n' +
-            '<div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
-            '                    <li>\n' +
-            '                        <button onclick="reportFirst()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
-            '                    </li>\n' +
-            '                </div>' +
-            '         </section>';
-        document.getElementById('report_part').innerHTML = output;
-    }
-    xhr.send();
+    output += '<section id="services" class="only_four">\n' +
+        '        <div class="content">\n' +
+        '            <h3>1/4 Vyberte kategorii hlášení:</h3>\n' +
+        '            <div>\n' +
+        '                <div onclick="reportSecond()" class="services-column">\n' +
+        '                    <div class="services-card">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/car_pic/edit_road.svg" alt=".">\n' +
+        '                            <img src="src/pictures/car_pic/edit_road.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Oprava ciest</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '                <div onclick="reportSecond()" class="services-column">\n' +
+        '                    <div class="services-card">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/car_pic/sign-stop-lights.svg" alt=".">\n' +
+        '                            <img src="src/pictures/car_pic/sign-stop-lights.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Nefunkčný semafor</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '                <div onclick="reportSecond()" class="services-column">\n' +
+        '                    <div class="services-card">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/car_pic/sign-stop.svg" alt=".">\n' +
+        '                            <img src="src/pictures/car_pic/sign-stop.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Dopravné značenie</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '                <div onclick="reportSecond()" class="services-column">\n' +
+        '                    <div class="services-card">\n' +
+        '                        <div>\n' +
+        '                            <img src="src/pictures/car_pic/other.svg" alt=".">\n' +
+        '                            <img src="src/pictures/car_pic/other.svg" alt=".">\n' +
+        '                        </div>\n' +
+        '                        <h4>Ostatné</h4>\n' +
+        '                    </div>\n' +
+        '                </div>\n' +
+        '            </div>\n' +
+        '        </div>\n' +
+        '<div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
+        '                    <li>\n' +
+        '                        <button onclick="reportFirst()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
+        '                    </li>\n' +
+        '                </div>' +
+        '         </section>';
+    document.getElementById('report_part').innerHTML = output;
 }
 
-function createMap(){
+function createMap() {
     const mapKey = "pk.eyJ1IjoianVsaXVzangiLCJhIjoiY2xiY2hoZWpvMDRkMTNxb2VsYWQ3ZW1vdSJ9.Qu7Yj2WOBF-uLm2S8x5yaQ";
     var map = L.map('map_div').setView([49.194825, 16.608241], 15);
 
@@ -461,9 +454,9 @@ function createMap(){
         interactive: false
     }).addTo(map);
 
-    var marker = L.marker([0,0]).addTo(map);
+    var marker = L.marker([0, 0]).addTo(map);
 
-    map.on('click', function(e){
+    map.on('click', function (e) {
         var coord = e.latlng;
         var lat = coord.lat;
         var lng = coord.lng;
@@ -472,7 +465,8 @@ function createMap(){
     });
 }
 
-function log_out(){
+// this functions logs user out of application
+function log_out() {
     console.log("test");
     var xhr = new XMLHttpRequest();
     xhr.open('PUT', 'https://639637b790ac47c680810698.mockapi.io/active/1', true);
