@@ -492,7 +492,10 @@ section {
     height: 40px;
     border-radius: 10px;
     padding-left: 10px;
-    font-size: larger;
+}
+
+#form_register input:not(#news_reg) {
+    width: 90%;
 }
 
 #form_login input:focus, #form_register input:not(#news_reg):focus, #form_login_register input:focus {
