@@ -19,6 +19,9 @@
     grid-template-columns: 1fr 4fr;
 }
 
+ul {
+    padding: 0;
+}
 
 main {
     margin-top: 73px;
@@ -89,6 +92,10 @@ tbody, a {
     margin-top: 20px;
 }
 
+#profile_ul h3{
+    text-align: center;
+}
+
 .a {
     grid-column: 1;
 }
@@ -141,7 +148,6 @@ tbody, a {
     height: 50px;
     margin: 20px auto;
     display: block;
-    margin-left: -40px;
     cursor: pointer;
 }
 
@@ -489,7 +495,7 @@ th {
         z-index: 10;
     }
 
-    #bar_list {
+    #bar_list2 {
         display: none;
     }
 

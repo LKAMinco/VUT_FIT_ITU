@@ -342,7 +342,7 @@ function placeUserNav() {
         ' <div class="profile">' +
         '    <img src="src/images/profile.png" alt="Profile picture">' +
         '   </div>' +
-        '<ul>' +
+        '<ul id="profile_ul">' +
         '   <a>' +
         '       <div id="userName"></div>' +
         '   </a>' +
