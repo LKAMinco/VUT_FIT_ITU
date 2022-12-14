@@ -416,11 +416,11 @@ function load_add_comments(){
 function open_filter_menu(menu, img){
     if(document.getElementById(menu).hasAttribute("class")){
         document.getElementById(menu).removeAttribute("class");
-        document.getElementById(img).setAttribute("src", "list_opened.png");
+        document.getElementById(img).setAttribute("src", "src/pictures/list_opened.png");
     }
     else{
         document.getElementById(menu).setAttribute("class", "hidden_list");
-        document.getElementById(img).setAttribute("src", "list_closed.png");
+        document.getElementById(img).setAttribute("src", "src/pictures/list_closed.png");
     }
 }
 
