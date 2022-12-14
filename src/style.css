@@ -965,11 +965,16 @@ blockquote::after {
         display: none;
     }
 
+    #bar_list2 button{
+        background: Transparent;
+        border: none;
+        width: 100%;
+        text-align: left;
+    }
 
         #navigation-desktop2{
             overflow: hidden;
             background: rgba(5, 68, 104, 0.8);
-            backdrop-filter: blur(10px);
             z-index: 7000;
         }
         #nav-place {
@@ -1014,7 +1019,6 @@ blockquote::after {
         top: 0;
         width: 100%;
         background: rgba(5, 68, 104, 0.8);
-        backdrop-filter: blur(10px);
         z-index: 7000;
     }
 

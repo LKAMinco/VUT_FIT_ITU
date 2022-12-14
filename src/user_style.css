@@ -145,7 +145,6 @@ tbody, a {
 }
 
 #profile_button, #profile_button2, #edit_profile_button, #edit_profile_button2 {
-    margin-left: -40px;
     background-color: rgba(255, 255, 255, 0);
 }
 
@@ -155,7 +154,6 @@ tbody, a {
 }
 #profile_button2, #edit_profile_button2{
     background-color: rgba(43, 45, 56, 0) !important;
-    text-transform: lowercase;
     font-size: 17px !important;
     float: left;
 
@@ -467,7 +465,6 @@ th {
         max-width: 750px;
         height: 50px;
         width: 100%;
-        background-color: var(--darkRed);
         /*display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         */
@@ -486,6 +483,9 @@ th {
     #nav-place {
         display: block;
         visibility: visible;
+        position: fixed;
+        width: 100%;
+        z-index: 10;
     }
 
     #bar_list {
@@ -495,17 +495,14 @@ th {
     #navigation-desktop2 {
         position: relative;
         overflow: hidden;
-        backdrop-filter: blur(10px);
         z-index: 7000;
     }
 
     #nav-place {
         overflow: hidden;
-        background-color: #333;
-        position: relative;
     }
 
-    #nav-place a:hover, #nav-place button:hover, #edit_profile_button2:hover, #profile_button2:hover {
+    #edit_profile_button2:hover, #profile_button2:hover {
         transition: 200ms ease-in-out;
         background-color: var(--lightRed) !important;
     }
@@ -513,7 +510,6 @@ th {
     #nav-place a, #nav-place button {
         padding: 14px 16px;
         text-decoration: none;
-        backdrop-filter: blur(10px);
         z-index: 7000;
         font-size: 17px;
         display: block;
@@ -528,11 +524,6 @@ th {
 
     #navigation-desktop2 .icon {
         font-size: 25px;
-    }
-
-    .active {
-        background-color: #04AA6D;
-        color: white;
     }
 
     #edit_profile form .container{
