@@ -292,7 +292,7 @@ function editProfile() {
             '<input id="last-pass" type="text" placeholder="Nové heslo">' +
             '</div>' +
             '<div class="button_container_edit c">' +
-            '<input type="button" id="bt_pass" class="button" value="Uložit nové heslo"onClick="saveProfile()"/>' +
+            '<input type="button" id="bt_pass" class="button" value="Uložit nové heslo"onClick="saveProfilePass()"/>' +
             '</div>' +
             '</div>' +
             '</form>' +
@@ -319,11 +319,15 @@ function saveProfile(){
     document.getElementById("last-name").value = "";
     document.getElementById("address").value = "";
     document.getElementById("bio").value = "";
-    document.getElementById("first-pass").value = "";
-    document.getElementById("last-pass").value = "";
     document.getElementById("newsletter").checked = false;
 
     document.getElementById("update_header_h1").innerHTML = "Vaše údaje boli zmenené!";
 }
 
+function saveProfilePass(){
+    document.getElementById("first-pass").value = "";
+    document.getElementById("last-pass").value = "";
+
+    document.getElementById("update_header_h1").innerHTML = "Vaše údaje boli zmenené!";
+}
 
