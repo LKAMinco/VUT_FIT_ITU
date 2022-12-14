@@ -36,76 +36,71 @@ function getName() {
 //when user click on "user profile" button, this functions creates that content
 //loading all filters and their values with table frame
 function loadUserProfile() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'src/tickets.json', true);
-    xhr.onload = function () {
-        var output = '';
-        output += '<div class="content">' +
-            '<div id="ticket_filters">' +
-            '   <div id="ticker_filter1" class="col-12 mb-3 col-md-6">' +
-            '   <select class="form-select" id="filter1" onchange="searchFilter()">' +
-            '   <div id="myDropdown1" class="dropdown-content">' +
-            '   <option value="all" selected>Všechny staty</option>' +
-            '<option value="Prijaté">Prijaté</option>' +
-            '<option value="Aktuálne riešené">Aktuálne riešené</option>' +
-            '<option value="Vyriešené">Vyriešené</option>' +
-            '</div>' +
-            '</select>' +
-            '   </div>' +
-            '  <div id="ticket_filter2" class="col-12 mb-3 col-md-6">' +
-            '     <select class="form-select" id="filter2" onchange="searchFilter()">' +
-            '        <div id="myDropdown2" class="dropdown-content">' +
-            '           <option value="all" selected>Všechny kategorie</option>' +
-            '         <option value="Problémy na cestách">Problémy na cestách</option>' +
-            '       <option value="Lavičky">Lavičky</option>' +
-            '        <option value="Nelegálne skládky">Nelegálne skládky</option>' +
-            '        <option value="Parky a zeleň">Parky a zeleň</option>' +
-            '        <option value="Opustené vozidlá">Opustené vozidlá</option>' +
-            '        <option value="Detské ihriská">Detské ihriská</option>' +
-            '        <option value="Vandalizmus">Vandalizmus</option>' +
-            '        <option value="Ostatné">Ostatné</option>' +
-            '      </div>' +
-            '     </select>' +
-            '   </div>' +
-            '    <div id="ticket_filter3" class="col-12 mb-3 col-md-6">' +
-            '     <select class="form-select" id="filter3" onchange="searchFilter()">' +
-            '         <div id="myDropdown3" class="dropdown-content">' +
-            '              <option value="max" selected>Od nejnovějších</option>' +
-            '              <option value="min">Od nejstarších</option>' +
-            '          </div>' +
-            '        </select>' +
-            '    </div>' +
-            '    <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">' +
-            '       <li>' +
-            '            <button onclick="loadTickets()" id="buttonProfileTickets">Resetovat filter</button>' +
-            '       </li>' +
-            '     </div>' +
-            '    </div>' +
-            '  </div>';
-        output += '<tr class="ticket_body"> ' +
-            '<div id="ticket_table">' +
-            '<div class="content">' +
-            '<section id="price">' +
-            '<table class="main_table">' +
-            '<thead>' +
-            '<tr>' +
-            '<th>Název</th>' +
-            '<th>Datum nahlášení</th>' +
-            '<th>Adresa</th>' +
-            '<th>Kategorie</th>' +
-            '<th>Status</th>' +
-            '<th>Obrázek</th>' +
-            '</tr>' +
-            '               </thead>' +
-            '               <tbody id="ticket">' +
-            '               </tbody>' +
-            '           </table>' +
-            '       </section>' +
-            '   </div>' +
-            '</div>';
-        document.getElementById('loadUserPageAl').innerHTML = output;
-    }
-    xhr.send();
+    var output = '';
+    output += '<div class="content">' +
+        '<div id="ticket_filters">' +
+        '   <div id="ticker_filter1" class="col-12 mb-3 col-md-6">' +
+        '   <select class="form-select" id="filter1" onchange="searchFilter()">' +
+        '   <div id="myDropdown1" class="dropdown-content">' +
+        '   <option value="all" selected>Všechny staty</option>' +
+        '<option value="Prijaté">Prijaté</option>' +
+        '<option value="Aktuálne riešené">Aktuálne riešené</option>' +
+        '<option value="Vyriešené">Vyriešené</option>' +
+        '</div>' +
+        '</select>' +
+        '   </div>' +
+        '  <div id="ticket_filter2" class="col-12 mb-3 col-md-6">' +
+        '     <select class="form-select" id="filter2" onchange="searchFilter()">' +
+        '        <div id="myDropdown2" class="dropdown-content">' +
+        '           <option value="all" selected>Všechny kategorie</option>' +
+        '         <option value="Problémy na cestách">Problémy na cestách</option>' +
+        '       <option value="Lavičky">Lavičky</option>' +
+        '        <option value="Nelegálne skládky">Nelegálne skládky</option>' +
+        '        <option value="Parky a zeleň">Parky a zeleň</option>' +
+        '        <option value="Opustené vozidlá">Opustené vozidlá</option>' +
+        '        <option value="Detské ihriská">Detské ihriská</option>' +
+        '        <option value="Vandalizmus">Vandalizmus</option>' +
+        '        <option value="Ostatné">Ostatné</option>' +
+        '      </div>' +
+        '     </select>' +
+        '   </div>' +
+        '    <div id="ticket_filter3" class="col-12 mb-3 col-md-6">' +
+        '     <select class="form-select" id="filter3" onchange="searchFilter()">' +
+        '         <div id="myDropdown3" class="dropdown-content">' +
+        '              <option value="max" selected>Od nejnovějších</option>' +
+        '              <option value="min">Od nejstarších</option>' +
+        '          </div>' +
+        '        </select>' +
+        '    </div>' +
+        '    <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">' +
+        '       <li>' +
+        '            <button onclick="loadTickets()" id="buttonProfileTickets">Resetovat filter</button>' +
+        '       </li>' +
+        '     </div>' +
+        '    </div>' +
+        '  </div>';
+    output += '<tr class="ticket_body"> ' +
+        '<div id="ticket_table">' +
+        '<div class="content">' +
+        '<section id="price">' +
+        '<table class="main_table">' +
+        '<thead>' +
+        '<tr>' +
+        '<th>Název</th>' +
+        '<th>Datum nahlášení</th>' +
+        '<th>Adresa</th>' +
+        '<th>Kategorie</th>' +
+        '<th>Status</th>' +
+        '<th>Obrázek</th>' +
+        '</tr>' +
+        '               </thead>' +
+        '               <tbody id="ticket">' +
+        '               </tbody>' +
+        '           </table>' +
+        '       </section>' +
+        '   </div>' +
+        '</div>';
+    document.getElementById('loadUserPageAl').innerHTML = output;
 }
 
 
@@ -258,59 +253,54 @@ function popUpImage() {
 
 /* ************************EDIT PROFILE ****************************/
 function editProfile() {
-    var xhr1 = new XMLHttpRequest();
-    xhr1.open('GET', 'src/tickets.json', true);
-    xhr1.onload = function () {
-        var output = '';
-        output +=
-            '<section id="edit_profile">' +
-            '<form action="save_file_edit.js">' +
-            '<div class="container">' +
-            '<h1 id="update_header_h1" class="title c">Úprava profilu</h1>' +
-            '<div class="form-group a">' +
-            '<label for="first-name">Jméno</label>' + '<br>' +
-            '<input id="first-name" type="text" placeholder="Moje jméno">' +
-            '</div>' +
-            '<div class="form-group b">' +
-            '<label for="last-name">Příjmení</label>' + '<br>' +
-            '<input id="last-name" type="text" placeholder="Moje příjmení">' +
-            '</div>' +
-            '<div class="form-group">' +
-            '<label for="address">Adresa</label>' + '<br>' +
-            '<input id="address" type="text" placeholder="Ulice 42, Městská část">' +
-            '</div>' +
-            '<div class="form-group bio">' +
-            '<label for="bio">Osobní popis</label>' + '<br>' +
-            '<input id="bio" type="text" placeholder="Něco málo o mně...">' +
-            '</div>' +
-            '<div class="checkbox_group_edit c r4">' +
-            '<input id="newsletter" type="checkbox">' +
-            '<label for="newsletter">Chci dostávat novinky o mých nahlášených ticketech.</label>' +
-            '</div>' +
-            '<div class="button_container_edit c r5">' +
-            '<input type="button" id="bt" class="button" value="Uložit změny" onClick="saveProfile()"/>' +
-            '</div>' +
-            '</div>' +
-            '<div id="second_container" class="container">' +
-            '<h1 class="title c">Změna hesla</h1>' +
-            '<div class="form-group a">' +
-            '<label for="first-name">Heslo</label>' + '<br>' +
-            '<input id="first-pass" type="text" placeholder="Nové heslo">' +
-            '</div>' +
-            '<div class="form-group b">' +
-            '<label for="last-name">Kontrola hesla</label>' + '<br>' +
-            '<input id="last-pass" type="text" placeholder="Nové heslo">' +
-            '</div>' +
-            '<div class="button_container_edit c">' +
-            '<input type="button" id="bt_pass" class="button" value="Uložit nové heslo"onClick="saveProfilePass()"/>' +
-            '</div>' +
-            '</div>' +
-            '</form>' +
-            '</section>';
+    var output = '';
+    output +=
+        '<section id="edit_profile">' +
+        '<form action="save_file_edit.js">' +
+        '<div class="container">' +
+        '<h1 id="update_header_h1" class="title c">Úprava profilu</h1>' +
+        '<div class="form-group a">' +
+        '<label for="first-name">Jméno</label>' + '<br>' +
+        '<input id="first-name" type="text" placeholder="Moje jméno">' +
+        '</div>' +
+        '<div class="form-group b">' +
+        '<label for="last-name">Příjmení</label>' + '<br>' +
+        '<input id="last-name" type="text" placeholder="Moje příjmení">' +
+        '</div>' +
+        '<div class="form-group">' +
+        '<label for="address">Adresa</label>' + '<br>' +
+        '<input id="address" type="text" placeholder="Ulice 42, Městská část">' +
+        '</div>' +
+        '<div class="form-group bio">' +
+        '<label for="bio">Osobní popis</label>' + '<br>' +
+        '<input id="bio" type="text" placeholder="Něco málo o mně...">' +
+        '</div>' +
+        '<div class="checkbox_group_edit c r4">' +
+        '<input id="newsletter" type="checkbox">' +
+        '<label for="newsletter">Chci dostávat novinky o mých nahlášených ticketech.</label>' +
+        '</div>' +
+        '<div class="button_container_edit c r5">' +
+        '<input type="button" id="bt" class="button" value="Uložit změny" onClick="saveProfile()"/>' +
+        '</div>' +
+        '</div>' +
+        '<div id="second_container" class="container">' +
+        '<h1 class="title c">Změna hesla</h1>' +
+        '<div class="form-group a">' +
+        '<label for="first-name">Heslo</label>' + '<br>' +
+        '<input id="first-pass" type="text" placeholder="Nové heslo">' +
+        '</div>' +
+        '<div class="form-group b">' +
+        '<label for="last-name">Kontrola hesla</label>' + '<br>' +
+        '<input id="last-pass" type="text" placeholder="Nové heslo">' +
+        '</div>' +
+        '<div class="button_container_edit c">' +
+        '<input type="button" id="bt_pass" class="button" value="Uložit nové heslo"onClick="saveProfilePass()"/>' +
+        '</div>' +
+        '</div>' +
+        '</form>' +
+        '</section>';
 
-        document.getElementById('loadUserPageAl').innerHTML = output;
-    }
-    xhr1.send();
+    document.getElementById('loadUserPageAl').innerHTML = output;
 }
 
 function log_out() {
@@ -343,63 +333,53 @@ function saveProfilePass() {
 
 /* **********************NAV ***************************** */
 function placeUserNav() {
-    var xhr1 = new XMLHttpRequest();
-    xhr1.open('GET', 'src/tickets.json', true);
-    xhr1.onload = function () {
-        var output = '';
-        output +=
-            '<div id="side_bar">' +
-            '   <div class="content">' +
-            '<div class="wrapper">' +
+    var output = '';
+    output +=
+        '<div id="side_bar">' +
+        '   <div class="content">' +
+        '<div class="wrapper">' +
 
-            ' <div class="profile">' +
-            '    <img src="src/images/profile.png" alt="Profile picture">' +
-            '   </div>' +
-            '<ul>' +
-            '   <a>' +
-            '       <div id="userName"></div>' +
-            '   </a>' +
-            '   <li id="user"></li>' +
-            '   <li>' +
-            '       <button onClick="loadTickets()" id="profile_button" class="button">Moje nahlášené závady' +
-            '       </button>' +
-            '   </li>' +
-            '   <li>' +
-            '       <button onClick="editProfile()" id="edit_profile_button" class="button">Změna profilu' +
-            '       </button>' +
-            '   </li>' +
-            '</ul>' +
-            '</div>' +
-            '</div>' +
-            '</div>';
+        ' <div class="profile">' +
+        '    <img src="src/images/profile.png" alt="Profile picture">' +
+        '   </div>' +
+        '<ul>' +
+        '   <a>' +
+        '       <div id="userName"></div>' +
+        '   </a>' +
+        '   <li id="user"></li>' +
+        '   <li>' +
+        '       <button onClick="loadTickets()" id="profile_button" class="button">Moje nahlášené závady' +
+        '       </button>' +
+        '   </li>' +
+        '   <li>' +
+        '       <button onClick="editProfile()" id="edit_profile_button" class="button">Změna profilu' +
+        '       </button>' +
+        '   </li>' +
+        '</ul>' +
+        '</div>' +
+        '</div>' +
+        '</div>';
 
-        document.getElementById('tuPlaceNav').innerHTML = output;
-    }
-    xhr1.send();
+    document.getElementById('tuPlaceNav').innerHTML = output;
 }
 function placeMobileUserNav() {
-    var xhr1 = new XMLHttpRequest();
-    xhr1.open('GET', 'src/tickets.json', true);
-    xhr1.onload = function () {
-        var output = '';
-        output +=
-            '<div id="mobileUserNavDiv">' +
-            '<ul>' +
-            '   <li id="userName"></li>' +
-            '   <li id="user"></li>' +
-            '   <li>' +
-            '       <button onClick="loadTickets()" id="profile_button" class="button">Moje nahlášené závady' +
-            '       </button>' +
-            '   </li>' +
-            '   <li>' +
-            '       <button onClick="editProfile()" id="edit_profile_button" class="button">Změna profilu' +
-            '       </button>' +
-            '   </li>' +
-            '</ul>' +
-            '</div>';
-        document.getElementById('tuPlaceNav').innerHTML = output;
-    }
-    xhr1.send();
+    var output = '';
+    output +=
+        '<div id="mobileUserNavDiv">' +
+        '<ul>' +
+        '   <li id="userName"></li>' +
+        '   <li id="user"></li>' +
+        '   <li>' +
+        '       <button onClick="loadTickets()" id="profile_button" class="button">Moje nahlášené závady' +
+        '       </button>' +
+        '   </li>' +
+        '   <li>' +
+        '       <button onClick="editProfile()" id="edit_profile_button" class="button">Změna profilu' +
+        '       </button>' +
+        '   </li>' +
+        '</ul>' +
+        '</div>';
+    document.getElementById('tuPlaceNav').innerHTML = output;
 }
 
 getName();

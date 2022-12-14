@@ -16,11 +16,5 @@ function saveProfile()
 
 //    const fs = require('fs');
   //  const fs = require('fs');
-    const save_data = (user_to_save) =>{
-        const jsonData = JSON.stringify(user_to_save);
-        fs.writeFile('src/users.json', jsonData, finished);
-    }
-    saveData(user_to_save);
 
-    newLink.click();
 }
