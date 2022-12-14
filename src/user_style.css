@@ -30,7 +30,7 @@ li {
 }
 
 main {
-    min-height: calc(100vh - 150px - 45px);
+    min-height: calc(100vh - 73px - 45px);
 }
 
 #ticket_filters {
