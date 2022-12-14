@@ -109,7 +109,7 @@ function sendMessage(form) {
             '<span class="chat_user">'+form.contact_message.value+'</span>' +
             '   </blockquote>' +
             '   <figure id="user_chat_pic">' +
-            '       <img src="images/profile.png" alt="user">' +
+            '       <img src="src/images/profile.png" alt="user">' +
             '   </figure>' +
             '</div>' +
             '<div class="messages">' +
@@ -117,7 +117,7 @@ function sendMessage(form) {
             '       <span>Omlouváme se, ale chatbot momentálně není dostupný.</span>' +
             '   </blockquote>' +
             '<figure>' +
-            '<img src="pictures/bot.png" alt="bot">' +
+            '<img src="src/pictures/bot.png" alt="bot">' +
             '       </figure>' +
             '</div>';
         document.getElementById('getMessage').innerHTML = output;
