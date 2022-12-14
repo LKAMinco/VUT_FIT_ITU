@@ -1,6 +1,14 @@
+/*
+* File: interactive_map.js
+* Author:
+* Subject: ITU
+* */
+
+// Adds map to html page
 const mapKey = "pk.eyJ1IjoianVsaXVzangiLCJhIjoiY2xiY2hoZWpvMDRkMTNxb2VsYWQ3ZW1vdSJ9.Qu7Yj2WOBF-uLm2S8x5yaQ";
 var map = L.map('map_div').setView([49.194825, 16.608241], 15);
 
+// Limits user's movement on the map
 var bound1 = L.latLng(49.416606, 16.220931);
 var bound2 = L.latLng(48.918164, 17.048815);
 
@@ -13,6 +21,7 @@ L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
 
 map.setMaxBounds(L.latLngBounds(bound1, bound2));
 
+// Add polygon, that highlights city Brno
 const brnoBounds = L.polygon([[
     [90, -180],
     [90, 180],
@@ -150,35 +159,18 @@ const brnoBounds = L.polygon([[
     interactive: false
 }).addTo(map);
 
-// Different icon
-
-var LeafIcon = L.Icon.extend({
-    options: {
-        iconSize:     [38, 50],
-        shadowSize:   [0, 0],
-        iconAnchor:   [0, 40],
-        shadowAnchor: [4, 62],
-        popupAnchor:  [20, 0]
-    }
-});
-
-var greenIcon = new LeafIcon({
-    iconUrl: 'https://pngimg.com/uploads/gps/gps_PNG65.png',
-})
-
-// End of different icon
-
+// Variables for filters and sort
 var filter_arr = [];
-
 var marker_list = [];
 var selected_sort;
 
+// Finds name of html file, from which the script was called
 var path = window.location.pathname;
 var page = path.split("/").pop();
 
 reset_filters();
 
-
+// Functions resets all search filters and reprints all data
 function reset_filters(){
     filter_arr = [
         "Problémy na cestách",
@@ -195,6 +187,7 @@ function reset_filters(){
     ]
     selected_sort = "name_asc";
 
+    // Minimap does not contain finished tickets
     if(page === "index.html"){
         filter_arr =  filter_arr.filter(function(e) { return e !== "Vyriešené" });
     }
@@ -211,15 +204,20 @@ function reset_filters(){
             item.setAttribute("class", "selected_filter");
         })
     }
+    // Minimap can skip sort function
     if (page == "index.html"){
         loadTickets()
     }
     else{
+        // Otherwise loadTickets() is called from function set_sort()
         set_sort(selected_sort);
     }
 }
 
+// This function prints all tickets on interactive map and in ticket list
+// Previously printed data are removed and then replaced by new prints
 function loadTickets() {
+    // Remove markers from map
     marker_list.forEach(marker => {
         map.removeLayer(marker);
     })
@@ -228,6 +226,7 @@ function loadTickets() {
     xhr.onload = function () {
         var ticket_list = document.getElementById('ticket_list');
         var tickets = JSON.parse(this.responseText);
+        // Data are filtered and ther sorted
         var filtered = tickets.filter( (ticket) => {
             return filter_arr.includes(ticket.category) && filter_arr.includes(ticket.status);
         })
@@ -276,9 +275,9 @@ function loadTickets() {
             ticket_list.innerHTML = "";
         }
         filtered.forEach(ticket => {
-            //const marker = L.marker([49.152556, 16.679267], {icon: greenIcon}).addTo(map);
             const marker = L.marker([ticket.lat, ticket.long]).addTo(map);
             marker_list.push(marker);
+            // Sets marker's popup
             var popup_string = "<div id='map_marker_popup'>" +
                          "<img src='" + ticket.image_path + "' alt=\".\">" +
                          "<a>" + ticket.title + "</a><br>" +
@@ -292,6 +291,7 @@ function loadTickets() {
                 popup_string += "</div>";
             }
             marker.bindPopup(popup_string);
+            // Prints data on data list
             if (ticket_list != null) {
                 var list_string = "<div id='map_list_item'>" +
                     "<img src='" + ticket.image_path + "' alt=\".\">" +
@@ -308,15 +308,19 @@ function loadTickets() {
     xhr.send();
 }
 
+// Calls this function on page load
 window.onload = function() {
     reset_filters();
 }
 
+// Function prints all details for ticket
+// Called when detail button is clicked
 function ticket_detail(id){
     var popup = document.getElementById("ticket_info");
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
     xhr.onload = function () {
+        // Displays ticket div and overlay
         var overlay = document.getElementById("background-blur");
         overlay.setAttribute("class", "blur-active");
         var div = document.getElementById("ticket_detail");
@@ -340,6 +344,7 @@ function ticket_detail(id){
                           "<a>Stav závady: " + filtered.status + "</a><br>" +
                           "<a>Dátum pridania: " + filtered.date + "</a>"+
                           "</div>";
+        // Calls function, which displays comment functionality
         load_comments(id);
         load_add_comments();
         var comment_button = document.getElementById("comment_button");
@@ -348,6 +353,7 @@ function ticket_detail(id){
     xhr.send();
 }
 
+// Function prints all comments, which belong to displayed ticket
 function load_comments(id){
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/comments', true);
@@ -373,6 +379,7 @@ function load_comments(id){
     xhr.send();
 }
 
+// Function displays user's name/last name in comment header
 function readName(email, id){
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/users', true);
@@ -388,6 +395,8 @@ function readName(email, id){
     xhr.send();
 }
 
+// Function displays add button form
+// Only when user is logged in
 function load_add_comments(){
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/active/1', true);
@@ -403,17 +412,19 @@ function load_add_comments(){
     xhr.send();
 }
 
+// Function opens filter/sort menus
 function open_filter_menu(menu, img){
     if(document.getElementById(menu).hasAttribute("class")){
         document.getElementById(menu).removeAttribute("class");
-        document.getElementById(img).setAttribute("src", "list_opened.png");
+        document.getElementById(img).setAttribute("src", "src/pictures/list_opened.png");
     }
     else{
         document.getElementById(menu).setAttribute("class", "hidden_list");
-        document.getElementById(img).setAttribute("src", "list_closed.png");
+        document.getElementById(img).setAttribute("src", "src/pictures/list_closed.png");
     }
 }
 
+// Function sets filters, based on user input
 function set_filter(filter){
     if(document.getElementById(filter).hasAttribute("class")){
         document.getElementById(filter).removeAttribute("class");
@@ -423,9 +434,11 @@ function set_filter(filter){
         document.getElementById(filter).setAttribute("class", "selected_filter");
         filter_arr.push(filter);
     }
+    // Reprints all tickets
     loadTickets();
 }
 
+// Function sets sorts, based on user input
 function set_sort(sort){
     var button = document.getElementById(sort);
     if(button != null) {
@@ -437,6 +450,7 @@ function set_sort(sort){
                     sort_types[i].removeAttribute("class");
                 }
             }
+            // Changes text in button, to better represent active sort
             document.getElementById(sort).setAttribute("class", "selected_filter");
             var text = '';
             switch (sort) {
@@ -456,10 +470,13 @@ function set_sort(sort){
             document.getElementById('sort_text').innerHTML = "Zoradené podľa: " + text;
         }
     }
+    // Reprints all tickets
     loadTickets();
 }
 
 var index = 0;
+// Function adds comment to ticket
+// These comments are not stored anywhere, they disappear on ticket detail reload
 function add_comment(form, id){
     var div = document.getElementById("comment_list");
     var date = new Date().toISOString().substr(0, 19).replace('T', ' ');
