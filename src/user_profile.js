@@ -1,3 +1,10 @@
+/*
+* File: user_profile.js
+* Author: Simona Češková (cesko00)
+* Subject: ITU
+* */
+
+
 //this functions loads user informations, then user cant change - email and date of birth
 function loadUser() {
     var xhr = new XMLHttpRequest();
@@ -256,7 +263,7 @@ function editProfile() {
     var output = '';
     output +=
         '<section id="edit_profile">' +
-        '<form action="save_file_edit.js">' +
+        '<form>' +
         '<div class="container">' +
         '<h1 id="update_header_h1" class="title c">Úprava profilu</h1>' +
         '<div class="form-group a">' +

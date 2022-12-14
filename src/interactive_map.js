@@ -1,6 +1,6 @@
 /*
 * File: interactive_map.js
-* Author:
+* Author: Jakub Július Šmýkal (xsmyka01)
 * Subject: ITU
 * */
 

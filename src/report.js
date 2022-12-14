@@ -1,3 +1,10 @@
+/*
+* File: report.js
+* Author: Milan Hrabovský (xhrabo15), Jakub Július Šmýkal (xsmyka01)
+* Subject: ITU
+* */
+
+
 function endOfReport() {
     var output = '';
     output += '<section id="last_report_page">' +
@@ -292,6 +299,10 @@ function roads() {
     document.getElementById('report_part').innerHTML = output;
 }
 
+/*
+* * Function: createMap()
+* * Author: Jakub Július Šmýkal (xsmyka01)
+* */
 function createMap() {
     const mapKey = "pk.eyJ1IjoianVsaXVzangiLCJhIjoiY2xiY2hoZWpvMDRkMTNxb2VsYWQ3ZW1vdSJ9.Qu7Yj2WOBF-uLm2S8x5yaQ";
     var map = L.map('map_div').setView([49.194825, 16.608241], 15);

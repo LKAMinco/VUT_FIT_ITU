@@ -1,3 +1,9 @@
+/*
+* File: main_page.js
+* Author: Milan Hrabovský (xhrabo15), Simona Češková (xcesko00)
+* Subject: ITU
+* */
+
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
@@ -101,4 +107,30 @@ function showMobileNav() {
     } else {
         x.style.display = "block";
     }
+}
+
+/*
+* Function: sendMessage()
+* Author: Simona Češková (xcesko00)
+* */
+// Function sends response to chat bot query
+function sendMessage(form) {
+    var output = '';
+    output += '<div class="messages">' +
+        '<blockquote id="user_chat">' +
+        '<span class="chat_user">'+form.contact_message.value+'</span>' +
+        '   </blockquote>' +
+        '   <figure id="user_chat_pic">' +
+        '       <img src="src/images/profile.png" alt="user">' +
+        '   </figure>' +
+        '</div>' +
+        '<div class="messages">' +
+        '   <blockquote>' +
+        '       <span>Omlouváme se, ale chatbot momentálně není dostupný.</span>' +
+        '   </blockquote>' +
+        '<figure>' +
+        '<img src="src/pictures/bot.png" alt="bot">' +
+        '       </figure>' +
+        '</div>';
+    document.getElementById('getMessage').innerHTML = output;
 }
