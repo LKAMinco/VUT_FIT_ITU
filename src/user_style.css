@@ -141,6 +141,7 @@ tbody, a {
     height: 50px;
     margin: 20px auto;
     display: block;
+    margin-left: -40px;
     cursor: pointer;
 }
 
