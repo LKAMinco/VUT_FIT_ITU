@@ -51,21 +51,37 @@ function set_navbar(){
         var response = JSON.parse(this.responseText).status;
         if (response === "true"){
             var button = document.getElementById("register_btn");
-            button.setAttribute("class", "hide_btn");
+            if (button != null){
+                button.setAttribute("class", "hide_btn");
+            }
             button = document.getElementById("register_btn2");
-            button.setAttribute("class", "hide_btn");
+            if (button != null){
+                button.setAttribute("class", "hide_btn");
+            }
             button = document.getElementById("login_btn");
-            button.setAttribute("class", "hide_btn");
+            if (button != null){
+                button.setAttribute("class", "hide_btn");
+            }
             button = document.getElementById("login_btn2");
-            button.setAttribute("class", "hide_btn");
+            if (button != null){
+                button.setAttribute("class", "hide_btn");
+            }
             button = document.getElementById("profile_btn");
-            button.removeAttribute("class");
+            if (button != null){
+                button.removeAttribute("class");
+            }
+            button = document.getElementById("profile_btn2");
+            if (button != null){
+                button.removeAttribute("class");
+            }
             button = document.getElementById("logout_btn");
-            button.removeAttribute("class");
+            if (button != null){
+                button.removeAttribute("class");
+            }
             button = document.getElementById("logout_btn2");
-            button.removeAttribute("class");
-            button = document.getElementById("logout_btn2");
-            button.removeAttribute("class");
+            if (button != null){
+                button.removeAttribute("class");
+            }
 
             button = document.getElementById("submit_btn");
             if(button != null) {
@@ -75,21 +91,37 @@ function set_navbar(){
         }
         else{
             var button = document.getElementById("profile_btn");
-            button.setAttribute("class", "hide_btn");
+            if (button != null){
+                button.setAttribute("class", "hide_btn");
+            }
             button = document.getElementById("profile_btn2");
-            button.setAttribute("class", "hide_btn");
+            if (button != null){
+                button.setAttribute("class", "hide_btn");
+            }
             button = document.getElementById("logout_btn");
-            button.setAttribute("class", "hide_btn");
+            if (button != null){
+                button.setAttribute("class", "hide_btn");
+            }
             button = document.getElementById("logout_btn2");
-            button.setAttribute("class", "hide_btn");
+            if (button != null){
+                button.setAttribute("class", "hide_btn");
+            }
             button = document.getElementById("register_btn");
-            button.removeAttribute("class");
+            if (button != null){
+                button.removeAttribute("class");
+            }
             button = document.getElementById("register_btn2");
-            button.removeAttribute("class");
+            if (button != null){
+                button.removeAttribute("class");
+            }
             button = document.getElementById("login_btn");
-            button.removeAttribute("class");
+            if (button != null){
+                button.removeAttribute("class");
+            }
             button = document.getElementById("login_btn2");
-            button.removeAttribute("class");
+            if (button != null){
+                button.removeAttribute("class");
+            }
 
             button = document.getElementById("submit_btn");
             if(button != null) {

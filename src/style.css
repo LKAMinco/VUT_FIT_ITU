@@ -725,7 +725,7 @@ section {
 }
 
 .hide_btn {
-    display: none;
+    display: none !important;
 }
 
 /* ************************ GRAPHS ********************** */
