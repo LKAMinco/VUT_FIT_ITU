@@ -1000,6 +1000,10 @@ blockquote::after {
         top: 0;
     }
 
+    #nav-place a.icon:hover {
+        color: var(--lightRed);
+    }
+
     #navigation-desktop2 .icon {
         background: rgba(5, 68, 104, 0.8);
         font-size: 25px;
