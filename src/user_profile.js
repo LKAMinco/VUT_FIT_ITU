@@ -1,10 +1,8 @@
+//this functions loads user informations, then user cant change - email and date of birth
 function loadUser() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/users', true);
     xhr.onload = function () {
-        //FIXME:
-        //var active_user = JSON.parse(this.responseText).filter(function(entry){return entry.email === 'ree@email.com'});
-
         var users_list = JSON.parse(this.responseText);
         var active_user = users_list.filter((user) => user.email === 'basic.user@email.com');
         active_user = active_user[0];
@@ -19,11 +17,11 @@ function loadUser() {
     xhr.send();
 }
 
+//loads user name and surname
 function getName() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/users', true);
     xhr.onload = function () {
-        //FIXME:
         var users_list = JSON.parse(this.responseText);
         var active_user = users_list.filter((user) => user.email === 'basic.user@email.com');
         active_user = active_user[0];
@@ -35,6 +33,8 @@ function getName() {
     xhr.send();
 }
 
+//when user click on "user profile" button, this functions creates that content
+//loading all filters and their values with table frame
 function loadUserProfile() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'src/tickets.json', true);
@@ -108,12 +108,15 @@ function loadUserProfile() {
     xhr.send();
 }
 
+
+//loads tickets that user created into a table. Table is built from title, date, address, category, status and image of tickets
 function loadTickets() {
     loadUserProfile();
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
     xhr.onload = function () {
         var ticker_list = JSON.parse(this.responseText);
+        //using one user for demonstration of our application
         var ticker_list_filtered = ticker_list.filter((ticket) => ticket.user_email === 'Misty_Mertz80@gmail.com');
         var output = '';
         document.getElementById('ticket').innerHTML = ticker_list_filtered;
@@ -141,6 +144,8 @@ function loadTickets() {
 
 
 /* **********************************DROPDOWN MENU **************************** */
+//user selects a filter and according to which he used this function selects values and filters it.
+//filtered values are sorted with ticket category, status, date
 var searchFilter = () => {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
@@ -150,12 +155,16 @@ var searchFilter = () => {
         let status = document.getElementById("filter1").value;
         let category = document.getElementById("filter2").value;
         let date = document.getElementById("filter3").value;
+        //filtering with getted values
+        //status
         if (status != "all") {
             ticker_list_filtered = ticker_list_filtered.filter((ticket) => ticket.status === status);
         }
+        //category
         if (category != "all") {
             ticker_list_filtered = ticker_list_filtered.filter((ticket) => ticket.category === category);
         }
+        //date
         if (date == 'max') {
             ticker_list_filtered = ticker_list_filtered.sort((a, b) => {
                 const dateB = b.date;
@@ -181,7 +190,7 @@ var searchFilter = () => {
                 return 0;
             })
         }
-
+        //one line of a table is made here
         var output = '';
         document.getElementById('ticket').innerHTML = ticker_list_filtered;
         console.log(ticker_list_filtered);
@@ -209,8 +218,8 @@ var searchFilter = () => {
 
 /* **********************************DROPDOWN MENU **************************** */
 /* **********************************MODAL IMG **************************** */
-
 // all images inside the image modal content class
+//each ticket has one picture and after click on it, it turns bigger as a popup modal image
 function popUpImage() {
 
     const lightboxImages = document.querySelectorAll('.ticket_img_small');
