@@ -13,6 +13,7 @@ function loadUser() {
         output += '<li><h3>' + active_user.email + '</h3></li>' +
             '<li><h3>' + active_user.date_of_birth + '</h3></li>';
         document.getElementById('user').innerHTML = output;
+        loadTickets();
     }
 
     xhr.send();
