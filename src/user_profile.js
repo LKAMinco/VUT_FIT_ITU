@@ -119,7 +119,7 @@ function loadTickets() {
         //using one user for demonstration of our application
         var ticker_list_filtered = ticker_list.filter((ticket) => ticket.user_email === 'Misty_Mertz80@gmail.com');
         var output = '';
-        document.getElementById('ticket').innerHTML = ticker_list_filtered;
+        document.getElementById('ticket');
         for (var i in ticker_list_filtered) {
             output += '<tr class="ticket_body"> ' +
                 '<td>' + ticker_list_filtered[i].title + '</td>' +
