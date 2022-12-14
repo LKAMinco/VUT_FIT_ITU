@@ -75,7 +75,7 @@ html, body {
     background-color: var(--white);
     height: 100vh;
     font-family: Bahnschrift, serif;
-    overflow-y: hidden;
+    overflow-x: hidden;
     scroll-behavior: smooth;
 }
 
@@ -216,10 +216,11 @@ a {
     transition: 50ms ease-in-out;
 }
 
-#categories_list button:hover>p, #conditions_list button:hover>p, #sort_list button:hover>p{
+#categories_list button:hover, #conditions_list button:hover, #sort_list button:hover{
     cursor: pointer;
     transition: 200ms ease-in-out;
     color: var(--black) !important;
+    background-color: var(--lightRed);
 }
 
 #map_list_item{
