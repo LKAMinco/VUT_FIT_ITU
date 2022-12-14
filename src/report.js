@@ -19,7 +19,7 @@ function reportFour() {
     output += '<section id="services">' +
         '<div class="content">' +
         '<h3>4/4 Doplňte další informace:</h3>' +
-        '<form action="#" id="form_4">' +
+        '<form id="form_4">' +
         '<input id="4_input" type="text" name="subject" placeholder="Subject" required>' +
         '<textarea id="4_textarea" name="message" cols="30" rows="10" placeholder="Message" required></textarea>' +
         '<input onclick="endOfReport()" class="submit-btn" id="submit-btn" type="submit" value="Pokračovat dále">' +
@@ -39,7 +39,7 @@ function reportThree() {
     output += '<section id="services">' +
         '<div class="content">' +
         '<h3>3/4 Vyberte lokaci problému:</h3>' +
-        '<form id="report_form" action="#">' +
+        '<form id="report_form">' +
         '<div id="map_div"></div>' +
         '<input onclick="reportFour()" class="submit-btn" id="three-submit" type="submit" value="Pokračovat dále">' +
         '</form>' +
