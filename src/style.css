@@ -936,44 +936,59 @@ blockquote::after {
 
 /* ************************ MEDIA ********************** */
 @media only screen and (max-width: 750px) {
-    .mobile-container {
-        max-width: 480px;
-        margin: auto;
-        background-color: #555;
-        height: 500px;
-        color: white;
-        border-radius: 10px;
+    #navigation-desktop{
+        position: fixed;
+        background: rgba(5, 68, 104, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 7000;
     }
-
-    #navigation-desktop {
+    #nav-place {
         overflow: hidden;
         background-color: #333;
         position: relative;
     }
 
-    #navigation-desktop #myLinks {
+    #nav-place #bar_list {
         display: none;
     }
 
-    #navigation-desktop a {
-        color: white;
-        padding: 14px 16px;
-        text-decoration: none;
-        font-size: 17px;
-        display: block;
+    #nav-place a:hover, #nav-place button:hover {
+    transition: 200ms ease-in-out;
+    background-color: var(--lightRed);
     }
 
-    #navigation-desktop a.icon {
-        background: black;
+    #nav-place a, #nav-place button {
+        padding: 14px 16px;
+        text-decoration: none;
+
+        background: rgba(5, 68, 104, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 7000;
+
+        font-size: 17px;
+        display: block;
+        height: 20px;
+    }
+
+    #nav-place a.icon {
+        background: rgba(168, 175, 185, 0);
+
         display: block;
         position: absolute;
         right: 0;
         top: 0;
     }
 
+    #navigation-desktop .icon{
+        font-size: 25px;
+    }
+
     .active {
         background-color: #04AA6D;
         color: white;
+    }
+    #navigation-desktop{
+        height: 50px;
     }
 }
 /* ************************ MEDIA ********************** */
