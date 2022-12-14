@@ -221,6 +221,10 @@ section {
     padding: 30px 10% 80px;
 }
 
+#about h1{
+    text-align: center;
+}
+
 #map {
     background-color: var(--darkRed);
     margin-bottom: 100px;
