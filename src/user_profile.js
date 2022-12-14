@@ -294,11 +294,11 @@ function editProfile() {
         '<h1 class="title c">Změna hesla</h1>' +
         '<div class="form-group a">' +
         '<label for="first-name">Heslo</label>' + '<br>' +
-        '<input id="first-pass" type="text" placeholder="Nové heslo">' +
+        '<input id="first-pass" type="text" placeholder="Nové heslo" required>' +
         '</div>' +
         '<div class="form-group b">' +
         '<label for="last-name">Kontrola hesla</label>' + '<br>' +
-        '<input id="last-pass" type="text" placeholder="Nové heslo">' +
+        '<input id="last-pass" type="text" placeholder="Nové heslo" required>' +
         '</div>' +
         '<div class="button_container_edit c">' +
         '<input type="button" id="bt_pass" class="button" value="Uložit nové heslo"onClick="saveProfilePass()"/>' +
