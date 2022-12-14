@@ -8,12 +8,6 @@ main {
 
 }
 
-.content {
-    max-width: 1920px;
-    margin: auto;
-    padding: 0 20px 0 20px;
-}
-
 h2 {
     font-size: 40px;
     text-transform: uppercase;
@@ -140,18 +134,32 @@ cursor: pointer;
 /* ******************************* BUTTON ************************** */
 /* ******************************** 1/5 ***************************** */
 /* ******************************** 2/5 ***************************** */
+
 #photo_mode {
-    border-style: dashed;
-    max-width: 500px;
-    max-height: 500px;
-    height: 100%;
-    width: 100%;
-    color: #a62e2e;
-    text-align: center;
-    position: relative;
-    padding: 200px;
+    display: none;
+}
+
+#aa {
+}
+
+#aa img {
+    max-width: 50%;
+}
+
+.custom-file-upload {
+    border-radius: 10px;
+    display: inline-block;
+    padding: 20px;
     cursor: pointer;
-    background-color: #acbabd;
+    width: 100px;
+    color: white;
+    text-align: center;
+    background-color: var(--darkRed);
+    font-size: 14pt;
+}
+
+.custom-file-upload:hover {
+    background-color: var(--lightRed);
 }
 
 .photo_mode_h {

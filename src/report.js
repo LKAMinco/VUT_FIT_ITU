@@ -76,6 +76,15 @@ function handleForm(event) {
     event.preventDefault();
 }
 
+function loadFile(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function () {
+        URL.revokeObjectURL(output.src) // free memory
+    }
+}
+
+
 function reportSecond() {
 //    var image = document.getElementById('photo_mode').innerHTML;
     var xhr = new XMLHttpRequest();
@@ -87,7 +96,8 @@ function reportSecond() {
             '            <h3>2/4 Nahrajte fotografii:</h3>\n' +
             '        </div>\n' +
             '<div id="aa">' +
-            '<input id="photo_mode" type="file" name="uploadfile" accept="image/png, image/gif, image/jpeg">' +
+            '<img id="output"/><br>' +
+            '<label class="custom-file-upload"><input id="photo_mode" type="file" name="uploadfile" accept="image/png, image/gif, image/jpeg" onchange="loadFile(event)"/>Upload file</label>' +
             '</div>' +
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n<ul>' +
             '   <li>\n' +

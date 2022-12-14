@@ -132,7 +132,9 @@ section {
     transition: .3s linear;
 }
 
-#navigation-desktop .content ul button:nth-child(2n) {
+#navigation-desktop .content ul #login_btn,
+#navigation-desktop .content ul #profile_btn,
+#navigation-desktop .content ul #show_btn {
     border-right: 3px solid var(--white);
 }
 
