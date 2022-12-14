@@ -92,7 +92,7 @@ function loadUserProfile() {
             '<th>Název</th>' +
             '<th>Datum nahlášení</th>' +
             '<th>Adresa</th>' +
-            '<th>Kategorie</th' +
+            '<th>Kategorie</th>' +
             '<th>Status</th>' +
             '<th>Obrázek</th>' +
             '</tr>' +
