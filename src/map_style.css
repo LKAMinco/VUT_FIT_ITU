@@ -269,7 +269,7 @@ a {
     position: fixed;
     width: 34rem;
     height: auto;
-    left: 50%;
+    left: 46%;
     transform: translate(-7%,9.2rem);
     opacity: 0;
     pointer-events: none;
