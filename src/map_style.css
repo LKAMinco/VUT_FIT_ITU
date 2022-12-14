@@ -454,7 +454,6 @@ a {
     background: var(--lightGray);
     border-radius: 10px;
 }
-
 #navigation-desktop {
     position: fixed;
     top: 0;
@@ -473,6 +472,7 @@ a {
 
 #navigation-desktop ul li {
     float: left;
+    height: 73px;
 }
 
 #navigation-desktop ul button {
@@ -495,10 +495,10 @@ a {
     text-align: center;
     text-decoration: none;
     font-weight: bold;
-    height: 39px;
+    height: 100%;
     padding: 0 16px 14px;
-    margin-top: 20px;
-    font-size: large;
+    margin-top: 24px;
+    font-size: 15pt;
     text-transform: uppercase;
     cursor: pointer;
 }
@@ -506,14 +506,12 @@ a {
 #navigation-desktop .content ul button:hover {
     background-color: var(--lightRed);
     -moz-transition: .5s linear;
-    cursor: pointer;
     -webkit-transition: .5s linear;
     -o-transition: .3s linear;
     transition: .3s linear;
 }
 
 #navigation-desktop .content li:hover {
-    cursor: pointer;
     background-color: var(--lightRed);
     -moz-transition: .5s linear;
     -webkit-transition: .5s linear;
