@@ -80,7 +80,7 @@ html, body {
 }
 
 .content{
-    max-width: 1920px; /* TODO */
+    max-width: 1720px; /* TODO */
     margin: auto;
 }
 
@@ -140,7 +140,7 @@ a {
 
 #map_main {
     display: grid;
-    grid-template-columns: 77% 23%;
+    grid-template-columns: 74% 26%;
     height: 100%;
     margin: auto;
 }
@@ -224,8 +224,8 @@ a {
 }
 
 #map_list_item{
-    max-width: 24.4rem; /*36rem*/
-    min-width: 24.4rem;
+    max-width: 25rem; /*36rem*/
+    min-width: 25rem;
     background-color: var(--darkRed);
     margin: 1rem auto;
     height: 18rem; /*20rem*/
