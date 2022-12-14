@@ -221,7 +221,7 @@ section {
     padding: 30px 10% 80px;
 }
 
-#about h1{
+#about h1 {
     text-align: center;
 }
 
@@ -429,7 +429,7 @@ section {
     color: white;
 }
 
-.close-button{
+.close-button {
     cursor: pointer;
 }
 
@@ -472,7 +472,7 @@ section {
     transition: 200ms ease-in-out;
 }
 
-#form_login input,  #form_login_register input {
+#form_login input, #form_login_register input {
     background-color: lightgrey;
     border: none;
     margin: 10px;
@@ -483,18 +483,18 @@ section {
     font-size: larger;
 }
 
-#form_register input,  #form_login_register input {
-     background-color: lightgrey;
-     border: none;
-     margin: 10px;
-     height: 40px;
-     border-radius: 10px;
-     padding-left: 10px;
-     font-size: larger;
- }
+#form_register input, #form_login_register input {
+    background-color: lightgrey;
+    border: none;
+    margin: 10px;
+    height: 40px;
+    border-radius: 10px;
+    padding-left: 10px;
+    font-size: larger;
+}
 
- #form_login input:focus, #form_register input:not(#news_reg):focus,  #form_login_register input:focus {
-     background-color: white;
+#form_login input:focus, #form_register input:not(#news_reg):focus, #form_login_register input:focus {
+    background-color: white;
     outline: var(--darkRed) solid 3px;
 }
 
@@ -504,7 +504,7 @@ section {
     font-size: x-large;
 }
 
-#form_login button, #form_register button,  #form_login_register button {
+#form_login button, #form_register button, #form_login_register button {
     margin: 15px;
     height: 40px;
     width: 90%;
@@ -608,7 +608,7 @@ section {
 
 #password_reg2 {
     grid-column: 2;
-    grid-row:8;
+    grid-row: 8;
 }
 
 #news {
@@ -625,7 +625,7 @@ section {
     border: 0;
 }
 
-#reg_btn{
+#reg_btn {
     grid-column: 1/-1;
     grid-row: 10;
     justify-self: center;
@@ -645,18 +645,20 @@ section {
 #contact_div a {
     float: right;
 }
+
 /* ************************************************* */
 /* ********************** LOGIN OR REGISTER *************************** */
-.nebo{
+.nebo {
     text-align: center;
 }
+
 /* ********************** LOGIN OR REGISTER *************************** */
 /* ********************** UP BUTTON *************************** */
-#up{
+#up {
     position: fixed;
     z-index: 6000;
-    width:60px;
-    height:60px;
+    width: 60px;
+    height: 60px;
     left: 5%;
     top: 86%;
     background: var(--lightRed);
@@ -668,15 +670,16 @@ section {
     font-size: 60px;
 }
 
-#up:hover{
+#up:hover {
     background: orange;
     color: var(--up-hover);
     cursor: pointer;
     transition: .2s linear;
 }
+
 /* ********************** UP BUTTON *************************** */
 
-#map_div{
+#map_div {
     width: 100%;
     height: 500px;
     border-radius: 40px;
@@ -690,7 +693,7 @@ section {
     margin: 0;
 }
 
-.leaflet-popup-content-wrapper a, .leaflet-popup.tip a{
+.leaflet-popup-content-wrapper a, .leaflet-popup.tip a {
     background-color: var(--darkRed) !important;
     color: var(--white) !important;
 }
@@ -706,7 +709,7 @@ section {
     transform: translate(-1.31rem, -0.9rem);
 }
 
-#map_marker_popup img{
+#map_marker_popup img {
     width: 100%;
     height: 7rem;
     border-top-left-radius: 0.75rem;
@@ -716,12 +719,12 @@ section {
     margin-bottom: 0.2rem;
 }
 
-#map_marker_popup a{
+#map_marker_popup a {
     margin-left: 0.6rem;
     font-size: 1rem;
 }
 
-.hide_btn{
+.hide_btn {
     display: none;
 }
 
@@ -734,9 +737,10 @@ section {
     background: conic-gradient(var(--menu-color) 0% 33%, var(--almost-white) 33% 67%, var(--violet) 67%);
 }
 
-#graph_p1, #graph_p2{
+#graph_p1, #graph_p2 {
     width: 100%;
 }
+
 /* ************************ GRAPHS ********************** */
 /* ************************ CHATBOX ********************** */
 #chatbot {
@@ -804,7 +808,7 @@ section {
     transition: 200ms ease-in-out;
 }
 
-#chatbot_wrapper{
+#chatbot_wrapper {
     border-radius: 15px;
     width: 320px;
     height: 448px;
@@ -828,7 +832,7 @@ section {
     justify-items: center;
 }
 
-#getMessage{
+#getMessage {
     transition: .3s linear;
 }
 
@@ -897,12 +901,12 @@ blockquote::after {
     margin-left: 200px;
 }
 
-.chat_user{
+.chat_user {
     margin-left: -145px;
     color: var(--lightGray);
 }
 
-#contact_message{
+#contact_message {
     margin-top: -10px;
     max-width: 250px;
     min-width: 250px;
@@ -911,15 +915,16 @@ blockquote::after {
     min-height: 45px;
 }
 
-#chat_form{
+#chat_form {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
 }
-#texarea_div{
+
+#texarea_div {
     grid-column: 1/4;
 }
 
-#contact-submit{
+#contact-submit {
     font-size: 27px;
     cursor: pointer;
     border: None;
@@ -927,73 +932,147 @@ blockquote::after {
     width: 50px;
     background: rgba(43, 45, 56, 0);
 }
+
 #sendPaper {
     margin-bottom: 20px;
     margin-left: 15px;
     grid-column: 4/-1;
 }
+
 /* ************************ CHATBOX ********************** */
 
-#news_reg{
+#news_reg {
     cursor: pointer;
 }
 
+#nav-place {
+    display: none;
+}
+
+
 /* ************************ MEDIA ********************** */
 @media only screen and (max-width: 750px) {
-    #navigation-desktop{
-        position: fixed;
-        background: rgba(5, 68, 104, 0.8);
-        backdrop-filter: blur(10px);
-        z-index: 7000;
-    }
-    #nav-place {
-        overflow: hidden;
-        background-color: #333;
-        position: relative;
+    #long {
+        display: None;
     }
 
-    #nav-place #bar_list {
+    #nav-place {
+        display: block;
+        visibility: visible;
+    }
+
+    #bar_list {
         display: none;
     }
 
-    #nav-place a:hover, #nav-place button:hover {
-    transition: 200ms ease-in-out;
-    background-color: var(--lightRed);
-    }
 
-    #nav-place a, #nav-place button {
-        padding: 14px 16px;
-        text-decoration: none;
+        #navigation-desktop2{
+            overflow: hidden;
+            background: rgba(5, 68, 104, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 7000;
+        }
+        #nav-place {
+            overflow: hidden;
+            background-color: #333;
+            position: relative;
+        }
 
-        background: rgba(5, 68, 104, 0.8);
-        backdrop-filter: blur(10px);
-        z-index: 7000;
+        #nav-place a:hover, #nav-place button:hover {
+        transition: 200ms ease-in-out;
+        background-color: var(--lightRed);
+        }
 
-        font-size: 17px;
-        display: block;
-        height: 20px;
-    }
-
+        #nav-place a, #nav-place button {
+            padding: 14px 16px;
+            text-decoration: none;
+            background: rgba(5, 68, 104, 0.8);
+            backdrop-filter: blur(10px);
+            z-index: 7000;
+            font-size: 17px;
+            display: block;
+        }
     #nav-place a.icon {
         background: rgba(168, 175, 185, 0);
-
         display: block;
-        position: absolute;
         right: 0;
         top: 0;
     }
 
-    #navigation-desktop .icon{
+    #navigation-desktop2 .icon {
+        background: rgba(5, 68, 104, 0.8);
         font-size: 25px;
     }
 
-    .active {
-        background-color: #04AA6D;
-        color: white;
+    #navigation-desktop2 {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        background: rgba(5, 68, 104, 0.8);
+        backdrop-filter: blur(10px);
+        z-index: 7000;
     }
-    #navigation-desktop{
-        height: 50px;
+
+    #navigation-desktop2 ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
     }
+
+    #navigation-desktop2 ul li {
+        float: left;
+        height: 73px;
+    }
+
+    #navigation-desktop2 ul button {
+        float: right;
+        font-weight: bold;
+        height: 73px;
+        padding-left: 20px;
+        padding-right: 20px;
+        font-size: large;
+        text-transform: uppercase;
+        background-color: Transparent;
+        border: 0;
+        color: var(--white);
+        cursor: pointer;
+    }
+
+    #navigation-desktop2 ul li a {
+        display: block;
+        color: var(--white);
+        text-align: center;
+        text-decoration: none;
+        font-weight: bold;
+        height: 100%;
+        padding: 0 16px 14px;
+        margin-top: 24px;
+        font-size: 15pt;
+        text-transform: uppercase;
+        cursor: pointer;
+    }
+
+    #navigation-desktop2 .content ul button:hover {
+        background-color: var(--lightRed);
+        -moz-transition: .5s linear;
+        -webkit-transition: .5s linear;
+        -o-transition: .3s linear;
+        transition: .3s linear;
+    }
+
+    #navigation-desktop2 .content li:hover {
+        background-color: var(--lightRed);
+        -moz-transition: .5s linear;
+        -webkit-transition: .5s linear;
+        -o-transition: .3s linear;
+        transition: .3s linear;
+    }
+
+    #navigation-desktop2 .content ul button:nth-child(2n-1) {
+        border-right: 3px solid var(--white);
+    }
+
     /* ********* MAP AND REPORT ********** */
     #map .content {
         display: grid;
@@ -1019,7 +1098,8 @@ blockquote::after {
         margin-right: 15px;
         width: auto;
     }
-    #zoom{
+
+    #zoom {
         margin-left: 420px;
     }
 
@@ -1027,6 +1107,7 @@ blockquote::after {
         grid-row: 4;
         grid-column: 1;
     }
+
     /* ********* MAP AND REPORT ********** */
     /* ********* STATS ******** */
     #statid {
@@ -1034,47 +1115,58 @@ blockquote::after {
         grid-template-columns: 1fr;
         grid-template-rows: auto auto;
     }
+
     /* ********* STATS ******** */
     /* ********* CONTACTS ******** */
-
-    #contact_div{
+    #contact_div {
         display: grid;
         grid-template-rows:  auto auto auto auto auto auto auto auto;
         grid-template-columns: 1fr;
     }
-    #contact_div label{
+
+    #contact_div label {
         width: 600px;
         padding-bottom: 10px;
     }
-    #milan{
+
+    #milan {
         grid-row: 1;
     }
-    #simona{
+
+    #simona {
         grid-row: 2;
     }
+
     #julius {
         grid-row: 3;
     }
-    #email_ a{
+
+    #email_ a {
         grid-column: 1;
         grid-row: 5;
     }
-    #mobile a{
+
+    #mobile a {
         grid-column: 1;
-         grid-row: 6;
+        grid-row: 6;
     }
-    #phone a{
+
+    #phone a {
         grid-column: 1;
         grid-row: 7;
     }
-    #address a{
+
+    #address a {
         grid-column: 1;
         grid-row: 8;
     }
-    #chatbot{
+
+    #chatbot {
         grid-column: 1;
         margin-left: -30px;
     }
+
     /* ********* CONTACTS ******** */
 }
+
 /* ************************ MEDIA ********************** */

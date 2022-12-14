@@ -144,14 +144,21 @@ tbody, a {
     cursor: pointer;
 }
 
-#profile_button, #edit_profile_button {
+#profile_button, #profile_button2, #edit_profile_button, #edit_profile_button2 {
     margin-left: -40px;
     background-color: rgba(255, 255, 255, 0);
 }
 
-.button:hover, #profile_button:hover, #edit_profile_button:hover {
+.button:hover, #profile_button:hover, #profile_button2:hover, #edit_profile_button:hover, #edit_profile_button2:hover {
     transition: 200ms ease-in-out;
     background: #a62e2e;
+}
+#profile_button2, #edit_profile_button2{
+    background-color: rgba(43, 45, 56, 0) !important;
+    text-transform: lowercase;
+    font-size: 17px !important;
+    float: left;
+
 }
 
 /* *************************** BODY ***************************** */
@@ -428,15 +435,16 @@ th {
 /* *************************** DROPDOWN MENU ***************************** */
 
 @media only screen and (max-width: 750px) {
-    .all{
+    .all {
         display: grid;
         grid-template-rows: 1fr 1fr;
     }
 
-    #tuPlaceNav{
-        grid-row: 1;
+    #tuPlaceNav {
+        display: none;
     }
-    #user_profile{
+
+    #user_profile {
         grid-row: 1;
 
     }
@@ -451,10 +459,11 @@ th {
         display: inline;
     }
 
-    #mobileUserNavDiv h3, #mobileUserNavDiv button{
-color: black;
+    #mobileUserNavDiv h3, #mobileUserNavDiv button {
+        color: black;
     }
-    #mobileUserNavDiv{
+
+    #mobileUserNavDiv {
         max-width: 750px;
         height: 50px;
         width: 100%;
@@ -463,8 +472,83 @@ color: black;
         grid-template-columns: 1fr 1fr 1fr 1fr;
         */
     }
-    #mobileUserNavDiv ul,#mobileUserNavDiv li{
+
+    #mobileUserNavDiv ul, #mobileUserNavDiv li {
         display: inline;
         position: relative;
     }
+
+    /* ******************** NAV ********************* */
+    #long {
+        display: None;
+    }
+
+    #nav-place {
+        display: block;
+        visibility: visible;
+    }
+
+    #bar_list {
+        display: none;
+    }
+
+    #navigation-desktop2 {
+        position: relative;
+        overflow: hidden;
+        backdrop-filter: blur(10px);
+        z-index: 7000;
+    }
+
+    #nav-place {
+        overflow: hidden;
+        background-color: #333;
+        position: relative;
+    }
+
+    #nav-place a:hover, #nav-place button:hover, #edit_profile_button2:hover, #profile_button2:hover {
+        transition: 200ms ease-in-out;
+        background-color: var(--lightRed) !important;
+    }
+
+    #nav-place a, #nav-place button {
+        padding: 14px 16px;
+        text-decoration: none;
+        backdrop-filter: blur(10px);
+        z-index: 7000;
+        font-size: 17px;
+        display: block;
+    }
+
+    #nav-place a.icon {
+        background: rgba(168, 175, 185, 0);
+        display: block;
+        right: 0;
+        top: 0;
+    }
+
+    #navigation-desktop2 .icon {
+        font-size: 25px;
+    }
+
+    .active {
+        background-color: #04AA6D;
+        color: white;
+    }
+
+    #edit_profile form .container{
+        width: 650px;
+    }
+    .form-group input{
+        width: 200px;
+    }
+    #ticket_filters{
+        margin-left: 0px;
+        width: 650px;
+    }
+    #price .main_table{
+        width: 650px;
+        background-color: #ddd;
+        margin-left: -30px;
+    }
+    /* ******************* NAV ******************* */
 }

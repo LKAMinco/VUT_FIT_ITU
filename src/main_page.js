@@ -92,3 +92,101 @@ function showDivs(n) {
     dots[slideIndex - 1].className += " white";
 }
 
+/* ************************MEDIA************************** */
+/*
+function showNavDesktop() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '../index.html', true);
+    xhr.onload = function () {
+        var output = '';
+        output +=
+            '  <nav id="navigation-desktop">' +
+            '     <div class="content">' +
+            '           <ul id="bar_list">' +
+            '               <li><a href="#">Hlavní stránka</a></li>' +
+            '               <li><a href="interactive_map.html">Mapa závad</a></li>' +
+            '               <li><a href="index.html#about_ref">O nás</a></li>' +
+            '               <li><a href="index.html#map_ref">Nahlašování problémů</a></li>' +
+            '               <li><a href="index.html#stats_ref">Štatistiky</a></li>' +
+            '               <li><a href="index.html#contact_ref">Kontakty</a></li>' +
+            '               <button class="hide_btn" id="logout_btn" type="submit" onClick="logout()">Odhlásit se</button>' +
+            '               <button class="hide_btn" id="profile_btn" type="submit"' +
+            '                       onClick="location.href=' +
+            'user_profile.html' +
+            '">Zobrazit' +
+            '                   profil' +
+            '               </button>' +
+            '               <button class="hide_btn" id="register_btn" type="submit"' +
+            '                       data-modal-target="#register_form">Registrovať sa' +
+            '               </button>' +
+            '               <button class="hide_btn" id="login_btn" type="submit" data-modal-target="#login_form">Přihlásit se' +
+            '               </button>' +
+            '           </ul>' +
+            '       </div>' +
+            '   </nav>';
+        document.getElementById('nav-place').innerHTML = output;
+    }
+    xhr.send();
+
+}
+
+function showNavMobile() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '../index.html', true);
+    xhr.onload = function () {
+        var output = '';
+        output +=
+            '  <nav id="navigation-desktop">' +
+            '     <div class="content">' +
+            '           <div id="bar_list">' +
+            '               <a href="#" class="active">Hlavní stránka</a>' +
+            '               <a href="index.html#about_ref">O nás</a>' +
+            '               <a href="index.html#map_ref">Mapa závad</a>' +
+            '               <a href="index.html#stats_ref">Štatistiky</a>' +
+            '               <a href="index.html#contact_ref">Kontakty</a>' +
+            '               <button class="hide_btn" id="logout_btn" type="submit" onClick="logout()">Odhlásit se</button>' +
+            '               <button class="hide_btn" id="profile_btn" type="submit"' +
+            '                       onClick="location.href=' +
+            'user_profile.html">Zobrazit profil' +
+            '               </button>' +
+            '               <button class="hide_btn" id="register_btn" type="submit"' +
+            '                       data-modal-target="#register_form">Registrovať sa' +
+            '               </button>' +
+            '               <button class="hide_btn" id="login_btn" type="submit" data-modal-target="#login_form">Přihlásit se' +
+            '               </button>' +
+            '           </div>' +
+            '       </div>' +
+            '<a href="javascript:void(0);" class="icon" onClick="showMobileNav()">' +
+            '    <i class="fa fa-bars"></i>' +
+            '</a>' +
+            '   </nav>';
+        document.getElementById('nav-place').innerHTML = output;
+    }
+    xhr.send();
+
+}
+*/
+function showMobileNav() {
+    var x = document.getElementById("bar_list2");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
+/*
+function resisePageMobile() {
+
+    if (window.innerWidth <= 750) { //Detect mobile
+        showNavMobile();
+    } else { //Detect other higher resolution screens
+        showNavDesktop();
+    }
+
+}
+
+resisePageMobile();//run once on page load
+
+//then attach to the event listener
+window.addEventListener('resize', resisePageMobile);
+*/

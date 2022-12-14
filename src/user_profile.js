@@ -367,7 +367,6 @@ function placeUserNav() {
     }
     xhr1.send();
 }
-
 function placeMobileUserNav() {
     var xhr1 = new XMLHttpRequest();
     xhr1.open('GET', 'src/tickets.json', true);
@@ -409,5 +408,12 @@ resisePageMobile();//run once on page load
 
 //then attach to the event listener
 window.addEventListener('resize', resisePageMobile);
-
 /* **********************NAV ***************************** */
+function showMobileNav() {
+    var x = document.getElementById("bar_list2");
+    if (x.style.display === "block") {
+        x.style.display = "none";
+    } else {
+        x.style.display = "block";
+    }
+}
