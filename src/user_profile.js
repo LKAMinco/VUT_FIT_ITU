@@ -346,79 +346,6 @@ function saveProfilePass() {
 
 /* **********************NAV ***************************** */
 
-//places desctop navigation when a resolutin is high
-function placeUserNav() {
-    var output = '';
-    output +=
-        '<div id="side_bar">' +
-        '   <div class="content">' +
-        '<div class="wrapper">' +
-
-        ' <div class="profile">' +
-        '    <img src="src/images/profile.png" alt="Profile picture">' +
-        '   </div>' +
-        '<ul>' +
-        '   <a>' +
-        '       <div id="userName"></div>' +
-        '   </a>' +
-        '   <li id="user"></li>' +
-        '   <li>' +
-        '       <button onClick="loadTickets()" id="profile_button" class="button">Moje nahlášené závady' +
-        '       </button>' +
-        '   </li>' +
-        '   <li>' +
-        '       <button onClick="editProfile()" id="edit_profile_button" class="button">Změna profilu' +
-        '       </button>' +
-        '   </li>' +
-        '</ul>' +
-        '</div>' +
-        '</div>' +
-        '</div>';
-    //div in html file to which content is going to be written
-    document.getElementById('tuPlaceNav').innerHTML = output;
-}
-
-//places mobile navigation when it's resized to mobile resolution
-function placeMobileUserNav() {
-    var output = '';
-    output +=
-        '<div id="mobileUserNavDiv">' +
-        '<ul>' +
-        '   <li id="userName"></li>' +
-        '   <li id="user"></li>' +
-        '   <li>' +
-        '       <button onClick="loadTickets()" id="profile_button" class="button">Moje nahlášené závady' +
-        '       </button>' +
-        '   </li>' +
-        '   <li>' +
-        '       <button onClick="editProfile()" id="edit_profile_button" class="button">Změna profilu' +
-        '       </button>' +
-        '   </li>' +
-        '</ul>' +
-        '</div>';
-    document.getElementById('tuPlaceNav').innerHTML = output;
-}
-
-//calling functions to get information about user everytime we go to the user profile part of appliacation
-getName();
-loadUser();
-
-//if size of screen is less than 750px then other navigation shows up
-function resisePageMobile() {
-    //for mobile resolution
-    if (window.innerWidth <= 750) {
-        placeMobileUserNav();
-    } else { //desctop navigation
-        placeUserNav();
-    }
-
-}
-
-//calling need function and trying to catch event
-resisePageMobile();
-window.addEventListener('resize', resisePageMobile);
-
-/* **********************NAV ***************************** */
 
 //selection for when which navigation should appear
 function showMobileNav() {
@@ -429,3 +356,4 @@ function showMobileNav() {
         x.style.display = "block";
     }
 }
+/* **********************NAV ***************************** */
