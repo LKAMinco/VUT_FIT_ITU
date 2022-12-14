@@ -1,14 +1,14 @@
 function endOfReport(){
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'users.json', true);
+    xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
         output += '<section id="last_report_page">'+
             '<div class="content">'+
             '<h3>Děkujeme za nahlášení problému</h3>'+
             ' <div id="back">\n' +
-            '     <button id="buttonProfileTickets" onClick="location.href=\'../index.html\'">Zpět na hlavní stránku</button><br>\n' +
-            '     <button id="buttonProfileTickets" onClick="location.href=\'../user_profile.html\'">Sledovat stav mých hlášení</button>\n' +
+            '     <button id="buttonProfileTickets" onClick="location.href=\'index.html\'">Zpět na hlavní stránku</button><br>\n' +
+            '     <button id="buttonProfileTickets" onClick="location.href=\'user_profile.html\'">Sledovat stav mých hlášení</button>\n' +
             '</div>'+
             ' </div>' +
             '</section>';
@@ -19,7 +19,7 @@ function endOfReport(){
 
 function reportFour() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'users.json', true);
+    xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
         output += '<section id="services">'+
@@ -44,7 +44,7 @@ function reportFour() {
 
 function reportThree() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'users.json', true);
+    xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
         output += '<section id="services">'+
@@ -75,7 +75,7 @@ function handleForm(event) { event.preventDefault(); }
 function reportSecond() {
 //    var image = document.getElementById('photo_mode').innerHTML;
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'users.json', true);
+    xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
         output += '<section id="services">\n' +
@@ -101,7 +101,7 @@ function reportSecond() {
 
 function reportFirst() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'users.json', true);
+    xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
         output += '<section id="services">\n' +
@@ -111,8 +111,8 @@ function reportFirst() {
             '                <div class="services-card">\n' +
             '                    <div onclick="roads()" class="services-column">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/roads.svg" alt=".">\n' +
-            '                            <img src="pictures/roads.svg" alt=".">\n' +
+            '                            <img src="src/pictures/roads.svg" alt=".">\n' +
+            '                            <img src="src/pictures/roads.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Problémy na cestách</h4>\n' +
             '                    </div>\n' +
@@ -120,8 +120,8 @@ function reportFirst() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/bench.svg" alt=".">\n' +
-            '                            <img src="pictures/bench.svg" alt=".">\n' +
+            '                            <img src="src/pictures/bench.svg" alt=".">\n' +
+            '                            <img src="src/pictures/bench.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Lavičky</h4>\n' +
             '                    </div>\n' +
@@ -129,8 +129,8 @@ function reportFirst() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/dump.svg" alt=".">\n' +
-            '                            <img src="pictures/dump.svg" alt=".">\n' +
+            '                            <img src="src/pictures/dump.svg" alt=".">\n' +
+            '                            <img src="src/pictures/dump.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Nelegálne skládky</h4>\n' +
             '                    </div>\n' +
@@ -138,8 +138,8 @@ function reportFirst() {
             '                <div onclick="parks()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/park.svg" alt=".">\n' +
-            '                            <img src="pictures/park.svg" alt=".">\n' +
+            '                            <img src="src/pictures/park.svg" alt=".">\n' +
+            '                            <img src="src/pictures/park.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Parky a zeleň</h4>\n' +
             '                    </div>\n' +
@@ -147,8 +147,8 @@ function reportFirst() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/car.svg" alt=".">\n' +
-            '                            <img src="pictures/car.svg" alt=".">\n' +
+            '                            <img src="src/pictures/car.svg" alt=".">\n' +
+            '                            <img src="src/pictures/car.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Opustené vozidlá</h4>\n' +
             '                    </div>\n' +
@@ -156,8 +156,8 @@ function reportFirst() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/playground.svg" alt=".">\n' +
-            '                            <img src="pictures/playground.svg" alt=".">\n' +
+            '                            <img src="src/pictures/playground.svg" alt=".">\n' +
+            '                            <img src="src/pictures/playground.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Detské ihriská</h4>\n' +
             '                    </div>\n' +
@@ -165,8 +165,8 @@ function reportFirst() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/vandalism.svg" alt=".">\n' +
-            '                            <img src="pictures/vandalism.svg" alt=".">\n' +
+            '                            <img src="src/pictures/vandalism.svg" alt=".">\n' +
+            '                            <img src="src/pictures/vandalism.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Vandalizmus</h4>\n' +
             '                    </div>\n' +
@@ -174,8 +174,8 @@ function reportFirst() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/others.svg" alt=".">\n' +
-            '                            <img src="pictures/others.svg" alt=".">\n' +
+            '                            <img src="src/pictures/others.svg" alt=".">\n' +
+            '                            <img src="src/pictures/others.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Ostatné</h4>\n' +
             '                    </div>\n' +
@@ -190,7 +190,7 @@ function reportFirst() {
 
 function parks() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'users.json', true);
+    xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
 
@@ -201,8 +201,8 @@ function parks() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/park_pic/flower.svg" alt=".">\n' +
-            '                            <img src="pictures/park_pic/flower.svg" alt=".">\n' +
+            '                            <img src="src/pictures/park_pic/flower.svg" alt=".">\n' +
+            '                            <img src="src/pictures/park_pic/flower.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Vysádzanie kvetín</h4>\n' +
             '                    </div>\n' +
@@ -210,8 +210,8 @@ function parks() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/park_pic/forest.svg" alt=".">\n' +
-            '                            <img src="pictures/park_pic/forest.svg" alt=".">\n' +
+            '                            <img src="src/pictures/park_pic/forest.svg" alt=".">\n' +
+            '                            <img src="src/pictures/park_pic/forest.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Sadenie nových stromov</h4>\n' +
             '                    </div>\n' +
@@ -219,8 +219,8 @@ function parks() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/park_pic/grass.svg" alt=".">\n' +
-            '                            <img src="pictures/park_pic/grass.svg" alt=".">\n' +
+            '                            <img src="src/pictures/park_pic/grass.svg" alt=".">\n' +
+            '                            <img src="src/pictures/park_pic/grass.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Lúčne trávy</h4>\n' +
             '                    </div>\n' +
@@ -228,8 +228,8 @@ function parks() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/park_pic/people_in_park.svg" alt=".">\n' +
-            '                            <img src="pictures/park_pic/people_in_park.svg" alt=".">\n' +
+            '                            <img src="src/pictures/park_pic/people_in_park.svg" alt=".">\n' +
+            '                            <img src="src/pictures/park_pic/people_in_park.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Nelegálne kempovanie</h4>\n' +
             '                    </div>\n' +
@@ -249,7 +249,7 @@ function parks() {
 
 function roads() {
     var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'users.json', true);
+    xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
 
@@ -260,8 +260,8 @@ function roads() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/car_pic/edit_road.svg" alt=".">\n' +
-            '                            <img src="pictures/car_pic/edit_road.svg" alt=".">\n' +
+            '                            <img src="src/pictures/car_pic/edit_road.svg" alt=".">\n' +
+            '                            <img src="src/pictures/car_pic/edit_road.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Oprava ciest</h4>\n' +
             '                    </div>\n' +
@@ -269,8 +269,8 @@ function roads() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/car_pic/sign-stop-lights.svg" alt=".">\n' +
-            '                            <img src="pictures/car_pic/sign-stop-lights.svg" alt=".">\n' +
+            '                            <img src="src/pictures/car_pic/sign-stop-lights.svg" alt=".">\n' +
+            '                            <img src="src/pictures/car_pic/sign-stop-lights.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Nefunkčný semafor</h4>\n' +
             '                    </div>\n' +
@@ -278,8 +278,8 @@ function roads() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/car_pic/sign-stop.svg" alt=".">\n' +
-            '                            <img src="pictures/car_pic/sign-stop.svg" alt=".">\n' +
+            '                            <img src="src/pictures/car_pic/sign-stop.svg" alt=".">\n' +
+            '                            <img src="src/pictures/car_pic/sign-stop.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Dopravné značenie</h4>\n' +
             '                    </div>\n' +
@@ -287,8 +287,8 @@ function roads() {
             '                <div onclick="reportSecond()" class="services-column">\n' +
             '                    <div class="services-card">\n' +
             '                        <div>\n' +
-            '                            <img src="pictures/car_pic/other.svg" alt=".">\n' +
-            '                            <img src="pictures/car_pic/other.svg" alt=".">\n' +
+            '                            <img src="src/pictures/car_pic/other.svg" alt=".">\n' +
+            '                            <img src="src/pictures/car_pic/other.svg" alt=".">\n' +
             '                        </div>\n' +
             '                        <h4>Ostatné</h4>\n' +
             '                    </div>\n' +
@@ -475,7 +475,7 @@ function log_out(){
     var xhr = new XMLHttpRequest();
     xhr.open('PUT', 'https://639637b790ac47c680810698.mockapi.io/active/1', true);
     xhr.onload = function () {
-        window.location.href = "../index.html";
+        window.location.href = "index.html";
     }
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send('status=' + false);

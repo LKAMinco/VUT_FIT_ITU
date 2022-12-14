@@ -62,7 +62,7 @@ function set_navbar(){
             button = document.getElementById("submit_btn");
             if(button != null) {
                 button.removeAttribute("data-modal-target");
-                button.setAttribute("onclick", "location.href='src/report.html'");
+                button.setAttribute("onclick", "location.href='report.html'");
             }
         }
         else{
@@ -109,7 +109,7 @@ function sendMessage(form) {
             '<span class="chat_user">'+form.contact_message.value+'</span>' +
             '   </blockquote>' +
             '   <figure id="user_chat_pic">' +
-            '       <img src="src/images/profile.png" alt="user">' +
+            '       <img src="images/profile.png" alt="user">' +
             '   </figure>' +
             '</div>' +
             '<div class="messages">' +
@@ -117,7 +117,7 @@ function sendMessage(form) {
             '       <span>Omlouváme se, ale chatbot momentálně není dostupný.</span>' +
             '   </blockquote>' +
             '<figure>' +
-            '<img src="src/pictures/bot.png" alt="bot">' +
+            '<img src="pictures/bot.png" alt="bot">' +
             '       </figure>' +
             '</div>';
         document.getElementById('getMessage').innerHTML = output;
