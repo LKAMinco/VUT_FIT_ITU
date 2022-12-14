@@ -1,17 +1,17 @@
-function endOfReport(){
+function endOfReport() {
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
-        output += '<section id="last_report_page">'+
-            '<div class="content">'+
-            '<h3>Děkujeme za nahlášení problému</h3>'+
-            '<h3>Problém jsme si převzali na kontrolu ověření jeho pravdivost.</h3>'+
-            '<h3>O další změně stavu Vás nadále budeme informovat.</h3>'+
+        output += '<section id="last_report_page">' +
+            '<div class="content">' +
+            '<h3>Děkujeme za nahlášení problému</h3>' +
+            '<h3>Problém jsme si převzali na kontrolu ověření jeho pravdivost.</h3>' +
+            '<h3>O další změně stavu Vás nadále budeme informovat.</h3>' +
             ' <div id="back">\n' +
             '     <button id="buttonProfileTickets" onClick="location.href=\'index.html\'">Zpět na hlavní stránku</button><br>\n' +
             '     <button id="buttonProfileTickets" onClick="location.href=\'user_profile.html\'">Sledovat stav mých hlášení</button>\n' +
-            '</div>'+
+            '</div>' +
             ' </div>' +
             '</section>';
         document.getElementById('report_part').innerHTML = output;
@@ -24,15 +24,15 @@ function reportFour() {
     xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
-        output += '<section id="services">'+
-            '<div class="content">'+
-                '<h3>4/4 Doplňte další informace:</h3>'+
-                '<form action="#" id="form_4">'+
-                    '<input id="4_input" type="text" name="subject" placeholder="Subject" required>'+
-                    '<textarea id="4_textarea" name="message" cols="30" rows="10" placeholder="Message" required></textarea>'+
-                    '<input onclick="endOfReport()" class="submit-btn" id="submit-btn" type="submit" value="Pokračovat dále">'+
-                '</form>'+
-            '</div>'+
+        output += '<section id="services">' +
+            '<div class="content">' +
+            '<h3>4/4 Doplňte další informace:</h3>' +
+            '<form action="#" id="form_4">' +
+            '<input id="4_input" type="text" name="subject" placeholder="Subject" required>' +
+            '<textarea id="4_textarea" name="message" cols="30" rows="10" placeholder="Message" required></textarea>' +
+            '<input onclick="endOfReport()" class="submit-btn" id="submit-btn" type="submit" value="Pokračovat dále">' +
+            '</form>' +
+            '</div>' +
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
             '   <li>\n' +
             '     <button onclick="reportThree()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
@@ -49,14 +49,14 @@ function reportThree() {
     xhr.open('GET', 'src/users.json', true);
     xhr.onload = function () {
         var output = '';
-        output += '<section id="services">'+
-            '<div class="content">'+
-            '<h3>3/4 Vyberte lokaci problému:</h3>'+
-            '<form id="report_form" action="#">'+
+        output += '<section id="services">' +
+            '<div class="content">' +
+            '<h3>3/4 Vyberte lokaci problému:</h3>' +
+            '<form id="report_form" action="#">' +
             '<div id="map_div"></div>' +
-            '<input onclick="reportFour()" class="submit-btn" id="three-submit" type="submit" value="Pokračovat dále">'+
-            '</form>'+
-            '</div>'+
+            '<input onclick="reportFour()" class="submit-btn" id="three-submit" type="submit" value="Pokračovat dále">' +
+            '</form>' +
+            '</div>' +
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
             '   <li>\n' +
             '     <button onclick="reportSecond()" id="buttonProfileTickets">Vrátit se zpět</button>\n' +
@@ -72,7 +72,18 @@ function reportThree() {
     xhr.send();
 }
 
-function handleForm(event) { event.preventDefault(); }
+function handleForm(event) {
+    event.preventDefault();
+}
+
+function loadFile(event) {
+    var output = document.getElementById('output');
+    output.src = URL.createObjectURL(event.target.files[0]);
+    output.onload = function () {
+        URL.revokeObjectURL(output.src) // free memory
+    }
+}
+
 
 function reportSecond() {
 //    var image = document.getElementById('photo_mode').innerHTML;
@@ -85,7 +96,8 @@ function reportSecond() {
             '            <h3>2/4 Nahrajte fotografii:</h3>\n' +
             '        </div>\n' +
             '<div id="aa">' +
-            '<input id="photo_mode" type="file" name="uploadfile" accept="image/png, image/gif, image/jpeg">'+
+            '<img id="output"/><br>' +
+            '<label class="custom-file-upload"><input id="photo_mode" type="file" name="uploadfile" accept="image/png, image/gif, image/jpeg" onchange="loadFile(event)"/>Upload file</label>' +
             '</div>' +
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n<ul>' +
             '   <li>\n' +
@@ -308,7 +320,7 @@ function roads() {
     xhr.send();
 }
 
-function createMap(){
+function createMap() {
     const mapKey = "pk.eyJ1IjoianVsaXVzangiLCJhIjoiY2xiY2hoZWpvMDRkMTNxb2VsYWQ3ZW1vdSJ9.Qu7Yj2WOBF-uLm2S8x5yaQ";
     var map = L.map('map_div').setView([49.194825, 16.608241], 15);
 
@@ -461,9 +473,9 @@ function createMap(){
         interactive: false
     }).addTo(map);
 
-    var marker = L.marker([0,0]).addTo(map);
+    var marker = L.marker([0, 0]).addTo(map);
 
-    map.on('click', function(e){
+    map.on('click', function (e) {
         var coord = e.latlng;
         var lat = coord.lat;
         var lng = coord.lng;
@@ -472,7 +484,7 @@ function createMap(){
     });
 }
 
-function log_out(){
+function log_out() {
     console.log("test");
     var xhr = new XMLHttpRequest();
     xhr.open('PUT', 'https://639637b790ac47c680810698.mockapi.io/active/1', true);
