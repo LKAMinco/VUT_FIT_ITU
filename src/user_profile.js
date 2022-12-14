@@ -328,6 +328,6 @@ function saveProfilePass(){
     document.getElementById("first-pass").value = "";
     document.getElementById("last-pass").value = "";
 
-    document.getElementById("update_header_h1").innerHTML = "Vaše údaje boli zmenené!";
+    document.getElementById("update_header_h1").innerHTML = "Vaše heslo bolo zmenené!";
 }
 
