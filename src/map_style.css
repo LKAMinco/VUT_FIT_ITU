@@ -797,3 +797,9 @@ a {
     opacity: 1;
     pointer-events: all;
 }
+
+@media only screen and (max-width: 1920px) {
+    #map_div, #ticket_list{
+        height: 57rem;
+    }
+}
