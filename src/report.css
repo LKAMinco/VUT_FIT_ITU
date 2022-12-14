@@ -387,6 +387,115 @@ cursor: pointer;
         margin: auto;
         transition: 200ms ease-in-out;
     }
-}
 
+    .all {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+    }
+
+    #tuPlaceNav {
+        display: none;
+    }
+
+    #user_profile {
+        grid-row: 1;
+
+    }
+
+    .profile img {
+        visibility: hidden;
+    }
+
+    .wrapper ul li a {
+        color: black;
+        background-color: var(--lightRed);
+        display: inline;
+    }
+
+    #mobileUserNavDiv h3, #mobileUserNavDiv button {
+        color: black;
+    }
+
+    #mobileUserNavDiv {
+        max-width: 750px;
+        height: 50px;
+        width: 100%;
+        /*display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        */
+    }
+
+    #mobileUserNavDiv ul, #mobileUserNavDiv li {
+        display: inline;
+        position: relative;
+    }
+
+    /* ******************** NAV ********************* */
+    #navigation-desktop {
+        display: None;
+    }
+
+    #nav-place {
+        display: block;
+        visibility: visible;
+        position: fixed;
+        width: 100%;
+        z-index: 10;
+    }
+
+    #bar_list {
+        display: none;
+    }
+
+    #navigation-desktop2 {
+        position: relative;
+        overflow: hidden;
+        z-index: 7000;
+    }
+
+    #nav-place {
+        overflow: hidden;
+    }
+
+    #edit_profile_button2:hover, #profile_button2:hover {
+        transition: 200ms ease-in-out;
+        background-color: var(--lightRed) !important;
+    }
+
+    #nav-place a, #nav-place button {
+        padding: 14px 16px;
+        text-decoration: none;
+        z-index: 7000;
+        font-size: 17px;
+        display: block;
+    }
+
+    #nav-place a.icon {
+        background: rgba(168, 175, 185, 0);
+        display: block;
+        right: 0;
+        top: 0;
+    }
+
+    #navigation-desktop2 .icon {
+        font-size: 25px;
+    }
+
+    #edit_profile form .container{
+        width: 650px;
+    }
+    .form-group input{
+        width: 200px;
+    }
+    #ticket_filters{
+        margin-left: 0px;
+        width: 650px;
+    }
+    #price .main_table{
+        width: 650px;
+        background-color: #ddd;
+        margin-left: -30px;
+    }
+    /* ******************* NAV ******************* */
+}
 /* ************************* MEDIA ************************ */
