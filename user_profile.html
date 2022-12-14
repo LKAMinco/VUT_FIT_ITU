@@ -30,37 +30,7 @@
 </nav>
 <main>
     <div class="all content">
-        <div id="side_bar">
-            <div class="content">
-                <div class="wrapper">
-                    <div class="profile">
-                        <img src="src/images/profile.png" alt="Profile picture">
-                        <script>
-                            loadUser();
-                            getName();
-                        </script>
-                    </div>
-                    <ul>
-                        <a>
-                            <div id="userName"></div>
-                        </a>
-                        <li id="user"></li>
-                        <li>
-                            <button onClick="loadTickets()" id="profile_button" class="button">Moje nahlášené závady
-                            </button>
-                        </li>
-                        <li>
-                            <button onClick="editProfile()" id="edit_profile_button" class="button">Změna profilu
-                            </button>
-                        </li>
-
-                        <li class="level_bar_info">3/10 nahlášených problémů</li>
-                        <li><img class="level_bar" src="src/pictures/bar.png"></li>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+        <div id="tuPlaceNav"></div>
         <section id="user_profile">
             <script>loadTickets()</script>
             <div id="loadUserPageAl"></div>

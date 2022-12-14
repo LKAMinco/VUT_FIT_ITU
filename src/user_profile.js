@@ -303,7 +303,7 @@ function editProfile() {
     xhr1.send();
 }
 
-function log_out(){
+function log_out() {
     console.log("test");
     var xhr = new XMLHttpRequest();
     xhr.open('PUT', 'https://639637b790ac47c680810698.mockapi.io/active/1', true);
@@ -314,7 +314,7 @@ function log_out(){
     xhr.send('status=' + false);
 }
 
-function saveProfile(){
+function saveProfile() {
     document.getElementById("first-name").value = "";
     document.getElementById("last-name").value = "";
     document.getElementById("address").value = "";
@@ -324,10 +324,90 @@ function saveProfile(){
     document.getElementById("update_header_h1").innerHTML = "Vaše údaje boli zmenené!";
 }
 
-function saveProfilePass(){
+function saveProfilePass() {
     document.getElementById("first-pass").value = "";
     document.getElementById("last-pass").value = "";
 
     document.getElementById("update_header_h1").innerHTML = "Vaše heslo bolo zmenené!";
 }
 
+/* **********************NAV ***************************** */
+function placeUserNav() {
+    var xhr1 = new XMLHttpRequest();
+    xhr1.open('GET', 'src/tickets.json', true);
+    xhr1.onload = function () {
+        var output = '';
+        output +=
+            '<div id="side_bar">' +
+            '   <div class="content">' +
+            '<div class="wrapper">' +
+
+            ' <div class="profile">' +
+            '    <img src="src/images/profile.png" alt="Profile picture">' +
+            '   </div>' +
+            '<ul>' +
+            '   <a>' +
+            '       <div id="userName"></div>' +
+            '   </a>' +
+            '   <li id="user"></li>' +
+            '   <li>' +
+            '       <button onClick="loadTickets()" id="profile_button" class="button">Moje nahlášené závady' +
+            '       </button>' +
+            '   </li>' +
+            '   <li>' +
+            '       <button onClick="editProfile()" id="edit_profile_button" class="button">Změna profilu' +
+            '       </button>' +
+            '   </li>' +
+            '</ul>' +
+            '</div>' +
+            '</div>' +
+            '</div>';
+
+        document.getElementById('tuPlaceNav').innerHTML = output;
+    }
+    xhr1.send();
+}
+
+function placeMobileUserNav() {
+    var xhr1 = new XMLHttpRequest();
+    xhr1.open('GET', 'src/tickets.json', true);
+    xhr1.onload = function () {
+        var output = '';
+        output +=
+            '<div id="mobileUserNavDiv">' +
+            '<ul>' +
+            '   <li id="userName"></li>' +
+            '   <li id="user"></li>' +
+            '   <li>' +
+            '       <button onClick="loadTickets()" id="profile_button" class="button">Moje nahlášené závady' +
+            '       </button>' +
+            '   </li>' +
+            '   <li>' +
+            '       <button onClick="editProfile()" id="edit_profile_button" class="button">Změna profilu' +
+            '       </button>' +
+            '   </li>' +
+            '</ul>' +
+            '</div>';
+        document.getElementById('tuPlaceNav').innerHTML = output;
+    }
+    xhr1.send();
+}
+
+getName();
+loadUser();
+
+function resisePageMobile() {
+    if (window.innerWidth <= 750) { //Detect mobile
+        placeMobileUserNav();
+    } else { //Detect other higher resolution screens
+        placeUserNav();
+    }
+
+}
+
+resisePageMobile();//run once on page load
+
+//then attach to the event listener
+window.addEventListener('resize', resisePageMobile);
+
+/* **********************NAV ***************************** */
