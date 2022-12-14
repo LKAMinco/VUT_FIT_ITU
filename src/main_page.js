@@ -49,7 +49,7 @@ function currentDiv(n) {
 var path = window.location.pathname;
 var page = path.split("/").pop();
 
-if(page !== "report.html"){
+if (page !== "report.html") {
     carousel();
 }
 
@@ -91,3 +91,87 @@ function showDivs(n) {
     x[slideIndex - 1].style.display = "block";
     dots[slideIndex - 1].className += " white";
 }
+
+/* *************** MEDIA ******************* */
+function showNavMobile(){
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '../index.html', true);
+    xhr.onload = function () {
+        var output = '';
+        output +=
+        <div id="mobile-nav-place"></div>
+
+
+        document.getElementById('desktop-nav-place').innerHTML = output;
+    }
+    xhr.send();
+}
+
+function showNavDesktop() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', '../index.html', true);
+    xhr.onload = function () {
+        var output = '';
+        output +=
+            '  <nav id="navigation-desktop">' +
+            '     <div class="content">' +
+            '           <ul id="bar_list">' +
+            '               <li><a href="#">Hlavní stránka</a></li>' +
+            '               <li><a href="index.html#about_ref">O nás</a></li>' +
+            '               <li><a href="index.html#map_ref">Mapa závad</a></li>' +
+            '               <li><a href="index.html#stats_ref">Štatistiky</a></li>' +
+            '               <li><a href="index.html#contact_ref">Kontakty</a></li>' +
+            '               <button class="hide_btn" id="logout_btn" type="submit" onClick="logout()">Odhlásit se</button>'+
+        '               <button class="hide_btn" id="profile_btn" type="submit"' +
+        '                       onClick="location.href=' +
+        'user_profile.html'+
+        '">Zobrazit' +
+        '                   profil' +
+        '               </button>' +
+        '               <button class="hide_btn" id="register_btn" type="submit"' +
+        '                       data-modal-target="#register_form">Registrovať sa' +
+        '               </button>' +
+        '               <button class="hide_btn" id="login_btn" type="submit" data-modal-target="#login_form">Přihlásit se'+
+        '               </button>' +
+        '           </ul>'+
+        '       </div>'+
+        '   </nav>';
+        document.getElementById('desktop-nav-place').innerHTML = output;
+    }
+    xhr.send();
+
+}
+
+function resisePageMobile() {
+
+    if (window.innerWidth <= 696) { //Detect mobile
+        showNavMobile();
+    } else { //Detect other higher resolution screens
+        showNavDesktop();
+    }
+
+}
+
+resisePageMobile();//run once on page load
+
+//then attach to the event listener
+window.addEventListener('resize', resisePageMobile);
+
+/*<nav id="navigation-desktop">
+    <div class="content">
+        <ul id="bar_list">
+            <li><a href="#">Hlavní stránka</a></li>
+            <li><a href="index.html#about_ref">O nás</a></li>
+            <li><a href="index.html#map_ref">Mapa závad</a></li>
+            <li><a href="index.html#stats_ref">Štatistiky</a></li>
+            <li><a href="index.html#contact_ref">Kontakty</a></li>
+            <button class="hide_btn" id="logout_btn" type="submit" onclick="logout()">Odhlásit se</button>
+            <button class="hide_btn" id="profile_btn" type="submit" onclick="location.href='user_profile.html'">Zobrazit
+                profil
+            </button>
+            <button class="hide_btn" id="register_btn" type="submit" data-modal-target="#register_form">Registrovať sa
+            </button>
+            <button class="hide_btn" id="login_btn" type="submit" data-modal-target="#login_form">Přihlásit se</button>
+        </ul>
+    </div>
+</nav>*/
