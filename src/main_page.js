@@ -8,6 +8,8 @@ const openModalButtons = document.querySelectorAll('[data-modal-target]')
 const closeModalButtons = document.querySelectorAll('[data-close-button]')
 const overlay = document.getElementById('overlay')
 
+// set every button with querry selector to click,
+// on click, open popup
 openModalButtons.forEach(button => {
     button.addEventListener('click', () => {
         const modal = document.querySelector(button.dataset.modalTarget)
@@ -15,6 +17,7 @@ openModalButtons.forEach(button => {
     })
 })
 
+//set event click on overlay, if click on overlay, close popup
 overlay.addEventListener('click', () => {
     const modals = document.querySelectorAll('.modal.active')
     modals.forEach(modal => {
@@ -22,6 +25,8 @@ overlay.addEventListener('click', () => {
     })
 })
 
+// set every closebutton with querry selector to click,
+// on click, close popup
 closeModalButtons.forEach(button => {
     button.addEventListener('click', () => {
         const modal = button.closest('.modal')
@@ -29,6 +34,7 @@ closeModalButtons.forEach(button => {
     })
 })
 
+// open pupup, by refereníing the id of the popup
 function getModal(modal_id) {
     const modal = document.querySelector(modal_id)
     openModal(modal)
@@ -59,6 +65,7 @@ if (page !== "report.html") {
     carousel();
 }
 
+//Change every 10 senonds slide to next
 function carousel() {
     let i;
     let x = document.getElementsByClassName("slide");
@@ -78,6 +85,7 @@ function carousel() {
     setTimeout(carousel, 10000); // Change image every 2 seconds
 }
 
+// On coressponding dot click, show the corresponding slide
 function showDivs(n) {
     let i;
     let x = document.getElementsByClassName("slide");
