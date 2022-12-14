@@ -52,11 +52,19 @@ function set_navbar(){
         if (response === "true"){
             var button = document.getElementById("register_btn");
             button.setAttribute("class", "hide_btn");
+            button = document.getElementById("register_btn2");
+            button.setAttribute("class", "hide_btn");
             button = document.getElementById("login_btn");
+            button.setAttribute("class", "hide_btn");
+            button = document.getElementById("login_btn2");
             button.setAttribute("class", "hide_btn");
             button = document.getElementById("profile_btn");
             button.removeAttribute("class");
             button = document.getElementById("logout_btn");
+            button.removeAttribute("class");
+            button = document.getElementById("logout_btn2");
+            button.removeAttribute("class");
+            button = document.getElementById("logout_btn2");
             button.removeAttribute("class");
 
             button = document.getElementById("submit_btn");
@@ -68,11 +76,19 @@ function set_navbar(){
         else{
             var button = document.getElementById("profile_btn");
             button.setAttribute("class", "hide_btn");
+            button = document.getElementById("profile_btn2");
+            button.setAttribute("class", "hide_btn");
             button = document.getElementById("logout_btn");
+            button.setAttribute("class", "hide_btn");
+            button = document.getElementById("logout_btn2");
             button.setAttribute("class", "hide_btn");
             button = document.getElementById("register_btn");
             button.removeAttribute("class");
+            button = document.getElementById("register_btn2");
+            button.removeAttribute("class");
             button = document.getElementById("login_btn");
+            button.removeAttribute("class");
+            button = document.getElementById("login_btn2");
             button.removeAttribute("class");
 
             button = document.getElementById("submit_btn");
