@@ -1,12 +1,13 @@
 /*
-<button id="profile_btn" type="submit" onclick="location.href='user_profile.html'">Zobrazit profil</button>
-<button id="logout_btn" type="submit" onclick="location.href='index.html'">Odhlásit se</button>
-<button id="register_btn" type="submit" data-modal-target="#register_form">Registrovať sa</button>
-<button id="login_btn" type="submit" data-modal-target="#login_form">Přihlásit se</button>
-*/
+* File: login.js
+* Author:
+* Subject: ITU
+* */
 
+// Prevents submit buttons from reloading page
 function handleForm(event) { event.preventDefault(); }
 
+// Sets this restriction to all present forms
 var form = document.getElementById("form_login_register");
 if(form != null){
     form.addEventListener('submit', handleForm);
@@ -22,7 +23,13 @@ if(form != null){
     form.addEventListener('submit', handleForm);
 }
 
+form = document.getElementById("chat_form_form");
+if(form != null){
+    form.addEventListener('submit', handleForm);
+}
 
+// Function changes value status on MockAPI.io server to true
+// This represents that user is logged in
 function login(){
 
     var xhr = new XMLHttpRequest();
@@ -34,6 +41,8 @@ function login(){
     xhr.send('status=' + true);
 }
 
+// Function changes value status on MockAPI.io server to false
+// This represents that user is logged out
 function logout(){
     var xhr = new XMLHttpRequest();
     xhr.open('PUT', 'https://639637b790ac47c680810698.mockapi.io/active/1', true);
@@ -44,11 +53,14 @@ function logout(){
     xhr.send('status=' + false);
 }
 
+// This functions show/hides buttons based on login status of user
+// Buttons are modified by adding/removing class for hidden button
 function set_navbar(){
     var xhr = new XMLHttpRequest();
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/active/1', true);
     xhr.onload = function () {
         var response = JSON.parse(this.responseText).status;
+        // If user is logged in
         if (response === "true"){
             var button = document.getElementById("register_btn");
             if (button != null){
@@ -83,12 +95,14 @@ function set_navbar(){
                 button.removeAttribute("class");
             }
 
+            // Changes 'Report Problem' button functionality to transfer to report page
             button = document.getElementById("submit_btn");
             if(button != null) {
                 button.removeAttribute("data-modal-target");
                 button.setAttribute("onclick", "location.href='report.html'");
             }
         }
+        // If user is logged out
         else{
             var button = document.getElementById("profile_btn");
             if (button != null){
@@ -123,6 +137,7 @@ function set_navbar(){
                 button.removeAttribute("class");
             }
 
+            // Changes 'Report Problem' button functionality to transfer to open modal for login/registration
             button = document.getElementById("submit_btn");
             if(button != null) {
                 button.setAttribute("data-modal-target", "#login_register_form");
@@ -133,50 +148,33 @@ function set_navbar(){
     xhr.send();
 }
 
+// Function loads buttons when page is loaded
 window.onload = function() {
     set_navbar();
 }
 
-/* aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa */
-var comment_button = document.getElementById("contact-submit");
-if(comment_button != null){
-    comment_button.setAttribute("onclick", "sendMessage(this.form)")
-}
-var form3 = document.getElementById("chat_form_form");
-if(form3 != null){
-    form3.addEventListener('submit', handleForm);
-}
-
+// Function sends response to chat bot query
 function sendMessage(form) {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'index.html', true);
-    xhr.onload = function () {
-        var output = '';
-        output += '<div class="messages">' +
-            '<blockquote id="user_chat">' +
-            '<span class="chat_user">'+form.contact_message.value+'</span>' +
-            '   </blockquote>' +
-            '   <figure id="user_chat_pic">' +
-            '       <img src="src/images/profile.png" alt="user">' +
-            '   </figure>' +
-            '</div>' +
-            '<div class="messages">' +
-            '   <blockquote>' +
-            '       <span>Omlouváme se, ale chatbot momentálně není dostupný.</span>' +
-            '   </blockquote>' +
-            '<figure>' +
-            '<img src="src/pictures/bot.png" alt="bot">' +
-            '       </figure>' +
-            '</div>';
-        document.getElementById('getMessage').innerHTML = output;
-    }
-    xhr.send();
+    var output = '';
+    output += '<div class="messages">' +
+        '<blockquote id="user_chat">' +
+        '<span class="chat_user">'+form.contact_message.value+'</span>' +
+        '   </blockquote>' +
+        '   <figure id="user_chat_pic">' +
+        '       <img src="src/images/profile.png" alt="user">' +
+        '   </figure>' +
+        '</div>' +
+        '<div class="messages">' +
+        '   <blockquote>' +
+        '       <span>Omlouváme se, ale chatbot momentálně není dostupný.</span>' +
+        '   </blockquote>' +
+        '<figure>' +
+        '<img src="src/pictures/bot.png" alt="bot">' +
+        '       </figure>' +
+        '</div>';
+    document.getElementById('getMessage').innerHTML = output;
 }
 
-
-function handleForm(event) {
-    event.preventDefault();
-}
 
 
 
