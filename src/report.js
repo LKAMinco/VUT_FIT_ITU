@@ -6,6 +6,8 @@ function endOfReport(){
         output += '<section id="last_report_page">'+
             '<div class="content">'+
             '<h3>Děkujeme za nahlášení problému</h3>'+
+            '<h3>Problém jsme si převzali na kontrolu ověření jeho pravdivost.</h3>'+
+            '<h3>O další změně stavu Vás nadále budeme informovat.</h3>'+
             ' <div id="back">\n' +
             '     <button id="buttonProfileTickets" onClick="location.href=\'index.html\'">Zpět na hlavní stránku</button><br>\n' +
             '     <button id="buttonProfileTickets" onClick="location.href=\'user_profile.html\'">Sledovat stav mých hlášení</button>\n' +
@@ -28,7 +30,7 @@ function reportFour() {
                 '<form action="#" id="form_4">'+
                     '<input id="4_input" type="text" name="subject" placeholder="Subject" required>'+
                     '<textarea id="4_textarea" name="message" cols="30" rows="10" placeholder="Message" required></textarea>'+
-                    '<input onclick="endOfReport()" class="submit-btn" id="submit-btn" type="submit" value="Submit">'+
+                    '<input onclick="endOfReport()" class="submit-btn" id="submit-btn" type="submit" value="Pokračovat dále">'+
                 '</form>'+
             '</div>'+
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
@@ -52,7 +54,7 @@ function reportThree() {
             '<h3>3/4 Vyberte lokaci problému:</h3>'+
             '<form id="report_form" action="#">'+
             '<div id="map_div"></div>' +
-            '<input onclick="reportFour()" class="submit-btn" id="three-submit" type="submit" value="Submit">'+
+            '<input onclick="reportFour()" class="submit-btn" id="three-submit" type="submit" value="Pokračovat dále">'+
             '</form>'+
             '</div>'+
             ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +

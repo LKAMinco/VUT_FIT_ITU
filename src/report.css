@@ -328,7 +328,6 @@ cursor: pointer;
 /* ************************* MEDIA ************************ */
 
 @media only screen and (max-width: 1650px) {
-    /*
     #map_div {
         height: 700px;
         width: 800px;
@@ -339,16 +338,15 @@ cursor: pointer;
 
     #photo_mode {
         max-height: 300px;
-        max-width: 100px;
+        max-width: 400px;
         height: 40%;
         width: 40%;
         transition: 200ms ease-in-out;
+    }
 
-    }*/
 }
 
 @media only screen and (max-width: 750px) {
-    /*
     #services .content > div {
         display: grid;
         grid-template-columns: auto auto;
@@ -374,7 +372,7 @@ cursor: pointer;
         width: 300px;
         margin: auto;
         transition: 200ms ease-in-out;
-    }*/
+    }
 }
 
 /* ************************* MEDIA ************************ */

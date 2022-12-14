@@ -147,8 +147,9 @@ function showNavDesktop() {
             '     <div class="content">' +
             '           <ul id="bar_list">' +
             '               <li><a href="#">Hlavní stránka</a></li>' +
+            '               <li><a href="interactive_map.html">Mapa závad</a></li>' +
             '               <li><a href="index.html#about_ref">O nás</a></li>' +
-            '               <li><a href="index.html#map_ref">Mapa závad</a></li>' +
+            '               <li><a href="index.html#map_ref">Nahlašování problémů</a></li>' +
             '               <li><a href="index.html#stats_ref">Štatistiky</a></li>' +
             '               <li><a href="index.html#contact_ref">Kontakty</a></li>' +
             '               <button class="hide_btn" id="logout_btn" type="submit" onClick="logout()">Odhlásit se</button>' +
