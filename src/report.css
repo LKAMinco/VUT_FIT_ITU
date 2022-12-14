@@ -120,6 +120,7 @@ cursor: pointer;
     border-radius: 10px;
     border: none;
     margin-top: 20px;
+    margin-bottom: 10px;
 }
 
 #buttonProfileTickets:hover {
@@ -190,6 +191,7 @@ cursor: pointer;
 
 #map_div {
     margin-top: 150px;
+    margin-bottom: -50px;
 }
 
 /* ******************************** 3/5 ***************************** */

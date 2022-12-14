@@ -652,8 +652,8 @@ section {
     z-index: 6000;
     width:60px;
     height:60px;
-    left: 95%;
-    top: 87%;
+    left: 5%;
+    top: 86%;
     background: var(--lightRed);
     border-radius: 10px;
 }
