@@ -16,7 +16,9 @@ function loadUser() {
         var output = '';
 
         output += '<li><h3>' + active_user.email + '</h3></li>' +
-            '<li><h3>' + active_user.date_of_birth + '</h3></li>';
+            '<li><h3>' + active_user.date_of_birth + '</h3></li>'+
+            '<li><h3>' + active_user.address + '</h3></li>' +
+            '<li><h3>' + active_user.bio + '</h3></li>';
         document.getElementById('user').innerHTML = output;
         loadTickets();
     }
@@ -322,12 +324,33 @@ function log_out() {
 }
 
 function saveProfile() {
-    document.getElementById("first-name").value = "";
-    document.getElementById("last-name").value = "";
-    document.getElementById("address").value = "";
-    document.getElementById("bio").value = "";
-    document.getElementById("newsletter").checked = false;
-
+    var first_name = document.getElementById("first-name").value;
+    var last_name = document.getElementById("last-name").value;
+    var address = document.getElementById("address").value;
+    var bio = document.getElementById("bio").value;
+    var newsletter = document.getElementById("newsletter").checked = false;
+    var xhr = new XMLHttpRequest();
+    xhr.open('PUT', 'https://639637b790ac47c680810698.mockapi.io/users/6', true);
+    xhr.onload = function () {
+        getName();
+        loadUser();
+    }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    var out_string = "";
+    if (first_name !== "")
+        out_string += 'name=' + first_name + '&';
+    if (last_name !== "")
+        out_string += 'surename=' + last_name + '&';
+    if (address !== "")
+        out_string += 'address=' + address + '&';
+    if (bio !== "")
+        out_string += 'bio=' + bio + '&';
+    if (newsletter.toString() !== "")
+        out_string += 'newsletter=' + newsletter + '&';
+    if (out_string.charAt(out_string.length - 1) === '&') {
+        out_string = out_string.slice(0, -1);
+    }
+    xhr.send(out_string);
     document.getElementById("update_header_h1").innerHTML = "Vaše údaje boli zmenené!";
 }
 
