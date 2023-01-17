@@ -387,7 +387,7 @@ a {
 .comment_header{
     display: grid;
     color: var(--white);
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 5%;
     width: 100%;
 }
 
@@ -395,8 +395,13 @@ a {
     font-size: 1rem;
 }
 
-.comment_header h1:last-child{
+.comment_header h1:nth-child(2){
     text-align: end;
+    padding-right: 5%;
+}
+
+.comment_header form{
+    margin-top: 0.5rem;
 }
 
 .comment_div p{

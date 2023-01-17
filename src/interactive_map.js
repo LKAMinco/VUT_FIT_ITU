@@ -4,6 +4,8 @@
 * Subject: ITU
 * */
 
+function handleForm(event) { event.preventDefault(); }
+
 // Adds map to html page
 const mapKey = "pk.eyJ1IjoianVsaXVzangiLCJhIjoiY2xiY2hoZWpvMDRkMTNxb2VsYWQ3ZW1vdSJ9.Qu7Yj2WOBF-uLm2S8x5yaQ";
 var map = L.map('map_div').setView([49.194825, 16.608241], 15);
@@ -359,22 +361,37 @@ function load_comments(id){
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/comments', true);
     xhr.onload = function () {
         var div = document.getElementById("comment_list");
+        div.innerHTML = "";
         var comments = JSON.parse(this.responseText);
         var filtered = comments.filter( (comment) => {
             return comment.ticket_id == id;
         })
         var output_string = "";
         filtered.forEach(comment => {
-            output_string += "<div class='comment_div'>" +
+            output_string = "<div class='comment_div'>" +
                 "<div class='comment_header'>" +
                 "<h1 id='" + comment.id + "'></h1>" +
                 "<h1>" + comment.date + " " + comment.time + "</h1>" +
+                "<form id='delete_form" + comment.id + "'><input type='submit' value='X' onclick='delete_comment(" + comment.id + "," + id + ")'/></form>" +
                 "</div>" +
                 "<p>" + comment.text + "</p>" +
                 "</div>";
             readName(comment.user_email, comment.id);
+            div.innerHTML += output_string;
+            // Hides remove button in other people's comments
+            if(comment.user_email !== "basic.user@email.com") {
+                var form = document.getElementById("delete_form" + comment.id)
+                if (form != null) {
+                    form.setAttribute('class', 'hide_btn');
+                }
+            }
         })
-        div.innerHTML = output_string;
+
+        // Removes page reloading of form submit
+        var forms = document.getElementById("comment_list").getElementsByTagName('form');
+        for (var i = 0; i < forms.length; i++) {
+            forms[i].addEventListener('submit', handleForm);
+        }
     }
     xhr.send();
 }
@@ -474,7 +491,6 @@ function set_sort(sort){
     loadTickets();
 }
 
-var index = 0;
 // Function adds comment to ticket
 // These comments are uploaded to mockapi.io
 function add_comment(form, id){
@@ -485,7 +501,19 @@ function add_comment(form, id){
     xhr.open('POST', 'https://639637b790ac47c680810698.mockapi.io/comments', true);
     xhr.onload = function () {
         load_comments(id);
+        form.comment_text.value = '';
     }
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.send('user_email=basic.user@email.com&text=' + form.comment_text.value + '&date=' + date + '&time=' + time + '&ticket_id=' + id);
+}
+
+// Function removes comment
+function delete_comment(id, ticket_id){
+    var xhr = new XMLHttpRequest();
+    xhr.open('DELETE', 'https://639637b790ac47c680810698.mockapi.io/comments/' + id, true);
+    xhr.onload = function () {
+        load_comments(ticket_id);
+    }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send();
 }
