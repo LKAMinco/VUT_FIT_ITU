@@ -476,18 +476,16 @@ function set_sort(sort){
 
 var index = 0;
 // Function adds comment to ticket
-// These comments are not stored anywhere, they disappear on ticket detail reload
+// These comments are uploaded to mockapi.io
 function add_comment(form, id){
-    var div = document.getElementById("comment_list");
-    var date = new Date().toISOString().substr(0, 19).replace('T', ' ');
-    div.innerHTML += "<div class='comment_div'>" +
-        "<div class='comment_header'>" +
-        "<h1 id='fake" + index + "'></h1>" +
-        "<h1>" + date + "</h1>" +
-        "</div>" +
-        "<p>" + form.comment_text.value + "</p>" +
-        "</div>";
-    readName("basic.user@email.com", "fake" + index);
-    index++;
-    document.getElementById("comment_text").value = "";
+    var date = new Date().toISOString().substr(0, 10).replace('T', ' ');
+    var time = new Date().toISOString().substr(10, 9).replace('T', ' ');
+
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://639637b790ac47c680810698.mockapi.io/comments', true);
+    xhr.onload = function () {
+        load_comments(id);
+    }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send('user_email=basic.user@email.com&text=' + form.comment_text.value + '&date=' + date + '&time=' + time + '&ticket_id=' + id);
 }
