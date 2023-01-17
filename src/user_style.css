@@ -213,7 +213,7 @@ tbody, a {
 
 .wrapper {
     max-height: 800px;
-    height: 650px;
+    height: 750px;
     max-width: 300px;
     background: linear-gradient(var(--lightDarkBlue) 70%, rgba(43, 45, 56, 0));
     padding: 20px 0;

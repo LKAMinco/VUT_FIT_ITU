@@ -16,13 +16,11 @@ function loadUser() {
         var output = '';
 
         output += '<li><h3>' + active_user.email + '</h3></li>' +
-            '<li><h3>' + active_user.date_of_birth + '</h3></li>'+
+            '<li><h3>' + active_user.date_of_birth + '</h3></li>' +
             '<li><h3>' + active_user.address + '</h3></li>' +
             '<li><h3>' + active_user.bio + '</h3></li>';
         document.getElementById('user').innerHTML = output;
-        loadTickets();
     }
-
     xhr.send();
 }
 
@@ -35,9 +33,10 @@ function getName() {
         var active_user = users_list.filter((user) => user.email === 'basic.user@email.com');
         active_user = active_user[0];
         var output = '';
-
+        output += "<h3>" + "Obrázok " + active_user.picture + "<h3>";
         output += "<h3>" + active_user.name + " " + active_user.surname + "<h3>";
         document.getElementById('userName').innerHTML = output;
+        document.getElementById('profile_pic').setAttribute('src', 'src/images/'+active_user.active_pic);
     }
     xhr.send();
 }
@@ -284,7 +283,11 @@ function editProfile() {
         '<label for="bio">Osobní popis</label>' + '<br>' +
         '<input id="bio" type="text" placeholder="Něco málo o mně...">' +
         '</div>' +
-        '<div class="checkbox_group_edit c r4">' +
+        '<div class="form-group r4">' +
+        '<label for="profile-picture">Profilová fotka</label>' +
+        '<input id="profile-picture" type="file" accept="image/*">' +
+        '</div>' +
+        '<div class="checkbox_group_edit r4">' +
         '<input id="newsletter" type="checkbox">' +
         '<label for="newsletter">Chci dostávat novinky o mých nahlášených ticketech.</label>' +
         '</div>' +
@@ -296,11 +299,11 @@ function editProfile() {
         '<h1 class="title c">Změna hesla</h1>' +
         '<div class="form-group a">' +
         '<label for="first-name">Heslo</label>' + '<br>' +
-        '<input id="first-pass" type="text" placeholder="Nové heslo" required>' +
+        '<input id="first-pass" type="password" placeholder="Nové heslo" required>' +
         '</div>' +
         '<div class="form-group b">' +
         '<label for="last-name">Kontrola hesla</label>' + '<br>' +
-        '<input id="last-pass" type="text" placeholder="Nové heslo" required>' +
+        '<input id="last-pass" type="password" placeholder="Nové heslo" required>' +
         '</div>' +
         '<div class="button_container_edit c">' +
         '<input type="button" id="bt_pass" class="button" value="Uložit nové heslo"onClick="saveProfilePass()"/>' +
@@ -329,6 +332,7 @@ function saveProfile() {
     var address = document.getElementById("address").value;
     var bio = document.getElementById("bio").value;
     var newsletter = document.getElementById("newsletter").checked = false;
+    var profile_picture = document.getElementById("profile-picture").value;
     var xhr = new XMLHttpRequest();
     xhr.open('PUT', 'https://639637b790ac47c680810698.mockapi.io/users/6', true);
     xhr.onload = function () {
@@ -347,6 +351,17 @@ function saveProfile() {
         out_string += 'bio=' + bio + '&';
     if (newsletter.toString() !== "")
         out_string += 'newsletter=' + newsletter + '&';
+    if (profile_picture !== "") {
+        out_string += 'picture=' + profile_picture.split('\\').pop() + '&';
+        var img = document.getElementById("profile_pic").getAttribute("src").split('/').pop();
+        if(img === "profile2.png") {
+            out_string += 'active_pic=profile.png&';
+        }
+        else {
+            out_string += 'active_pic=profile2.png&';
+        }
+
+    }
     if (out_string.charAt(out_string.length - 1) === '&') {
         out_string = out_string.slice(0, -1);
     }
@@ -355,10 +370,21 @@ function saveProfile() {
 }
 
 function saveProfilePass() {
-    document.getElementById("first-pass").value = "";
-    document.getElementById("last-pass").value = "";
-
-    document.getElementById("update_header_h1").innerHTML = "Vaše heslo bolo zmenené!";
+    var pwd1 = document.getElementById("first-pass").value;
+    var pwd2 = document.getElementById("last-pass").value;
+    if (pwd1 === pwd2) {
+        document.getElementById("update_header_h1").innerHTML = "Vaše heslo bolo zmenené!";
+        var xhr = new XMLHttpRequest();
+        xhr.open('PUT', 'https://639637b790ac47c680810698.mockapi.io/users/6', true);
+        xhr.onload = function () {
+            getName();
+            loadUser();
+        }
+        xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhr.send('password=' + pwd1);
+    } else {
+        document.getElementById("update_header_h1").innerHTML = "Vaše heslo sa nezhoduje!";
+    }
 }
 
 /* **********************NAV ***************************** */
@@ -370,7 +396,7 @@ function placeUserNav() {
         '<div class="wrapper">' +
 
         ' <div class="profile">' +
-        '    <img src="src/images/profile.png" alt="Profile picture">' +
+        '    <img id="profile_pic" src="" alt="Profile picture">' +
         '   </div>' +
         '<ul id="profile_ul">' +
         '   <a>' +
@@ -392,6 +418,7 @@ function placeUserNav() {
 
     document.getElementById('tuPlaceNav').innerHTML = output;
 }
+
 function placeMobileUserNav() {
     var output = '';
     output +=
@@ -414,6 +441,7 @@ function placeMobileUserNav() {
 
 getName();
 loadUser();
+loadTickets();
 
 function resisePageMobile() {
     if (window.innerWidth <= 750) { //Detect mobile
@@ -428,6 +456,7 @@ resisePageMobile();//run once on page load
 
 //then attach to the event listener
 window.addEventListener('resize', resisePageMobile);
+
 /* **********************NAV ***************************** */
 function showMobileNav() {
     var x = document.getElementById("bar_list2");
