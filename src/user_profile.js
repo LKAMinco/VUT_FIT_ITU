@@ -344,7 +344,7 @@ function saveProfile() {
     if (first_name !== "")
         out_string += 'name=' + first_name + '&';
     if (last_name !== "")
-        out_string += 'surename=' + last_name + '&';
+        out_string += 'surname=' + last_name + '&';
     if (address !== "")
         out_string += 'address=' + address + '&';
     if (bio !== "")
