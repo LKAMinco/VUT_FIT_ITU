@@ -5,6 +5,7 @@
 * */
 
 function handleForm(event) { event.preventDefault(); }
+var logged_in = false;
 
 // Adds map to html page
 const mapKey = "pk.eyJ1IjoianVsaXVzangiLCJhIjoiY2xiY2hoZWpvMDRkMTNxb2VsYWQ3ZW1vdSJ9.Qu7Yj2WOBF-uLm2S8x5yaQ";
@@ -347,10 +348,10 @@ function ticket_detail(id){
                           "<a>Dátum pridania: " + filtered.date + "</a>"+
                           "</div>";
         // Calls function, which displays comment functionality
-        load_comments(id);
         load_add_comments();
         var comment_button = document.getElementById("comment_button");
         comment_button.setAttribute("onclick", "add_comment(this.form, " + id + ")")
+        load_comments(id);
     }
     xhr.send();
 }
@@ -379,7 +380,7 @@ function load_comments(id){
             readName(comment.user_email, comment.id);
             div.innerHTML += output_string;
             // Hides remove button in other people's comments
-            if(comment.user_email !== "basic.user@email.com") {
+            if(comment.user_email !== "basic.user@email.com" || logged_in == false) {
                 var form = document.getElementById("delete_form" + comment.id)
                 if (form != null) {
                     form.setAttribute('class', 'hide_btn');
@@ -421,9 +422,11 @@ function load_add_comments(){
         var response = JSON.parse(this.responseText).status;
         if (response === "true"){
             document.getElementById("add_comment").removeAttribute("class");
+            logged_in = true;
         }
         else{
             document.getElementById("add_comment").setAttribute("class", "hide_btn");
+            logged_in = false;
         }
     }
     xhr.send();
