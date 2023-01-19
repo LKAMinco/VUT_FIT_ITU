@@ -6,11 +6,14 @@
 
 var title = "";
 var category = "";
-var lat = "";
-var long = "";
+var lat = 49.194825;
+var long = 16.608241;
 var description = "";
+var marker;
 
-function endOfReport() {
+function endOfReport(form) {
+    title = form.subject.value;
+    description = form.message.value;
     var output = '';
     output += '<section id="last_report_page">' +
         '<div class="content">' +
@@ -24,11 +27,6 @@ function endOfReport() {
         ' </div>' +
         '</section>';
     document.getElementById('report_part').innerHTML = output;
-    console.log("title: " + title);
-    console.log("cat:" + category);
-    console.log("lat: " + lat);
-    console.log("long: " + long);
-    console.log("desc: " + description);
 }
 
 function reportFour() {
@@ -36,10 +34,10 @@ function reportFour() {
     output += '<section id="services">' +
         '<div class="content">' +
         '<h3>4/4 Doplňte další informace:</h3>' +
-        '<form id="form_4">' +
+        '<form id="form_4" method="GET">' +
         '<input id="4_input" type="text" name="subject" placeholder="Subject" required>' +
         '<textarea id="4_textarea" name="message" cols="30" rows="10" placeholder="Message" required></textarea>' +
-        '<input onclick="endOfReport()" class="submit-btn" id="submit-btn" type="submit" value="Pokračovat dále">' +
+        '<input onclick="endOfReport(this.form)" class="submit-btn" id="submit-btn" type="submit" value="Pokračovat dále">' +
         '</form>' +
         '</div>' +
         ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
@@ -67,6 +65,8 @@ function reportThree() {
         '</section>';
     document.getElementById('report_part').innerHTML = output;
     createMap();
+    //sets position of marker on map
+    marker.setLatLng(new L.LatLng(lat, long));
 }
 
 function handleForm(event) {
@@ -309,7 +309,7 @@ function roads() {
 * */
 function createMap() {
     const mapKey = "pk.eyJ1IjoianVsaXVzangiLCJhIjoiY2xiY2hoZWpvMDRkMTNxb2VsYWQ3ZW1vdSJ9.Qu7Yj2WOBF-uLm2S8x5yaQ";
-    var map = L.map('map_div').setView([49.194825, 16.608241], 15);
+    var map = L.map('map_div').setView([lat, long], 15);
 
     var bound1 = L.latLng(49.416606, 16.220931);
     var bound2 = L.latLng(48.918164, 17.048815);
@@ -460,14 +460,13 @@ function createMap() {
         interactive: false
     }).addTo(map);
 
-    var marker = L.marker([0, 0]).addTo(map);
+    marker = L.marker([lat, long]).addTo(map);
 
     map.on('click', function (e) {
         var coord = e.latlng;
-        var lat = coord.lat;
-        var lng = coord.lng;
-        marker.setLatLng(new L.LatLng(lat, lng));
-        console.log("You clicked the map at latitude: " + lat + " and longitude: " + lng);
+        lat = coord.lat;
+        long = coord.lng;
+        marker.setLatLng(new L.LatLng(lat, long));
     });
 }
 
