@@ -56,10 +56,8 @@ function reportThree() {
     output += '<section id="services">' +
         '<div class="content">' +
         '<h3>3/4 Vyberte lokaci problému:</h3>' +
-        '<form id="report_form">' +
         '<div id="map_div"></div>' +
-        '<input onclick="reportFour()" class="submit-btn" id="three-submit" type="submit" value="Pokračovat dále">' +
-        '</form>' +
+        '<button onclick="reportFour()" class="submit-btn" id="three-submit">Pokračovat dále</button>\n' +
         '</div>' +
         ' <div id="ticket_filter_search" class="col-12 mb-3 col-md-6">\n' +
         '   <li>\n' +
@@ -69,9 +67,6 @@ function reportThree() {
         '</section>';
     document.getElementById('report_part').innerHTML = output;
     createMap();
-
-    var form = document.getElementById("report_form");
-    form.addEventListener('submit', handleForm);
 }
 
 function handleForm(event) {
