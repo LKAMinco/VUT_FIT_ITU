@@ -120,7 +120,7 @@ function loadTickets() {
     xhr.onload = function () {
         var ticker_list = JSON.parse(this.responseText);
         //using one user for demonstration of our application
-        var ticker_list_filtered = ticker_list.filter((ticket) => ticket.user_email === 'Misty_Mertz80@gmail.com');
+        var ticker_list_filtered = ticker_list.filter((ticket) => ticket.user_email === 'basic.user@email.com');
         var output = '';
         document.getElementById('ticket');
         for (var i in ticker_list_filtered) {
@@ -138,11 +138,25 @@ function loadTickets() {
                 '</div>' +
                 '</div>' +
                 '</td>' +
+                '<td>' +
+                '<button id="delete_ticket" onclick="delete_ticket(' + ticker_list_filtered[i].id + ')"><p>Vymazať</p></button>' +
+                '</td>' +
                 '</tr>';
             document.getElementById('ticket').innerHTML = output;
         }
     }
     xhr.send();
+}
+
+//deletes ticket and reloads ticket table
+function delete_ticket(id){
+    var xhr = new XMLHttpRequest();
+    xhr.open('DELETE', 'https://639637b790ac47c680810698.mockapi.io/tickets/' + id, true);
+    xhr.onload = function () {
+        loadTickets();
+    }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send()
 }
 
 
