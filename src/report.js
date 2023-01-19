@@ -35,7 +35,7 @@ function endOfReport(form) {
         document.getElementById('report_part').innerHTML = output;
     }
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send('user_email=basic.user@email.com&title=' + title + '&address=' + lat + ',+' + long + '&category=' + category + '&status=Prijaté&lat=' + lat + '&long=' + long + '&image_path=src/images/park.png&date=' + date + '&description=' + description);
+    xhr.send('user_email=basic.user@email.com&title=' + title + '&address=' + lat.toFixed(5) + ',+' + long.toFixed(5) + '&category=' + category + '&status=Prijaté&lat=' + lat + '&long=' + long + '&image_path=src/images/park.png&date=' + date + '&description=' + description);
 
 }
 
