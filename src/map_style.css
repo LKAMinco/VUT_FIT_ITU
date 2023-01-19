@@ -340,13 +340,13 @@ a {
 #comment_text{
     grid-column: 1;
     width: 72%;
-    min-height: 2rem;
+    height: 2rem;
     margin-left: 1rem;
     margin-top: 0.75rem;
-    max-width: 72%;
-    min-width: 72%;
+    width: 72%;
     background-color: var(--lightGray);
     color: var(--white);
+    resize: none;
 }
 
 ::placeholder{
