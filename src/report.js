@@ -6,6 +6,7 @@
 
 var title = "";
 var category = "";
+// these lat/long values represent default view of map
 var lat = 49.194825;
 var long = 16.608241;
 var description = "";
@@ -26,7 +27,16 @@ function endOfReport(form) {
         '</div>' +
         ' </div>' +
         '</section>';
-    document.getElementById('report_part').innerHTML = output;
+
+    var date = new Date().toISOString().substr(0, 10).replace('T', ' ');
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
+    xhr.onload = function () {
+        document.getElementById('report_part').innerHTML = output;
+    }
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.send('user_email=basic.user@email.com&title=' + title + '&address=' + lat + ',+' + long + '&category=' + category + '&status=Prijaté&lat=' + lat + '&long=' + long + '&image_path=src/images/park.png&date=' + date + '&description=' + description);
+
 }
 
 function reportFour() {
@@ -47,6 +57,8 @@ function reportFour() {
         ' </div>' +
         '</section>';
     document.getElementById('report_part').innerHTML = output;
+
+    document.getElementById('form_4').addEventListener('submit', handleForm);
 }
 
 function reportThree() {
