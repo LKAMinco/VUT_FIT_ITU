@@ -341,14 +341,22 @@ function saveProfile() {
     }
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     var out_string = "";
-    if (first_name !== "")
+    if (first_name !== "") {
         out_string += 'name=' + first_name + '&';
-    if (last_name !== "")
+        document.getElementById("first-name").value = "";
+    }
+    if (last_name !== "") {
         out_string += 'surname=' + last_name + '&';
-    if (address !== "")
+        document.getElementById("last-name").value = "";
+    }
+    if (address !== "") {
         out_string += 'address=' + address + '&';
-    if (bio !== "")
+        document.getElementById("address").value = "";
+    }
+    if (bio !== "") {
         out_string += 'bio=' + bio + '&';
+        document.getElementById("bio").value = "";
+    }
     if (newsletter.toString() !== "")
         out_string += 'newsletter=' + newsletter + '&';
     if (profile_picture !== "") {
@@ -360,7 +368,7 @@ function saveProfile() {
         else {
             out_string += 'active_pic=profile2.png&';
         }
-
+        document.getElementById("profile-picture").value = "";
     }
     if (out_string.charAt(out_string.length - 1) === '&') {
         out_string = out_string.slice(0, -1);
@@ -377,6 +385,8 @@ function saveProfilePass() {
         var xhr = new XMLHttpRequest();
         xhr.open('PUT', 'https://639637b790ac47c680810698.mockapi.io/users/6', true);
         xhr.onload = function () {
+            document.getElementById("first-pass").value = "";
+            document.getElementById("last-pass").value = "";
             getName();
             loadUser();
         }
