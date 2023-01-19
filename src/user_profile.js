@@ -139,7 +139,7 @@ function loadTickets() {
                 '</div>' +
                 '</td>' +
                 '<td>' +
-                '<button id="delete_ticket" onclick="delete_ticket(' + ticker_list_filtered[i].id + ')"><p>Vymazať</p></button>' +
+                '<button id="delete_ticket' + ticker_list_filtered[i].id + '" onclick="delete_ticket(' + ticker_list_filtered[i].id + ')" class="button"><p>Vymazať</p></button>' +
                 '</td>' +
                 '</tr>';
             document.getElementById('ticket').innerHTML = output;
