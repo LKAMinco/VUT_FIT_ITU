@@ -168,7 +168,7 @@ var searchFilter = () => {
     xhr.open('GET', 'https://639637b790ac47c680810698.mockapi.io/tickets', true);
     xhr.onload = function () {
         var ticker_list = JSON.parse(this.responseText);
-        var ticker_list_filtered = ticker_list.filter((ticket) => ticket.user_email === 'Misty_Mertz80@gmail.com');
+        var ticker_list_filtered = ticker_list.filter((ticket) => ticket.user_email === 'basic.user@email.com');
         let status = document.getElementById("filter1").value;
         let category = document.getElementById("filter2").value;
         let date = document.getElementById("filter3").value;
@@ -224,8 +224,11 @@ var searchFilter = () => {
                 '<div class="modal-header_u">' +
                 '<img src="' + ticker_list_filtered[i].image_path + '">' +
                 '</div>' +
-                '</div>'
-                + '</td>' +
+                '</div>' +
+                '</td>' +
+                '<td>' +
+                '<button id="delete_ticket' + ticker_list_filtered[i].id + '" onclick="delete_ticket(' + ticker_list_filtered[i].id + ')" class="button"><p>Vymazať</p></button>' +
+                '</td>' +
                 '</tr>';
             document.getElementById('ticket').innerHTML = output;
         }
