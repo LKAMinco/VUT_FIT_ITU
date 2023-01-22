@@ -36,7 +36,8 @@ function endOfReport(form) {
         document.getElementById('report_part').innerHTML = output;
     }
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-    xhr.send('user_email=basic.user@email.com&title=' + title + '&address=' + file + '&category=' + category + '&status=Prijaté&lat=' + lat + '&long=' + long + '&image_path=src/images/park.png&date=' + date + '&description=' + description);
+    xhr.send('user_email=basic.user@email.com&title=' + title + '&address=' + file + '&category=' + category + '&status=Prijaté&lat=' + lat + '&long=' + long +
+                    '&image_path=src/images/park.png&date=' + date + '&description=' + description);
 
 }
 
@@ -90,7 +91,7 @@ function handleForm(event) {
 function loadFile(event) {
     var output = document.getElementById('output');
     output.src = URL.createObjectURL(event.target.files[0]);
-    file = event.target.files[0].name;
+    file = "image path: " + event.target.files[0].name;
     output.onload = function () {
         URL.revokeObjectURL(output.src) // free memory
     }
